@@ -1,0 +1,100 @@
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+W          W      W                 W                    W                                         W
+W                                                                                                  W
+W          W       WWWWWWWWWWWWWWWWW WWWWWWWWWWWWWWWWWWWW    WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W          W      W                 W                    W                                         W
+W          W      W                 W                    W W                                       W
+W          W      W                 W                    W W                                       W
+W          W      W                 W                    W W                                       W
+W          W      W                 W                    W W                                       W
+W          W      W                 W                      W                                       W
+W          W       WWWWWWWWWWWWWWWWWWWWWWWW WWWWWWWWWWWW   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W          W      W           WWWW WWWWWWWW WWWW WWWWWWWW                                          W
+W          W      W          W             W             W                   W                     W
+W          W      W          W    W        W    W        W                   W                     W
+W          W      W          W    W        W    W        W                   W                     W
+W          W      W          W    W        W    W        W                   W                     W
+W          W      W          W    W        W    W         WWWWWWWWWWWWWWWWWWW  WWWWWWWWWWWWWWWWWWW W
+W          W      W          W    W        W    W        W                     WWWWWWWWWWWWWWWWWWW W
+W          W      W               W        W    W        W           W       W                     W
+W          W       WWWWWWWWW   WWWW WWWWWWW WWWW WWWWWWWWW           W          WWWWWWWWWWW WWWWWW W
+W          W      W                                      W           W       W             W       W
+W          W      W          W     W       W    W        W           W       WW            W       W
+W          W      W          W     W       W    W        W           W       WW            W       W
+W          W      W          W     W       W    W        W           W       WW            W       W
+W          W      W          W     W       W    W        W           W       WW            W       W
+W          W      W          W     W       W    W        W           W       WW            W       W
+W          W      W          W     W       W    W        W           W       WW            W       W
+W                 W          W     W       W    W        W                   WW            W       W
+W WWWWWWWW   WWWWWW          W     W            W         WWWWWWWWWW   WWWWWWWW            W       W
+W                 W          W      WWWWWW   WWWWWWWWWWWWW                   WW            W       W
+W          W      W          W     W                     W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W             W           W       WW            W       W
+W          W      W          W     W        WWWW   WWWWWWW           W       WW            W       W
+W          W      W          W     W       W             W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W      W          W     W       W     W       W           W       WW            W       W
+W          W                 W     W       W     W       W           W       WW            W       W
+W WWWWWWWWWWWWWWW   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W                                                                                                  W
+W WWWWWWW WWWWWWWWW         W   W                                                                  W
+W        W        W         W                                                                      W
+W        W        W          WW   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W         W                                                                      W
+W        W        W         W   W                             W                                    W
+W        W        W         W   W                             W                                    W
+W        W        W         W   W                             W                                    W
+W        W        W         W   W                                                                  W
+W        W        W         W    WWWWWWWWWWWWWWWWWWWWWWWWWWWW   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W         W   W                                                                  W
+W        W        W         W   W                             W                                    W
+W        W        W         W   W                             W                                    W
+W        W        W         W   W                             W                                    W
+W        W        W         W   W                             W                                    W
+W        W        W             W                             W                                    W
+W        W         WWWWWWWW   WWWWWWWWWWWWWWWWWWWW WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W                               W                                                W
+W        W        W         W             W    W                                                   W
+W        W        W          WWWWW WWWWWWWW     W   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W         W             W    W                                                   W
+W        W        W         W     W       W    W  W                                                W
+W        W        W         W     W       W    W  W                                                W
+W        W        W         W     W       W    W  W                                                W
+W        W        W         W     W       W    W  W                                                W
+W        W        W         W     W       W    W  W                                                W
+W        W        W         W     W        WWWW WWWW WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W         W     W       W     WWWW WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W         W     W       W    W    W                                              W
+W        W        W         W     W       W    W    W                                              W
+W        W        W         W     W       W    W    W                                              W
+W        W        W         W     W       W    W    W                                              W
+W        W        W         W     W       W    W    W                                              W
+W        W        W         W     W            W    W                                              W
+W        W        W          WWWWWW WWWWW   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W         W      W                                                               W
+W        W        W         W             W       W                                                W
+W        W        W          WWWWW   WWWWWW                                                        W
+W        W        W         W              WWWWWW   WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW W
+W        W        W         W      W      W                                                        W
+W        W        W         W      W      W       W                                                W
+W        W        W         W      W      W       W                                                W
+W        W        W         W      W      W       W                                                W
+W        W        W         W      W      W       W                                                W
+W        W        W         W      W      W       W                                                W
+W                                                                                                  W
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
