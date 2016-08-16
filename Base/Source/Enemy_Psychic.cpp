@@ -24,14 +24,14 @@ void Enemy_Psychic::Update()
 
 }
 
-int Enemy_Psychic::SetPos_x(int pos_x)
+void Enemy_Psychic::SetPos_x(int pos_x)
 {
-	enemyPosition.x = pos_x;
+	this->enemyPosition.x = pos_x;
 }
 
-int Enemy_Psychic::SetPos_y(int pos_y)
+void Enemy_Psychic::SetPos_y(int pos_y)
 {
-	enemyPosition.y = pos_y;
+	this->enemyPosition.y = pos_y;
 }
 
 int Enemy_Psychic::GetPos_x()

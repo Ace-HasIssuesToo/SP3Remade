@@ -3,7 +3,7 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 
-PlayerClass* PlayerClass::m_pointer = new PlayerClass;
+PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
 PlayerClass::PlayerClass()
 	:movementSpeed(0)
@@ -90,25 +90,25 @@ void PlayerClass::Update(double dt, Map map)
 	if (PlayerPos.x > Render_PI::Window_Scale().x - 5)
 	{
 		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 5);
-		PlayerPosOffSet += difference;
+		PlayerPosOffSet.x += difference;
 		PlayerPos = (Render_PI::Window_Scale().x - 5);
 	}
 	else if (PlayerPos.x < 5)
 	{
 		double difference = PlayerPos.x - (5);
-		PlayerPosOffSet += difference;
+		PlayerPosOffSet.x += difference;
 		PlayerPos = (5);
 	}
 	if (PlayerPos.y > Render_PI::Window_Scale().y - 5)
 	{
 		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
-		PlayerPosOffSet += difference;
+		PlayerPosOffSet.y += difference;
 		PlayerPos = (Render_PI::Window_Scale().y - 5);
 	}
 	else if (PlayerPos.y < 5)
 	{
 		double difference = PlayerPos.y - (5);
-		PlayerPosOffSet += difference;
+		PlayerPosOffSet.y += difference;
 		PlayerPos = (5);
 	}
 }

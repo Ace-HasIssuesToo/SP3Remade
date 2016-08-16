@@ -23,9 +23,9 @@ public:
 	void Exit();
 
 	// Set pos x of enemy
-	int SetPos_x(int pos_x);
+	void SetPos_x(int pos_x);
 	// Set pos y of enemy
-	int SetPos_y(int pos_y);
+	void SetPos_y(int pos_y);
 
 	// Get pos x of enemy
 	int GetPos_x();
