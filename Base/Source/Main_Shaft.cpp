@@ -12,10 +12,6 @@ void Main_Shaft::Init()
 	Render_PI::pointer()->Init();
 	Input_PI::pointer()->Init();
 	Game_System::pointer()->Init();
-<<<<<<< HEAD
-	PlayerClass::pointer()->Init();
-=======
->>>>>>> ced28e260ab9fe57ed95bcf1860d7b5ecf02c9a3
 }
 
 void Main_Shaft::Update(double dt)
@@ -23,10 +19,6 @@ void Main_Shaft::Update(double dt)
 	//std::cout << 1 / dt << std::endl;
 	Input_PI::pointer()->Update(dt);
 	Game_System::pointer()->Update(dt);
-<<<<<<< HEAD
-	PlayerClass::pointer()->Update(dt);
-=======
->>>>>>> ced28e260ab9fe57ed95bcf1860d7b5ecf02c9a3
 }
 
 

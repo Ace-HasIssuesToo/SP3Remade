@@ -22,32 +22,19 @@ void Game_System::Init()
 	{
 		cout << "File Error" << endl;
 	}
+	PlayerClass::pointer()->Init();
 	Pos = Vector3();
 }
 
 void Game_System::Update(double dt)
 {
-	if (Application::IsKeyPressed('W'))
-	{
-		Pos.x += 10 * dt;
-	}
-	if (Application::IsKeyPressed('S'))
-	{
-		Pos.x -= 10 * dt;
-	}
-	if (Application::IsKeyPressed('D'))
-	{
-		Pos.y += 10 * dt;
-	}
-	if (Application::IsKeyPressed('A'))
-	{
-		Pos.y -= 10 * dt;
-	}
+	PlayerClass::pointer()->Update(dt, Floor1);
 }
 
 void Game_System::Render()
 {
 	Floor1.Render(Pos);
+	PlayerClass::pointer()->Renderplayer();
 }
 
 void Game_System::Exit()
