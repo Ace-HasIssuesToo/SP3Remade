@@ -16,6 +16,7 @@
     <ClCompile Include="Source\Camera_PI.cpp" />
     <ClCompile Include="Source\EnemyGhost.cpp" />
     <ClCompile Include="Source\Enemy_Poison.cpp" />
+    <ClCompile Include="Source\Enemy_Psychic.cpp" />
     <ClCompile Include="Source\Main_Shaft.cpp" />
     <ClCompile Include="Source\Map_PI.cpp" />
     <ClCompile Include="Source\Player.cpp" />
@@ -32,6 +33,7 @@
     <ClInclude Include="Source\Camera_PI.h" />
     <ClInclude Include="Source\EnemyGhost.h" />
     <ClInclude Include="Source\Enemy_Poison.h" />
+    <ClInclude Include="Source\Enemy_Psychic.h" />
     <ClInclude Include="Source\Main_Shaft.h" />
     <ClInclude Include="Source\Map_PI.h" />
     <ClInclude Include="Source\Player.h" />

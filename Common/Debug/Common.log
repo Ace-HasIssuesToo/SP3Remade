@@ -1,1 +1,37 @@
+<<<<<<< HEAD
 ﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+﻿Build started 16/8/2016 12:08:05 PM.
+     1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         Common.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib
+     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.03
+=======
+<<<<<<< HEAD
+﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
+=======
+﻿Build started 16/8/2016 12:41:26 PM.
+=======
+﻿Build started 16/8/2016 1:00:27 PM.
+>>>>>>> Half Scrolling
+     1>Project "D:\SP3 Life Problems\SP3Again\SP3\Common\Common.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         Common.vcxproj -> D:\SP3 Life Problems\SP3Again\SP3\Debug\Common.lib
+     1>Done Building Project "D:\SP3 Life Problems\SP3Again\SP3\Common\Common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+<<<<<<< HEAD
+Time Elapsed 00:00:00.22
+>>>>>>> 8d0b6d3d8a42c48123f14d8fbdb0af97e31625ca
+>>>>>>> bb72dff01adbe6ff8d0fe409e191b36cfbcbcde0
+=======
+Time Elapsed 00:00:00.03
+>>>>>>> Half Scrolling
+>>>>>>> 8ae6244b9ead5c0dabdcdbcebe391a6153e88ed2

@@ -36,7 +36,7 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
-	Floor1.Render(Pos);
+	Floor1.Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	EnemyGhost::pointer()->RenderGhost();
 }
