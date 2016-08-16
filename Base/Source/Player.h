@@ -10,6 +10,9 @@ public:
 	virtual void Init();
 	virtual void Update(double dt, Map map);
 	virtual void Renderplayer();
+	virtual void RenderPokeball();
+	Vector3 getPlayerPos();
+	Vector3 getPlayerPosOffSet();
 	static PlayerClass* pointer()
 	{
 		return m_pointer;
@@ -22,7 +25,7 @@ private:
 	double throwSpeed;
 	Vector3 PlayerPos, PokeballPos, PlayerPosOffSet;
 	Mesh* playerMesh;
-	Vector3 playerShadow;
+	Vector3 playerShadow, pokeballShadow;
 };
 
 #endif
