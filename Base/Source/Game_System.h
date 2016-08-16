@@ -15,6 +15,7 @@ public:
 	virtual void Exit();
 private:
 	Map Floor1;
+	Map Floor2;
 	Game_System();
 	~Game_System();
 	static Game_System* c_pointer;

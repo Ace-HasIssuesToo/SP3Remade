@@ -45,7 +45,6 @@ bool Map::Init(std::string Filename)
 	}
 	file.close();
 	return true;
-
 }
 
 void Map::Render(Vector3 pos)
