@@ -18,6 +18,10 @@ void Debug_PI::Init()
 	Camera_PI camera;
 	camera.Init(Vector3(10, 0, 0), Vector3(), Vector3(0, 1, 0), 0, 0);
 	Render_PI::pointer()->Camera_Set(camera);
+	if (!Floor1.Init("Data\\Map\\Floor1.csv"))
+	{
+		cout << "File Error" << endl;
+	}
 }
 
 void Debug_PI::Update(double dt)
@@ -26,10 +30,7 @@ void Debug_PI::Update(double dt)
 
 void Debug_PI::Render()
 {
-	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BackGround"), false, (Render_PI::Window_Scale()*0.5) + Vector3(0, 0, -1), Render_PI::Window_Scale() + Vector3(0, 0, 1));
-	Render_PI::pointer()->modelStack_Set(false);
-
+	Floor1.Render(Vector3());
 }
 
 void Debug_PI::Exit()

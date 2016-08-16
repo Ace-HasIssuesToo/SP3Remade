@@ -34,7 +34,7 @@ bool Texture::Set(Mesh* Mesh_)
 	if (ret.second == false) {
 		return false;
 	}
-	return false;
+	return true;
 }
 
 bool Texture::Set(std::string FileName)
