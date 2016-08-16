@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD
 Debug|Win32|D:\NYP Projects\SP3\Edited Pull\|
+=======
+Debug|Win32|D:\SP3 Life Problems\SP3MAKEITSTOP\|
+>>>>>>> d9580da46056991b3e2d99efafe75d1ea16d6798

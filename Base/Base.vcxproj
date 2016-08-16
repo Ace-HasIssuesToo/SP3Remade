@@ -14,7 +14,7 @@
     <ClCompile Include="Source\Angle_And_Target.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Camera_PI.cpp" />
-    <ClCompile Include="Source\EnemyGhost.cpp" />
+    <ClCompile Include="Source\Enemy_Ghost.cpp" />
     <ClCompile Include="Source\Enemy_Poison.cpp" />
     <ClCompile Include="Source\Enemy_Psychic.cpp" />
     <ClCompile Include="Source\Main_Shaft.cpp" />
@@ -31,7 +31,7 @@
     <ClInclude Include="Source\Angle_And_Target.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Camera_PI.h" />
-    <ClInclude Include="Source\EnemyGhost.h" />
+    <ClInclude Include="Source\Enemy_Ghost.h" />
     <ClInclude Include="Source\Enemy_Poison.h" />
     <ClInclude Include="Source\Enemy_Psychic.h" />
     <ClInclude Include="Source\Main_Shaft.h" />

@@ -45,11 +45,11 @@ bool Map::Init(std::string Filename)
 	}
 	file.close();
 	return true;
-
 }
 
 void Map::Render(Vector3 pos)
 {
+	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * 10);
 	std::stringstream Location;
 	Vector3 Size = Render_PI::Window_Scale()*(1.f/10.f);
 	Vector3 Displacement = Vector3(pos.x - Math::Max(floor(pos.x), 0.f), pos.y - Math::Max(floor(pos.y), 0.f), 0)*-1;
@@ -80,9 +80,9 @@ void Map::Render(Vector3 pos)
 
 std::string Map::Get_Type(Vector3 pos)
 {
-	pos = (Vector3(pos.x / Render_PI::Window_Scale().x, pos.y / Render_PI::Window_Scale().y, 0) * 10);
+	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * 10);
 	std::stringstream Location;
-	Location << int(pos.x ) << " / " << int(pos.y);
+	Location << floor(pos.x) << " / " << floor(pos.y);
 	std::map<std::string, std::string>::iterator it;
 	string Strings = Location.str();
 	it = Map_Data.find(Strings);

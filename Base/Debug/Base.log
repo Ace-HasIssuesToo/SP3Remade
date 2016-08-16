@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 16/8/2016 3:08:39 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -36,3 +37,14 @@
 Build succeeded.
 
 Time Elapsed 00:00:01.17
+=======
+﻿Build started 16/8/2016 5:17:42 PM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.exe
+     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.05
+>>>>>>> d9580da46056991b3e2d99efafe75d1ea16d6798

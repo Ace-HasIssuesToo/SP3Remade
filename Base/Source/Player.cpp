@@ -13,6 +13,7 @@ PlayerClass::PlayerClass()
 	, PokeballPos(0,0,0)
 	, playerShadow(0,0,0)
 	, pokeballShadow(0,0,0)
+	, sc(0,0,0)
 {
 }
 
@@ -22,9 +23,10 @@ PlayerClass::~PlayerClass()
 
 void PlayerClass::Init()
 {
-	movementSpeed = 10;
+	movementSpeed = 20;
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
+	sc.Set(1, 1, 1);
 	//playerMesh = MeshBuilder::GenerateSpriteAnimation();
 }
 
@@ -49,11 +51,11 @@ void PlayerClass::Update(double dt, Map map)
 	}
 
 	//Kind of Collision
-	if (map.Get_Type(playerShadow) == "Wall")
+	if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{
 
 	}
-	else if (map.Get_Type(playerShadow) == "Floor")
+	else if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Floor")
 	{
 		PlayerPos = playerShadow;
 	}
@@ -76,7 +78,7 @@ void PlayerClass::Update(double dt, Map map)
 	{
 
 	}
-
+/*
 	if (map.Get_Type(pokeballShadow) == "Wall")
 	{
 		
@@ -84,32 +86,32 @@ void PlayerClass::Update(double dt, Map map)
 	else if (map.Get_Type(pokeballShadow) == "Floor")
 	{
 		PokeballPos = pokeballShadow;
-	}
+	}*/
 
 	//Keep Player in window
-	if (PlayerPos.x > Render_PI::Window_Scale().x - 5)
+	if (PlayerPos.x > (Render_PI::Window_Scale().x - 5))
 	{
 		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 5);
-		PlayerPosOffSet += difference;
-		PlayerPos = (Render_PI::Window_Scale().x - 5);
+		PlayerPosOffSet.x += difference;
+		PlayerPos.x = (Render_PI::Window_Scale().x - 5);
 	}
 	else if (PlayerPos.x < 5)
 	{
 		double difference = PlayerPos.x - (5);
-		PlayerPosOffSet += difference;
-		PlayerPos = (5);
+		PlayerPosOffSet.x += difference;
+		PlayerPos.x = (5);
 	}
-	if (PlayerPos.y > Render_PI::Window_Scale().y - 5)
+	if (PlayerPos.y > (Render_PI::Window_Scale().y - 5))
 	{
 		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
-		PlayerPosOffSet += difference;
-		PlayerPos = (Render_PI::Window_Scale().y - 5);
+		PlayerPosOffSet.y += difference;
+		PlayerPos.y = (Render_PI::Window_Scale().y - 5);
 	}
 	else if (PlayerPos.y < 5)
 	{
 		double difference = PlayerPos.y - (5);
-		PlayerPosOffSet += difference;
-		PlayerPos = (5);
+		PlayerPosOffSet.y += difference;
+		PlayerPos.y = (5);
 	}
 }
 
@@ -121,17 +123,21 @@ Vector3 PlayerClass::getPlayerPosOffSet()
 {
 	return PlayerPosOffSet;
 }
+Vector3 PlayerClass::getPlayerScale()
+{
+	return sc;
+}
 
 void PlayerClass::Renderplayer()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PlayerPos), Vector3(1, 1, 1));
+	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
 void PlayerClass::RenderPokeball()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PokeballPos), Vector3(1, 1, 1));
+	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PokeballPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 }
