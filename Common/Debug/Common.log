@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Vector3.cpp
   Vector2.cpp
   timer.cpp
@@ -6,3 +7,14 @@
   MathUtility.cpp
   Generating Code...
   Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
+=======
+﻿生成启动时间为 16/8/2016 下午 1:27:24。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
+     1>Lib:
+         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.04
+>>>>>>> f91ce0f978b10cab94da2018adc44c1e772f62c7

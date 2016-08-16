@@ -22,7 +22,7 @@ PlayerClass::~PlayerClass()
 
 void PlayerClass::Init()
 {
-	movementSpeed = 10;
+	movementSpeed = 20;
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	//playerMesh = MeshBuilder::GenerateSpriteAnimation();
@@ -49,11 +49,11 @@ void PlayerClass::Update(double dt, Map map)
 	}
 
 	//Kind of Collision
-	if (map.Get_Type(playerShadow) == "Wall")
+	if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{
 
 	}
-	else if (map.Get_Type(playerShadow) == "Floor")
+	else if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Floor")
 	{
 		PlayerPos = playerShadow;
 	}
@@ -76,7 +76,7 @@ void PlayerClass::Update(double dt, Map map)
 	{
 
 	}
-
+/*
 	if (map.Get_Type(pokeballShadow) == "Wall")
 	{
 		
@@ -84,32 +84,32 @@ void PlayerClass::Update(double dt, Map map)
 	else if (map.Get_Type(pokeballShadow) == "Floor")
 	{
 		PokeballPos = pokeballShadow;
-	}
+	}*/
 
 	//Keep Player in window
-	if (PlayerPos.x > Render_PI::Window_Scale().x - 5)
+	if (PlayerPos.x > (Render_PI::Window_Scale().x - 5))
 	{
 		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 5);
 		PlayerPosOffSet.x += difference;
-		PlayerPos = (Render_PI::Window_Scale().x - 5);
+		PlayerPos.x = (Render_PI::Window_Scale().x - 5);
 	}
 	else if (PlayerPos.x < 5)
 	{
 		double difference = PlayerPos.x - (5);
 		PlayerPosOffSet.x += difference;
-		PlayerPos = (5);
+		PlayerPos.x = (5);
 	}
-	if (PlayerPos.y > Render_PI::Window_Scale().y - 5)
+	if (PlayerPos.y > (Render_PI::Window_Scale().y - 5))
 	{
 		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
 		PlayerPosOffSet.y += difference;
-		PlayerPos = (Render_PI::Window_Scale().y - 5);
+		PlayerPos.y = (Render_PI::Window_Scale().y - 5);
 	}
 	else if (PlayerPos.y < 5)
 	{
 		double difference = PlayerPos.y - (5);
 		PlayerPosOffSet.y += difference;
-		PlayerPos = (5);
+		PlayerPos.y = (5);
 	}
 }
 

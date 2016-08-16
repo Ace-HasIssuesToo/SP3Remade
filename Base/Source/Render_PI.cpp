@@ -9,7 +9,7 @@ Vector3 Render_PI::Window_Scale()
 	float m_worldHeight = 100.f;
 	float m_worldWidth = m_worldHeight * (float)Application::GetWindowWidth() / Application::GetWindowHeight();
 
-	return Vector3(m_worldHeight, m_worldWidth, 0);
+	return Vector3(m_worldWidth,m_worldHeight,  0);
 }
 
 void Render_PI::Lights_Set(int i, Light light)
@@ -236,7 +236,7 @@ void Render_PI::Ortho_Set(bool Ortho)
 			glDisable(GL_DEPTH_TEST);
 			Mtx44 ortho;
 			Vector3 Window_ = Window_Scale();
-			ortho.SetToOrtho(0, Window_.x, 0, Window_.y, -10, 10);
+			ortho.SetToOrtho(0, Window_.y, 0, Window_.x, -10, 10);
 			projectionStack.PushMatrix();
 			projectionStack.LoadMatrix(ortho);
 			viewStack.PushMatrix();
