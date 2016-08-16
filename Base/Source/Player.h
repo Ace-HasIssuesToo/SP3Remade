@@ -2,12 +2,13 @@
 #define PLAYER_H
 #include "Support_Codes.h"
 #include "Render_PI.h"
+#include "Map_PI.h"
 
 class PlayerClass
 {
 public:
 	virtual void Init();
-	virtual void Update(double dt);
+	virtual void Update(double dt, Map map);
 	virtual void Renderplayer();
 	static PlayerClass* pointer()
 	{
@@ -21,6 +22,7 @@ private:
 	double throwSpeed;
 	Vector3 PlayerPos, PokeballPos, PlayerPosOffSet;
 	Mesh* playerMesh;
+	Vector3 playerShadow;
 };
 
 #endif
