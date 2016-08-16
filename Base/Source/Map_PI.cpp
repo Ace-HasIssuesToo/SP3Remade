@@ -80,5 +80,15 @@ void Map::Render(Vector3 pos)
 
 std::string Map::Get_Type(Vector3 pos)
 {
-	return "";
+	pos = (Vector3(pos.x / Render_PI::Window_Scale().x, pos.y / Render_PI::Window_Scale().y, 0) * 10);
+	std::stringstream Location;
+	Location << int(pos.x ) << " / " << int(pos.y);
+	std::map<std::string, std::string>::iterator it;
+	string Strings = Location.str();
+	it = Map_Data.find(Strings);
+	if (it == Map_Data.end())
+	{
+		return "Wall";
+	}
+	return Map_Data.at(Location.str());
 }

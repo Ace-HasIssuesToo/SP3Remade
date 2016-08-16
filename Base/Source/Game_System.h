@@ -2,6 +2,7 @@
 #define PARTICLE_SCENE
 #include "Main_Shaft.h"
 #include "Map_PI.h"
+#include "Player.h"
 
 class Game_System :public Scene
 {

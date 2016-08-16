@@ -27,56 +27,65 @@ void PlayerClass::Init()
 	//playerMesh = MeshBuilder::GenerateSpriteAnimation();
 }
 
-void PlayerClass::Update(double dt)
+void PlayerClass::Update(double dt, Map map)
 {
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::All_Control])
+	playerShadow = PlayerPos;
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
 	{
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
-		{
-			PlayerPos.y += movementSpeed * dt;
-		}
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::Backward] == true)
-		{
-			PlayerPos.y -= movementSpeed * dt;
-		}
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::Leftward] == true)
-		{
-			PlayerPos.x -= movementSpeed * dt;
-		}
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::Rightward] == true)
-		{
-			PlayerPos.x -= movementSpeed * dt;
-		}
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrow] == true)
-		{
-
-		}
-		//Bounds
-		if (PlayerPos.x > Render_PI::Window_Scale().x - 5)
-		{
-			double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 5);
-			PlayerPosOffSet += difference;
-			PlayerPos = (Render_PI::Window_Scale().x - 5);
-		}
-		else if (PlayerPos.x < 5)
-		{
-			double difference = PlayerPos.x - (5);
-			PlayerPosOffSet += difference;
-			PlayerPos = (5);
-		}
-		if (PlayerPos.y > Render_PI::Window_Scale().y - 5)
-		{
-			double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
-			PlayerPosOffSet += difference;
-			PlayerPos = (Render_PI::Window_Scale().y - 5);
-		}
-		else if (PlayerPos.y < 5)
-		{
-			double difference = PlayerPos.y - (5);
-			PlayerPosOffSet += difference;
-			PlayerPos = (5);
-		}
+		playerShadow.y += movementSpeed * dt;
 	}
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Backward] == true)
+	{
+		playerShadow.y -= movementSpeed * dt;
+	}
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Leftward] == true)
+	{
+		playerShadow.x -= movementSpeed * dt;
+	}
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Rightward] == true)
+	{
+		playerShadow.x += movementSpeed * dt;
+	}
+
+	if (map.Get_Type(playerShadow) == "Wall")
+	{
+
+	}
+	else if (map.Get_Type(playerShadow) == "Floor")
+	{
+		PlayerPos = playerShadow;
+	}
+
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrow] == true)
+	{
+
+	}
+
+	//Keep Player in window
+	/*if (PlayerPos.x > Render_PI::Window_Scale().x - 5)
+	{
+		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 5);
+		PlayerPosOffSet += difference;
+		PlayerPos = (Render_PI::Window_Scale().x - 5);
+	}
+	else if (PlayerPos.x < 5)
+	{
+		double difference = PlayerPos.x - (5);
+		PlayerPosOffSet += difference;
+		PlayerPos = (5);
+	}
+	if (PlayerPos.y > Render_PI::Window_Scale().y - 5)
+	{
+		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
+		PlayerPosOffSet += difference;
+		PlayerPos = (Render_PI::Window_Scale().y - 5);
+	}
+	else if (PlayerPos.y < 5)
+	{
+		double difference = PlayerPos.y - (5);
+		PlayerPosOffSet += difference;
+		PlayerPos = (5);
+	}*/
 }
 
 void PlayerClass::Renderplayer()
