@@ -23,6 +23,7 @@ void Game_System::Init()
 		cout << "File Error" << endl;
 	}
 	PlayerClass::pointer()->Init();
+	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
 	Pos = Vector3();
 }
@@ -31,7 +32,12 @@ void Game_System::Update(double dt)
 {
 
 	PlayerClass::pointer()->Update(dt, Floor1);
+	Enemy_Psychic::pointer()->Update(dt, Floor1);
 	Enemy_Ghost::pointer()->Update(dt, Floor1);
+<<<<<<< HEAD
+=======
+	//EnemyGhost::pointer()->Update(dt, Floor1);
+>>>>>>> 83b28297b4a40a15afc409b60b47432c92a9e377
 }
 
 void Game_System::Render()
@@ -39,6 +45,8 @@ void Game_System::Render()
 	Floor1.Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	Enemy_Ghost::pointer()->RenderGhost();
+	if (Enemy_Psychic::pointer()->tempKill == false)
+		Enemy_Psychic::pointer()->RenderPsychic();
 }
 
 void Game_System::Exit()

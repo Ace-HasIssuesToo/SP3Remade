@@ -1,4 +1,42 @@
+<<<<<<< HEAD
 ﻿  Game_System.cpp
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+﻿Build started 16/8/2016 5:40:46 PM.
+     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Game_System.cpp
+         Game_System.cpp
+       Link:
+         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+         Debug\Application.obj
+         Debug\Camera_PI.obj
+         Debug\Enemy_Ghost.obj
+         Debug\Enemy_Poison.obj
+         Debug\Enemy_Psychic.obj
+         Debug\Main_Shaft.obj
+         Debug\Map_PI.obj
+         Debug\Player.obj
+         Debug\Render_PI.obj
+         Debug\main.obj
+         Debug\Input_PI.obj
+         Debug\Game_System.obj
+         Debug\Support_Codes.obj
+         Debug\Texture_PI.obj
+     1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>Texture_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Texture_PI.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Support_Codes.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Support_Codes.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>main.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'main.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Camera_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera_PI.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Application.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Application.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Angle_And_Target.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Angle_And_Target.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
+     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.25
+>>>>>>> 83b28297b4a40a15afc409b60b47432c92a9e377
