@@ -10,8 +10,9 @@ public:
 	void Init();
 	void Update(double dt, Map map);
 	void RenderGhost();
-	Vector3 GetGhostOffSet();
 	void Exit();
+
+	Vector3 GetGhostOffSet();
 private:
 	Enemy_Ghost()
 		: ghostTimer(0)

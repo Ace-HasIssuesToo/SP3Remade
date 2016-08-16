@@ -1,11 +1,4 @@
-﻿  Enemy_Ghost.cpp
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(10): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(31): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(32): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(33): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(66): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(75): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(76): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+﻿  Game_System.cpp
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe

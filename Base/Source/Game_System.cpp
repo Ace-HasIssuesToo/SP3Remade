@@ -32,8 +32,6 @@ void Game_System::Update(double dt)
 
 	PlayerClass::pointer()->Update(dt, Floor1);
 	Enemy_Ghost::pointer()->Update(dt, Floor1);
-	//EnemyGhost::pointer()->Update(dt, Floor1);
-	
 }
 
 void Game_System::Render()
