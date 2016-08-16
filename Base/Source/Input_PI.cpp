@@ -23,7 +23,7 @@ void Input_PI::Clear()
 void Input_PI::Update(double dt)
 {
 	Clear();
-	if (Application::IsKeyPressed(VK_LBUTTON))
+	/*if (Application::IsKeyPressed(VK_LBUTTON))
 	{
 		IsBeingPressed[PokeThrow] = true;
 	}
@@ -31,6 +31,42 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[PokeThrow] = false;
 		HaveBeenPressed[PokeThrow] = true;
+	}*/
+	if (Application::IsKeyPressed(VK_UP))
+	{
+		IsBeingPressed[PokeThrowFront] = true;
+	}
+	else if (IsBeingPressed[PokeThrowFront] == true)
+	{
+		IsBeingPressed[PokeThrowFront] = false;
+		HaveBeenPressed[PokeThrowFront] = true;
+	}
+	if (Application::IsKeyPressed(VK_DOWN))
+	{
+		IsBeingPressed[PokeThrowBack] = true;
+	}
+	else if (IsBeingPressed[PokeThrowBack] == true)
+	{
+		IsBeingPressed[PokeThrowBack] = false;
+		HaveBeenPressed[PokeThrowBack] = true;
+	}
+	if (Application::IsKeyPressed(VK_LEFT))
+	{
+		IsBeingPressed[PokeThrowLeft] = true;
+	}
+	else if (IsBeingPressed[PokeThrowLeft] == true)
+	{
+		IsBeingPressed[PokeThrowLeft] = false;
+		HaveBeenPressed[PokeThrowLeft] = true;
+	}
+	if (Application::IsKeyPressed(VK_RIGHT))
+	{
+		IsBeingPressed[PokeThrowRight] = true;
+	}
+	else if (IsBeingPressed[PokeThrowRight] == true)
+	{
+		IsBeingPressed[PokeThrowRight] = false;
+		HaveBeenPressed[PokeThrowRight] = true;
 	}
 	if (Application::IsKeyPressed(VK_RBUTTON))
 	{
