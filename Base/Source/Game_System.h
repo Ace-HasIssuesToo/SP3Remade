@@ -3,6 +3,7 @@
 #include "Main_Shaft.h"
 #include "Map_PI.h"
 #include "Player.h"
+#include "EnemyGhost.h"
 
 class Game_System :public Scene
 {
