@@ -23,7 +23,6 @@ void Enemy_Psychic::Init()
 
 void Enemy_Psychic::Update(double dt, Map map)
 {
-<<<<<<< HEAD
 	Vector3 radiusRange;
 	radiusRange = (psychicPos - PlayerClass::pointer()->getPlayerPos());
 
@@ -55,38 +54,6 @@ void Enemy_Psychic::Update(double dt, Map map)
 	}
 
 	// NOTE : defMech run instead of teleport, counter change to 3, rng PsychicPos
-=======
-
-}
-
-void Enemy_Psychic::SetPos_x(int pos_x)
-{
-	this->enemyPosition.x = pos_x;
-}
-
-void Enemy_Psychic::SetPos_y(int pos_y)
-{
-	this->enemyPosition.y = pos_y;
-}
-
-int Enemy_Psychic::GetPos_x()
-{
-	return enemyPosition.x;
-}
-
-int Enemy_Psychic::GetPos_y()
-{
-	return enemyPosition.y;
-}
-
-bool Enemy_Psychic::detectionArea()
-{
-	// Tile size in world origin
-	Vector3 tileSize = Render_PI::Window_Scale()*(1.f / 10.f);
-	//if (enemyPosition.x)
-
-	return true;
->>>>>>> d9580da46056991b3e2d99efafe75d1ea16d6798
 }
 
 void Enemy_Psychic::RenderPsychic()

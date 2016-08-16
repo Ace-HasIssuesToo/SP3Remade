@@ -3,13 +3,10 @@
 #include "Main_Shaft.h"
 #include "Map_PI.h"
 #include "Player.h"
-<<<<<<< HEAD
-#include "EnemyGhost.h"
+#include "Enemy_Ghost.h"
 #include "Enemy_Psychic.h"
-=======
 #include "Enemy_Ghost.h"
 #include "EnemyDark.h"
->>>>>>> d9580da46056991b3e2d99efafe75d1ea16d6798
 
 class Game_System :public Scene
 {
