@@ -3,19 +3,19 @@
 #include "Main_Shaft.h"
 #include "Map_PI.h"
 
-class Debug_PI :public Scene
+class Game_System :public Scene
 {
 public:
-	static Debug_PI* pointer(){ return c_pointer; };
+	static Game_System* pointer(){ return c_pointer; };
 	virtual void Init();
 	virtual void Update(double dt);
 	virtual void Render();
 	virtual void Exit();
 private:
 	Map Floor1;
-	Debug_PI();
-	~Debug_PI();
-	static Debug_PI* c_pointer;
+	Game_System();
+	~Game_System();
+	static Game_System* c_pointer;
 	Vector3 Pos;
 };
 

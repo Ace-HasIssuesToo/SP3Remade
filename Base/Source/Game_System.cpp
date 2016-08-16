@@ -1,19 +1,19 @@
-#include "Debug_PI.h"
+#include "Game_System.h"
 #include "Texture_PI.h"
 
-Debug_PI* Debug_PI::c_pointer = new Debug_PI();
+Game_System* Game_System::c_pointer = new Game_System();
 
-Debug_PI::Debug_PI()
+Game_System::Game_System()
 {
 
 }
 
-Debug_PI::~Debug_PI()
+Game_System::~Game_System()
 {
 
 }
 
-void Debug_PI::Init()
+void Game_System::Init()
 {
 	Camera_PI camera;
 	camera.Init(Vector3(10, 0, 0), Vector3(), Vector3(0, 1, 0), 0, 0);
@@ -25,7 +25,7 @@ void Debug_PI::Init()
 	Pos = Vector3();
 }
 
-void Debug_PI::Update(double dt)
+void Game_System::Update(double dt)
 {
 	if (Application::IsKeyPressed('W'))
 	{
@@ -45,12 +45,12 @@ void Debug_PI::Update(double dt)
 	}
 }
 
-void Debug_PI::Render()
+void Game_System::Render()
 {
 	Floor1.Render(Pos);
 }
 
-void Debug_PI::Exit()
+void Game_System::Exit()
 {
 
 }
