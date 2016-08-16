@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-﻿Build started 16/8/2016 12:57:19 PM.
+﻿Build started 16/8/2016 5:31:22 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MathUtility.cpp Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector2.cpp Source\Vector3.cpp
+         D:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MathUtility.cpp Source\MatrixStack.cpp Source\Mtx44.cpp Source\Vector2.cpp Source\Vector3.cpp Source\timer.cpp
+         timer.cpp
          Vector3.cpp
          Vector2.cpp
-         timer.cpp
          Mtx44.cpp
          MatrixStack.cpp
          MathUtility.cpp
@@ -22,15 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.04
-=======
-﻿Build started 16/8/2016 5:16:52 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Common.lib
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Common\Common.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.03
->>>>>>> d9580da46056991b3e2d99efafe75d1ea16d6798
+Time Elapsed 00:00:02.13
