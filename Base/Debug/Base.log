@@ -1,43 +1,24 @@
-﻿Build started 16/8/2016 10:55:40 AM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+﻿Build started 16/8/2016 12:41:27 PM.
+     1>Project "D:\SP3 Life Problems\SP3Again\SP3\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Angle_And_Target.cpp Source\Application.cpp Source\Camera_PI.cpp Source\Enemy_Poison.cpp Source\Main_Shaft.cpp Source\Map_PI.cpp Source\Player.cpp Source\Render_PI.cpp Source\main.cpp Source\Input_PI.cpp Source\Game_System.cpp Source\Support_Codes.cpp Source\Texture_PI.cpp
-         Texture_PI.cpp
-         Support_Codes.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\support_codes.cpp(1100): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\support_codes.cpp(1101): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-         Game_System.cpp
-         Input_PI.cpp
-         main.cpp
-         Render_PI.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(38): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(40): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(42): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(44): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(46): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(48): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(50): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(52): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\nyp projects\sp3\edited pull\base\source\render_pi.cpp(165): warning C4305: 'argument' : truncation from 'double' to 'float'
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3Again\SP3\/Common/Source" /I"D:\SP3 Life Problems\SP3Again\SP3\/glew/include" /I"D:\SP3 Life Problems\SP3Again\SP3\/glfw/include" /I"D:\SP3 Life Problems\SP3Again\SP3\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Poison.cpp Source\Game_System.cpp Source\Input_PI.cpp Source\Main_Shaft.cpp Source\Player.cpp
          Player.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\player.cpp(35): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\player.cpp(39): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\player.cpp(43): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\player.cpp(47): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-         Map_PI.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\map_pi.cpp(23): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\map_pi.cpp(56): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\map_pi.cpp(58): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\map_pi.cpp(73): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(36): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(40): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(44): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(48): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(65): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(93): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(99): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(105): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3again\sp3\base\source\player.cpp(111): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
          Main_Shaft.cpp
+         Input_PI.cpp
+         Game_System.cpp
          Enemy_Poison.cpp
-         Camera_PI.cpp
-         Application.cpp
-         Angle_And_Target.cpp
          Generating Code...
-     1>d:\nyp projects\sp3\edited pull\base\source\texture_pi.cpp(93): warning C4715: 'Texture::Set' : not all control paths return a value
        Link:
-         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3Again\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3Again\SP3\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3Again\SP3\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3Again\SP3\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3Again\SP3\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3Again\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3Again\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
          Debug\Application.obj
          Debug\Camera_PI.obj
          Debug\Enemy_Poison.obj
@@ -52,9 +33,13 @@
          Debug\Texture_PI.obj
      1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
+     1>Common.lib(MatrixStack.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(MatrixStack.obj)' or at 'D:\SP3 Life Problems\SP3Again\SP3\Debug\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(Mtx44.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(Mtx44.obj)' or at 'D:\SP3 Life Problems\SP3Again\SP3\Debug\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(timer.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(timer.obj)' or at 'D:\SP3 Life Problems\SP3Again\SP3\Debug\vc120.pdb'; linking object as if no debug info
+     1>Common.lib(Vector3.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'Common.lib(Vector3.obj)' or at 'D:\SP3 Life Problems\SP3Again\SP3\Debug\vc120.pdb'; linking object as if no debug info
+         Base.vcxproj -> D:\SP3 Life Problems\SP3Again\SP3\Debug\Base.exe
+     1>Done Building Project "D:\SP3 Life Problems\SP3Again\SP3\Base\Base.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:08.71
+Time Elapsed 00:00:04.40

@@ -113,6 +113,15 @@ void PlayerClass::Update(double dt, Map map)
 	}
 }
 
+Vector3 PlayerClass::getPlayerPos()
+{
+	return PlayerPos;
+}
+Vector3 PlayerClass::getPlayerPosOffSet()
+{
+	return PlayerPosOffSet;
+}
+
 void PlayerClass::Renderplayer()
 {
 	Render_PI::pointer()->modelStack_Set(true);
