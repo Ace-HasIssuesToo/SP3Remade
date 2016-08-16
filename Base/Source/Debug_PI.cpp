@@ -22,15 +22,32 @@ void Debug_PI::Init()
 	{
 		cout << "File Error" << endl;
 	}
+	Pos = Vector3();
 }
 
 void Debug_PI::Update(double dt)
 {
+	if (Application::IsKeyPressed('W'))
+	{
+		Pos.x += 10 * dt;
+	}
+	if (Application::IsKeyPressed('S'))
+	{
+		Pos.x -= 10 * dt;
+	}
+	if (Application::IsKeyPressed('D'))
+	{
+		Pos.y += 10 * dt;
+	}
+	if (Application::IsKeyPressed('A'))
+	{
+		Pos.y -= 10 * dt;
+	}
 }
 
 void Debug_PI::Render()
 {
-	Floor1.Render(Vector3());
+	Floor1.Render(Pos);
 }
 
 void Debug_PI::Exit()

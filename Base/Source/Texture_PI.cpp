@@ -12,6 +12,15 @@ void Texture::Init()
 
 void Texture::Exit()
 {
+	for (auto& x : Textures_Data)
+	{
+
+		if (x.second != nullptr)
+		{
+			delete x.second;
+			x.second = nullptr;
+		}
+	}
 	Textures_Data.clear();
 }
 

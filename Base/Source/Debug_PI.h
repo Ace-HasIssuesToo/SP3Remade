@@ -16,6 +16,7 @@ private:
 	Debug_PI();
 	~Debug_PI();
 	static Debug_PI* c_pointer;
+	Vector3 Pos;
 };
 
 
