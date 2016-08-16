@@ -3,7 +3,7 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 
-PlayerClass* PlayerClass::m_pointer = new PlayerClass;
+PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
 PlayerClass::PlayerClass()
 	:movementSpeed(0)

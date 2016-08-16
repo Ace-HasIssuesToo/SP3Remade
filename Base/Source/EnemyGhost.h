@@ -10,10 +10,22 @@ public:
 	void Init();
 	void Update(double dt, Map map);
 	void RenderGhost();
+	Vector3 GetGhostOffSet();
 	void Exit();
 private:
-	EnemyGhost() : ghostTimer(0), ghostStayTimer(0), dirX(Math::RandFloatMinMax(-10.f, 10.f)), dirY(Math::RandFloatMinMax(-10.f, 10.f)){};
-	~EnemyGhost(){};
+	EnemyGhost()
+		: ghostTimer(0)
+		, ghostStayTimer(0)
+		, dirX(Math::RandFloatMinMax(-10.f, 10.f))
+		, dirY(Math::RandFloatMinMax(-10.f, 10.f))
+		, ghostPos(0, 0, 0)
+		, ghostShadow(0, 0, 0)
+		, ghostoffset(0, 0, 0)
+	{
+	}
+	~EnemyGhost()
+	{
+	}
 	static EnemyGhost* c_enemyGhost;
 
 	float dirX;
@@ -22,4 +34,5 @@ private:
 	float ghostStayTimer;
 	Vector3 ghostPos;
 	Vector3 ghostShadow;
+	Vector3 ghostoffset;
 };

@@ -1,12 +1,20 @@
 #include "EnemyGhost.h"
 #include "Render_PI.h"
 #include "Texture_PI.h"
+#include "Player.h"
 EnemyGhost* EnemyGhost::c_enemyGhost = new EnemyGhost();
 
 void EnemyGhost::Init()
 {
 	ghostPos = (Render_PI::Window_Scale() * 0.5);
+	ghostoffset = (Math::RandFloatMinMax(5.f, 15.f), Math::RandFloatMinMax(5.f, 15.f), 0);
 }
+
+Vector3 EnemyGhost::GetGhostOffSet()
+{
+	return ghostoffset;
+}
+
 void EnemyGhost::Update(double dt, Map map)
 {
 	ghostShadow = ghostPos;
@@ -28,11 +36,13 @@ void EnemyGhost::Update(double dt, Map map)
 	if (ghostTimer > 10.f)
 	{
 		//teleport ghost to 1 tile before player position
-		
+		ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
 		ghostStayTimer += dt;
-		if (ghostStayTimer > 3.f)
+		if (ghostStayTimer > 5.f)
 		{
 			//ghost will move away again
+			/*ghostShadow.x += dirX * dt;
+			ghostShadow.y += dirY * dt;*/
 		}
 		ghostTimer = 0.0f;
 	}
