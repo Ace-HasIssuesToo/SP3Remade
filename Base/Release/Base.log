@@ -1,0 +1,25 @@
+﻿  Angle_And_Target.cpp
+  Application.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Camera_PI.cpp
+  EnemyGhost.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Enemy_Poison.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Main_Shaft.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Map_PI.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Player.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Render_PI.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  main.cpp
+  Input_PI.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Game_System.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Support_Codes.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
+  Texture_PI.cpp
+c:\users\user\documents\sp3remade\base\source\Support_Codes.h(18): fatal error C1083: Cannot open include file: 'irrKlang.h': No such file or directory
