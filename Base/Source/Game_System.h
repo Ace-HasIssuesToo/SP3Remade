@@ -4,6 +4,7 @@
 #include "Map_PI.h"
 #include "Player.h"
 #include "EnemyGhost.h"
+#include "Enemy_Psychic.h"
 
 class Game_System :public Scene
 {

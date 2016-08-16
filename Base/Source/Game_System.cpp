@@ -24,6 +24,7 @@ void Game_System::Init()
 	}
 	PlayerClass::pointer()->Init();
 	EnemyGhost::pointer()->Init();
+	Enemy_Psychic::pointer()->Init();
 	Pos = Vector3();
 }
 
@@ -31,7 +32,7 @@ void Game_System::Update(double dt)
 {
 	PlayerClass::pointer()->Update(dt, Floor1);
 	EnemyGhost::pointer()->Update(dt, Floor1);
-	
+	Enemy_Psychic::pointer()->Update(dt, Floor1);
 }
 
 void Game_System::Render()
@@ -39,6 +40,8 @@ void Game_System::Render()
 	Floor1.Render(Pos);
 	PlayerClass::pointer()->Renderplayer();
 	EnemyGhost::pointer()->RenderGhost();
+	if (Enemy_Psychic::pointer()->tempKill == false)
+		Enemy_Psychic::pointer()->RenderPsychic();
 }
 
 void Game_System::Exit()

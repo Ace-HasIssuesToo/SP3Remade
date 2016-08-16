@@ -1,7 +1,9 @@
 #ifndef ENEMY_PSYCHIC_H
 #define ENEMY_PSYCHIC_H
 
-#include "Vector2.h"
+#include "Support_Codes.h"
+#include "Render_PI.h"
+#include "Map_PI.h"
 
 class Enemy_Psychic
 {
@@ -9,7 +11,7 @@ public:
 	Enemy_Psychic();
 	~Enemy_Psychic();
 
-	static Enemy_Psychic* c_enemyPsychic;
+	static Enemy_Psychic* pointer() { return c_enemyPsychic; };
 
 	enum GEOMETRY_TYPE
 	{
@@ -18,32 +20,22 @@ public:
 	};
 
 	void Init();
-	void Update();
-	void Render();
+	void Update(double dt, Map map);
+	void RenderPsychic();
 	void Exit();
 
-	// Set pos x of enemy
-	int SetPos_x(int pos_x);
-	// Set pos y of enemy
-	int SetPos_y(int pos_y);
-
-	// Get pos x of enemy
-	int GetPos_x();
-	// Get pos y of enemy
-	int GetPos_y();
-	// Get number of times enemy found by the player
-	int counterFound;
-	// Get bool for enemy detection area
-	bool detectionArea();
-
-	// Set enemy strategy
-	void enemyStrategy();
+	//temporary death code
+	bool tempKill;
 
 private:
-	static Enemy_Psychic* pointer() { return c_enemyPsychic; };
+	static Enemy_Psychic* c_enemyPsychic;
 
-	// Enemy's Information
-	Vector2 enemyPosition;
+	Vector3 psychicPos, psychicPosOffset;
+
+	int counterFound;
+	bool playerIntrude;
+	bool defMechanism;
+	bool lastResort;
 };
 
 #endif
