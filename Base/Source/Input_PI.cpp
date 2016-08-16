@@ -25,12 +25,12 @@ void Input_PI::Update(double dt)
 	Clear();
 	if (Application::IsKeyPressed(VK_LBUTTON))
 	{
-		IsBeingPressed[Gun_Shoot] = true;
+		IsBeingPressed[PokeThrow] = true;
 	}
-	else if (IsBeingPressed[Gun_Shoot] == true)
+	else if (IsBeingPressed[PokeThrow] == true)
 	{
-		IsBeingPressed[Gun_Shoot] = false;
-		HaveBeenPressed[Gun_Shoot] = true;
+		IsBeingPressed[PokeThrow] = false;
+		HaveBeenPressed[PokeThrow] = true;
 	}
 	if (Application::IsKeyPressed(VK_RBUTTON))
 	{

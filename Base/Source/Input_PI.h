@@ -17,7 +17,7 @@ public:
 		Leftward,
 		Rightward,
 		Light_Switch,
-		Gun_Shoot,
+		PokeThrow,
 		Interact,
 		Run,
 		Phone_Switch,

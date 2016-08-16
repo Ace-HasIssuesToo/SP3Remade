@@ -2,6 +2,7 @@
 #include "Debug_PI.h"
 #include "Input_PI.h"
 #include "Texture_PI.h"
+#include "Player.h"
 
 Main_Shaft* Main_Shaft::c_pointer = new Main_Shaft();
 
@@ -11,6 +12,7 @@ void Main_Shaft::Init()
 	Render_PI::pointer()->Init();
 	Input_PI::pointer()->Init();
 	Debug_PI::pointer()->Init();
+	PlayerClass::pointer()->Init();
 }
 
 void Main_Shaft::Update(double dt)
@@ -18,6 +20,7 @@ void Main_Shaft::Update(double dt)
 	//std::cout << 1 / dt << std::endl;
 	Input_PI::pointer()->Update(dt);
 	Debug_PI::pointer()->Update(dt);
+	PlayerClass::pointer()->Update(dt);
 }
 
 
@@ -27,6 +30,7 @@ void Main_Shaft::Render()
 	Render_PI::pointer()->Fog_Set(true);
 	Debug_PI::pointer()->Render();
 	Render_PI::pointer()->Fog_Set(false);
+	PlayerClass::pointer()->Renderplayer();
 }
 
 void Main_Shaft::Exit()
