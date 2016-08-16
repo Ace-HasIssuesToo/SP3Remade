@@ -12,6 +12,7 @@ public:
 	virtual void Renderplayer();
 	virtual void RenderPokeball();
 	Vector3 getPlayerPos();
+	Vector3 getPlayerScale();
 	Vector3 getPlayerPosOffSet();
 	static PlayerClass* pointer()
 	{
@@ -26,6 +27,7 @@ private:
 	Vector3 PlayerPos, PokeballPos, PlayerPosOffSet;
 	Mesh* playerMesh;
 	Vector3 playerShadow, pokeballShadow;
+	Vector3 sc;
 };
 
 #endif

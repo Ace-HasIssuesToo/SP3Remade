@@ -13,6 +13,7 @@ PlayerClass::PlayerClass()
 	, PokeballPos(0,0,0)
 	, playerShadow(0,0,0)
 	, pokeballShadow(0,0,0)
+	, sc(0,0,0)
 {
 }
 
@@ -25,6 +26,7 @@ void PlayerClass::Init()
 	movementSpeed = 20;
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
+	sc.Set(1, 1, 1);
 	//playerMesh = MeshBuilder::GenerateSpriteAnimation();
 }
 
@@ -121,17 +123,21 @@ Vector3 PlayerClass::getPlayerPosOffSet()
 {
 	return PlayerPosOffSet;
 }
+Vector3 PlayerClass::getPlayerScale()
+{
+	return sc;
+}
 
 void PlayerClass::Renderplayer()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PlayerPos), Vector3(1, 1, 1));
+	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
 void PlayerClass::RenderPokeball()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PokeballPos), Vector3(1, 1, 1));
+	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PokeballPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 }
