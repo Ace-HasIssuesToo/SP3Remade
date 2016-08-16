@@ -1,20 +1,9 @@
-<<<<<<< HEAD
-﻿  Vector3.cpp
-  Vector2.cpp
-  timer.cpp
-  Mtx44.cpp
-  MatrixStack.cpp
-  MathUtility.cpp
-  Generating Code...
-  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
-=======
-﻿Build started 16/8/2016 1:25:31 PM.
-     1>Project "D:\SP3 Life Problems\SP3Again\SP3\Common\Common.vcxproj" on node 2 (Build target(s)).
+﻿Build started 16/8/2016 5:16:52 PM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
-         Common.vcxproj -> D:\SP3 Life Problems\SP3Again\SP3\Debug\Common.lib
-     1>Done Building Project "D:\SP3 Life Problems\SP3Again\SP3\Common\Common.vcxproj" (Build target(s)).
+         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Common.lib
+     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Common\Common.vcxproj" (Build target(s)).
 
 Build succeeded.
 
 Time Elapsed 00:00:00.03
->>>>>>> Added Dark Type Enemy Class

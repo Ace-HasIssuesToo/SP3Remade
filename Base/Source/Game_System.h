@@ -3,12 +3,8 @@
 #include "Main_Shaft.h"
 #include "Map_PI.h"
 #include "Player.h"
-<<<<<<< HEAD
 #include "Enemy_Ghost.h"
-=======
-#include "EnemyGhost.h"
 #include "EnemyDark.h"
->>>>>>> Added Dark Type Enemy Class
 
 class Game_System :public Scene
 {
