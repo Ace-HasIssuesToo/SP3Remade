@@ -18,8 +18,16 @@ public:
 	void RenderPsychic();
 	void Exit();
 
-	//temporary death code
-	bool tempKill;
+	void SpriteUpdate(double dt);
+
+	enum STATE_TYPE
+	{
+		STATE_HIDE,
+		STATE_RUN,
+		STATE_APPEAR,
+		STATE_KILL,
+		STATE_TOTAL,
+	};
 
 private:
 	static Enemy_Psychic* c_enemyPsychic;
@@ -31,9 +39,10 @@ private:
 	bool defMechanism;
 	bool lastResort;
 
-	Mesh* camou_psychic;
+	Mesh* hide_psychic;
 	Mesh* run_psychic;
 	Mesh* appear_psychic;
+	Mesh* kill_psychic;
 };
 
 #endif

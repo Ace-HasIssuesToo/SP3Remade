@@ -122,8 +122,7 @@ void Game_System::Render()
 	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	Enemy_Ghost::pointer()->RenderGhost();
-	if (Enemy_Psychic::pointer()->tempKill == false)
-		Enemy_Psychic::pointer()->RenderPsychic();
+	Enemy_Psychic::pointer()->RenderPsychic();
 	Enemy_Poison::pointer()->render();
 }
 
