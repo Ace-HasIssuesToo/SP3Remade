@@ -114,7 +114,6 @@ void Game_System::GameState(double dt)
 void Game_System::Update(double dt)
 {
 	GameState(dt);
-	
 }
 
 void Game_System::Render()
