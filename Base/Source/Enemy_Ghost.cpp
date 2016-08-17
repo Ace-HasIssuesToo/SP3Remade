@@ -106,10 +106,6 @@ void Enemy_Ghost::RenderGhost()
 {
 	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 	Render_PI::pointer()->modelStack_Set(true);
-<<<<<<< HEAD
-	//cout << Diff.x << " / " << Diff.y << endl;
-=======
->>>>>>> b1f80b33c4e962eef81f2941c421b4b3248156a0
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Vector3(ghostPos), Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
 }

@@ -27,7 +27,6 @@ void PlayerClass::Init()
 	movementSpeed = 20;
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
-<<<<<<< HEAD
 	//sc.Set(3.f, 3.f, 3.f);
 	sc.Set(10.f, 10.f, 10.f);
 	setPlayerMesh(Top);
@@ -68,10 +67,7 @@ void PlayerClass::Init()
 		saR->m_anim = new Animation();
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
-=======
-	sc.Set(1, 1, 1);
-	playerMesh = nullptr;
->>>>>>> 725b3b555616dd3994b19d0f9335df5f03ab3aa3
+	//playerMesh = nullptr;
 }
 
 void PlayerClass::Update(double dt, Map* map)
@@ -167,9 +163,6 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 
 	}
-<<<<<<< HEAD
-=======
-
 	//if (map->Get_Type(pokeballShadow) == "Wall")
 	//{
 	//	
@@ -178,7 +171,6 @@ void PlayerClass::Update(double dt, Map* map)
 	//{
 	//	PokeballPos = pokeballShadow;
 	//}
->>>>>>> 725b3b555616dd3994b19d0f9335df5f03ab3aa3
 
 	//Keep Player in window
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - 5))
@@ -209,11 +201,11 @@ void PlayerClass::Update(double dt, Map* map)
 
 void PlayerClass::Exit()
 {
-	if (playerMesh != nullptr)
+	/*if (playerMesh != nullptr)
 	{
 		delete playerMesh;
 		playerMesh = nullptr;
-	};
+	};*/
 	if (m_pointer != nullptr)
 	{
 		delete m_pointer;
