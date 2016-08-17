@@ -8,7 +8,7 @@ class Enemy_Ghost
 public:
 	static Enemy_Ghost* pointer(){ return c_Enemy_Ghost; };
 	void Init();
-	void Update(double dt, Map map);
+	void Update(double dt, Map* map);
 	void RenderGhost();
 	void Exit();
 

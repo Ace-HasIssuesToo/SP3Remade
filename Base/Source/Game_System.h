@@ -29,18 +29,13 @@ public:
 	virtual void Render();
 	virtual void Exit();
 	void GameState(double dt);
-	void LoadFloor1();
-	void LoadFloor2();
-	void LoadFloor3();
-	void LoadFloor4();
-	void LoadFloor5();
 	Game state;
 private:
-	Map Floor1;
-	Map Floor2;
-	Map Floor3;
-	Map Floor4;
-	Map Floor5;
+	Map* Floor1;
+	Map* Floor2;
+	Map* Floor3;
+	Map* Floor4;
+	Map* Floor5;
 	Game_System();
 	~Game_System();
 	static Game_System* c_pointer;

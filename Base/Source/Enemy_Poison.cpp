@@ -12,9 +12,8 @@ void Enemy_Poison::Init()
 	CoolDown = LastTime = ChangeEffect = 0;
 }
 
-void Enemy_Poison::Update(float dt, Map map)
+void Enemy_Poison::Update(float dt, Map* map)
 {
-<<<<<<< HEAD
 
 	//cout <<CoolDown<<" / "<< LastTime << " / " << ChangeEffect << endl;
 	if (Vel == Vector3())
@@ -31,7 +30,7 @@ void Enemy_Poison::Update(float dt, Map map)
 	{
 		Vel.y = 0;
 	}
-	if (map.Get_Type(Shadow) == "Floor")
+	if (map->Get_Type(Shadow) == "Floor")
 	{
 		//Pos = Shadow;
 	}
@@ -42,15 +41,10 @@ void Enemy_Poison::Update(float dt, Map map)
 
 	if (CoolDown == 0)
 	{
-		Vector3 Range = PlayerClass::pointer()->getPlayerPos() - Pos;
-		double radius = (Range.x*Range.x) + (Range.y*Range.y);
-		if (radius < (20* 20))
-=======
-		if (Vel == Vector3())
->>>>>>> 778a92115d8b3561c4e9e9594443984e7bd73ae1
-		{
-			Vel = Vector3(Math::RandFloatMinMax(-10, 10), Math::RandFloatMinMax(-10, 10), 0);
-		}
+			if (Vel == Vector3())
+			{
+				Vel = Vector3(Math::RandFloatMinMax(-10, 10), Math::RandFloatMinMax(-10, 10), 0);
+			}
 		Vector3 Shadow = Pos + Vel*dt;
 		Vel *= 0.99;
 		if (Vel.x > -1 && Vel.x < 1)
@@ -61,7 +55,7 @@ void Enemy_Poison::Update(float dt, Map map)
 		{
 			Vel.y = 0;
 		}
-		if (map.Get_Type(Shadow) == "Floor")
+		if (map->Get_Type(Shadow) == "Floor")
 		{
 			//Pos = Shadow;
 		}
@@ -69,12 +63,13 @@ void Enemy_Poison::Update(float dt, Map map)
 		{
 			//Vel = Vector3(Math::RandFloatMinMax(-10, 10), Math::RandFloatMinMax(-10, 10), 0);
 		}
-	
+
 		if (CoolDown == 0)
 		{
-			Vector3 Range = 1;//PlayerClass::pointer()->getPlayerPos() - Pos;
+			Vector3 Range = PlayerClass::pointer()->getPlayerPos() - Pos;
 			double radius = (Range.x*Range.x) + (Range.y*Range.y);
-			if (radius < (20* 20))
+
+			if (radius < (20 * 20))
 			{
 				CoolDown = 20;
 				LastTime = 10;
@@ -96,7 +91,7 @@ void Enemy_Poison::Update(float dt, Map map)
 			{
 				CoolDown = 0;
 			}
-	
+
 			if (LastTime > 0)
 			{
 				LastTime -= dt;
@@ -115,8 +110,8 @@ void Enemy_Poison::Update(float dt, Map map)
 				ChangeEffect = 0;
 			}
 		}
+	}
 }
-
 void Enemy_Poison::render()
 {
 	Render_PI::pointer()->modelStack_Set(true);

@@ -39,9 +39,9 @@ void Main_Shaft::Update(double dt)
 void Main_Shaft::Render()
 {
 	Render_PI::pointer()->Render_Set();
-	Render_PI::pointer()->Fog_Set(true);
+	Render_PI::pointer()->Ortho_Set(true);
 	Game_System::pointer()->Render();
-	Render_PI::pointer()->Fog_Set(false);
+	Render_PI::pointer()->Ortho_Set(false);
 }
 
 void Main_Shaft::Exit()

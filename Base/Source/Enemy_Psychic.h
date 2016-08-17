@@ -20,7 +20,7 @@ public:
 	//};
 
 	void Init();
-	void Update(double dt, Map map);
+	void Update(double dt, Map* map);
 	void RenderPsychic();
 	void Exit();
 

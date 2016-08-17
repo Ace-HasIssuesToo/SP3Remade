@@ -195,7 +195,6 @@ void Render_PI::Render_Set()
 	//perspective.SetToOrtho(-80, 80, -60, 60, -1000, 1000);
 	projectionStack.LoadMatrix(perspective);
 	Ortho = false;
-
 	// Camera_PI matrix
 	viewStack.LoadIdentity();
 
@@ -236,7 +235,7 @@ void Render_PI::Ortho_Set(bool Ortho)
 			glDisable(GL_DEPTH_TEST);
 			Mtx44 ortho;
 			Vector3 Window_ = Window_Scale();
-			ortho.SetToOrtho(0, Window_.y, 0, Window_.x, -10, 10);
+			ortho.SetToOrtho(0, Window_.x, 0, Window_.y, -10, 10);
 			projectionStack.PushMatrix();
 			projectionStack.LoadMatrix(ortho);
 			viewStack.PushMatrix();

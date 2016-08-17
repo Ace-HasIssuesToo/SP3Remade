@@ -31,7 +31,7 @@ void PlayerClass::Init()
 	playerMesh = nullptr;
 }
 
-void PlayerClass::Update(double dt, Map map)
+void PlayerClass::Update(double dt, Map* map)
 {
 	playerShadow = PlayerPos;
 	Vector3 Movement = Vector3();
@@ -54,11 +54,11 @@ void PlayerClass::Update(double dt, Map map)
 	Movement = Enemy_Poison::pointer()->Poison(Movement);
 	playerShadow += Movement;
 	//Kind of Collision
-	if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
+	if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{
 
 	}
-	else if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Floor")
+	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Floor")
 	{
 		PlayerPos = playerShadow;
 	}
@@ -82,11 +82,11 @@ void PlayerClass::Update(double dt, Map map)
 
 	}
 
-	//if (map.Get_Type(pokeballShadow) == "Wall")
+	//if (map->Get_Type(pokeballShadow) == "Wall")
 	//{
 	//	
 	//}
-	//else if (map.Get_Type(pokeballShadow) == "Floor")
+	//else if (map->Get_Type(pokeballShadow) == "Floor")
 	//{
 	//	PokeballPos = pokeballShadow;
 	//}
@@ -104,7 +104,7 @@ void PlayerClass::Update(double dt, Map map)
 		PlayerPosOffSet.x += difference;
 		PlayerPos.x = (5);
 	}
-	if (PlayerPos.y > (Render_PI::Window_Scale().y - 5))
+	if (PlayerPos.y >(Render_PI::Window_Scale().y - 5))
 	{
 		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
 		PlayerPosOffSet.y += difference;

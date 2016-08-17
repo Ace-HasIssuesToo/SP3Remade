@@ -23,7 +23,7 @@ Vector3 Enemy_Ghost::GetGhostOffSet()
 	return ghostoffset;
 }
 
-void Enemy_Ghost::Update(double dt, Map map)
+void Enemy_Ghost::Update(double dt, Map* map)
 {
 	ghostShadow = ghostPos;
 	
@@ -48,14 +48,14 @@ void Enemy_Ghost::Update(double dt, Map map)
 	{
 		Shadows.y -= 0.5;
 	}
-	if (map.Get_Type(Shadows) == "Wall")
+	if (map->Get_Type(Shadows) == "Wall")
 	{
 		dirX = -dirX;
 		dirY = -dirY;
 		dirX += Math::RandFloatMinMax(-5, 5);
 		dirY += Math::RandFloatMinMax(-5, 5);
 	}
-	else if (map.Get_Type(Shadows) == "Floor")
+	else if (map->Get_Type(Shadows) == "Floor")
 	{
 		ghostPos = ghostShadow;
 	}

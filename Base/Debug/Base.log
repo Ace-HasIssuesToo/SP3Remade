@@ -1,58 +1,9 @@
-﻿  Texture_PI.cpp
-  Support_Codes.cpp
-c:\users\user\documents\sp3remade\base\source\support_codes.cpp(1100): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\support_codes.cpp(1101): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-  Game_System.cpp
-c:\users\user\documents\sp3remade\base\source\game_system.cpp(103): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\game_system.cpp(111): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\game_system.cpp(119): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\game_system.cpp(127): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\game_system.cpp(135): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Input_PI.cpp
-  main.cpp
-  Render_PI.cpp
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(38): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(40): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(42): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(44): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(46): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(48): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(50): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(52): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(165): warning C4305: 'argument' : truncation from 'double' to 'float'
-  Player.cpp
-c:\users\user\documents\sp3remade\base\source\player.cpp(40): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(44): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(48): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(52): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(70): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(98): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(104): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(110): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(116): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-  Map_PI.cpp
-c:\users\user\documents\sp3remade\base\source\map_pi.cpp(23): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\map_pi.cpp(56): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-c:\users\user\documents\sp3remade\base\source\map_pi.cpp(58): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-c:\users\user\documents\sp3remade\base\source\map_pi.cpp(73): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Main_Shaft.cpp
-  GameEnvironmentEvent.cpp
-  Enemy_Psychic.cpp
-c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(21): warning C4305: 'argument' : truncation from 'double' to 'float'
-  Enemy_Poison.cpp
-c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(23): warning C4305: 'argument' : truncation from 'double' to 'float'
-  Enemy_Ghost.cpp
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(31): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(32): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(33): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(81): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(89): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(90): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-  Camera_PI.cpp
-  Application.cpp
-  Angle_And_Target.cpp
-  Generating Code...
-c:\users\user\documents\sp3remade\base\source\texture_pi.cpp(93): warning C4715: 'Texture::Set' : not all control paths return a value
+﻿  Game_System.cpp
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(76): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(84): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(92): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(100): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(108): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe

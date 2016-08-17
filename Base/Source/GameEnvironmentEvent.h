@@ -9,7 +9,7 @@ public:
 	static GameEnvironmentEvent* pointer(){ return c_GameEnvironmentEvent; };
 
 	void Init();
-	void Update(double dt, Map map);
+	void Update(double dt, Map* map);
 	void Render();
 	void Exit();
 private:

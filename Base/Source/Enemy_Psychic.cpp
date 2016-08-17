@@ -21,7 +21,7 @@ void Enemy_Psychic::Init()
 	psychicPos = (Render_PI::Window_Scale() * 0.2);
 }
 
-void Enemy_Psychic::Update(double dt, Map map)
+void Enemy_Psychic::Update(double dt, Map* map)
 {
 	Vector3 radiusRange;
 	radiusRange = (psychicPos - PlayerClass::pointer()->getPlayerPos());
@@ -36,10 +36,7 @@ void Enemy_Psychic::Update(double dt, Map map)
 		defMechanism = true;
 		playerIntrude = false;
 	}
-<<<<<<< HEAD
 	//cout << counterFound << endl;
-=======
->>>>>>> 778a92115d8b3561c4e9e9594443984e7bd73ae1
 	if (defMechanism && counterFound < 2)
 	{
 		// Runs to another location

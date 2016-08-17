@@ -6,7 +6,7 @@ void GameEnvironmentEvent::Init()
 {
 
 }
-void GameEnvironmentEvent::Update(double dt, Map map)
+void GameEnvironmentEvent::Update(double dt, Map* map)
 {
 
 }
