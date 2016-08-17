@@ -7,7 +7,7 @@ Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 void Enemy_Ghost::Init()
 {
 	ghostPos = (Render_PI::Window_Scale() * 0.5);
-	ghostoffset = (Math::RandFloatMinMax(10.f, 50.f), Math::RandFloatMinMax(10.f, 50.f), 0);
+	ghostoffset = (Math::RandFloatMinMax(-10.f, 10.f), 0, Math::RandFloatMinMax(-10.f, 10.f));
 	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
@@ -59,14 +59,14 @@ void Enemy_Ghost::Update(double dt, Map map)
 	{
 		ghostPos = ghostShadow;
 	}
-	if (ghostTimer > 45.f)
+
+	if (ghostTimer > 5.f)
 	{
 		//teleport ghost to near player position
 		ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
 		ghostStayTimer += dt;
 		dirX = 0;
 		dirY = 0;
-		
 		if (ghostStayTimer > 5.f)
 		{
 			//ghost will move away again
@@ -77,7 +77,7 @@ void Enemy_Ghost::Update(double dt, Map map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 45.f)
+	else if (ghostTimer < 5.f)
 	{
 		ghostStayTimer = 0.0f;
 	}

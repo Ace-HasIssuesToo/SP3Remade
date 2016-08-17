@@ -22,6 +22,7 @@ private:
 		, ghostPos(0, 0, 0)
 		, ghostShadow(0, 0, 0)
 		, ghostoffset(0, 0, 0)
+		//, atPlayer(false)
 	{
 	}
 	~Enemy_Ghost()
@@ -29,6 +30,7 @@ private:
 	}
 	static Enemy_Ghost* c_Enemy_Ghost;
 
+	//bool atPlayer;
 	float dirX;
 	float dirY;
 	float ghostTimer;
