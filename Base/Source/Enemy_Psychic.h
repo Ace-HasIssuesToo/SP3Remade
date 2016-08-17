@@ -13,12 +13,6 @@ public:
 
 	static Enemy_Psychic* pointer() { return c_enemyPsychic; };
 
-	//enum GEOMETRY_TYPE
-	//{
-	//	//GEO_TILEENEMY_FRAME0,
-	//	NUM_GEOMETRY,
-	//};
-
 	void Init();
 	void Update(double dt, Map map);
 	void RenderPsychic();
@@ -36,6 +30,10 @@ private:
 	bool playerIntrude;
 	bool defMechanism;
 	bool lastResort;
+
+	Mesh* camou_psychic;
+	Mesh* run_psychic;
+	Mesh* appear_psychic;
 };
 
 #endif
