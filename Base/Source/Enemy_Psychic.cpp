@@ -102,16 +102,33 @@ void Enemy_Psychic::Update(double dt, Map* map)
 void Enemy_Psychic::RenderPsychic()
 {
 	Render_PI::pointer()->modelStack_Set(true);
+<<<<<<< HEAD
 	//Render_PI::pointer()->RenderMeshIn2D(Texture::Get("psychic"), false, Map::Pokemon_Offset(psychicPos), Vector3(1, 1, 1));
 	//Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(5, 5, 1));
 	Render_PI::pointer()->RenderMeshIn2D(run_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(5, 5, 1));
 	//Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
 	//Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+=======
+	//Render_PI::pointer()->RenderMeshIn2D(Texture::Get("psychic"), false, Vector3(psychicPos), Vector3(1, 1, 1));
+	//Render_PI::pointer()->RenderMeshIn2D(camou_psychic, false, Vector3(psychicPos), Vector3(5, 5, 1));
+	//Render_PI::pointer()->RenderMeshIn2D(run_psychic, false, Vector3(psychicPos), Vector3(5, 5, 1));
+	Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+>>>>>>> ac1596f8dbb5ff2f356d05ec1e5b937160d4604d
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
 void Enemy_Psychic::Exit()
 {
+<<<<<<< HEAD
+=======
+	/*
+	NOTE:
+	enemy spawn rand()
+	enemy sound
+	kill player strategy
+	counter value change to 3, limit counter for last resort
+	*/
+>>>>>>> ac1596f8dbb5ff2f356d05ec1e5b937160d4604d
 	if (c_enemyPsychic != nullptr)
 	{
 		delete c_enemyPsychic;

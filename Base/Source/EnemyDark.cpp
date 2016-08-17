@@ -24,7 +24,8 @@ void Enemy_Dark::Init()
 {
 	movementSpeed = 10;
 	throwSpeed = -9.8;
-	EnemyDarkPos = Render_PI::Window_Scale() * 0.7;
+	EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
+	EnemyDarkScale.Set(1.1f, 1.1f, 1.1f);
 	//Enemy_DarkMesh = MeshBuilder::GenerateSpriteAnimation();
 }
 
@@ -120,7 +121,7 @@ Vector3 Enemy_Dark::getEnemyDarkScale()
 void Enemy_Dark::RenderEnemyDark()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(EnemyDarkPos), Vector3(1, 1, 1));
+	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(getEnemyDarkScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 

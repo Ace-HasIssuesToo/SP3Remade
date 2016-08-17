@@ -61,7 +61,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	}
 	
 	
-	if (ghostTimer > 45.f)
+	if (ghostTimer > 1.f)
 	{
 		//teleport ghost to near player position
 		if (ghostStayTimer == 0.0f)
@@ -75,8 +75,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			{
 				ghostoffset.y = -ghostoffset.y;
 			}
-			ghostPos = PlayerClass::pointer()->getPlayerPos() + ghostoffset;
-			ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+			ghostPos = Map::Pokemon_Offset(PlayerClass::pointer()->getPlayerPos()) + ghostoffset;
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
@@ -91,7 +90,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 45.f)
+	else if (ghostTimer < 1.f)
 	{
 		ghostStayTimer = 0.0f;
 	}
@@ -106,8 +105,12 @@ void Enemy_Ghost::RenderGhost()
 {
 	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 	Render_PI::pointer()->modelStack_Set(true);
+<<<<<<< HEAD
 	//cout << Diff.x << " / " << Diff.y << endl;
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Vector3(ghostPos), Vector3(10, 10, 1));
+=======
+	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
+>>>>>>> ac1596f8dbb5ff2f356d05ec1e5b937160d4604d
 	Render_PI::pointer()->modelStack_Set(false);
 }
 void Enemy_Ghost::Exit()

@@ -15,6 +15,18 @@ public:
 	Vector3 getPlayerPos();
 	Vector3 getPlayerScale();
 	Vector3 getPlayerPosOffSet();
+
+	enum PlayerMeshes
+	{
+		Left = 0,
+		Right,
+		Top, 
+		Down
+	};
+
+	void setPlayerMesh(PlayerClass::PlayerMeshes mesh);
+	Mesh* getPlayerMesh2();
+
 	static PlayerClass* pointer()
 	{
 		return m_pointer;
@@ -22,13 +34,19 @@ public:
 private:
 	PlayerClass();
 	~PlayerClass();
+
 	static PlayerClass* m_pointer;
+
 	int movementSpeed;
 	double throwSpeed;
+
 	Vector3 PlayerPos, PokeballPos, PlayerPosOffSet;
-	Mesh* playerMesh;
 	Vector3 playerShadow, pokeballShadow;
 	Vector3 sc;
+
+	PlayerMeshes playerMesh;
+	PlayerMeshes playerMeshString;
+	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
 };
 
 #endif
