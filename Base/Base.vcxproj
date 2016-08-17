@@ -14,6 +14,7 @@
     <ClCompile Include="Source\Angle_And_Target.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Camera_PI.cpp" />
+    <ClCompile Include="Source\EnemyDark.cpp" />
     <ClCompile Include="Source\Enemy_Ghost.cpp" />
     <ClCompile Include="Source\Enemy_Poison.cpp" />
     <ClCompile Include="Source\Enemy_Psychic.cpp" />
@@ -21,6 +22,7 @@
     <ClCompile Include="Source\Main_Shaft.cpp" />
     <ClCompile Include="Source\Map_PI.cpp" />
     <ClCompile Include="Source\Player.cpp" />
+    <ClCompile Include="Source\PokeInfo.cpp" />
     <ClCompile Include="Source\Render_PI.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Input_PI.cpp" />
@@ -32,6 +34,7 @@
     <ClInclude Include="Source\Angle_And_Target.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Camera_PI.h" />
+    <ClInclude Include="Source\EnemyDark.h" />
     <ClInclude Include="Source\Enemy_Ghost.h" />
     <ClInclude Include="Source\Enemy_Poison.h" />
     <ClInclude Include="Source\Enemy_Psychic.h" />
@@ -39,6 +42,7 @@
     <ClInclude Include="Source\Main_Shaft.h" />
     <ClInclude Include="Source\Map_PI.h" />
     <ClInclude Include="Source\Player.h" />
+    <ClInclude Include="Source\PokeInfo.h" />
     <ClInclude Include="Source\Render_PI.h" />
     <ClInclude Include="Source\Input_PI.h" />
     <ClInclude Include="Source\Game_System.h" />
