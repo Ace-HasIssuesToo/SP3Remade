@@ -30,7 +30,7 @@ void Game_System::Init()
 void Game_System::Update(double dt)
 {
 	PlayerClass::pointer()->Update(dt, Floor1);
-	EnemyGhost::pointer()->Update(dt, Floor1);
+	//EnemyGhost::pointer()->Update(dt, Floor1);
 	
 }
 
