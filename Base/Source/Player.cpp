@@ -2,6 +2,7 @@
 #include "Input_PI.h"
 #include "Render_PI.h"
 #include "Texture_PI.h"
+#include "Enemy_Poison.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -33,23 +34,25 @@ void PlayerClass::Init()
 void PlayerClass::Update(double dt, Map map)
 {
 	playerShadow = PlayerPos;
+	Vector3 Movement = Vector3();
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
 	{
-		playerShadow.y += movementSpeed * dt;
+		Movement.y += movementSpeed * dt;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::Backward] == true)
 	{
-		playerShadow.y -= movementSpeed * dt;
+		Movement.y -= movementSpeed * dt;
 	}
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Leftward] == true)
 	{
-		playerShadow.x -= movementSpeed * dt;
+		Movement.x -= movementSpeed * dt;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::Rightward] == true)
 	{
-		playerShadow.x += movementSpeed * dt;
+		Movement.x += movementSpeed * dt;
 	}
-
+	Movement = Enemy_Poison::pointer()->Poison(Movement);
+	playerShadow += Movement;
 	//Kind of Collision
 	if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{

@@ -8,7 +8,7 @@ void Enemy_Ghost::Init()
 {
 	ghostPos = (Render_PI::Window_Scale() * 0.5);
 	ghostoffset = (Math::RandFloatMinMax(10.f, 50.f), Math::RandFloatMinMax(10.f, 50.f), 0);
-	ghostSprite = MeshBuilder::GenerateSpriteAnimation("cfire", 1, 8);
+	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
@@ -59,9 +59,9 @@ void Enemy_Ghost::Update(double dt, Map map)
 	{
 		ghostPos = ghostShadow;
 	}
-	if (ghostTimer > 15.f)
+	if (ghostTimer > 45.f)
 	{
-		//teleport ghost to 1 tile before player position
+		//teleport ghost to near player position
 		ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
 		ghostStayTimer += dt;
 		dirX = 0;
@@ -77,7 +77,7 @@ void Enemy_Ghost::Update(double dt, Map map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 15.f)
+	else if (ghostTimer < 45.f)
 	{
 		ghostStayTimer = 0.0f;
 	}
@@ -92,7 +92,6 @@ void Enemy_Ghost::RenderGhost()
 {
 	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 	Render_PI::pointer()->modelStack_Set(true);
-	cout << Diff.x << " / " << Diff.y << endl;
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Vector3(ghostPos), Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
 }
