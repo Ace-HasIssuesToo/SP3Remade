@@ -7,7 +7,7 @@ Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 void Enemy_Ghost::Init()
 {
 	ghostPos = (Render_PI::Window_Scale() * 0.5);
-	ghostoffset = (Math::RandFloatMinMax(-10.f, 10.f), 0, Math::RandFloatMinMax(-10.f, 10.f));
+	//ghostoffset = (Math::RandFloatMinMax(5.f, 10.f), 0, Math::RandFloatMinMax(5.f, 10.f));
 	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
@@ -26,8 +26,8 @@ Vector3 Enemy_Ghost::GetGhostOffSet()
 void Enemy_Ghost::Update(double dt, Map map)
 {
 	ghostShadow = ghostPos;
+	
 	//ghost will move randomly until every 10 seconds
-
 	ghostTimer += dt;
 	ghostShadow.x += dirX * dt;
 	ghostShadow.y += dirY * dt;
@@ -59,15 +59,28 @@ void Enemy_Ghost::Update(double dt, Map map)
 	{
 		ghostPos = ghostShadow;
 	}
-
-	if (ghostTimer > 5.f)
+	
+	
+	if (ghostTimer > 45.f)
 	{
 		//teleport ghost to near player position
-		ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+		if (ghostStayTimer == 0.0f)
+		{
+			ghostoffset = Vector3(Math::RandFloatMinMax(3.f, 8.f), Math::RandFloatMinMax(3.f, 8.f), 0);
+			if (rand() % 2 == 1)
+			{
+				ghostoffset.x = -ghostoffset.x;
+			}
+			if (rand() % 2 == 1)
+			{
+				ghostoffset.y = -ghostoffset.y;
+			}
+			ghostPos = PlayerClass::pointer()->getPlayerPos() + ghostoffset;
+		}
 		ghostStayTimer += dt;
 		dirX = 0;
 		dirY = 0;
-		if (ghostStayTimer > 5.f)
+		if (ghostStayTimer > 45.f)
 		{
 			//ghost will move away again
 			dirX += Math::RandFloatMinMax(-5, 5);
