@@ -14,7 +14,6 @@ void Texture::Exit()
 {
 	for (auto& x : Textures_Data)
 	{
-
 		if (x.second != nullptr)
 		{
 			delete x.second;
