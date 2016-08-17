@@ -115,7 +115,7 @@ void Enemy_Poison::Update(float dt, Map* map)
 void Enemy_Poison::render()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(Pos), Vector3(10, 10, 1));
+	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Map::Pokemon_Offset(Pos), Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 

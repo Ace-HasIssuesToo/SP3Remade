@@ -98,7 +98,7 @@ void Enemy_Psychic::RenderPsychic()
 	//Render_PI::pointer()->RenderMeshIn2D(Texture::Get("psychic"), false, Vector3(psychicPos), Vector3(1, 1, 1));
 	//Render_PI::pointer()->RenderMeshIn2D(camou_psychic, false, Vector3(psychicPos), Vector3(5, 5, 1));
 	//Render_PI::pointer()->RenderMeshIn2D(run_psychic, false, Vector3(psychicPos), Vector3(5, 5, 1));
-	Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Vector3(psychicPos), Vector3(6, 6, 1));
+	Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
