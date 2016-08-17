@@ -1,5 +1,6 @@
 #include "Game_System.h"
 #include "Texture_PI.h"
+#include "Enemy_Poison.h"
 
 Game_System* Game_System::c_pointer = new Game_System();
 
@@ -25,6 +26,7 @@ void Game_System::Init()
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
+	Enemy_Poison::pointer()->Init();
 	Pos = Vector3();
 }
 
@@ -34,8 +36,12 @@ void Game_System::Update(double dt)
 	PlayerClass::pointer()->Update(dt, Floor1);
 	Enemy_Psychic::pointer()->Update(dt, Floor1);
 	Enemy_Ghost::pointer()->Update(dt, Floor1);
+<<<<<<< 39da76cf1dc61db99c3da997066597eb70c92b2b
 <<<<<<< HEAD
 =======
+=======
+	Enemy_Poison::pointer()->Update(dt, Floor1);
+>>>>>>> Enemy Poison Done
 	//EnemyGhost::pointer()->Update(dt, Floor1);
 >>>>>>> 83b28297b4a40a15afc409b60b47432c92a9e377
 }
@@ -45,8 +51,12 @@ void Game_System::Render()
 	Floor1.Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	Enemy_Ghost::pointer()->RenderGhost();
+<<<<<<< 39da76cf1dc61db99c3da997066597eb70c92b2b
 	if (Enemy_Psychic::pointer()->tempKill == false)
 		Enemy_Psychic::pointer()->RenderPsychic();
+=======
+	Enemy_Poison::pointer()->render();
+>>>>>>> Enemy Poison Done
 }
 
 void Game_System::Exit()
