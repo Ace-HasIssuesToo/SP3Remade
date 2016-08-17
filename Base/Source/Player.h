@@ -8,10 +8,14 @@ class PlayerClass
 {
 public:
 	virtual void Init();
-	virtual void Update(double dt, Map map);
+	virtual void Update(double dt, Map* map);
 	virtual void Renderplayer();
 	virtual void RenderPokeball();
+<<<<<<< HEAD
 
+=======
+	void Exit();
+>>>>>>> 725b3b555616dd3994b19d0f9335df5f03ab3aa3
 	Vector3 getPlayerPos();
 	Vector3 getPlayerScale();
 	Vector3 getPlayerPosOffSet();

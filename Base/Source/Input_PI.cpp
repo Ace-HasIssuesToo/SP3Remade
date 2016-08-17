@@ -123,7 +123,11 @@ void Input_PI::Update(double dt)
 
 void Input_PI::Render()
 {
-
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
+	}
 }
 
 void Input_PI::Exit()

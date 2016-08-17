@@ -8,6 +8,7 @@ public:
 	void Render(Vector3 pos);
 	bool Init(std::string Filename);
 	std::string Get_Type(Vector3 pos);
+	static Vector3 Pokemon_Offset(Vector3 pos);
 private:
 	std::map<std::string, std::string> Map_Data;
 	Vector3 Limitation;

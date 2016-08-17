@@ -8,9 +8,9 @@ class Enemy_Poison
 public:
 	static Enemy_Poison* pointer(){ return m_pointer; };
 	void Init();
-	void Update(float dt, Map map);
+	void Update(float dt, Map* map);
 	void render();
-	void exit();
+	void Exit();
 	Vector3 Poison(Vector3 Movement);
 private:
 	static Enemy_Poison* m_pointer;

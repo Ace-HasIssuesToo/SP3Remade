@@ -7,7 +7,7 @@ Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 void Enemy_Ghost::Init()
 {
 	ghostPos = (Render_PI::Window_Scale() * 0.5);
-	ghostoffset = (Math::RandFloatMinMax(10.f, 50.f), Math::RandFloatMinMax(10.f, 50.f), 0);
+	//ghostoffset = (Math::RandFloatMinMax(5.f, 10.f), 0, Math::RandFloatMinMax(5.f, 10.f));
 	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
@@ -23,11 +23,11 @@ Vector3 Enemy_Ghost::GetGhostOffSet()
 	return ghostoffset;
 }
 
-void Enemy_Ghost::Update(double dt, Map map)
+void Enemy_Ghost::Update(double dt, Map* map)
 {
 	ghostShadow = ghostPos;
+	
 	//ghost will move randomly until every 10 seconds
-
 	ghostTimer += dt;
 	ghostShadow.x += dirX * dt;
 	ghostShadow.y += dirY * dt;
@@ -48,25 +48,39 @@ void Enemy_Ghost::Update(double dt, Map map)
 	{
 		Shadows.y -= 0.5;
 	}
-	if (map.Get_Type(Shadows) == "Wall")
+	if (map->Get_Type(Shadows) == "Wall")
 	{
 		dirX = -dirX;
 		dirY = -dirY;
 		dirX += Math::RandFloatMinMax(-5, 5);
 		dirY += Math::RandFloatMinMax(-5, 5);
 	}
-	else if (map.Get_Type(Shadows) == "Floor")
+	else if (map->Get_Type(Shadows) == "Floor")
 	{
 		ghostPos = ghostShadow;
 	}
+	
+	
 	if (ghostTimer > 45.f)
 	{
 		//teleport ghost to near player position
-		ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+		if (ghostStayTimer == 0.0f)
+		{
+			ghostoffset = Vector3(Math::RandFloatMinMax(3.f, 8.f), Math::RandFloatMinMax(3.f, 8.f), 0);
+			if (rand() % 2 == 1)
+			{
+				ghostoffset.x = -ghostoffset.x;
+			}
+			if (rand() % 2 == 1)
+			{
+				ghostoffset.y = -ghostoffset.y;
+			}
+			ghostPos = PlayerClass::pointer()->getPlayerPos() + ghostoffset;
+			ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+		}
 		ghostStayTimer += dt;
 		dirX = 0;
 		dirY = 0;
-		
 		if (ghostStayTimer > 5.f)
 		{
 			//ghost will move away again
@@ -92,10 +106,23 @@ void Enemy_Ghost::RenderGhost()
 {
 	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 	Render_PI::pointer()->modelStack_Set(true);
+<<<<<<< HEAD
+	//cout << Diff.x << " / " << Diff.y << endl;
+=======
+>>>>>>> b1f80b33c4e962eef81f2941c421b4b3248156a0
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Vector3(ghostPos), Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 void Enemy_Ghost::Exit()
 {
-
+	if (ghostSprite != nullptr)
+	{
+		delete ghostSprite;
+		ghostSprite = nullptr;
+	}
+	if (c_Enemy_Ghost != nullptr)
+	{
+		delete c_Enemy_Ghost;
+		c_Enemy_Ghost = nullptr;
+	}
 }
