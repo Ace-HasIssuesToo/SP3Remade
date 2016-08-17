@@ -76,23 +76,19 @@ void PlayerClass::Update(double dt, Map* map)
 	Vector3 Movement = Vector3();
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
 	{
-		Movement.y += movementSpeed * dt; 
-		setPlayerMesh(Top);
+		Movement.y += movementSpeed * dt;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::Backward] == true)
 	{
 		Movement.y -= movementSpeed * dt;
-		setPlayerMesh(Down);
 	}
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Leftward] == true)
 	{
 		Movement.x -= movementSpeed * dt;
-		setPlayerMesh(Left);
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::Rightward] == true)
 	{
 		Movement.x += movementSpeed * dt;
-		setPlayerMesh(Right);
 	}
 
 	if (getPlayerMesh2() == playerMeshForward)
@@ -134,6 +130,22 @@ void PlayerClass::Update(double dt, Map* map)
 
 
 	Movement = Enemy_Poison::pointer()->Poison(Movement);
+	if (Movement.y > 0)
+	{
+		setPlayerMesh(Top);
+	}
+	else if (Movement.y < 0)
+	{
+		setPlayerMesh(Down);
+	}
+	if (Movement.x < 0)
+	{
+		setPlayerMesh(Left);
+	}
+	else if (Movement.x > 0)
+	{
+		setPlayerMesh(Right);
+	}
 	playerShadow += Movement;
 	//Kind of Collision
 	if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
