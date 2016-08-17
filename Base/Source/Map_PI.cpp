@@ -97,5 +97,5 @@ std::string Map::Get_Type(Vector3 pos)
 
 Vector3 Map::Pokemon_Offset(Vector3 pos)
 {
-	return (pos + PlayerClass::pointer()->getPlayerPosOffSet());
+	return (pos - PlayerClass::pointer()->getPlayerPosOffSet());
 }

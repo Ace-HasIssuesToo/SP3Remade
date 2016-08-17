@@ -69,6 +69,11 @@ void Game_System::GameState(double dt)
 			}
 			break;
 		}*/
+		case GUIDE:
+		{
+
+			break;
+		}
 		case FLOOR1:
 		{
 			PlayerClass::pointer()->Update(dt, Floor1);
@@ -107,6 +112,16 @@ void Game_System::GameState(double dt)
 			Enemy_Psychic::pointer()->Update(dt, Floor5);
 			Enemy_Ghost::pointer()->Update(dt, Floor5);
 			Enemy_Poison::pointer()->Update(dt, Floor5);
+			break;
+		}
+		case WIN:
+		{
+
+			break;
+		}
+		case LOSE:
+		{
+
 			break;
 		}
 		break;
