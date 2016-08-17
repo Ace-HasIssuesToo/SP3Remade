@@ -14,7 +14,7 @@ void Enemy_Poison::Init()
 void Enemy_Poison::Update(float dt, Map map)
 {
 
-	cout <<CoolDown<<" / "<< LastTime << " / " << ChangeEffect << endl;
+	//cout <<CoolDown<<" / "<< LastTime << " / " << ChangeEffect << endl;
 	if (Vel == Vector3())
 	{
 		Vel = Vector3(Math::RandFloatMinMax(-10, 10), Math::RandFloatMinMax(-10, 10), 0);

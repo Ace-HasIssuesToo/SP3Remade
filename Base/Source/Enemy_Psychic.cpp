@@ -36,7 +36,7 @@ void Enemy_Psychic::Update(double dt, Map map)
 		defMechanism = true;
 		playerIntrude = false;
 	}
-	cout << counterFound << endl;
+	//cout << counterFound << endl;
 	if (defMechanism && counterFound < 2)
 	{
 		// Runs to another location
