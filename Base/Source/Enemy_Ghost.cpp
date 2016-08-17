@@ -66,6 +66,7 @@ void Enemy_Ghost::Update(double dt, Map map)
 		//teleport ghost to near player position
 		if (ghostStayTimer == 0.0f)
 		{
+<<<<<<< HEAD
 			ghostoffset = Vector3(Math::RandFloatMinMax(3.f, 8.f), Math::RandFloatMinMax(3.f, 8.f), 0);
 			if (rand() % 2 == 1)
 			{
@@ -76,6 +77,9 @@ void Enemy_Ghost::Update(double dt, Map map)
 				ghostoffset.y = -ghostoffset.y;
 			}
 			ghostPos = PlayerClass::pointer()->getPlayerPos() + ghostoffset;
+=======
+			ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+>>>>>>> 97834170ff795d8ae20d0d0a403c9d85cbcda03c
 		}
 		ghostStayTimer += dt;
 		dirX = 0;

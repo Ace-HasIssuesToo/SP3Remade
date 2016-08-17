@@ -35,7 +35,10 @@ void Game_System::Update(double dt)
 	PlayerClass::pointer()->Update(dt, Floor1);
 	Enemy_Psychic::pointer()->Update(dt, Floor1);
 	Enemy_Ghost::pointer()->Update(dt, Floor1);
+<<<<<<< HEAD
 	//EnemyGhost::pointer()->Update(dt, Floor1);
+=======
+>>>>>>> 97834170ff795d8ae20d0d0a403c9d85cbcda03c
 	Enemy_Poison::pointer()->Update(dt, Floor1);
 }
 

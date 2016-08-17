@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD
 Debug|Win32|C:\Users\user\Documents\SP3Remade\|
+=======
+Debug|Win32|C:\Users\sword_000\Desktop\SP3\|
+>>>>>>> 97834170ff795d8ae20d0d0a403c9d85cbcda03c
