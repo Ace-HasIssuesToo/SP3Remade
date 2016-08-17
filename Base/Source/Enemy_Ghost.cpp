@@ -105,12 +105,9 @@ void Enemy_Ghost::RenderGhost()
 {
 	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 	Render_PI::pointer()->modelStack_Set(true);
-<<<<<<< HEAD
 	//cout << Diff.x << " / " << Diff.y << endl;
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Vector3(ghostPos), Vector3(10, 10, 1));
-=======
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
->>>>>>> ac1596f8dbb5ff2f356d05ec1e5b937160d4604d
 	Render_PI::pointer()->modelStack_Set(false);
 }
 void Enemy_Ghost::Exit()
