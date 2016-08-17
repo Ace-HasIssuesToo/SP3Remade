@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Enemy_Ghost.cpp
 c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(31): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
 c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(32): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
@@ -18,3 +19,14 @@ Camera_PI.obj : warning LNK4020: a type record in 'c:\users\user\documents\sp3re
 Application.obj : warning LNK4020: a type record in 'c:\users\user\documents\sp3remade\base\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
 Angle_And_Target.obj : warning LNK4020: a type record in 'c:\users\user\documents\sp3remade\base\debug\vc120.pdb' is corrupted; some symbols and types may not be accessible from the debugger
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+﻿Build started 17/8/2016 11:15:48 AM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.exe
+     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.05
+>>>>>>> 6b9eeed68fd8c5c81bc5b431f8799b6108293c22

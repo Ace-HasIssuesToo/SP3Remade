@@ -1,5 +1,6 @@
 #include "Game_System.h"
 #include "Texture_PI.h"
+#include "Enemy_Poison.h"
 
 Game_System* Game_System::c_pointer = new Game_System();
 
@@ -25,6 +26,7 @@ void Game_System::Init()
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
+	Enemy_Poison::pointer()->Init();
 	Pos = Vector3();
 }
 
@@ -33,7 +35,11 @@ void Game_System::Update(double dt)
 	PlayerClass::pointer()->Update(dt, Floor1);
 	Enemy_Psychic::pointer()->Update(dt, Floor1);
 	Enemy_Ghost::pointer()->Update(dt, Floor1);
+<<<<<<< HEAD
 	//EnemyGhost::pointer()->Update(dt, Floor1);
+=======
+	Enemy_Poison::pointer()->Update(dt, Floor1);
+>>>>>>> 6b9eeed68fd8c5c81bc5b431f8799b6108293c22
 }
 
 void Game_System::Render()
@@ -43,6 +49,7 @@ void Game_System::Render()
 	Enemy_Ghost::pointer()->RenderGhost();
 	if (Enemy_Psychic::pointer()->tempKill == false)
 		Enemy_Psychic::pointer()->RenderPsychic();
+	Enemy_Poison::pointer()->render();
 }
 
 void Game_System::Exit()
