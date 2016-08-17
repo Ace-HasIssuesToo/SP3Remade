@@ -1,9 +1,41 @@
-﻿Build started 17/8/2016 11:15:48 AM.
+﻿Build started 17/8/2016 3:29:32 PM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
+         Player.cpp
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(78): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(83): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(88): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(93): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(170): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(176): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(182): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(188): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(229): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+         Debug\Application.obj
+         Debug\Camera_PI.obj
+         Debug\EnemyDark.obj
+         Debug\Enemy_Ghost.obj
+         Debug\Enemy_Poison.obj
+         Debug\Enemy_Psychic.obj
+         Debug\GameEnvironmentEvent.obj
+         Debug\Main_Shaft.obj
+         Debug\Map_PI.obj
+         Debug\Player.obj
+         Debug\PokeInfo.obj
+         Debug\Render_PI.obj
+         Debug\main.obj
+         Debug\Input_PI.obj
+         Debug\Game_System.obj
+         Debug\Support_Codes.obj
+         Debug\Texture_PI.obj
+     1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.exe
      1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.05
+Time Elapsed 00:00:01.17

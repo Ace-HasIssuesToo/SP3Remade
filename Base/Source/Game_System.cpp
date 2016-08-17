@@ -24,29 +24,31 @@ void Game_System::Init()
 		cout << "File Error" << endl;
 	}
 	PlayerClass::pointer()->Init();
-	Enemy_Psychic::pointer()->Init();
-	Enemy_Ghost::pointer()->Init();
+	//Enemy_Psychic::pointer()->Init();
+	//Enemy_Ghost::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
+	//Enemy_Dark::pointer()->Init();
 	Pos = Vector3();
 }
 
 void Game_System::Update(double dt)
 {
-
 	PlayerClass::pointer()->Update(dt, Floor1);
-	Enemy_Psychic::pointer()->Update(dt, Floor1);
-	Enemy_Ghost::pointer()->Update(dt, Floor1);
-	Enemy_Poison::pointer()->Update(dt, Floor1);
+	//Enemy_Psychic::pointer()->Update(dt, Floor1);
+	//Enemy_Ghost::pointer()->Update(dt, Floor1);
+	//Enemy_Poison::pointer()->Update(dt, Floor1);
+	//Enemy_Dark::pointer()->Update(dt, Floor1);
 }
 
 void Game_System::Render()
 {
 	Floor1.Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
-	Enemy_Ghost::pointer()->RenderGhost();
-	if (Enemy_Psychic::pointer()->tempKill == false)
-		Enemy_Psychic::pointer()->RenderPsychic();
-	Enemy_Poison::pointer()->render();
+	//Enemy_Ghost::pointer()->RenderGhost();
+	//if (Enemy_Psychic::pointer()->tempKill == false)
+		//Enemy_Psychic::pointer()->RenderPsychic();
+	//Enemy_Poison::pointer()->render();
+	//Enemy_Dark::pointer()->RenderEnemyDark();
 }
 
 void Game_System::Exit()
