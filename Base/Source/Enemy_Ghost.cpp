@@ -63,7 +63,10 @@ void Enemy_Ghost::Update(double dt, Map map)
 	if (ghostTimer > 5.f)
 	{
 		//teleport ghost to near player position
-		ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+		if (ghostStayTimer == 0.0f)
+		{
+			ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+		}
 		ghostStayTimer += dt;
 		dirX = 0;
 		dirY = 0;
