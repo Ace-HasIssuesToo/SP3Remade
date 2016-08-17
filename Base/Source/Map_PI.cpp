@@ -1,6 +1,8 @@
 #include "Map_PI.h"
 #include "Render_PI.h"
 #include "Texture_PI.h"
+#include "Player.h"
+
 
 bool Map::Init(std::string Filename)
 {
@@ -91,4 +93,9 @@ std::string Map::Get_Type(Vector3 pos)
 		return "Wall";
 	}
 	return Map_Data.at(Location.str());
+}
+
+Vector3 Map::Pokemon_Offset(Vector3 pos)
+{
+	return (pos + PlayerClass::pointer()->getPlayerPosOffSet());
 }

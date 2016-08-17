@@ -14,7 +14,7 @@ public:
 	static Enemy_Psychic* pointer() { return c_enemyPsychic; };
 
 	void Init();
-	void Update(double dt, Map map);
+	void Update(double dt, Map* map);
 	void RenderPsychic();
 	void Exit();
 

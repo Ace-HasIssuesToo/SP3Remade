@@ -87,7 +87,6 @@ private:
 	MS modelStack;
 	MS viewStack;
 	MS projectionStack;
-	Mesh* light;
 
 };
 

@@ -2,6 +2,7 @@
 #include "Input_PI.h"
 #include "Render_PI.h"
 #include "Texture_PI.h"
+#include "Enemy_Poison.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -27,35 +28,37 @@ void PlayerClass::Init()
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(1, 1, 1);
-	//playerMesh = MeshBuilder::GenerateSpriteAnimation();
+	playerMesh = nullptr;
 }
 
-void PlayerClass::Update(double dt, Map map)
+void PlayerClass::Update(double dt, Map* map)
 {
 	playerShadow = PlayerPos;
+	Vector3 Movement = Vector3();
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
 	{
-		playerShadow.y += movementSpeed * dt;
+		Movement.y += movementSpeed * dt;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::Backward] == true)
 	{
-		playerShadow.y -= movementSpeed * dt;
+		Movement.y -= movementSpeed * dt;
 	}
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Leftward] == true)
 	{
-		playerShadow.x -= movementSpeed * dt;
+		Movement.x -= movementSpeed * dt;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::Rightward] == true)
 	{
-		playerShadow.x += movementSpeed * dt;
+		Movement.x += movementSpeed * dt;
 	}
-
+	Movement = Enemy_Poison::pointer()->Poison(Movement);
+	playerShadow += Movement;
 	//Kind of Collision
-	if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
+	if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{
 
 	}
-	else if (map.Get_Type(playerShadow + PlayerPosOffSet) == "Floor")
+	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Floor")
 	{
 		PlayerPos = playerShadow;
 	}
@@ -78,15 +81,15 @@ void PlayerClass::Update(double dt, Map map)
 	{
 
 	}
-/*
-	if (map.Get_Type(pokeballShadow) == "Wall")
-	{
-		
-	}
-	else if (map.Get_Type(pokeballShadow) == "Floor")
-	{
-		PokeballPos = pokeballShadow;
-	}*/
+
+	//if (map->Get_Type(pokeballShadow) == "Wall")
+	//{
+	//	
+	//}
+	//else if (map->Get_Type(pokeballShadow) == "Floor")
+	//{
+	//	PokeballPos = pokeballShadow;
+	//}
 
 	//Keep Player in window
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - 5))
@@ -101,7 +104,7 @@ void PlayerClass::Update(double dt, Map map)
 		PlayerPosOffSet.x += difference;
 		PlayerPos.x = (5);
 	}
-	if (PlayerPos.y > (Render_PI::Window_Scale().y - 5))
+	if (PlayerPos.y >(Render_PI::Window_Scale().y - 5))
 	{
 		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
 		PlayerPosOffSet.y += difference;
@@ -113,6 +116,21 @@ void PlayerClass::Update(double dt, Map map)
 		PlayerPosOffSet.y += difference;
 		PlayerPos.y = (5);
 	}
+}
+
+void PlayerClass::Exit()
+{
+	if (playerMesh != nullptr)
+	{
+		delete playerMesh;
+		playerMesh = nullptr;
+	};
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
+	};
+
 }
 
 Vector3 PlayerClass::getPlayerPos()

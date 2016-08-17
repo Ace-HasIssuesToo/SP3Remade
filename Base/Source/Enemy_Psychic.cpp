@@ -44,7 +44,7 @@ void Enemy_Psychic::Init()
 	}
 }
 
-void Enemy_Psychic::Update(double dt, Map map)
+void Enemy_Psychic::Update(double dt, Map* map)
 {
 	// Psychic run sprite
 	SpriteAnimation *sa1 = dynamic_cast<SpriteAnimation*>(run_psychic);
@@ -104,6 +104,7 @@ void Enemy_Psychic::RenderPsychic()
 
 void Enemy_Psychic::Exit()
 {
+<<<<<<< HEAD
 	/*
 	NOTE:
 	enemy spawn rand()
@@ -111,4 +112,11 @@ void Enemy_Psychic::Exit()
 	kill player strategy
 	counter value change to 3, limit counter for last resort
 	*/
+=======
+	if (c_enemyPsychic != nullptr)
+	{
+		delete c_enemyPsychic;
+		c_enemyPsychic = nullptr;
+	}
+>>>>>>> b1f80b33c4e962eef81f2941c421b4b3248156a0
 }

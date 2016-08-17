@@ -4,7 +4,21 @@
 #include "Texture_PI.h"
 #include "Player.h"
 
+#ifdef _DEBUG
+#ifndef DBG_NEW
+#define DBG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#define new DBG_NEW
+#endif
+#endif //_DEBUG
+
+#define _CRTDBG_MAP_ALLOC
+#include<stdlib.h>
+#include<crtdbg.h>
+
 Main_Shaft* Main_Shaft::c_pointer = new Main_Shaft();
+
+
+
 
 void Main_Shaft::Init()
 {
@@ -16,7 +30,7 @@ void Main_Shaft::Init()
 
 void Main_Shaft::Update(double dt)
 {
-	//std::cout << 1 / dt << std::endl;
+	std::cout << 1 / dt << std::endl;
 	Input_PI::pointer()->Update(dt);
 	Game_System::pointer()->Update(dt);
 }
@@ -25,9 +39,9 @@ void Main_Shaft::Update(double dt)
 void Main_Shaft::Render()
 {
 	Render_PI::pointer()->Render_Set();
-	Render_PI::pointer()->Fog_Set(true);
+	Render_PI::pointer()->Ortho_Set(true);
 	Game_System::pointer()->Render();
-	Render_PI::pointer()->Fog_Set(false);
+	Render_PI::pointer()->Ortho_Set(false);
 }
 
 void Main_Shaft::Exit()
@@ -36,4 +50,13 @@ void Main_Shaft::Exit()
 	Input_PI::pointer()->Exit();
 	Game_System::pointer()->Exit();
 	Texture::Exit();
+
+	if (c_pointer != nullptr)
+	{
+		delete c_pointer;
+		c_pointer = nullptr;
+	};
+	_CrtDumpMemoryLeaks();
+
+
 }
