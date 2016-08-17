@@ -114,20 +114,7 @@ void Game_System::GameState(double dt)
 }
 void Game_System::Update(double dt)
 {
-	PlayerClass::pointer()->Update(dt, Floor1);
-	Enemy_Psychic::pointer()->Update(dt, Floor1);
-	Enemy_Ghost::pointer()->Update(dt, Floor1);
-	Enemy_Poison::pointer()->Update(dt, Floor1);
-	//Enemy_Dark::pointer()->Update(dt, Floor1);
 	GameState(dt);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-	
->>>>>>> 725b3b555616dd3994b19d0f9335df5f03ab3aa3
->>>>>>> 87137f0259fb566612625d7fddbb9de417fb101b
->>>>>>> 16533aa556c62f0010f9e84165b3b08577f30164
 }
 
 void Game_System::Render()
