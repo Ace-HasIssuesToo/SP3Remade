@@ -26,7 +26,7 @@ void PlayerClass::Init()
 {
 	movementSpeed = 20;
 	throwSpeed = -9.8;
-	PlayerPos = Render_PI::Window_Scale() * 0.5;
+	PlayerPos = Render_PI::Window_Scale();
 	sc.Set(5.f, 5.f, 5.f);
 	//sc.Set(10.f, 10.f, 10.f);
 	setPlayerMesh(Top);

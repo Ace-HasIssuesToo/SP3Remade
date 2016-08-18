@@ -71,6 +71,13 @@ void Map::Render(Vector3 pos)
 			}
 			else
 			{
+				string testname = (Map_Data.at(Location.str()));
+				if (testname == "Chemicals")
+				{
+					int X = 1;
+					int e = 1;
+					int r = 1;
+				}
 				Render_PI::pointer()->modelStack_Set(true);
 				Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
 				Render_PI::pointer()->RenderMeshIn2D(Texture::Get(Map_Data.at(Location.str())),false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
