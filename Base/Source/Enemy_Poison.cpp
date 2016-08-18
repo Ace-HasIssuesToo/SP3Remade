@@ -24,6 +24,58 @@ void Enemy_Poison::Init()
 
 void Enemy_Poison::Update(float dt, Map* map)
 {
+	if (Poisonous && FlipType[ShadowClone])
+	{
+		for (int i = 0; i < 5; i++)
+		{
+
+			Vector3 Range = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - Clones[i];
+			double radius = (Range.x*Range.x) + (Range.y*Range.y);
+			Vector3 Velocity = (Pos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*Moving_Speed;
+			if (radius > 10 * 10)
+			{
+				if (i % 2)
+				{
+					Velocity.x *= -1;
+				}
+				if (i % 3)
+				{
+					Velocity.y *= -1;
+				}
+				Vector3 Shadows = Clones[i] + Velocity*dt;
+				if (map->Get_Type(Shadows) == "Floor")
+				{
+					Clones[i] = Shadows;
+				}
+				else
+				{
+					int random = rand() % 5;
+					if (i == random)
+					{
+						Clones[i] = Pos + Velocity;
+						Pos = Clones[rand() % 5] + Velocity;
+					}
+					else
+					{
+						Clones[i] = Clones[random];
+					}
+				}
+			}
+			else
+			{
+				int random = rand() % 5;
+				if (i == random)
+				{
+					Clones[i] = Pos + Velocity;
+					Pos = Clones[rand() % 5] + Velocity;
+				}
+				else
+				{
+					Clones[i] = Clones[random];
+				}
+			}
+		}
+	}
 		SpriteAnimation *sa1 = dynamic_cast<SpriteAnimation*>(Poison_Mesh);
 		if (sa1)
 		{
@@ -32,14 +84,13 @@ void Enemy_Poison::Update(float dt, Map* map)
 		}
 	if (Vel == Vector3())
 	{
-		float Speed = 20;
 		if (Poisonous)
 		{
-			Vel = (Pos - Map::Pokemon_Offset(PlayerClass::pointer()->getPlayerPos())).Normalize()*Speed;
+			Vel = (Pos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*Moving_Speed;
 		}
 		else
 		{
-			Vel = (Map::Pokemon_Offset(PlayerClass::pointer()->getPlayerPos()) - Pos).Normalize()*Speed;
+			Vel = ((PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - Pos).Normalize()*Moving_Speed;
 		}
 	}
 	Vector3 Shadow = Pos + Vel*dt;
@@ -54,16 +105,33 @@ void Enemy_Poison::Update(float dt, Map* map)
 	}
 	if (map->Get_Type(Shadow) == "Floor")
 	{
-		//Pos = Shadow;
+		Pos = Shadow;
 	}
 	else
 	{
-		Vel = Vector3();
+		if (Poisonous && FlipType[ShadowClone])
+		{
+			int random = rand() % 5;
+			Pos = Clones[random];
+		}
+		else
+		{
+			Vector3 offset = (Pos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*Moving_Speed;
+			if (rand()% 2)
+			{
+				offset.x *= -1;
+			}
+			if (rand() % 3)
+			{
+				offset.y *= -1;
+			}
+			Pos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
+		}
 	}
 
 	if (CoolDown == 0)
 	{
-		Vector3 Range = Map::Pokemon_Offset(PlayerClass::pointer()->getPlayerPos()) - Pos;
+		Vector3 Range = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - Pos;
 		double radius = (Range.x*Range.x) + (Range.y*Range.y);
 
 		if (radius < (10 * 10))
@@ -115,6 +183,16 @@ void Enemy_Poison::render()
 	Vector3 Render_Pos = Map::Pokemon_Offset(Pos);
 	Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Render_Pos, Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
+	if (Poisonous && FlipType[ShadowClone])
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			Render_PI::pointer()->modelStack_Set(true);
+			Vector3 Render_Pos = Map::Pokemon_Offset(Clones[i]);
+			Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Render_Pos, Vector3(10, 10, 1));
+			Render_PI::pointer()->modelStack_Set(false);
+		}
+	}
 }
 
 void Enemy_Poison::Exit()
@@ -130,23 +208,40 @@ Vector3 Enemy_Poison::Poison(Vector3 Movement)
 {
 	if (Poisonous)
 	{
+		bool ShadowClonesBool = FlipType[ShadowClone];
+		for (int i = 0; i < All_debuff; i++)
+		{
+			FlipType[i] = false;
+		}
+		FlipType[ShadowClone] = ShadowClonesBool;
 		if (ChangeEffect == 0)
 		{
-			if (rand() % 2 == 0)
+			int random = rand() % Debuff_Effects::All_debuff;
+			if (!FlipType[Debuff_Effects::ShadowClone])
 			{
-				FlipType[Debuff_Effects::MoonWalk] = true;
+				random = Debuff_Effects::ShadowClone;
 			}
-			if (rand() % 2 == 0)
+			if (random == Debuff_Effects::ShadowClone)
 			{
-				FlipType[Debuff_Effects::XY_swap] = true;
+				if (!FlipType[Debuff_Effects::ShadowClone])
+				{
+					FlipType[Debuff_Effects::ShadowClone] = true;
+					for (int i = 0; i < 5; i++)
+					{
+						Clones[i] = Pos;
+					}
+				}
+				else
+				{
+					while (random = rand() % Debuff_Effects::All_debuff != ShadowClone)
+					{
+						FlipType[random] = true;
+					}
+				}
 			}
-			if (rand() % 2 == 0)
+			else
 			{
-				FlipType[Debuff_Effects::Speed] = true;
-			}
-			else if (rand() % 2 == 0)
-			{
-				FlipType[Debuff_Effects::Slow] = true;
+				FlipType[random] = true;
 			}
 			ChangeEffect = 0.5;
 		}

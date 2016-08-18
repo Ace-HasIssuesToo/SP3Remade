@@ -62,13 +62,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostPos = ghostShadow;
 	}
-	
-<<<<<<< HEAD
 	if (ghostTimer > 5.f)
-=======
-	
-	if (ghostTimer > 1.f)
->>>>>>> 472092165c1dd57c7b0d165e37fe2d846c06f98c
 	{
 		//teleport ghost to near player position
 		if (ghostStayTimer == 0.0f)
@@ -82,11 +76,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			{
 				ghostoffset.y = -ghostoffset.y;
 			}
-<<<<<<< HEAD
-			ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
-=======
-			ghostPos = Map::Pokemon_Offset(PlayerClass::pointer()->getPlayerPos()) + ghostoffset;
->>>>>>> 472092165c1dd57c7b0d165e37fe2d846c06f98c
+			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + ghostoffset;
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
@@ -101,11 +91,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			ghostTimer = 0.0f;
 		}
 	}
-<<<<<<< HEAD
 	else if (ghostTimer < 5.f)
-=======
-	else if (ghostTimer < 1.f)
->>>>>>> 472092165c1dd57c7b0d165e37fe2d846c06f98c
 	{
 		ghostStayTimer = 0.0f;
 	}
@@ -126,14 +112,8 @@ void Enemy_Ghost::RenderGhost()
 {
 	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 	Render_PI::pointer()->modelStack_Set(true);
-	//cout << Diff.x << " / " << Diff.y << endl;
-	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Vector3(ghostPos), Vector3(10, 10, 1));
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
-	/*std::ostringstream ss;
-	ss.precision(5);
-	ss << "HP: " << health;*/
-	//RenderTextOnScreen(meshList[GEO_TEXT], ss.str(), Color(1, 0.25f, 0), 30, 0, 6);
 }
 void Enemy_Ghost::Exit()
 {

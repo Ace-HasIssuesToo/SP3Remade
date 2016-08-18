@@ -19,6 +19,7 @@ private:
 		XY_swap,
 		Speed,
 		Slow,
+		ShadowClone,
 		All_debuff,
 	};
 	static Enemy_Poison* m_pointer;
@@ -32,7 +33,8 @@ private:
 	float ChangeEffect;
 	bool FlipType[All_debuff];
 	Mesh* Poison_Mesh;
+	Vector3 Clones[5];
 
 };
-
+const float Moving_Speed = 30;
 #endif
