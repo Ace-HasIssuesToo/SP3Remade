@@ -28,6 +28,7 @@ public:
 		STATE_HIDE,
 		STATE_APPEAR,
 		STATE_KILL,
+		STATE_GG,
 		STATE_TOTAL,
 	};
 	STATE_TYPE currState;

@@ -118,7 +118,7 @@ void Enemy_Psychic::Update(double dt, Map* map)
 	if (finalScream)
 		screamTimer += (dt);
 	if (screamTimer > 3.f)
-		currState = STATE_HIDE;	//TEMP KILL/ CAUGHT
+		currState = STATE_GG;	//TEMP KILL/ CAUGHT
 
 	//cout << screamTimer << endl;
 }
@@ -133,7 +133,9 @@ void Enemy_Psychic::RenderPsychic()
 		Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
 	if (currState == STATE_KILL)
 		Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
-	
+	if (currState == STATE_GG)
+		Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
