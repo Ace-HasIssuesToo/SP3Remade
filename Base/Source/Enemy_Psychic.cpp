@@ -42,9 +42,12 @@ void Enemy_Psychic::Init()
 		sa2->m_anim = new Animation();
 		sa2->m_anim->Set(0, 1, 0, 5.f, true);
 	}
-	//Psychic kill image
+	// Psychic kill image
 	kill_psychic = MeshBuilder::GenerateQuad("kill_psychic", Color(1, 1, 1));
 	kill_psychic->textureArray[0] = LoadTGA("Data//Texture//psychic-kill.tga");
+
+	// Enemy State
+	currState = STATE_HIDE;
 }
 
 void Enemy_Psychic::SpriteUpdate(double dt)
@@ -73,40 +76,72 @@ void Enemy_Psychic::Update(double dt, Map* map)
 	radiusRange = (psychicPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
 
 	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
-	if (radRange < 10.f)
+	
+	if (radRange < 120.f)
+	{
 		playerIntrude = true;
+	}
 
 	if (playerIntrude)
 	{
-		counterFound += 1;
-		defMechanism = true;
-		playerIntrude = false;
+		if (currState == STATE_HIDE)
+		{
+			counterFound += 1;
+			defMechanism = true;
+		}
+		if (currState == STATE_APPEAR)
+		{
+			lastResort = true;
+		}
 	}
-	//cout << counterFound << endl;
-	if (defMechanism && counterFound < 2)
+	
+	// State of enemy: HIDE to RUN
+	if (defMechanism)
 	{
+		// Change sprite to psychic_run
+		currState = STATE_RUN;
+
 		// Runs to another location
-		psychicPos = (Render_PI::Window_Scale() * 0.5);
+		psychicPos = Render_PI::Window_Scale() * 0.5;
 
-		//play enemy sound - 461
+		// Plays enemy sound
 
+		playerIntrude = false;
 		defMechanism = false;
 	}
 
-	if (counterFound == 2)
+	// State of enemy: RUN to HIDE/ APPEAR
+	if (counterFound < 2)
+		currState = STATE_HIDE;
+	if (counterFound >= 2)
+		currState = STATE_APPEAR;
+
+	// State of enemy: APPEAR
+	if (lastResort)
 	{
-		//kill player
+		if (radRange < 170.f)
+		{
+			playerIntrude = false;
+
+			//kill player
+		}
 	}
+	cout << lastResort << "     " << counterFound << endl;
 }
 
 void Enemy_Psychic::RenderPsychic()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	//Render_PI::pointer()->RenderMeshIn2D(Texture::Get("psychic"), false, Map::Pokemon_Offset(psychicPos), Vector3(1, 1, 1));
-	//Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(5, 5, 1));
-	Render_PI::pointer()->RenderMeshIn2D(run_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(5, 5, 1));
-	//Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
-	//Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+
+	if (currState == STATE_HIDE)
+		Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+	if (currState == STATE_RUN)
+		Render_PI::pointer()->RenderMeshIn2D(run_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+	if (currState == STATE_APPEAR)
+		Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
+	if (currState == STATE_KILL)
+		Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
+	
 	Render_PI::pointer()->modelStack_Set(false);
 }
 

@@ -27,8 +27,8 @@ void PlayerClass::Init()
 	movementSpeed = 20;
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
-	//sc.Set(3.f, 3.f, 3.f);
-	sc.Set(10.f, 10.f, 10.f);
+	sc.Set(5.f, 5.f, 5.f);
+	//sc.Set(10.f, 10.f, 10.f);
 	setPlayerMesh(Top);
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
@@ -185,29 +185,29 @@ void PlayerClass::Update(double dt, Map* map)
 	//}
 
 	//Keep Player in window
-	if (PlayerPos.x > (Render_PI::Window_Scale().x - 5))
+	if (PlayerPos.x > (Render_PI::Window_Scale().x - 10))
 	{
-		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 5);
+		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 10);
 		PlayerPosOffSet.x += difference;
-		PlayerPos.x = (Render_PI::Window_Scale().x - 5);
+		PlayerPos.x = (Render_PI::Window_Scale().x - 10);
 	}
-	else if (PlayerPos.x < 5)
+	else if (PlayerPos.x < 10)
 	{
-		double difference = PlayerPos.x - (5);
+		double difference = PlayerPos.x - (10);
 		PlayerPosOffSet.x += difference;
-		PlayerPos.x = (5);
+		PlayerPos.x = (10);
 	}
-	if (PlayerPos.y >(Render_PI::Window_Scale().y - 5))
+	if (PlayerPos.y >(Render_PI::Window_Scale().y - 10))
 	{
-		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 5);
+		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 10);
 		PlayerPosOffSet.y += difference;
-		PlayerPos.y = (Render_PI::Window_Scale().y - 5);
+		PlayerPos.y = (Render_PI::Window_Scale().y - 10);
 	}
-	else if (PlayerPos.y < 5)
+	else if (PlayerPos.y < 10)
 	{
-		double difference = PlayerPos.y - (5);
+		double difference = PlayerPos.y - (10);
 		PlayerPosOffSet.y += difference;
-		PlayerPos.y = (5);
+		PlayerPos.y = (10);
 	}
 }
 

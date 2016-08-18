@@ -25,84 +25,151 @@ void Enemy_Dark::Init()
 	movementSpeed = 10;
 	throwSpeed = -9.8;
 	EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
-	EnemyDarkScale.Set(1.1f, 1.1f, 1.1f);
-	//Enemy_DarkMesh = MeshBuilder::GenerateSpriteAnimation();
+	EnemyDarkScale.Set(5.f, 5.f, 5.f);
+	//EnemyDarkScale.Set(10.f, 10.f, 10.f);
+
+	SpriteAnimation *saL, *saR, *saF, *saB;
+	//Left Texture
+	enemyDarkMeshLeft = MeshBuilder::GenerateSpriteAnimation("enemyDarkMeshLeft", 1, 4);
+	enemyDarkMeshLeft->textureArray[0] = LoadTGA("Data//Texture//EnemyDarkLeft.tga");
+	saL = dynamic_cast<SpriteAnimation*>(enemyDarkMeshLeft);
+	if (saL)
+	{
+		saL->m_anim = new Animation();
+		saL->m_anim->Set(0, 3, 0, 1.f, true);
+	}
+	//Down Texture
+	enemyDarkMeshDownward = MeshBuilder::GenerateSpriteAnimation("enemyDarkMeshDown", 1, 4);
+	enemyDarkMeshDownward->textureArray[0] = LoadTGA("Data//Texture//EnemyDarkDown.tga");
+	saB = dynamic_cast<SpriteAnimation*>(enemyDarkMeshDownward);
+	if (saB)
+	{
+		saB->m_anim = new Animation();
+		saB->m_anim->Set(0, 3, 0, 1.f, true);
+	}
+	//Top Texture
+	enemyDarkMeshForward = MeshBuilder::GenerateSpriteAnimation("enemyDarkMeshTop", 1, 4);
+	enemyDarkMeshForward->textureArray[0] = LoadTGA("Data//Texture//EnemyDarkTop.tga");
+	saF = dynamic_cast<SpriteAnimation*>(enemyDarkMeshForward);
+	if (saF)
+	{
+		saF->m_anim = new Animation();
+		saF->m_anim->Set(0, 3, 0, 1.f, true);
+	}
+	//Right Texture
+	enemyDarkMeshRight = MeshBuilder::GenerateSpriteAnimation("enemyDarkMeshRight", 1, 4);
+	enemyDarkMeshRight->textureArray[0] = LoadTGA("Data//Texture//EnemyDarkRight.tga");
+	saR = dynamic_cast<SpriteAnimation*>(enemyDarkMeshRight);
+	if (saR)
+	{
+		saR->m_anim = new Animation();
+		saR->m_anim->Set(0, 3, 0, 1.f, true);
+	}
 }
 
-void Enemy_Dark::Update(double dt, Map map)
+void Enemy_Dark::Update(double dt, Map* map)
 {
 	EnemyDarkShadow = EnemyDarkPos;
-	//Kind of Collision
-	if (map.Get_Type(EnemyDarkShadow) == "Wall")
-	{
-
-	}
-	else if (map.Get_Type(EnemyDarkShadow) == "Floor")
-	{
-		EnemyDarkPos = EnemyDarkShadow;
-	}
-
-	DarkBall = EnemyDarkPos;
-	DarkBallShadow = DarkBall;
-
-	if (map.Get_Type(DarkBallShadow) == "Wall")
-	{
-
-	}
-	else if (map.Get_Type(DarkBallShadow) == "Floor")
-	{
-		DarkBall = DarkBallShadow;
-	}
-
-	float distSq = (getEnemyDarkPos() - PlayerClass::pointer()->getPlayerPos()).LengthSquared();
+	Vector3 Movement = Vector3();
+	Vector3 player_position = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
+	float distSq = (getEnemyDarkPos() - player_position).LengthSquared();
 	float combinedRadSq = (getEnemyDarkScale().x + PlayerClass::pointer()->getPlayerScale().x) * (getEnemyDarkScale().x + PlayerClass::pointer()->getPlayerScale().x);
 
-	if ((distSq >= combinedRadSq) && (PlayerClass::pointer()->getPlayerPos().x > EnemyDarkShadow.x))
+	if ((distSq >= combinedRadSq) && (player_position.x > EnemyDarkShadow.x))
 	{
-		EnemyDarkPos.x += movementSpeed * dt;
+		Movement.x += movementSpeed * dt;
 	}
-	else if (distSq >= combinedRadSq && (PlayerClass::pointer()->getPlayerPos().x < EnemyDarkShadow.x))
+	else if (distSq >= combinedRadSq && (player_position.x < EnemyDarkShadow.x))
 	{
-		EnemyDarkPos.x -= movementSpeed * dt;
+		Movement.x -= movementSpeed * dt;
 	}
-	if (distSq >= combinedRadSq && (PlayerClass::pointer()->getPlayerPos().y < EnemyDarkShadow.y))
+	if (distSq >= combinedRadSq && (player_position.y < EnemyDarkShadow.y))
 	{
-		EnemyDarkPos.y -= movementSpeed * dt;
+		Movement.y -= movementSpeed * dt;
 	}
-	else if (distSq >= combinedRadSq && (PlayerClass::pointer()->getPlayerPos().y > EnemyDarkShadow.y))
+	else if (distSq >= combinedRadSq && (player_position.y > EnemyDarkShadow.y))
 	{
-		EnemyDarkPos.y += movementSpeed * dt;
+		Movement.y += movementSpeed * dt;
+	}
+	if (getEnemyMesh() == enemyDarkMeshForward)
+	{
+		SpriteAnimation *saT = dynamic_cast<SpriteAnimation*>(enemyDarkMeshForward);
+		if (saT)
+		{
+			saT->Update(dt);
+			saT->m_anim->animActive = true;
+		}
+	}
+	else if (getEnemyMesh() == enemyDarkMeshDownward)
+	{
+		SpriteAnimation *saD = dynamic_cast<SpriteAnimation*>(enemyDarkMeshDownward);
+		if (saD)
+		{
+			saD->Update(dt);
+			saD->m_anim->animActive = true;
+		}
+	}
+	else if (getEnemyMesh() == enemyDarkMeshLeft)
+	{
+		SpriteAnimation *saL = dynamic_cast<SpriteAnimation*>(enemyDarkMeshLeft);
+		if (saL)
+		{
+			saL->Update(dt);
+			saL->m_anim->animActive = true;
+		}
+	}
+	else if (getEnemyMesh() == enemyDarkMeshRight)
+	{
+		SpriteAnimation *saR = dynamic_cast<SpriteAnimation*>(enemyDarkMeshRight);
+		if (saR)
+		{
+			saR->Update(dt);
+			saR->m_anim->animActive = true;
+		}
+	}
+	if (Movement.y > 0)
+	{
+		setEnemyDarkMesh(Top);
+	}
+	else if (Movement.y < 0)
+	{
+		setEnemyDarkMesh(Down);
+	}
+	if (Movement.x < 0)
+	{
+		setEnemyDarkMesh(Left);
+	}
+	else if (Movement.x > 0)
+	{
+		setEnemyDarkMesh(Right);
+	}
+	EnemyDarkShadow += Movement;
+
+	//Kind of Collision
+	if (map->Get_Type(EnemyDarkShadow) == "Wall")
+	{
+
+	}
+	else if (map->Get_Type(EnemyDarkShadow) == "Floor")
+	{
+		EnemyDarkPos = EnemyDarkShadow;
 	}
 
 	if (distSq <= combinedRadSq)
 	{
 
 	}
-	//Keep Enemy_Dark in window
-	/*if (EnemyDarkPos.x > Render_PI::Window_Scale().x - 5)
+	DarkBall = EnemyDarkPos;
+	DarkBallShadow = DarkBall;
+
+	if (map->Get_Type(DarkBallShadow) == "Wall")
 	{
-		double difference = EnemyDarkPos.x - (Render_PI::Window_Scale().x - 5);
-		EnemyDarkPosOffSet.x += difference;
-		EnemyDarkPos = (Render_PI::Window_Scale().x - 5);
+
 	}
-	else if (EnemyDarkPos.x < 5)
+	else if (map->Get_Type(DarkBallShadow) == "Floor")
 	{
-		double difference = EnemyDarkPos.x - (5);
-		EnemyDarkPosOffSet.x += difference;
-		EnemyDarkPos = (5);
+		DarkBall = DarkBallShadow;
 	}
-	if (EnemyDarkPos.y > Render_PI::Window_Scale().y - 5)
-	{
-		double difference = EnemyDarkPos.y - (Render_PI::Window_Scale().y - 5);
-		EnemyDarkPosOffSet.y += difference;
-		EnemyDarkPos = (Render_PI::Window_Scale().y - 5);
-	}
-	else if (EnemyDarkPos.y < 5)
-	{
-		double difference = EnemyDarkPos.y - (5);
-		EnemyDarkPosOffSet.y += difference;
-		EnemyDarkPos = (5);
-	}*/
 }
 
 Vector3 Enemy_Dark::getEnemyDarkPos()
@@ -118,10 +185,35 @@ Vector3 Enemy_Dark::getEnemyDarkScale()
 	return EnemyDarkScale;
 }
 
+void Enemy_Dark::setEnemyDarkMesh(Enemy_Dark::EnemyDarkMeshes mesh)
+{
+	this->enemyDarkMesh = mesh;
+}
+
+Mesh* Enemy_Dark::getEnemyMesh()
+{
+	switch (enemyDarkMesh)
+	{
+	case Left:
+		return enemyDarkMeshLeft;
+		break;
+	case Right:
+		return enemyDarkMeshRight;
+		break;
+	case Top:
+		return enemyDarkMeshForward;
+		break;
+	case Down:
+		return enemyDarkMeshDownward;
+		break;
+
+	}
+}
+
 void Enemy_Dark::RenderEnemyDark()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(getEnemyDarkScale()));
+	Render_PI::pointer()->RenderMeshIn2D(Enemy_Dark::getEnemyMesh(), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(getEnemyDarkScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 

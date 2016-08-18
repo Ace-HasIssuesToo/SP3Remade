@@ -1,2 +1,10 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD
 Debug|Win32|C:\Users\user\Documents\SP3Remade\|
+=======
+<<<<<<< cb2d9c2828bdd3fc565036ad78daa938766469a7
+Debug|Win32|D:\SP3 Life Problems\SP3MAKEITSTOP\|
+=======
+Debug|Win32|C:\Users\sword_000\Desktop\SP3\|
+>>>>>>> ???
+>>>>>>> bb26683d3827d47741a2ae32db936ebf2cbe7fee

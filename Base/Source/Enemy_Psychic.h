@@ -28,6 +28,7 @@ public:
 		STATE_KILL,
 		STATE_TOTAL,
 	};
+	STATE_TYPE currState;
 
 private:
 	static Enemy_Psychic* c_enemyPsychic;

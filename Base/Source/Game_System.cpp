@@ -91,6 +91,7 @@ void Game_System::GameState(double dt)
 			Enemy_Psychic::pointer()->Update(dt, Floor1);
 			Enemy_Ghost::pointer()->Update(dt, Floor1);
 			Enemy_Poison::pointer()->Update(dt, Floor1);
+			Enemy_Dark::pointer()->Update(dt, Floor1);
 			break;
 		}
 		case FLOOR2:
@@ -99,6 +100,7 @@ void Game_System::GameState(double dt)
 			Enemy_Psychic::pointer()->Update(dt, Floor2);
 			Enemy_Ghost::pointer()->Update(dt, Floor2);
 			Enemy_Poison::pointer()->Update(dt, Floor2);
+			Enemy_Dark::pointer()->Update(dt, Floor2);
 			break;
 		}
 		case FLOOR3:
@@ -107,6 +109,7 @@ void Game_System::GameState(double dt)
 			Enemy_Psychic::pointer()->Update(dt, Floor3);
 			Enemy_Ghost::pointer()->Update(dt, Floor3);
 			Enemy_Poison::pointer()->Update(dt, Floor3);
+			Enemy_Dark::pointer()->Update(dt, Floor3);
 			break;
 		}
 		case FLOOR4:
@@ -115,6 +118,7 @@ void Game_System::GameState(double dt)
 			Enemy_Psychic::pointer()->Update(dt, Floor4);
 			Enemy_Ghost::pointer()->Update(dt, Floor4);
 			Enemy_Poison::pointer()->Update(dt, Floor4);
+			Enemy_Dark::pointer()->Update(dt, Floor4);
 			break;
 		}
 		case FLOOR5:
@@ -123,6 +127,7 @@ void Game_System::GameState(double dt)
 			Enemy_Psychic::pointer()->Update(dt, Floor5);
 			Enemy_Ghost::pointer()->Update(dt, Floor5);
 			Enemy_Poison::pointer()->Update(dt, Floor5);
+			Enemy_Dark::pointer()->Update(dt, Floor5);
 			break;
 		}
 		case WIN:
