@@ -26,19 +26,12 @@ void PlayerClass::Init()
 {
 	movementSpeed = 20;
 	//throwSpeed = -9.8;
-	PlayerPos = Render_PI::Window_Scale();
-	PlayerPos = Render_PI::Window_Scale() * 0.5;
-<<<<<<< HEAD
-=======
-<<<<<<< 90f614bc8842528d6ad9b64bac7bd132565c3bf4
->>>>>>> d8116b92ecf01aa631da0b85d8b3730eb0fb9411
->>>>>>> 64288ea87af5eac17ecdc10032715e7ff4dce870
+	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
+	//dPlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(5.f, 5.f, 5.f);
 	//sc.Set(10.f, 10.f, 10.f);
-=======
 	//sc.Set(5.f, 5.f, 5.f);
 	sc.Set(10.f, 10.f, 10.f);
->>>>>>> Edited EveryBody Codes SomeHow...
 
 	setPlayerMesh(Top);
 	SpriteAnimation *saL, *saR, *saF, *saB;

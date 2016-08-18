@@ -104,10 +104,6 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		life -= 1; //unconfirmed
 	}
-	/*if (life <= 0)
-	{
-
-	}*/
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
 	{
