@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 18/8/2016 3:31:59 PM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
@@ -7,3 +8,14 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.03
+=======
+﻿生成启动时间为 18/8/2016 下午 3:16:38。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
+     1>Lib:
+         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.04
+>>>>>>> 21858782562119ac917dad4e1ae1cbacc19fa733

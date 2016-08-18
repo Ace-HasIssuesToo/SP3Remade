@@ -21,7 +21,7 @@ void Enemy_Ghost::Init()
 }
 Vector3 Enemy_Ghost::GetGhostPos()
 {
-	return ghostPos;
+	return Map::Pokemon_Offset(ghostPos);
 }
 Vector3 Enemy_Ghost::GetGhostOffSet()
 {

@@ -44,6 +44,8 @@ private:
 	~Game_System();
 	static Game_System* c_pointer;
 	int Pokemon_Switch;
+	bool Pokemon_On_Loose[4];
+	void Update_Stuffs(double dt, Map* map);
 	int rest;
 };
 

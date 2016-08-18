@@ -7,7 +7,10 @@ void Texture::Init()
 	Mesh* X = MeshBuilder::GenerateQuad("Default",Color(1,1,1));
 	X->textureArray[0] = LoadTGA("Data\\Default\\Default_Texture.tga");
 	Textures_Data.insert(std::pair<std::string, Mesh*>(X->name, X));
-	Set("Data\\Texture\\Texture.csv");
+	if (Set("Data\\Texture\\Texture.csv") == false)
+	{
+		cout << "Error" << endl;
+	}
 }
 
 void Texture::Exit()
@@ -80,10 +83,14 @@ bool Texture::Set(std::string FileName)
 			if (X->textureArray[0] == 0)
 			{
 				return false;
+				cout << Mesh_Name << " texture array have error" << endl;
 			}
-			Set(X);
+			if (Set(X) == false)
+			{
+				cout << Mesh_Name << " have error" << endl;
+			}
 			Datas.clear();
 		}
 	}
-		return false;
+		return true;
 }
