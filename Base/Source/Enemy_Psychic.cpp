@@ -126,7 +126,7 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			//kill player
 		}
 	}
-	cout << lastResort << "     " << counterFound << endl;
+	//cout << lastResort << "     " << counterFound << endl;
 }
 
 void Enemy_Psychic::RenderPsychic()

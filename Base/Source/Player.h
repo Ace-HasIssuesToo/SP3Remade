@@ -3,6 +3,7 @@
 #include "Support_Codes.h"
 #include "Render_PI.h"
 #include "Map_PI.h"
+#include "PokeInfo.h"
 
 class PlayerClass
 {
@@ -11,7 +12,6 @@ public:
 	virtual void Update(double dt, Map* map);
 
 	virtual void Renderplayer();
-	virtual void RenderPokeball();
 	void Exit();
 
 	Vector3 getPlayerPos();
@@ -40,7 +40,6 @@ private:
 	static PlayerClass* m_pointer;
 
 	int movementSpeed;
-	double throwSpeed;
 
 	Vector3 PlayerPos, PokeballPos, PlayerPosOffSet;
 	Vector3 playerShadow, pokeballShadow;
@@ -48,6 +47,7 @@ private:
 
 	PlayerMeshes playerMesh;
 	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
+	Mesh *Pokeball_Mesh;
 };
 
 #endif

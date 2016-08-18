@@ -1,32 +1,14 @@
-<<<<<<< HEAD
-﻿Build started 18/8/2016 10:57:42 AM.
-=======
-<<<<<<< HEAD
-﻿Build started 18/8/2016 10:56:00 AM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Psychic.cpp
-         Enemy_Psychic.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(22): warning C4305: 'argument' : truncation from 'double' to 'float'
-=======
-<<<<<<< HEAD
-﻿Build started 18/8/2016 10:14:12 AM.
->>>>>>> 40c147cb0df2e76ab894264b944e5149a52affd0
+﻿Build started 18/8/2016 3:02:02 PM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp
-         EnemyDark.cpp
-     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(80): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(84): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(88): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(92): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(211): warning C4715: 'Enemy_Dark::getEnemyMesh' : not all control paths return a value
-<<<<<<< HEAD
-     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-=======
-     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(265): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
->>>>>>> 5a91434b91ac695d8c9c8284ac61874f76be5e43
->>>>>>> 40c147cb0df2e76ab894264b944e5149a52affd0
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\PokeInfo.cpp
+         PokeInfo.cpp
+     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(41): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(46): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(51): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(56): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(63): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(64): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
          Debug\Application.obj
@@ -53,22 +35,4 @@
 
 Build succeeded.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:05.08
-=======
-<<<<<<< HEAD
-Time Elapsed 00:00:01.23
-=======
-Time Elapsed 00:00:01.84
-=======
-     1>Angle_And_Target.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
-     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
-
-生成成功。
-
-已用时间 00:00:02.35
->>>>>>> 0ac679ba6cf616682d634d54fbfd811910bfa461
->>>>>>> 5a91434b91ac695d8c9c8284ac61874f76be5e43
->>>>>>> 40c147cb0df2e76ab894264b944e5149a52affd0
+Time Elapsed 00:00:01.14
