@@ -19,6 +19,7 @@
     <ClCompile Include="Source\Enemy_Poison.cpp" />
     <ClCompile Include="Source\Enemy_Psychic.cpp" />
     <ClCompile Include="Source\GameEnvironmentEvent.cpp" />
+    <ClCompile Include="Source\GameState.cpp" />
     <ClCompile Include="Source\Main_Shaft.cpp" />
     <ClCompile Include="Source\Map_PI.cpp" />
     <ClCompile Include="Source\Player.cpp" />
@@ -39,6 +40,7 @@
     <ClInclude Include="Source\Enemy_Poison.h" />
     <ClInclude Include="Source\Enemy_Psychic.h" />
     <ClInclude Include="Source\GameEnvironmentEvent.h" />
+    <ClInclude Include="Source\GameState.h" />
     <ClInclude Include="Source\Main_Shaft.h" />
     <ClInclude Include="Source\Map_PI.h" />
     <ClInclude Include="Source\Player.h" />

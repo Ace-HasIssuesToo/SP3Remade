@@ -5,6 +5,7 @@
 
 class Enemy_Ghost
 {
+	
 public:
 	static Enemy_Ghost* pointer(){ return c_Enemy_Ghost; };
 	void Init();
@@ -15,7 +16,7 @@ public:
 	Vector3 GetGhostPos();
 	Vector3 GetGhostOffSet();
 private:
-	int health = 1;
+	int life = 1;
 	Enemy_Ghost()
 		: ghostTimer(0)
 		, ghostStayTimer(0)
@@ -31,7 +32,6 @@ private:
 	{
 	}
 	static Enemy_Ghost* c_Enemy_Ghost;
-
 	//bool atPlayer;
 	float dirX;
 	float dirY;
