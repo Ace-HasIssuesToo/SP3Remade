@@ -2,11 +2,12 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 #include "Player.h"
+#include "Game_System.h"
 Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 
 void Enemy_Ghost::Init()
 {
-	ghostPos = (Render_PI::Window_Scale() * 0.5);
+	ghostPos = (Render_PI::Window_Scale() * 0.8);
 	//ghostoffset = (Math::RandFloatMinMax(5.f, 10.f), 0, Math::RandFloatMinMax(5.f, 10.f));
 	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
@@ -16,6 +17,7 @@ void Enemy_Ghost::Init()
 		sa->m_anim = new Animation();
 		sa->m_anim->Set(0, 7, 0, 1.f, true);
 	}
+	
 }
 Vector3 Enemy_Ghost::GetGhostPos()
 {
@@ -58,30 +60,22 @@ void Enemy_Ghost::Update(double dt, Map* map)
 		dirX += Math::RandFloatMinMax(-5, 5);
 		dirY += Math::RandFloatMinMax(-5, 5);
 	}
-	else if (map->Get_Type(Shadows) == "Floor")
+	else if (map->Get_Type(Shadows) == "Floor" )
 	{
 		ghostPos = ghostShadow;
 	}
 	if (ghostTimer > 5.f)
 	{
-		//teleport ghost to near player position
+		//teleport ghost to player position
 		if (ghostStayTimer == 0.0f)
 		{
-			ghostoffset = Vector3(Math::RandFloatMinMax(3.f, 8.f), Math::RandFloatMinMax(3.f, 8.f), 0);
-			if (rand() % 2 == 1)
-			{
-				ghostoffset.x = -ghostoffset.x;
-			}
-			if (rand() % 2 == 1)
-			{
-				ghostoffset.y = -ghostoffset.y;
-			}
-			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + ghostoffset;
+			//teleport first time
+			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
 		dirY = 0;
-		if (ghostStayTimer > 5.f)
+		if (ghostStayTimer > 3.f)
 		{
 			//ghost will move away again
 			dirX += Math::RandFloatMinMax(-5, 5);
@@ -95,11 +89,16 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostStayTimer = 0.0f;
 	}
-	/*Vector3 Range = PlayerClass::pointer()->getPlayerPos - ghostPos;
-	float radius = (Range.x * Range.x) + (Range.y * Range.y);
-	if (radius < 10.f)
+	Vector3 radiusRange;
+	radiusRange = (ghostPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
+	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
+	if (radRange < 10.f)
 	{
-		health -= 5;
+		life -= 1; //unconfirmed
+	}
+	/*if (life <= 0)
+	{
+
 	}*/
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
@@ -110,10 +109,18 @@ void Enemy_Ghost::Update(double dt, Map* map)
 }
 void Enemy_Ghost::RenderGhost()
 {
-	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
-	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
-	Render_PI::pointer()->modelStack_Set(false);
+	//ghost will disppear when it is on top of the player
+	if (ghostStayTimer == 0.0f)
+	{
+		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
+		Render_PI::pointer()->modelStack_Set(false);
+	}
+	/*std::ostringstream ss;
+	ss.precision(5);
+	ss << "Life: " << life;
+	Render_PI::pointer()->RenderTextOnScreen(Game_System::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), Render_PI::Window_Scale() * 0.3, Vector3(5, 5, 1));*/
 }
 void Enemy_Ghost::Exit()
 {

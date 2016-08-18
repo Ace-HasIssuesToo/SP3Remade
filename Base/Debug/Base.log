@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 18/8/2016 3:02:02 PM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -36,3 +37,6 @@
 Build succeeded.
 
 Time Elapsed 00:00:01.14
+=======
+﻿  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+>>>>>>> b187a99600befe162ff1ddf4f486d65258a23685

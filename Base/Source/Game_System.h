@@ -23,12 +23,15 @@ class Game_System :public Scene
 		LOSE,
 		WIN,
 	};
+	Mesh* text;
 public:
+	
 	static Game_System* pointer(){ return c_pointer; };
 	virtual void Init();
 	virtual void Update(double dt);
 	virtual void Render();
 	virtual void Exit();
+	Mesh* GetText();
 	void GameState(double dt);
 	Game state;
 private:
