@@ -11,9 +11,8 @@ ToiletBowl,Data//Texture//toiletbowl.tga
 Sink,Data//Texture//sink.tga
 Chair,Data//Texture//chair.tga
 Stove,Data//Texture//stove.tga
-Church,Data//Texture//church.tga
-Canteen,Data//Texture//canteen.tga
 Ward,Data//Texture//ward.tga
-Lab,Data//Texture//lab.tga
+Chemicals,Data//Texture//chemicals.tga
 Cell,Data//Texture//cell.tga
 Library,Data//Texture//library.tga
+SpilledChemical,Data//Texture//spilledchemicals.tga

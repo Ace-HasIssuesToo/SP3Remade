@@ -66,7 +66,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	}
 	if (ghostTimer > 5.f)
 	{
-		//teleport ghost to near player position
+		//teleport ghost to player position
 		if (ghostStayTimer == 0.0f)
 		{
 			//teleport first time
@@ -109,6 +109,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 }
 void Enemy_Ghost::RenderGhost()
 {
+	//ghost will disppear when it is on top of the player
 	if (ghostStayTimer == 0.0f)
 	{
 		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;

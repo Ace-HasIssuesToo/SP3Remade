@@ -7,6 +7,7 @@
 #include "Enemy_Psychic.h"
 #include "Enemy_Ghost.h"
 #include "EnemyDark.h"
+#include "PokeInfo.h"
 
 class Game_System :public Scene
 {

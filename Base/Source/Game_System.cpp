@@ -55,6 +55,7 @@ void Game_System::Init()
 	Enemy_Ghost::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
+	PokeballInfo::pointer()->Init();
 	Pokemon_Switch = 0;
 
 	text = MeshBuilder::GenerateText("text", 16, 16);
@@ -92,6 +93,7 @@ void Game_System::GameState(double dt)
 			Enemy_Ghost::pointer()->Update(dt, Floor1);
 			Enemy_Poison::pointer()->Update(dt, Floor1);
 			Enemy_Dark::pointer()->Update(dt, Floor1);
+			PokeballInfo::pointer()->Update(dt, Floor1);
 			break;
 		}
 		case FLOOR2:
@@ -101,6 +103,7 @@ void Game_System::GameState(double dt)
 			Enemy_Ghost::pointer()->Update(dt, Floor2);
 			Enemy_Poison::pointer()->Update(dt, Floor2);
 			Enemy_Dark::pointer()->Update(dt, Floor2);
+			PokeballInfo::pointer()->Update(dt, Floor2);
 			break;
 		}
 		case FLOOR3:
@@ -110,6 +113,7 @@ void Game_System::GameState(double dt)
 			Enemy_Ghost::pointer()->Update(dt, Floor3);
 			Enemy_Poison::pointer()->Update(dt, Floor3);
 			Enemy_Dark::pointer()->Update(dt, Floor3);
+			PokeballInfo::pointer()->Update(dt, Floor3);
 			break;
 		}
 		case FLOOR4:
@@ -119,6 +123,7 @@ void Game_System::GameState(double dt)
 			Enemy_Ghost::pointer()->Update(dt, Floor4);
 			Enemy_Poison::pointer()->Update(dt, Floor4);
 			Enemy_Dark::pointer()->Update(dt, Floor4);
+			PokeballInfo::pointer()->Update(dt, Floor4);
 			break;
 		}
 		case FLOOR5:
@@ -128,6 +133,7 @@ void Game_System::GameState(double dt)
 			Enemy_Ghost::pointer()->Update(dt, Floor5);
 			Enemy_Poison::pointer()->Update(dt, Floor5);
 			Enemy_Dark::pointer()->Update(dt, Floor5);
+			PokeballInfo::pointer()->Update(dt, Floor5);
 			break;
 		}
 		case WIN:
@@ -160,6 +166,8 @@ void Game_System::Render()
 	Enemy_Psychic::pointer()->RenderPsychic();
 	Enemy_Poison::pointer()->render();
 	Enemy_Dark::pointer()->RenderEnemyDark();
+	if (PokeballInfo::pointer()->getBallStatus() == true)
+		PokeballInfo::pointer()->Render();
 }
 
 void Game_System::Exit()
@@ -169,6 +177,8 @@ void Game_System::Exit()
 	Enemy_Psychic::pointer()->Exit();
 	Enemy_Ghost::pointer()->Exit();
 	Enemy_Poison::pointer()->Exit();
+	Enemy_Dark::pointer()->Exit();
+	PokeballInfo::pointer()->Exit();
 	
 	if (Floor1 != nullptr)
 	{
