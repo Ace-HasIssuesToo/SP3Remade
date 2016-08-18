@@ -36,7 +36,6 @@ void Enemy_Psychic::Update(double dt, Map map)
 		defMechanism = true;
 		playerIntrude = false;
 	}
-	cout << counterFound << endl;
 	if (defMechanism && counterFound < 2)
 	{
 		// Runs to another location
@@ -65,5 +64,9 @@ void Enemy_Psychic::RenderPsychic()
 
 void Enemy_Psychic::Exit()
 {
-
+	if (c_enemyPsychic != nullptr)
+	{
+		delete c_enemyPsychic;
+		c_enemyPsychic = nullptr;
+	}
 }

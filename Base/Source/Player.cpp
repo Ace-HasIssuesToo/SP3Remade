@@ -28,7 +28,7 @@ void PlayerClass::Init()
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(1, 1, 1);
-	//playerMesh = MeshBuilder::GenerateSpriteAnimation();
+	playerMesh = nullptr;
 }
 
 void PlayerClass::Update(double dt, Map map)
@@ -81,15 +81,15 @@ void PlayerClass::Update(double dt, Map map)
 	{
 
 	}
-/*
-	if (map.Get_Type(pokeballShadow) == "Wall")
-	{
-		
-	}
-	else if (map.Get_Type(pokeballShadow) == "Floor")
-	{
-		PokeballPos = pokeballShadow;
-	}*/
+
+	//if (map.Get_Type(pokeballShadow) == "Wall")
+	//{
+	//	
+	//}
+	//else if (map.Get_Type(pokeballShadow) == "Floor")
+	//{
+	//	PokeballPos = pokeballShadow;
+	//}
 
 	//Keep Player in window
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - 5))
@@ -116,6 +116,21 @@ void PlayerClass::Update(double dt, Map map)
 		PlayerPosOffSet.y += difference;
 		PlayerPos.y = (5);
 	}
+}
+
+void PlayerClass::Exit()
+{
+	if (playerMesh != nullptr)
+	{
+		delete playerMesh;
+		playerMesh = nullptr;
+	};
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
+	};
+
 }
 
 Vector3 PlayerClass::getPlayerPos()

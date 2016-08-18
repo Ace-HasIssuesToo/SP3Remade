@@ -22,7 +22,8 @@ private:
 	Game_System();
 	~Game_System();
 	static Game_System* c_pointer;
-	Vector3 Pos;
+	int Pokemon_Switch;
+	int rest;
 };
 
 

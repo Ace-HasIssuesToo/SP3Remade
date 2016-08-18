@@ -114,5 +114,14 @@ void Enemy_Ghost::RenderGhost()
 }
 void Enemy_Ghost::Exit()
 {
-
+	if (ghostSprite != nullptr)
+	{
+		delete ghostSprite;
+		ghostSprite = nullptr;
+	}
+	if (c_Enemy_Ghost != nullptr)
+	{
+		delete c_Enemy_Ghost;
+		c_Enemy_Ghost = nullptr;
+	}
 }

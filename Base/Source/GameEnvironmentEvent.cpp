@@ -16,5 +16,9 @@ void GameEnvironmentEvent::Render()
 }
 void GameEnvironmentEvent::Exit()
 {
-
+	if (c_GameEnvironmentEvent != nullptr)
+	{
+		delete c_GameEnvironmentEvent;
+		c_GameEnvironmentEvent = nullptr;
+	}
 }
