@@ -61,7 +61,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	}
 	
 	
-	if (ghostTimer > 45.f)
+	if (ghostTimer > 1.f)
 	{
 		//teleport ghost to near player position
 		if (ghostStayTimer == 0.0f)
@@ -75,8 +75,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			{
 				ghostoffset.y = -ghostoffset.y;
 			}
-			ghostPos = PlayerClass::pointer()->getPlayerPos() + ghostoffset;
-			ghostPos = PlayerClass::pointer()->getPlayerPos() + GetGhostOffSet();
+			ghostPos = Map::Pokemon_Offset(PlayerClass::pointer()->getPlayerPos()) + ghostoffset;
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
@@ -91,7 +90,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 45.f)
+	else if (ghostTimer < 1.f)
 	{
 		ghostStayTimer = 0.0f;
 	}
