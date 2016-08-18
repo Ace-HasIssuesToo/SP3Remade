@@ -161,6 +161,7 @@ void Game_System::Update(double dt)
 void Game_System::Render()
 {
 	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
+	Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	Enemy_Ghost::pointer()->RenderGhost();
 	Enemy_Psychic::pointer()->RenderPsychic();
