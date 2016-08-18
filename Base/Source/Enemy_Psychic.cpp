@@ -73,7 +73,7 @@ void Enemy_Psychic::Update(double dt, Map* map)
 	SpriteUpdate(dt);
 
 	Vector3 radiusRange;
-	radiusRange = (psychicPos - PlayerClass::pointer()->getPlayerPos());
+	radiusRange = (psychicPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
 
 	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
 	

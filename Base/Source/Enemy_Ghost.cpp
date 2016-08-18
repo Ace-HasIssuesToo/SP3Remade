@@ -17,7 +17,10 @@ void Enemy_Ghost::Init()
 		sa->m_anim->Set(0, 7, 0, 1.f, true);
 	}
 }
-
+Vector3 Enemy_Ghost::GetGhostPos()
+{
+	return ghostPos;
+}
 Vector3 Enemy_Ghost::GetGhostOffSet()
 {
 	return ghostoffset;
@@ -59,9 +62,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostPos = ghostShadow;
 	}
-	
-	
-	if (ghostTimer > 1.f)
+	if (ghostTimer > 5.f)
 	{
 		//teleport ghost to near player position
 		if (ghostStayTimer == 0.0f)
@@ -75,7 +76,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			{
 				ghostoffset.y = -ghostoffset.y;
 			}
-			ghostPos = Map::Pokemon_Offset(PlayerClass::pointer()->getPlayerPos()) + ghostoffset;
+			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + ghostoffset;
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
@@ -90,10 +91,16 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 1.f)
+	else if (ghostTimer < 5.f)
 	{
 		ghostStayTimer = 0.0f;
 	}
+	/*Vector3 Range = PlayerClass::pointer()->getPlayerPos - ghostPos;
+	float radius = (Range.x * Range.x) + (Range.y * Range.y);
+	if (radius < 10.f)
+	{
+		health -= 5;
+	}*/
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
 	{
@@ -105,8 +112,6 @@ void Enemy_Ghost::RenderGhost()
 {
 	Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 	Render_PI::pointer()->modelStack_Set(true);
-	//cout << Diff.x << " / " << Diff.y << endl;
-	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Vector3(ghostPos), Vector3(10, 10, 1));
 	Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
 }

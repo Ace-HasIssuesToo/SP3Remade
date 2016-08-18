@@ -13,18 +13,28 @@ public:
 	void Exit();
 	Vector3 Poison(Vector3 Movement);
 private:
+	enum Debuff_Effects
+	{
+		MoonWalk,
+		XY_swap,
+		Speed,
+		Slow,
+		ShadowClone,
+		All_debuff,
+	};
 	static Enemy_Poison* m_pointer;
 	Enemy_Poison(){};
 	~Enemy_Poison(){};
 	Vector3 Pos;
 	Vector3 Vel;
 	bool Poisonous;
-	bool Toxicfied;
 	float CoolDown;
 	float LastTime;
 	float ChangeEffect;
-	bool FlipType[2];
+	bool FlipType[All_debuff];
+	Mesh* Poison_Mesh;
+	Vector3 Clones[5];
 
 };
-
+const float Moving_Speed = 30;
 #endif
