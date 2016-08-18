@@ -85,8 +85,5 @@ bool Texture::Set(std::string FileName)
 			Datas.clear();
 		}
 	}
-	else
-	{
 		return false;
-	}
 }
