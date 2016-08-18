@@ -7,6 +7,7 @@
 #include "Enemy_Psychic.h"
 #include "Enemy_Ghost.h"
 #include "EnemyDark.h"
+#include "PokeInfo.h"
 
 class Game_System :public Scene
 {
@@ -43,6 +44,8 @@ private:
 	~Game_System();
 	static Game_System* c_pointer;
 	int Pokemon_Switch;
+	bool Pokemon_On_Loose[4];
+	void Update_Stuffs(double dt, Map* map);
 	int rest;
 };
 

@@ -8,7 +8,6 @@ PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
 PlayerClass::PlayerClass()
 	:movementSpeed(0)
-	, throwSpeed(0)
 	, PlayerPos(0, 0, 0)
 	, PlayerPosOffSet(0, 0, 0)
 	, PokeballPos(0,0,0)
@@ -25,10 +24,15 @@ PlayerClass::~PlayerClass()
 void PlayerClass::Init()
 {
 	movementSpeed = 20;
+<<<<<<< HEAD
 	throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale();
+=======
+	PlayerPos = Render_PI::Window_Scale() * 0.5;
+>>>>>>> d8116b92ecf01aa631da0b85d8b3730eb0fb9411
 	sc.Set(5.f, 5.f, 5.f);
 	//sc.Set(10.f, 10.f, 10.f);
+
 	setPlayerMesh(Top);
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
@@ -157,33 +161,6 @@ void PlayerClass::Update(double dt, Map* map)
 		PlayerPos = playerShadow;
 	}
 
-	PokeballPos = PlayerPos;
-	pokeballShadow = PokeballPos;
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowFront] == true)
-	{
-
-	}
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowBack] == true)
-	{
-
-	}
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowLeft] == true)
-	{
-
-	}
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowRight] == true)
-	{
-
-	}
-	//if (map->Get_Type(pokeballShadow) == "Wall")
-	//{
-	//	
-	//}
-	//else if (map->Get_Type(pokeballShadow) == "Floor")
-	//{
-	//	PokeballPos = pokeballShadow;
-	//}
-
 	//Keep Player in window
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - 10))
 	{
@@ -213,11 +190,6 @@ void PlayerClass::Update(double dt, Map* map)
 
 void PlayerClass::Exit()
 {
-	/*if (playerMesh != nullptr)
-	{
-		delete playerMesh;
-		playerMesh = nullptr;
-	};*/
 	if (m_pointer != nullptr)
 	{
 		delete m_pointer;
@@ -267,12 +239,5 @@ void PlayerClass::Renderplayer()
 {
 	Render_PI::pointer()->modelStack_Set(true);
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
-	Render_PI::pointer()->modelStack_Set(false);
-}
-
-void PlayerClass::RenderPokeball()
-{
-	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(PokeballPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 }

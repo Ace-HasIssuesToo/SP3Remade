@@ -28,6 +28,9 @@ void Enemy_Dark::Init()
 	EnemyDarkScale.Set(5.f, 5.f, 5.f);
 	//EnemyDarkScale.Set(10.f, 10.f, 10.f);
 
+	Darkball_Mesh = MeshBuilder::GenerateQuad("Pokeball", Color(0, 0, 0), 1.f);
+	Darkball_Mesh->textureArray[0] = LoadTGA("Data//Texture//DarkBall.tga");
+
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
 	enemyDarkMeshLeft = MeshBuilder::GenerateSpriteAnimation("enemyDarkMeshLeft", 1, 4);
@@ -72,8 +75,8 @@ void Enemy_Dark::Update(double dt, Map* map)
 	EnemyDarkShadow = EnemyDarkPos;
 	Vector3 Movement = Vector3();
 	Vector3 player_position = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
-	float distSq = (getEnemyDarkPos() - player_position).LengthSquared();
-	float combinedRadSq = (getEnemyDarkScale().x + PlayerClass::pointer()->getPlayerScale().x) * (getEnemyDarkScale().x + PlayerClass::pointer()->getPlayerScale().x);
+	float distSq = (EnemyDarkPos - player_position).LengthSquared();
+	float combinedRadSq = (EnemyDarkScale.x + PlayerClass::pointer()->getPlayerScale().x) * (EnemyDarkScale.x + PlayerClass::pointer()->getPlayerScale().x);
 
 	if ((distSq >= combinedRadSq) && (player_position.x > EnemyDarkShadow.x))
 	{
@@ -155,12 +158,13 @@ void Enemy_Dark::Update(double dt, Map* map)
 		EnemyDarkPos = EnemyDarkShadow;
 	}
 
-	if (distSq <= combinedRadSq)
-	{
-
-	}
 	DarkBall = EnemyDarkPos;
 	DarkBallShadow = DarkBall;
+
+	if (distSq <= combinedRadSq)
+	{
+		Vector3 posToPlayer = PlayerClass::pointer()->getPlayerPos() - EnemyDarkPos;
+	}
 
 	if (map->Get_Type(DarkBallShadow) == "Wall")
 	{
@@ -174,15 +178,7 @@ void Enemy_Dark::Update(double dt, Map* map)
 
 Vector3 Enemy_Dark::getEnemyDarkPos()
 {
-	return EnemyDarkPos;
-}
-Vector3 Enemy_Dark::getEnemyDarkPosOffSet()
-{
-	return EnemyDarkPosOffSet;
-}
-Vector3 Enemy_Dark::getEnemyDarkScale()
-{
-	return EnemyDarkScale;
+	return Map::Pokemon_Offset(EnemyDarkPos);
 }
 
 void Enemy_Dark::setEnemyDarkMesh(Enemy_Dark::EnemyDarkMeshes mesh)
@@ -213,13 +209,23 @@ Mesh* Enemy_Dark::getEnemyMesh()
 void Enemy_Dark::RenderEnemyDark()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Enemy_Dark::getEnemyMesh(), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(getEnemyDarkScale()));
+	Render_PI::pointer()->RenderMeshIn2D(Enemy_Dark::getEnemyMesh(), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(EnemyDarkScale));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
 void Enemy_Dark::RenderDarkball()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(DarkBall), Vector3(1, 1, 1));
+	Render_PI::pointer()->RenderMeshIn2D(Darkball_Mesh, false, Vector3(DarkBall), Vector3(1, 1, 1));
 	Render_PI::pointer()->modelStack_Set(false);
+}
+
+void Enemy_Dark::Exit()
+{
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
+	};
+
 }

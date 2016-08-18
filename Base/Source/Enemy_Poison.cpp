@@ -22,7 +22,7 @@ void Enemy_Poison::Init()
 	}
 }
 
-void Enemy_Poison::Update(float dt, Map* map)
+void Enemy_Poison::Update(double dt, Map* map)
 {
 	if (Poisonous && FlipType[ShadowClone])
 	{
@@ -94,7 +94,7 @@ void Enemy_Poison::Update(float dt, Map* map)
 		}
 	}
 	Vector3 Shadow = Pos + Vel*dt;
-	Vel *= 0.9;
+	Vel *= 0.9f;
 	if (Vel.x > -1 && Vel.x < 1)
 	{
 		Vel.x = 0;
@@ -282,4 +282,9 @@ Vector3 Enemy_Poison::Poison(Vector3 Movement)
 	}
 
 	return Movement;
+}
+
+Vector3 Enemy_Poison::GetPos()
+{
+	return Map::Pokemon_Offset(Pos);
 }

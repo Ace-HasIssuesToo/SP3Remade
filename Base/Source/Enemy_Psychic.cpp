@@ -15,6 +15,10 @@ Enemy_Psychic::~Enemy_Psychic()
 
 }
 
+Vector3 Enemy_Psychic::GetPos()
+{
+	return Map::Pokemon_Offset(psychicPos);
+}
 void Enemy_Psychic::Init()
 {
 	// Position of enemy
@@ -113,14 +117,11 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			finalScream = true;
 		}
 	}
-
 	// Kill the player or be caught by player
 	if (finalScream)
 		screamTimer += (dt);
 	if (screamTimer > 3.f)
 		currState = STATE_GG;	//TEMP KILL/ CAUGHT
-
-	//cout << screamTimer << endl;
 }
 
 void Enemy_Psychic::RenderPsychic()
