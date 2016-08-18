@@ -20,7 +20,7 @@ void Game_System::Init()
 	Camera_PI camera;
 	camera.Init(Vector3(10, 0, 0), Vector3(), Vector3(0, 1, 0), 0, 0);
 	Render_PI::pointer()->Camera_Set(camera);
-	state = FLOOR1;
+	state = FLOOR2;
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
