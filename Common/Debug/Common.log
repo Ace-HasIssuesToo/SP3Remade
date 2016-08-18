@@ -1,3 +1,4 @@
+<<<<<<< 90f614bc8842528d6ad9b64bac7bd132565c3bf4
 <<<<<<< HEAD
 ﻿Build started 18/8/2016 3:29:40 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
@@ -36,6 +37,9 @@ Build succeeded.
 Time Elapsed 00:00:00.03
 =======
 ﻿生成启动时间为 18/8/2016 下午 3:16:38。
+=======
+﻿生成启动时间为 18/8/2016 下午 4:10:28。
+>>>>>>> Edited EveryBody Codes SomeHow...
      1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
      1>Lib:
          Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
