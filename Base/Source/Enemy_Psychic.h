@@ -4,6 +4,9 @@
 #include "Support_Codes.h"
 #include "Render_PI.h"
 #include "Map_PI.h"
+#include "irrKlang.h"
+
+using namespace irrklang;
 
 class Enemy_Psychic
 {
@@ -23,25 +26,31 @@ public:
 	enum STATE_TYPE
 	{
 		STATE_HIDE,
-		STATE_RUN,
 		STATE_APPEAR,
 		STATE_KILL,
 		STATE_TOTAL,
 	};
 	STATE_TYPE currState;
 
+	// Sound Engine
+	ISoundEngine* theSoundEngine;
+	ISoundSource* runScream;
+	ISound* killScream;
+
 private:
 	static Enemy_Psychic* c_enemyPsychic;
 
-	Vector3 psychicPos, psychicPosOffset;
+	Vector3 psychicPos, psychicPosOffset, locationDir;
 
-	int counterFound;
+	bool finalScream;
+	float screamTimer;
+
+	int countFound;
 	bool playerIntrude;
 	bool defMechanism;
 	bool lastResort;
 
 	Mesh* hide_psychic;
-	Mesh* run_psychic;
 	Mesh* appear_psychic;
 	Mesh* kill_psychic;
 };
