@@ -28,7 +28,6 @@ public:
 
 	void setPlayerMesh(PlayerClass::PlayerMeshes mesh);
 	Mesh* getPlayerMesh2();
-
 	static PlayerClass* pointer()
 	{
 		return m_pointer;

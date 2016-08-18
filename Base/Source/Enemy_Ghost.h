@@ -15,6 +15,7 @@ public:
 
 	Vector3 GetGhostPos();
 	Vector3 GetGhostOffSet();
+	Vector3 Freeze(Vector3 Movement);
 private:
 	int life = 1;
 	Enemy_Ghost()
@@ -25,14 +26,12 @@ private:
 		, ghostPos(0, 0, 0)
 		, ghostShadow(0, 0, 0)
 		, ghostoffset(0, 0, 0)
-		//, atPlayer(false)
 	{
 	}
 	~Enemy_Ghost()
 	{
 	}
 	static Enemy_Ghost* c_Enemy_Ghost;
-	//bool atPlayer;
 	float dirX;
 	float dirY;
 	float ghostTimer;

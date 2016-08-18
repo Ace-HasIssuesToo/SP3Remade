@@ -27,7 +27,14 @@ Vector3 Enemy_Ghost::GetGhostOffSet()
 {
 	return ghostoffset;
 }
-
+Vector3 Enemy_Ghost::Freeze(Vector3 Movement)
+{
+	if (ghostStayTimer > 0.0f)
+	{
+		Movement = Vector3(0, 0, 0);
+	}
+	return Movement;
+}
 void Enemy_Ghost::Update(double dt, Map* map)
 {
 	ghostShadow = ghostPos;
@@ -71,6 +78,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 		{
 			//teleport first time
 			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
+
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
