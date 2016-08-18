@@ -14,9 +14,9 @@ public:
 	virtual void Render();
 	virtual void Exit();
 
-	Vector3 getPokeballScale();
 	Vector3 getPokeballPos();
 	bool getBallStatus();
+	void ClearBallStatus();
 
 	static PokeballInfo* pointer()
 	{

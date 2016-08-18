@@ -22,6 +22,7 @@ public:
 	void Exit();
 
 	void SpriteUpdate(double dt);
+	Vector3 GetPos();
 
 	enum STATE_TYPE
 	{

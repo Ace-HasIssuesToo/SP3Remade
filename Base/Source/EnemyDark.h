@@ -17,8 +17,6 @@ public:
 	void Exit();
 
 	Vector3 getEnemyDarkPos();
-	Vector3 getEnemyDarkPosOffSet();
-	Vector3 getEnemyDarkScale();
 
 	enum EnemyDarkMeshes
 	{

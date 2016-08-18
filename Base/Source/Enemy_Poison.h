@@ -12,6 +12,7 @@ public:
 	void render();
 	void Exit();
 	Vector3 Poison(Vector3 Movement);
+	Vector3 GetPos();
 private:
 	enum Debuff_Effects
 	{
