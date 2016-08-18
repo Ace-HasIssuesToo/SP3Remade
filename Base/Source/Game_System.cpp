@@ -1,6 +1,7 @@
 #include "Game_System.h"
 #include "Texture_PI.h"
 #include "Enemy_Poison.h"
+#include "GameState.h"
 
 Game_System* Game_System::c_pointer = new Game_System();
 
@@ -55,6 +56,14 @@ void Game_System::Init()
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
 	Pokemon_Switch = 0;
+
+	text = MeshBuilder::GenerateText("text", 16, 16);
+	text->textureArray[0] = LoadTGA("Data//Texture//calibri.tga");
+	text->material.kAmbient.Set(1, 0, 0);
+}
+Mesh* Game_System::GetText()
+{
+	return text;
 }
 void Game_System::GameState(double dt)
 {
@@ -71,7 +80,9 @@ void Game_System::GameState(double dt)
 		}*/
 		case GUIDE:
 		{
+			Render_PI::pointer()->modelStack_Set(true);
 
+			Render_PI::pointer()->modelStack_Set(false);
 			break;
 		}
 		case FLOOR1:
@@ -121,12 +132,16 @@ void Game_System::GameState(double dt)
 		}
 		case WIN:
 		{
+			Render_PI::pointer()->modelStack_Set(true);
 
+			Render_PI::pointer()->modelStack_Set(false);
 			break;
 		}
 		case LOSE:
 		{
+			Render_PI::pointer()->modelStack_Set(true);
 
+			Render_PI::pointer()->modelStack_Set(false);
 			break;
 		}
 		break;

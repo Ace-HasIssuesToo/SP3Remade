@@ -1,14 +1,140 @@
+<<<<<<< HEAD
 ﻿Build started 18/8/2016 2:39:27 PM.
+=======
+<<<<<<< HEAD
+﻿  Game_System.cpp
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(93): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(101): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(109): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(117): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\game_system.cpp(125): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  GameState.cpp
+  Enemy_Ghost.cpp
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(10): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(36): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(37): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(38): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(75): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(83): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(84): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Main_Shaft.cpp
+Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+<<<<<<< cb2d9c2828bdd3fc565036ad78daa938766469a7
+<<<<<<< HEAD
+﻿Build started 18/8/2016 10:57:42 AM.
+=======
+<<<<<<< HEAD
+﻿Build started 18/8/2016 10:56:00 AM.
+>>>>>>> a05c8bd9bc6e530d42206e8a6e89588ebb9bf537
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Psychic.cpp
          Enemy_Psychic.cpp
+<<<<<<< HEAD
      1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(21): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(78): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(82): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(118): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
        Link:
          D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+=======
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(22): warning C4305: 'argument' : truncation from 'double' to 'float'
+=======
+<<<<<<< HEAD
+﻿Build started 18/8/2016 10:14:12 AM.
+>>>>>>> 40c147cb0df2e76ab894264b944e5149a52affd0
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp
+         EnemyDark.cpp
+     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(80): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(84): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(88): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(92): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\base\source\enemydark.cpp(211): warning C4715: 'Enemy_Dark::getEnemyMesh' : not all control paths return a value
+<<<<<<< HEAD
+     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+=======
+     1>d:\sp3 life problems\sp3makeitstop\base\source\player.cpp(265): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
+>>>>>>> 5a91434b91ac695d8c9c8284ac61874f76be5e43
+>>>>>>> 40c147cb0df2e76ab894264b944e5149a52affd0
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+=======
+﻿生成启动时间为 18/8/2016 上午 11:27:24。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Angle_And_Target.cpp Source\Application.cpp Source\Camera_PI.cpp Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Poison.cpp Source\Enemy_Psychic.cpp Source\GameEnvironmentEvent.cpp Source\Game_System.cpp Source\Input_PI.cpp Source\Main_Shaft.cpp Source\Map_PI.cpp Source\Player.cpp Source\PokeInfo.cpp Source\Render_PI.cpp Source\Support_Codes.cpp Source\Texture_PI.cpp Source\main.cpp
+         main.cpp
+         Texture_PI.cpp
+         Support_Codes.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\support_codes.cpp(1100): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\support_codes.cpp(1101): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+         Render_PI.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(38): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(40): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(42): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(44): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(46): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(48): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(50): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(52): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(165): warning C4305: “参数”: 从“double”到“float”截断
+         PokeInfo.cpp
+         Player.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(79): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(83): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(87): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(91): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(191): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(197): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(203): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(209): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+         Map_PI.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(58): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(60): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(75): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+         Main_Shaft.cpp
+         Input_PI.cpp
+         Game_System.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(82): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(91): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(100): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(109): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(118): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+         GameEnvironmentEvent.cpp
+         Enemy_Psychic.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(22): warning C4305: “参数”: 从“double”到“float”截断
+         Enemy_Poison.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(97): warning C4305: “参数”: 从“double”到“float”截断
+         Enemy_Ghost.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(34): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(35): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(36): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(81): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(89): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(90): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+         EnemyDark.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(80): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(84): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(88): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(92): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+         Camera_PI.cpp
+         Application.cpp
+         Angle_And_Target.cpp
+         正在生成代码...
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(211): warning C4715: “Enemy_Dark::getEnemyMesh”: 不是所有的控件路径都返回值
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(264): warning C4715: “PlayerClass::getPlayerMesh2”: 不是所有的控件路径都返回值
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+>>>>>>> ???
+>>>>>>> a05c8bd9bc6e530d42206e8a6e89588ebb9bf537
          Debug\Application.obj
          Debug\Camera_PI.obj
          Debug\EnemyDark.obj
@@ -26,6 +152,10 @@
          Debug\Game_System.obj
          Debug\Support_Codes.obj
          Debug\Texture_PI.obj
+<<<<<<< HEAD
+=======
+<<<<<<< cb2d9c2828bdd3fc565036ad78daa938766469a7
+>>>>>>> a05c8bd9bc6e530d42206e8a6e89588ebb9bf537
      1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
          Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
@@ -33,4 +163,33 @@
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:01.18
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:05.08
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:01.23
+=======
+Time Elapsed 00:00:01.84
+=======
+=======
+>>>>>>> ???
+     1>Angle_And_Target.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
+     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+<<<<<<< cb2d9c2828bdd3fc565036ad78daa938766469a7
+已用时间 00:00:02.35
+>>>>>>> 0ac679ba6cf616682d634d54fbfd811910bfa461
+>>>>>>> 5a91434b91ac695d8c9c8284ac61874f76be5e43
+>>>>>>> 40c147cb0df2e76ab894264b944e5149a52affd0
+=======
+已用时间 00:00:14.10
+>>>>>>> ???
+>>>>>>> bb26683d3827d47741a2ae32db936ebf2cbe7fee
+>>>>>>> a05c8bd9bc6e530d42206e8a6e89588ebb9bf537

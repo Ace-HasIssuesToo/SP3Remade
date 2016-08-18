@@ -71,23 +71,23 @@ void Enemy_Dark::Update(double dt, Map* map)
 {
 	EnemyDarkShadow = EnemyDarkPos;
 	Vector3 Movement = Vector3();
-
-	float distSq = (getEnemyDarkPos() - PlayerClass::pointer()->getPlayerPos()).LengthSquared();
+	Vector3 player_position = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
+	float distSq = (getEnemyDarkPos() - player_position).LengthSquared();
 	float combinedRadSq = (getEnemyDarkScale().x + PlayerClass::pointer()->getPlayerScale().x) * (getEnemyDarkScale().x + PlayerClass::pointer()->getPlayerScale().x);
 
-	if ((distSq >= combinedRadSq) && (PlayerClass::pointer()->getPlayerPos().x > EnemyDarkShadow.x))
+	if ((distSq >= combinedRadSq) && (player_position.x > EnemyDarkShadow.x))
 	{
 		Movement.x += movementSpeed * dt;
 	}
-	else if (distSq >= combinedRadSq && (PlayerClass::pointer()->getPlayerPos().x < EnemyDarkShadow.x))
+	else if (distSq >= combinedRadSq && (player_position.x < EnemyDarkShadow.x))
 	{
 		Movement.x -= movementSpeed * dt;
 	}
-	if (distSq >= combinedRadSq && (PlayerClass::pointer()->getPlayerPos().y < EnemyDarkShadow.y))
+	if (distSq >= combinedRadSq && (player_position.y < EnemyDarkShadow.y))
 	{
 		Movement.y -= movementSpeed * dt;
 	}
-	else if (distSq >= combinedRadSq && (PlayerClass::pointer()->getPlayerPos().y > EnemyDarkShadow.y))
+	else if (distSq >= combinedRadSq && (player_position.y > EnemyDarkShadow.y))
 	{
 		Movement.y += movementSpeed * dt;
 	}
