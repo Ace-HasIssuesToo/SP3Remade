@@ -3,6 +3,7 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 #include "Enemy_Poison.h"
+#include "Enemy_Ghost.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -24,12 +25,9 @@ PlayerClass::~PlayerClass()
 void PlayerClass::Init()
 {
 	movementSpeed = 20;
-<<<<<<< HEAD
-	throwSpeed = -9.8;
+	//throwSpeed = -9.8;
 	PlayerPos = Render_PI::Window_Scale();
-=======
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
->>>>>>> d8116b92ecf01aa631da0b85d8b3730eb0fb9411
 	sc.Set(5.f, 5.f, 5.f);
 	//sc.Set(10.f, 10.f, 10.f);
 
@@ -134,6 +132,8 @@ void PlayerClass::Update(double dt, Map* map)
 
 
 	Movement = Enemy_Poison::pointer()->Poison(Movement);
+	Movement = Enemy_Ghost::pointer()->Freeze(Movement);
+
 	if (Movement.y > 0)
 	{
 		setPlayerMesh(Top);

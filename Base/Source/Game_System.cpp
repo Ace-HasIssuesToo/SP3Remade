@@ -215,7 +215,7 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
-	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
+	Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	if (Pokemon_On_Loose[0])
 	{

@@ -1,79 +1,11 @@
-<<<<<<< HEAD
-﻿  Texture_PI.cpp
+﻿  Enemy_Ghost.cpp
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(10): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(44): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(45): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(46): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(84): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(92): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(93): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
-=======
-<<<<<<< bff9529cc787801cb72d1517cc4e5af55b1efe2d
-<<<<<<< HEAD
-﻿Build started 18/8/2016 3:21:54 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Game_System.cpp
-         Game_System.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\game_system.cpp(93): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\game_system.cpp(102): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\game_system.cpp(111): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\game_system.cpp(120): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\game_system.cpp(129): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-=======
-<<<<<<< HEAD
-﻿Build started 18/8/2016 3:02:02 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\PokeInfo.cpp
-         PokeInfo.cpp
-     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(41): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(46): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(51): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(56): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(63): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\base\source\pokeinfo.cpp(64): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
->>>>>>> 5fe998b2656c07bb694b5c659fab764c8425ed11
-=======
-﻿生成启动时间为 18/8/2016 下午 4:00:58。
-     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Game_System.cpp
-         Game_System.cpp
->>>>>>> pokeball GO! :>
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
-         Debug\Application.obj
-         Debug\Camera_PI.obj
-         Debug\EnemyDark.obj
-         Debug\Enemy_Ghost.obj
-         Debug\Enemy_Poison.obj
-         Debug\Enemy_Psychic.obj
-         Debug\GameEnvironmentEvent.obj
-         Debug\GameState.obj
-         Debug\Main_Shaft.obj
-         Debug\Map_PI.obj
-         Debug\Player.obj
-         Debug\PokeInfo.obj
-         Debug\Render_PI.obj
-         Debug\main.obj
-         Debug\Input_PI.obj
-         Debug\Game_System.obj
-         Debug\Support_Codes.obj
-         Debug\Texture_PI.obj
-     1>Angle_And_Target.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
-     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
-
-生成成功。
-
-<<<<<<< bff9529cc787801cb72d1517cc4e5af55b1efe2d
-<<<<<<< HEAD
-Time Elapsed 00:00:01.98
-=======
-Time Elapsed 00:00:01.14
-=======
-﻿  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
->>>>>>> b187a99600befe162ff1ddf4f486d65258a23685
->>>>>>> 5fe998b2656c07bb694b5c659fab764c8425ed11
-=======
-已用时间 00:00:01.48
->>>>>>> pokeball GO! :>
->>>>>>> d8116b92ecf01aa631da0b85d8b3730eb0fb9411
