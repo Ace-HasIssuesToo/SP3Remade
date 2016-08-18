@@ -24,7 +24,7 @@ void Game_System::Init()
 	Camera_PI camera;
 	camera.Init(Vector3(10, 0, 0), Vector3(), Vector3(0, 1, 0), 0, 0);
 	Render_PI::pointer()->Camera_Set(camera);
-	state = FLOOR2;
+	state = FLOOR1;
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -215,6 +215,10 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
+<<<<<<< HEAD
+=======
+	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
+>>>>>>> 64288ea87af5eac17ecdc10032715e7ff4dce870
 	Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	if (Pokemon_On_Loose[0])

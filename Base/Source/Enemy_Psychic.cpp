@@ -117,19 +117,32 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			finalScream = true;
 		}
 	}
+<<<<<<< HEAD
+	//cout << lastResort << "     " << counterFound << endl;
+
+=======
+>>>>>>> 4d8716b9829dfeb5165f7d74c4e382a4520fa6db
 	// Kill the player or be caught by player
 	if (finalScream)
 		screamTimer += (dt);
 	if (screamTimer > 3.f)
 		currState = STATE_GG;	//TEMP KILL/ CAUGHT
+<<<<<<< HEAD
+
+	//cout << screamTimer << endl;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 21858782562119ac917dad4e1ae1cbacc19fa733
+>>>>>>> 4d8716b9829dfeb5165f7d74c4e382a4520fa6db
 }
 
 void Enemy_Psychic::RenderPsychic()
 {
 	Render_PI::pointer()->modelStack_Set(true);
 
-	if (currState == STATE_HIDE)
-		Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+	//if (currState == STATE_HIDE)
+		//Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
 	if (currState == STATE_APPEAR)
 		Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
 	if (currState == STATE_KILL)
