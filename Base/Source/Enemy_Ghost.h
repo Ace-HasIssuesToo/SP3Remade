@@ -12,8 +12,10 @@ public:
 	void RenderGhost();
 	void Exit();
 
+	Vector3 GetGhostPos();
 	Vector3 GetGhostOffSet();
 private:
+	int health = 1;
 	Enemy_Ghost()
 		: ghostTimer(0)
 		, ghostStayTimer(0)

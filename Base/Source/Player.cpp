@@ -260,7 +260,6 @@ Mesh* PlayerClass::getPlayerMesh2()
 	case Down:
 		return playerMeshDownward;
 		break;
-
 	}
 }
 
