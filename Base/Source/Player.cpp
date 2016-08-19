@@ -29,9 +29,14 @@ void PlayerClass::Init()
 	PlayerPos = Render_PI::Window_Scale();
 =======
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
+<<<<<<< 90f614bc8842528d6ad9b64bac7bd132565c3bf4
 >>>>>>> d8116b92ecf01aa631da0b85d8b3730eb0fb9411
 	sc.Set(5.f, 5.f, 5.f);
 	//sc.Set(10.f, 10.f, 10.f);
+=======
+	//sc.Set(5.f, 5.f, 5.f);
+	sc.Set(10.f, 10.f, 10.f);
+>>>>>>> Edited EveryBody Codes SomeHow...
 
 	setPlayerMesh(Top);
 	SpriteAnimation *saL, *saR, *saF, *saB;

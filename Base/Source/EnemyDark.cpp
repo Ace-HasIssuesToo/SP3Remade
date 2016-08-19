@@ -25,8 +25,8 @@ void Enemy_Dark::Init()
 	movementSpeed = 10;
 	throwSpeed = -9.8;
 	EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
-	EnemyDarkScale.Set(5.f, 5.f, 5.f);
-	//EnemyDarkScale.Set(10.f, 10.f, 10.f);
+	//EnemyDarkScale.Set(5.f, 5.f, 5.f);
+	EnemyDarkScale.Set(10.f, 10.f, 10.f);
 
 	Darkball_Mesh = MeshBuilder::GenerateQuad("Pokeball", Color(0, 0, 0), 1.f);
 	Darkball_Mesh->textureArray[0] = LoadTGA("Data//Texture//DarkBall.tga");

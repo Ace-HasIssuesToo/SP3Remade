@@ -60,19 +60,39 @@ void PokeballInfo::Update(double dt, Map* map)
 	}
 	else
 	{
-		ballPos += ballDirection * dt;
+		Vector3 Shadow = ballPos + (ballDirection * dt);
+		if (map->Get_Type(Shadow) == "Floor")
+		{
+			ballPos = Shadow;
+		}
+		else
+		{
+			ballDirection *= -1;
+		}
+		/*
 		movementTime += dt;
 		if (movementTime >= 3)
 		{
-			ballOnScreen = false;
-			ballDirection = Vector3(0, 0, 0);
-			ballPos = Vector3(-1000, -1000, 0);
+			ClearBallStatus();
+		}*/
+		ballDirection *= 0.989;
+		if (ballDirection.x > -1 && ballDirection.x < 1)
+		{
+			ballDirection.x = 0;
+		}
+		if (ballDirection.y > -1 && ballDirection.y < 1)
+		{
+			ballDirection.y = 0;
+		}
+		if (ballDirection == Vector3())
+		{
+			ClearBallStatus();
 		}
 	}
 }
 Vector3 PokeballInfo::getPokeballPos()
 {
-	return ballPos;
+	return Map::Pokemon_Offset(ballPos);
 }
 void PokeballInfo::ClearBallStatus()
 {

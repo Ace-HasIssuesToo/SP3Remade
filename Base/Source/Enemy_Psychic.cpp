@@ -141,8 +141,8 @@ void Enemy_Psychic::RenderPsychic()
 {
 	Render_PI::pointer()->modelStack_Set(true);
 
-	if (currState == STATE_HIDE)
-		Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
+	//if (currState == STATE_HIDE)
+		//Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
 	if (currState == STATE_APPEAR)
 		Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
 	if (currState == STATE_KILL)
