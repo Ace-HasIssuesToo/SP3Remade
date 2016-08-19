@@ -25,13 +25,11 @@ PlayerClass::~PlayerClass()
 void PlayerClass::Init()
 {
 	movementSpeed = 20;
+	Runtime = 30;
 	//throwSpeed = -9.8;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	//dPlayerPos = Render_PI::Window_Scale() * 0.5;
 	//PlayerPos = Render_PI::Window_Scale();
-	PlayerPos = Render_PI::Window_Scale() * 0.5;
-	PlayerPos = Render_PI::Window_Scale();
-	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(5.f, 5.f, 5.f);
 	//sc.Set(10.f, 10.f, 10.f);
@@ -77,12 +75,41 @@ void PlayerClass::Init()
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
 	//playerMesh = nullptr;
+	RunBar = MeshBuilder::GenerateQuad("Runbar", Color(0, 1, 0));
+
 }
 
 void PlayerClass::Update(double dt, Map* map)
 {
+
 	playerShadow = PlayerPos;
+	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
+	movementSpeed = 20;
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Run])
+	{
+		if (Runtime > 0.f)
+		{
+			Runtime -= dt;
+			movementSpeed *= Math::Max(1.f, Runtime);
+		}
+	}
+	else
+	{
+		if (Runtime <= Max_Speed)
+		{
+			Runtime += dt*0.5;
+		}
+		
+	}
+	if (Runtime > Max_Speed)
+	{
+		Runtime = Max_Speed;
+	}
+	else if (Runtime < 0.f)
+	{
+		Runtime = 0;
+	}
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
 	{
 		Movement.y += movementSpeed * dt;
@@ -169,29 +196,30 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 
 	//Keep Player in window
-	if (PlayerPos.x > (Render_PI::Window_Scale().x - 10))
+	float Limitation_size = 30;
+	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
 	{
-		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 10);
+		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - Limitation_size);
 		PlayerPosOffSet.x += difference;
-		PlayerPos.x = (Render_PI::Window_Scale().x - 10);
+		PlayerPos.x = (Render_PI::Window_Scale().x - Limitation_size);
 	}
-	else if (PlayerPos.x < 10)
+	else if (PlayerPos.x < Limitation_size)
 	{
-		double difference = PlayerPos.x - (10);
+		double difference = PlayerPos.x - (Limitation_size);
 		PlayerPosOffSet.x += difference;
-		PlayerPos.x = (10);
+		PlayerPos.x = (Limitation_size);
 	}
-	if (PlayerPos.y >(Render_PI::Window_Scale().y - 10))
+	if (PlayerPos.y >(Render_PI::Window_Scale().y - Limitation_size))
 	{
-		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 10);
+		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - Limitation_size);
 		PlayerPosOffSet.y += difference;
-		PlayerPos.y = (Render_PI::Window_Scale().y - 10);
+		PlayerPos.y = (Render_PI::Window_Scale().y - Limitation_size);
 	}
-	else if (PlayerPos.y < 10)
+	else if (PlayerPos.y < Limitation_size)
 	{
-		double difference = PlayerPos.y - (10);
+		double difference = PlayerPos.y - (Limitation_size);
 		PlayerPosOffSet.y += difference;
-		PlayerPos.y = (10);
+		PlayerPos.y = (Limitation_size);
 	}
 }
 
@@ -215,6 +243,7 @@ Vector3 PlayerClass::getPlayerPosOffSet()
 }
 Vector3 PlayerClass::getPlayerScale()
 {
+	sc.z = 0;
 	return sc;
 }
 
@@ -246,5 +275,9 @@ void PlayerClass::Renderplayer()
 {
 	Render_PI::pointer()->modelStack_Set(true);
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
+	Render_PI::pointer()->modelStack_Set(false);
+	Render_PI::pointer()->modelStack_Set(true);
+	Vector3 Pos = (Vector3(5, 5, 0) + Vector3(Runtime * 10, 10, 0))*0.5f;
+	Render_PI::pointer()->RenderMeshIn2D(RunBar, false, Pos, Vector3(Runtime * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
 }
