@@ -248,8 +248,6 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
-	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
-	//Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	if (state == START)
 	{
@@ -265,6 +263,10 @@ void Game_System::Render()
 		Render_PI::pointer()->RenderMesh(helpscreen, false);
 		Render_PI::pointer()->modelStack_Set(false);
 	}
+	//if (state == INTRODUCTION)
+	//{
+	//	Render_PI::
+	//}
 	if (state == FLOOR1)
 	{
 		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
