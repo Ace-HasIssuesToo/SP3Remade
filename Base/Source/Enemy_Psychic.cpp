@@ -151,6 +151,42 @@ void Enemy_Psychic::RenderPsychic()
 
 void Enemy_Psychic::Exit()
 {
+	if (theSoundEngine != nullptr)
+	{
+		delete theSoundEngine;
+		theSoundEngine = nullptr;
+	}
+	
+	if (runScream != nullptr)
+	{
+		delete runScream;
+		runScream = nullptr;
+	}
+
+	if (killScream != nullptr)
+	{
+		delete killScream;
+		killScream = nullptr;
+	}
+
+	if (hide_psychic != nullptr)
+	{
+		delete hide_psychic;
+		hide_psychic = nullptr;
+	}
+
+	if (appear_psychic != nullptr)
+	{
+		delete appear_psychic;
+		appear_psychic = nullptr;
+	}
+
+	if (kill_psychic != nullptr)
+	{
+		delete kill_psychic;
+		kill_psychic = nullptr;
+	}
+
 	if (c_enemyPsychic != nullptr)
 	{
 		delete c_enemyPsychic;

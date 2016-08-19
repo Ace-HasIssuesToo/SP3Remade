@@ -44,6 +44,8 @@ void StoryPlot::Update(double dt, Map* map)
 
 void StoryPlot::RenderPartOne()
 {
+	Render_PI::pointer()->modelStack_Set(true);
+
 	std::ostringstream ss;
 	ss.precision(5);
 	ss << "The beginnings of a morning is the end of a night.";
@@ -73,18 +75,29 @@ void StoryPlot::RenderPartOne()
 	ss.precision(5);
 	ss << "...has just started.";
 	Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, ss.str(), Color(0, 0, 0), Vector3(0, 0, 0), Vector3(1, 1, 1));
+
+	Render_PI::pointer()->modelStack_Set(false);
 }
 
-void StoryPlot::RenderStoryPlot()
+void StoryPlot::RenderEnd()
 {
-	//Render_PI::pointer()->modelStack_Set(true);
-	//Render_PI::pointer()->modelStack_Set(false);
 
-	RenderPartOne();
 }
 
 void StoryPlot::Exit()
 {
+	if (introduction != nullptr)
+	{
+		delete introduction;
+		introduction = nullptr;
+	}
+
+	if (intro_dialogue != nullptr)
+	{
+		delete intro_dialogue;
+		intro_dialogue = nullptr;
+	}
+
 	if (c_StoryPlot != nullptr)
 	{
 		delete c_StoryPlot;
