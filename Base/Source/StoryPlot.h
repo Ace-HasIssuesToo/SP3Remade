@@ -3,7 +3,6 @@
 
 #include "Support_Codes.h"
 #include "Render_PI.h"
-#include "Map_PI.h"
 
 class StoryPlot
 {
@@ -15,14 +14,16 @@ public:
 
 	void Init();
 	void Update(double dt, Map* map);
-	void RenderPsychic();
+	void RenderStoryPlot();
 	void Exit();
 
+	void RenderPartOne();
 
 private:
 	static StoryPlot* c_StoryPlot;
 
-
+	Mesh* introduction;
+	Mesh* intro_dialogue;
 };
 
 #endif
