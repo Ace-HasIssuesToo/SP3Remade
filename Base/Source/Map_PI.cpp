@@ -51,13 +51,19 @@ bool Map::Init(std::string Filename)
 
 void Map::Render(Vector3 pos)
 {
-	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * 10);
+	//Map Amount
+	//Offset Calculation
+	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
 	std::stringstream Location;
-	Vector3 Size = Render_PI::Window_Scale()*(1.f/10.f);
+	Vector3 Size = Render_PI::Window_Scale()*(1.f / sizes);
 	Vector3 Displacement = Vector3(pos.x - Math::Max(floor(pos.x), 0.f), pos.y - Math::Max(floor(pos.y), 0.f), 0)*-1;
-	for (int X = Math::Min(ceil(pos.x + 10), Limitation.x); Math::Max(floor(pos.x), 0.f) <= X;  X--)
+
+	Vector3 Character_Pos = PlayerClass::pointer()->getPlayerPos();
+	Character_Pos = (Vector3(Character_Pos.y / Render_PI::Window_Scale().y, Character_Pos.x / Render_PI::Window_Scale().x, 0) * sizes);
+
+	for (int X = Math::Min(ceil(pos.x + sizes), Limitation.x); Math::Max(floor(pos.x), 0.f) <= X; X--)
 	{
-		for (int Y = Math::Min(ceil(pos.y + 10), Limitation.y); Math::Max(floor(pos.y), 0.f) <= Y;  Y--)
+		for (int Y = Math::Min(ceil(pos.y + sizes), Limitation.y); Math::Max(floor(pos.y), 0.f) <= Y; Y--)
 		{
 			Location.str(std::string());
 			Location.clear();
@@ -71,13 +77,6 @@ void Map::Render(Vector3 pos)
 			}
 			else
 			{
-				string testname = (Map_Data.at(Location.str()));
-				if (testname == "Chemicals")
-				{
-					int X = 1;
-					int e = 1;
-					int r = 1;
-				}
 				Render_PI::pointer()->modelStack_Set(true);
 				Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
 				Render_PI::pointer()->RenderMeshIn2D(Texture::Get(Map_Data.at(Location.str())),false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
@@ -89,7 +88,7 @@ void Map::Render(Vector3 pos)
 
 std::string Map::Get_Type(Vector3 pos)
 {
-	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * 10);
+	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
 	std::stringstream Location;
 	Location << floor(pos.x) << " / " << floor(pos.y);
 	std::map<std::string, std::string>::iterator it;

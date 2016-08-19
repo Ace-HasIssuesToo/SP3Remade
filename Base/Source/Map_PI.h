@@ -13,5 +13,5 @@ private:
 	std::map<std::string, std::string> Map_Data;
 	Vector3 Limitation;
 };
-
+const float sizes = 5;
 #endif

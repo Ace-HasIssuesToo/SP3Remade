@@ -85,6 +85,15 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[Leftward] = false;
 	}
+
+	if (Application::IsKeyPressed(VK_SHIFT))
+	{
+		IsBeingPressed[Run] = true;
+	}
+	else
+	{
+		IsBeingPressed[Run] = false;
+	}
 	if (Application::IsKeyPressed('D'))
 	{
 		IsBeingPressed[Rightward] = true;

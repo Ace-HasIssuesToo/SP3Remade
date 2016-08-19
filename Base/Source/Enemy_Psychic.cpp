@@ -117,12 +117,9 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			finalScream = true;
 		}
 	}
-<<<<<<< HEAD
 	//cout << lastResort << "     " << counterFound << endl;
 
 	//cout << lastResort << "     " << counterFound << endl;
-=======
->>>>>>> 98ba16415be6ec04b2ddf466ed25f5496e6410d6
 	// Kill the player or be caught by player
 	if (finalScream)
 		screamTimer += (dt);
