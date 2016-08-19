@@ -140,19 +140,18 @@ void Enemy_Psychic::Update(double dt, Map* map)
 
 void Enemy_Psychic::RenderPsychic()
 {
-	Render_PI::pointer()->modelStack_Set(true);
-	Vector3 Pos = Map::Pokemon_Offset(psychicPos);
-	//if (currState == STATE_HIDE)
+		Render_PI::pointer()->modelStack_Set(true);
+		//if (currState == STATE_HIDE)
 		//Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
-	if (currState == STATE_APPEAR)
-		Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Pos, Vector3(7, 7, 1));
-	if (currState == STATE_KILL)
-		Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Pos, Vector3(7, 7, 1));
-	if (currState == STATE_GG)
-		Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Pos, Vector3(6, 6, 1));
+		if (currState == STATE_APPEAR)
+			Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
+		if (currState == STATE_KILL)
+			Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
+		if (currState == STATE_GG)
+			Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
 
-	Render_PI::pointer()->modelStack_Set(false);
-}
+		Render_PI::pointer()->modelStack_Set(false);
+	}
 
 void Enemy_Psychic::Exit()
 {

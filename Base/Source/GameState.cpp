@@ -383,8 +383,7 @@ void GameState::RenderFloors()
 {
 	if (state == FLOOR1)
 	{
-		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
-		PlayerClass::pointer()->Renderplayer();
+		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet(), false);
 		if (Pokemon_On_Loose[0])
 		{
 			Enemy_Psychic::pointer()->RenderPsychic();
@@ -395,19 +394,19 @@ void GameState::RenderFloors()
 		}
 		if (Pokemon_On_Loose[2])
 		{
-			Enemy_Poison::pointer()->render();
+			Enemy_Poison::pointer()->render(PlayerClass::pointer()->getPlayerPosOffSet());
 		}
 		if (Pokemon_On_Loose[3])
 		{
 			Enemy_Dark::pointer()->RenderEnemyDark();
 		}
-		PlayerClass::pointer()->Renderplayer();
 		PokeballInfo::pointer()->Render();
+		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
+		PlayerClass::pointer()->Renderplayer();
 	}
 	else if (state == FLOOR2)
 	{
-		Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
-		PlayerClass::pointer()->Renderplayer();
+		Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet(),false);
 		if (Pokemon_On_Loose[0])
 		{
 			Enemy_Psychic::pointer()->RenderPsychic();
@@ -418,14 +417,15 @@ void GameState::RenderFloors()
 		}
 		if (Pokemon_On_Loose[2])
 		{
-			Enemy_Poison::pointer()->render();
+			Enemy_Poison::pointer()->render(PlayerClass::pointer()->getPlayerPosOffSet());
 		}
 		if (Pokemon_On_Loose[3])
 		{
 			Enemy_Dark::pointer()->RenderEnemyDark();
 		}
-		PlayerClass::pointer()->Renderplayer();
 		PokeballInfo::pointer()->Render();
+		Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
+		PlayerClass::pointer()->Renderplayer();
 	}
 }
 void GameState::Render()

@@ -118,11 +118,10 @@ void Enemy_Ghost::RenderGhost()
 	//ghost will disppear when it is on top of the player
 	if (ghostStayTimer == 0.0f)
 	{
-		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
-		Render_PI::pointer()->modelStack_Set(true);
-		Vector3 Pos = Map::Pokemon_Offset(ghostPos);
-		Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Pos, Vector3(10, 10, 1));
-		Render_PI::pointer()->modelStack_Set(false);
+			Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
+			Render_PI::pointer()->modelStack_Set(true);
+			Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
+			Render_PI::pointer()->modelStack_Set(false);
 	}
 	/*std::ostringstream ss;
 	ss.precision(5);

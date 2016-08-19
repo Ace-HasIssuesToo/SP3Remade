@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Texture_PI.cpp
   Support_Codes.cpp
 c:\users\user\documents\sp3remade\base\source\support_codes.cpp(1100): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
@@ -85,3 +86,70 @@ c:\users\user\documents\sp3remade\base\source\player.cpp(272): warning C4715: 'P
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+<<<<<<< 19d85a58dfc95acee1b50707f35dc80a0a1598a4
+﻿Build started 19/8/2016 5:52:31 PM.
+     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Psychic.cpp
+         Enemy_Psychic.cpp
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(26): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(83): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(87): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(127): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+       Link:
+         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+=======
+﻿生成启动时间为 19/8/2016 下午 6:05:06。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Map_PI.cpp
+         Map_PI.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(64): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(66): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(81): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(88): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(99): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+>>>>>>> ThrchLight!!
+         Debug\Application.obj
+         Debug\Camera_PI.obj
+         Debug\EnemyDark.obj
+         Debug\Enemy_Ghost.obj
+         Debug\Enemy_Poison.obj
+         Debug\Enemy_Psychic.obj
+         Debug\GameEnvironmentEvent.obj
+         Debug\GameState.obj
+         Debug\Main_Shaft.obj
+         Debug\Map_PI.obj
+         Debug\Player.obj
+         Debug\PokeInfo.obj
+         Debug\Render_PI.obj
+         Debug\main.obj
+         Debug\Input_PI.obj
+         Debug\Game_System.obj
+         Debug\StoryPlot.obj
+         Debug\Support_Codes.obj
+         Debug\Texture_PI.obj
+<<<<<<< 19d85a58dfc95acee1b50707f35dc80a0a1598a4
+     1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
+     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
+=======
+     1>Angle_And_Target.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
+     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
+>>>>>>> ThrchLight!!
+
+生成成功。
+
+<<<<<<< 19d85a58dfc95acee1b50707f35dc80a0a1598a4
+Time Elapsed 00:00:01.40
+=======
+已用时间 00:00:01.53
+>>>>>>> ThrchLight!!
+>>>>>>> 0b0148778e98389321832d86923f2b7105b8549d

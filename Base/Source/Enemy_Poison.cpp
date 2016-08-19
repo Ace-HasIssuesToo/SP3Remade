@@ -146,7 +146,7 @@ void Enemy_Poison::Update(double dt, Map* map)
 			CoolDown = 20;
 			LastTime = 10;
 			ChangeEffect = 0;
-			Poisonous = true;
+			//Poisonous = true;
 			for (int i = 0; i < All_debuff; i++)
 			{
 				FlipType[i] = false;
@@ -183,12 +183,14 @@ void Enemy_Poison::Update(double dt, Map* map)
 		}
 	}
 }
-void Enemy_Poison::render()
+void Enemy_Poison::render(Vector3 Offset)
 {
-	Render_PI::pointer()->modelStack_Set(true);
-	Vector3 Render_Pos = Map::Pokemon_Offset(Pos);
-	Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Render_Pos, Vector3(10, 10, 1));
-	Render_PI::pointer()->modelStack_Set(false);
+	if (Map::In_Range(Pos, Offset))
+	{
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Map::Pokemon_Offset(Pos), Vector3(10, 10, 1));
+		Render_PI::pointer()->modelStack_Set(false);
+	}
 	if (Poisonous)
 	{
 		Render_PI::pointer()->modelStack_Set(true);
@@ -199,10 +201,12 @@ void Enemy_Poison::render()
 		{
 			for (int i = 0; i < 5; i++)
 			{
-				Render_PI::pointer()->modelStack_Set(true);
-				Vector3 Render_Pos = Map::Pokemon_Offset(Clones[i]);
-				Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Render_Pos, Vector3(10, 10, 1));
-				Render_PI::pointer()->modelStack_Set(false);
+				if (Map::In_Range(Clones[i], Offset))
+				{
+					Render_PI::pointer()->modelStack_Set(true);
+					Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Map::Pokemon_Offset(Clones[i]), Vector3(10, 10, 1));
+					Render_PI::pointer()->modelStack_Set(false);
+				}
 			}
 		}
 	}
@@ -210,6 +214,16 @@ void Enemy_Poison::render()
 
 void Enemy_Poison::Exit()
 {
+	if (Poison_Mesh != nullptr)
+	{
+		delete Poison_Mesh;
+		Poison_Mesh;
+	}
+	if (Poisoned_effect != nullptr)
+	{
+		delete Poison_Mesh;
+		Poison_Mesh;
+	}
 	if (m_pointer != nullptr)
 	{
 		delete m_pointer;
