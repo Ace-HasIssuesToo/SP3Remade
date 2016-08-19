@@ -3,6 +3,7 @@
 #include "Texture_PI.h"
 #include "Player.h"
 #include "Game_System.h"
+#include "GameState.h"
 Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 
 void Enemy_Ghost::Init()
@@ -77,7 +78,6 @@ void Enemy_Ghost::Update(double dt, Map* map)
 		//teleport ghost to player position
 		if (ghostStayTimer == 0.0f)
 		{
-			
 			//teleport first time
 			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
 			theSoundEngine->play2D(haunt);
@@ -99,13 +99,13 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostStayTimer = 0.0f;
 	}
-	Vector3 radiusRange;
+	/*Vector3 radiusRange;
 	radiusRange = (ghostPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
 	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
 	if (radRange < 10.f)
 	{
-		life -= 1; //unconfirmed
-	}
+		GameState::pointer()->SetState(GameState::LOSE);
+	}*/
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
 	{

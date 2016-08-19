@@ -1,9 +1,8 @@
-﻿  GameState.cpp
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(349): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(356): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(363): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(370): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(377): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+﻿  Enemy_Psychic.cpp
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(26): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(83): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(87): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(127): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe

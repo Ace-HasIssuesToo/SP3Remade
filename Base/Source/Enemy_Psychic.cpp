@@ -1,6 +1,7 @@
 #include "Enemy_Psychic.h"
 #include "Texture_PI.h"
 #include "Player.h"
+#include "GameState.h"
 
 Enemy_Psychic* Enemy_Psychic::c_enemyPsychic = new Enemy_Psychic();
 
@@ -115,6 +116,7 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			// Plays enemy sound: KILL
 			killScream = theSoundEngine->play2D("Data//Sound//psychic_468.mp3", false, false, false, ESM_AUTO_DETECT, true);
 			finalScream = true;
+			
 		}
 	}
 	//cout << lastResort << "     " << counterFound << endl;
@@ -124,8 +126,10 @@ void Enemy_Psychic::Update(double dt, Map* map)
 	if (finalScream)
 		screamTimer += (dt);
 	if (screamTimer > 3.f)
+	{
 		currState = STATE_GG;	//TEMP KILL/ CAUGHT
-
+		GameState::pointer()->SetState(GameState::LOSE);
+	}
 	//cout << screamTimer << endl;
 }
 
