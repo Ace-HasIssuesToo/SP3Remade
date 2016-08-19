@@ -253,7 +253,6 @@ void GameState::GetState(double dt)
 				pokemonCount++;
 				Pokemon_On_Loose[i] = false;
 			}
-
 			PlayerClass::pointer()->Init();
 			PokeballInfo::pointer()->Init();
 			Enemy_Psychic::pointer()->Init();
@@ -310,18 +309,16 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed(VK_SPACE))
 		{
 			state = START;
-			break;
 		}
-		
+		break;
 	}
 	case LOSE:
 	{
 		if (Application::IsKeyPressed('R'))
 		{
 			state = START;
-			break;
 		}
-		
+		break;
 	}
 	break;
 	}
@@ -332,7 +329,6 @@ void GameState::Update(double dt)
 }
 void GameState::RenderScreens()
 {
-
 	if (state == START)
 	{
 		Render_PI::pointer()->modelStack_Set(true);
