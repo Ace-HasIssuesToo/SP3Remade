@@ -29,6 +29,9 @@ public:
 	void setEnemyDarkMesh(Enemy_Dark::EnemyDarkMeshes mesh);
 	Mesh* getEnemyMesh();
 
+	Vector3 getRadSq();
+	Vector3 getDisSq();
+
 	static Enemy_Dark* pointer()
 	{
 		return m_pointer;
@@ -42,13 +45,19 @@ private:
 	int movementSpeed;
 	double throwSpeed;
 	double directionToPlayer;
+	float distSq;
+	float combinedRadSq;
 
-	Vector3 EnemyDarkPos, DarkBall, EnemyDarkPosOffSet, EnemyDarkScale;
-	Vector3 EnemyDarkShadow, DarkBallShadow;
+	Vector3 EnemyDarkPos, EnemyDarkPosOffSet, EnemyDarkScale;
+	Vector3 EnemyDarkShadow;
 
 	EnemyDarkMeshes enemyDarkMesh;
 	Mesh *enemyDarkMeshLeft, *enemyDarkMeshRight, *enemyDarkMeshForward, *enemyDarkMeshDownward;
 	Mesh *Darkball_Mesh;
+
+	Vector3 darkBallPos;
+	Vector3 darkBallDirection;
+	bool ballOnScreen;
 };
 
 #endif

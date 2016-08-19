@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 19/8/2016 3:35:25 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -22,3 +23,18 @@
 Build succeeded.
 
 Time Elapsed 00:00:01.77
+=======
+<<<<<<< HEAD
+﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
+=======
+﻿Build started 19/8/2016 3:46:33 PM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Common.lib
+     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.03
+>>>>>>> c3836ed01c7c622c62380631123a2cdb30e1aeaa
+>>>>>>> 3cd30390d155dedf2b03b6e43d634c91f3ccb199

@@ -21,7 +21,11 @@ public:
 		FLOOR5,
 		LOSE,
 		WIN,
+<<<<<<< HEAD
 		INTRODUCTION,
+=======
+		CREDIT,
+>>>>>>> 3cd30390d155dedf2b03b6e43d634c91f3ccb199
 	};
 	Game state;
 	//Game GetState(double dt);
@@ -41,6 +45,7 @@ public:
 	Mesh* winscreen;
 	Mesh* losescreen;
 	Mesh* helpscreen;
+	Mesh* creditscreen;
 
 	Mesh* GetText();
 private:
