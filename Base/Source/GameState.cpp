@@ -422,6 +422,26 @@ void GameState::Exit()
 	Enemy_Ghost::pointer()->Exit();
 	Enemy_Poison::pointer()->Exit();
 	Enemy_Dark::pointer()->Exit();
+	if (startscreen != nullptr)
+	{
+		delete startscreen;
+		startscreen = nullptr;
+	}
+	if (helpscreen != nullptr)
+	{
+		delete helpscreen;
+		helpscreen = nullptr;
+	}
+	if (winscreen != nullptr)
+	{
+		delete winscreen;
+		winscreen = nullptr;
+	}
+	if (losescreen != nullptr)
+	{
+		delete losescreen;
+		losescreen = nullptr;
+	}
 	if (Floor1 != nullptr)
 	{
 		delete Floor1;
