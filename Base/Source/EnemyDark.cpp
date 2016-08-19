@@ -2,6 +2,7 @@
 #include "Input_PI.h"
 #include "Render_PI.h"
 #include "Texture_PI.h"
+#include "GameState.h"
 
 Enemy_Dark* Enemy_Dark::m_pointer = new Enemy_Dark();
 
@@ -176,6 +177,13 @@ void Enemy_Dark::Update(double dt, Map* map)
 		else
 		{
 			ballOnScreen = false;
+		}
+		Vector3 radiusRange;
+		radiusRange = (darkBallPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
+		float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
+		if (radRange < 10.f)
+		{
+			GameState::pointer()->SetState(GameState::LOSE);
 		}
 	}
 }
