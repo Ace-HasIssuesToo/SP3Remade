@@ -134,10 +134,12 @@ void Enemy_Ghost::Exit()
 	if (theSoundEngine != nullptr)
 	{
 		theSoundEngine->drop();
+		theSoundEngine = nullptr;
 	}
 	if (haunt != nullptr)
 	{
 		haunt->drop();
+		haunt = nullptr;
 	}
 	if (ghostSprite != nullptr)
 	{

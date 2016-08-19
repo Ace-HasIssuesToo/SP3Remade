@@ -64,7 +64,8 @@ void GameState::Init()
 	helpscreen = MeshBuilder::GenerateQuad("helpscreen", Color(0, 0, 0), 1.f);
 	helpscreen->textureArray[0] = LoadTGA("Data//Texture//helpscreen.tga");
 
-	
+	creditscreen = MeshBuilder::GenerateQuad("creditscreen", Color(0, 0, 0), 1.f);
+	creditscreen->textureArray[0] = LoadTGA("Data//Texture//creditscreen.tga");
 }
 
 Mesh* GameState::GetText()
@@ -270,9 +271,21 @@ void GameState::GetState(double dt)
 		{
 			state = GUIDE;
 		}
+		else if (Application::IsKeyPressed('C'))
+		{
+			state = CREDIT;
+		}
 		break;
 	}
 	case GUIDE:
+	{
+		if (Application::IsKeyPressed('B'))
+		{
+			state = START;
+		}
+		break;
+	}
+	case CREDIT:
 	{
 		if (Application::IsKeyPressed('B'))
 		{
@@ -344,7 +357,13 @@ void GameState::RenderScreens()
 		Render_PI::pointer()->RenderMesh(helpscreen, false);
 		Render_PI::pointer()->modelStack_Set(false);
 	}
-
+	if (state == CREDIT)
+	{
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(140, 90, 1));
+		Render_PI::pointer()->RenderMesh(creditscreen, false);
+		Render_PI::pointer()->modelStack_Set(false);
+	}
 	if (state == WIN)
 	{
 		Render_PI::pointer()->modelStack_Set(true);
@@ -422,6 +441,11 @@ void GameState::Exit()
 	Enemy_Ghost::pointer()->Exit();
 	Enemy_Poison::pointer()->Exit();
 	Enemy_Dark::pointer()->Exit();
+	if (text != nullptr)
+	{
+		delete text;
+		text = nullptr;
+	}
 	if (startscreen != nullptr)
 	{
 		delete startscreen;
@@ -431,6 +455,11 @@ void GameState::Exit()
 	{
 		delete helpscreen;
 		helpscreen = nullptr;
+	}
+	if (creditscreen != nullptr)
+	{
+		delete creditscreen;
+		creditscreen = nullptr;
 	}
 	if (winscreen != nullptr)
 	{

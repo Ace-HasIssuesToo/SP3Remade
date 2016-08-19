@@ -31,10 +31,6 @@ void Game_System::Update(double dt)
 void Game_System::Render()
 {
 	GameState::pointer()->Render();
-<<<<<<< HEAD
-
-=======
->>>>>>> c3836ed01c7c622c62380631123a2cdb30e1aeaa
 }
 
 void Game_System::Exit()
