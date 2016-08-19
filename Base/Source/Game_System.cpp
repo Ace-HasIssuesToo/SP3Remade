@@ -24,7 +24,7 @@ void Game_System::Init()
 	Camera_PI camera;
 	camera.Init(Vector3(10, 0, 0), Vector3(), Vector3(0, 1, 0), 0, 0);
 	Render_PI::pointer()->Camera_Set(camera);
-	state = FLOOR1;
+	state = START;
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -66,6 +66,17 @@ void Game_System::Init()
 	text->textureArray[0] = LoadTGA("Data//Texture//calibri.tga");
 	text->material.kAmbient.Set(1, 0, 0);
 
+	startscreen = MeshBuilder::GenerateQuad("startscreen", Color(0, 0, 0), 1.f);
+	startscreen->textureArray[0] = LoadTGA("Data//Texture//startscreen.tga");
+
+	winscreen = MeshBuilder::GenerateQuad("winscreen", Color(0, 0, 0), 1.f);
+	winscreen->textureArray[0] = LoadTGA("Data//Texture//winscreen.tga");
+
+	losescreen = MeshBuilder::GenerateQuad("losescreen", Color(0, 0, 0), 1.f);
+	losescreen->textureArray[0] = LoadTGA("Data//Texture//losescreen.tga");
+
+	helpscreen = MeshBuilder::GenerateQuad("helpscreen", Color(0, 0, 0), 1.f);
+	helpscreen->textureArray[0] = LoadTGA("Data//Texture//helpscreen.tga");
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -150,20 +161,24 @@ void Game_System::GameState(double dt)
 {
 	switch (state)
 	{
-		/*case START:
+		case START:
 		{
 			if (Application::IsKeyPressed('S'))
 			{
 				state = FLOOR1;
-				LoadFloor1();
+			}
+			else if (Application::IsKeyPressed('H'))
+			{
+				state = GUIDE;
 			}
 			break;
-		}*/
+		}
 		case GUIDE:
 		{
-			Render_PI::pointer()->modelStack_Set(true);
-
-			Render_PI::pointer()->modelStack_Set(false);
+			if (Application::IsKeyPressed('B'))
+			{
+				state = START;
+			}
 			break;
 		}
 		case FLOOR1:
@@ -193,16 +208,18 @@ void Game_System::GameState(double dt)
 		}
 		case WIN:
 		{
-			Render_PI::pointer()->modelStack_Set(true);
-
-			Render_PI::pointer()->modelStack_Set(false);
+			if (Application::IsKeyPressed(VK_SPACE))
+			{
+				state = START;
+			}
 			break;
 		}
 		case LOSE:
 		{
-			Render_PI::pointer()->modelStack_Set(true);
-
-			Render_PI::pointer()->modelStack_Set(false);
+			if (Application::IsKeyPressed('R'))
+			{
+				state = START;
+			}
 			break;
 		}
 		break;
@@ -215,26 +232,63 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
+<<<<<<< HEAD
 	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	//Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
 	if (Pokemon_On_Loose[0])
+=======
+	if (state == START)
+>>>>>>> 46fbf9a5e02a456040358d59a8f5f5cae7269cb1
 	{
-		Enemy_Psychic::pointer()->RenderPsychic();
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
+		Render_PI::pointer()->RenderMesh(startscreen, false);
+		Render_PI::pointer()->modelStack_Set(false);
 	}
-	if (Pokemon_On_Loose[1])
+	if (state == GUIDE)
 	{
-		Enemy_Ghost::pointer()->RenderGhost();
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(134, 100, 1));
+		Render_PI::pointer()->RenderMesh(helpscreen, false);
+		Render_PI::pointer()->modelStack_Set(false);
 	}
-	if (Pokemon_On_Loose[2])
+	if (state == FLOOR1)
 	{
-		Enemy_Poison::pointer()->render();
+		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
+		PlayerClass::pointer()->Renderplayer();
+		if (Pokemon_On_Loose[0])
+		{
+			Enemy_Psychic::pointer()->RenderPsychic();
+		}
+		if (Pokemon_On_Loose[1])
+		{
+			Enemy_Ghost::pointer()->RenderGhost();
+		}
+		if (Pokemon_On_Loose[2])
+		{
+			Enemy_Poison::pointer()->render();
+		}
+		if (Pokemon_On_Loose[3])
+		{
+			Enemy_Dark::pointer()->RenderEnemyDark();
+		}
+		PokeballInfo::pointer()->Render();
 	}
-	if (Pokemon_On_Loose[3])
+	if (state == WIN)
 	{
-		Enemy_Dark::pointer()->RenderEnemyDark();
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
+		Render_PI::pointer()->RenderMesh(winscreen, false);
+		Render_PI::pointer()->modelStack_Set(false);
 	}
-	PokeballInfo::pointer()->Render();
+	if (state == LOSE)
+	{
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
+		Render_PI::pointer()->RenderMesh(losescreen, false);
+		Render_PI::pointer()->modelStack_Set(false);
+	}
 }
 
 void Game_System::Exit()

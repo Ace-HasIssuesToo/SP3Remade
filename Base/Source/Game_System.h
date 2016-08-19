@@ -24,6 +24,10 @@ class Game_System :public Scene
 		WIN,
 	};
 	Mesh* text;
+	Mesh* startscreen;
+	Mesh* winscreen;
+	Mesh* losescreen;
+	Mesh* helpscreen;
 public:
 	
 	static Game_System* pointer(){ return c_pointer; };
