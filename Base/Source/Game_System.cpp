@@ -17,6 +17,10 @@ Game_System::~Game_System()
 
 void Game_System::Init()
 {
+	for (int i = 0; i < 3; i++)
+	{
+		Pokemon_On_Loose[i] = false;
+	}
 	Camera_PI camera;
 	camera.Init(Vector3(10, 0, 0), Vector3(), Vector3(0, 1, 0), 0, 0);
 	Render_PI::pointer()->Camera_Set(camera);
@@ -61,11 +65,87 @@ void Game_System::Init()
 	text = MeshBuilder::GenerateText("text", 16, 16);
 	text->textureArray[0] = LoadTGA("Data//Texture//calibri.tga");
 	text->material.kAmbient.Set(1, 0, 0);
+
+
+	for (int i = 0; i < 3; i++)
+	{
+		Pokemon_On_Loose[i] = true;
+	}
 }
 Mesh* Game_System::GetText()
 {
 	return text;
 }
+
+void Game_System::Update_Stuffs(double dt, Map* map)
+{
+	PlayerClass::pointer()->Update(dt, map);
+	if (Pokemon_On_Loose[0])
+	{
+		Enemy_Psychic::pointer()->Update(dt, map);
+	}
+	if (Pokemon_On_Loose[1])
+	{
+		Enemy_Ghost::pointer()->Update(dt, map);
+	}
+	if (Pokemon_On_Loose[2])
+	{
+		Enemy_Poison::pointer()->Update(dt, map);
+	}
+	if (Pokemon_On_Loose[3])
+	{
+		Enemy_Dark::pointer()->Update(dt, map);
+	}
+	PokeballInfo::pointer()->Update(dt, map);
+
+	Vector3 Radius = Vector3();
+	double range = 0;
+	float min_range = 10;
+	if (PokeballInfo::pointer()->getBallStatus())
+	{
+		if (Pokemon_On_Loose[0])
+		{
+			Radius = PokeballInfo::pointer()->getPokeballPos() - Enemy_Psychic::pointer()->GetPos();
+			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
+			if (range <= min_range)
+			{
+				Pokemon_On_Loose[0] = false;
+				PokeballInfo::pointer()->ClearBallStatus();
+			}
+		}
+		if (Pokemon_On_Loose[1])
+		{
+			Radius = PokeballInfo::pointer()->getPokeballPos() - Enemy_Ghost::pointer()->GetGhostPos();
+			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
+			if (range <= min_range)
+			{
+				Pokemon_On_Loose[1] = false;
+				PokeballInfo::pointer()->ClearBallStatus();
+			}
+		}
+		if (Pokemon_On_Loose[2])
+		{
+			Radius = PokeballInfo::pointer()->getPokeballPos() - Enemy_Poison::pointer()->GetPos();
+			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
+			if (range <= min_range)
+			{
+				Pokemon_On_Loose[2] = false;
+				PokeballInfo::pointer()->ClearBallStatus();
+			}
+		}
+		if (Pokemon_On_Loose[3])
+		{
+			Radius = PokeballInfo::pointer()->getPokeballPos() - Enemy_Dark::pointer()->getEnemyDarkPos();
+			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
+			if (range <= min_range)
+			{
+				Pokemon_On_Loose[3] = false;
+				PokeballInfo::pointer()->ClearBallStatus();
+			}
+		}
+	}
+}
+
 void Game_System::GameState(double dt)
 {
 	switch (state)
@@ -88,52 +168,27 @@ void Game_System::GameState(double dt)
 		}
 		case FLOOR1:
 		{
-			PlayerClass::pointer()->Update(dt, Floor1);
-			Enemy_Psychic::pointer()->Update(dt, Floor1);
-			Enemy_Ghost::pointer()->Update(dt, Floor1);
-			Enemy_Poison::pointer()->Update(dt, Floor1);
-			Enemy_Dark::pointer()->Update(dt, Floor1);
-			PokeballInfo::pointer()->Update(dt, Floor1);
+					   Update_Stuffs(dt, Floor1);
 			break;
 		}
 		case FLOOR2:
 		{
-			PlayerClass::pointer()->Update(dt, Floor2);
-			Enemy_Psychic::pointer()->Update(dt, Floor2);
-			Enemy_Ghost::pointer()->Update(dt, Floor2);
-			Enemy_Poison::pointer()->Update(dt, Floor2);
-			Enemy_Dark::pointer()->Update(dt, Floor2);
-			PokeballInfo::pointer()->Update(dt, Floor2);
+					   Update_Stuffs(dt, Floor2);
 			break;
 		}
 		case FLOOR3:
 		{
-			PlayerClass::pointer()->Update(dt, Floor3);
-			Enemy_Psychic::pointer()->Update(dt, Floor3);
-			Enemy_Ghost::pointer()->Update(dt, Floor3);
-			Enemy_Poison::pointer()->Update(dt, Floor3);
-			Enemy_Dark::pointer()->Update(dt, Floor3);
-			PokeballInfo::pointer()->Update(dt, Floor3);
+					   Update_Stuffs(dt, Floor3);
 			break;
 		}
 		case FLOOR4:
 		{
-			PlayerClass::pointer()->Update(dt, Floor4);
-			Enemy_Psychic::pointer()->Update(dt, Floor4);
-			Enemy_Ghost::pointer()->Update(dt, Floor4);
-			Enemy_Poison::pointer()->Update(dt, Floor4);
-			Enemy_Dark::pointer()->Update(dt, Floor4);
-			PokeballInfo::pointer()->Update(dt, Floor4);
+					   Update_Stuffs(dt, Floor4);
 			break;
 		}
 		case FLOOR5:
 		{
-			PlayerClass::pointer()->Update(dt, Floor5);
-			Enemy_Psychic::pointer()->Update(dt, Floor5);
-			Enemy_Ghost::pointer()->Update(dt, Floor5);
-			Enemy_Poison::pointer()->Update(dt, Floor5);
-			Enemy_Dark::pointer()->Update(dt, Floor5);
-			PokeballInfo::pointer()->Update(dt, Floor5);
+					   Update_Stuffs(dt, Floor5);
 			break;
 		}
 		case WIN:
@@ -162,12 +217,23 @@ void Game_System::Render()
 {
 	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
-	Enemy_Ghost::pointer()->RenderGhost();
-	Enemy_Psychic::pointer()->RenderPsychic();
-	Enemy_Poison::pointer()->render();
-	Enemy_Dark::pointer()->RenderEnemyDark();
-	if (PokeballInfo::pointer()->getBallStatus() == true)
-		PokeballInfo::pointer()->Render();
+	if (Pokemon_On_Loose[0])
+	{
+		Enemy_Psychic::pointer()->RenderPsychic();
+	}
+	if (Pokemon_On_Loose[1])
+	{
+		Enemy_Ghost::pointer()->RenderGhost();
+	}
+	if (Pokemon_On_Loose[2])
+	{
+		Enemy_Poison::pointer()->render();
+	}
+	if (Pokemon_On_Loose[3])
+	{
+		Enemy_Dark::pointer()->RenderEnemyDark();
+	}
+	PokeballInfo::pointer()->Render();
 }
 
 void Game_System::Exit()

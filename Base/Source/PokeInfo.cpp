@@ -66,6 +66,7 @@ void PokeballInfo::Update(double dt, Map* map)
 		{
 			ballOnScreen = false;
 			ballDirection = Vector3(0, 0, 0);
+			ballPos = Vector3(-1000, -1000, 0);
 		}
 	}
 }
@@ -73,11 +74,12 @@ Vector3 PokeballInfo::getPokeballPos()
 {
 	return ballPos;
 }
-Vector3 PokeballInfo::getPokeballScale()
+void PokeballInfo::ClearBallStatus()
 {
-	return sc;
+	ballOnScreen = false;
+	ballDirection = Vector3(0, 0, 0);
+	ballPos = Vector3(-1000, -1000, 0);
 }
-
 bool PokeballInfo::getBallStatus()
 {
 	return ballOnScreen;
@@ -88,7 +90,7 @@ void PokeballInfo::Render()
 	if (ballOnScreen == true)
 	{
 		Render_PI::pointer()->modelStack_Set(true);
-		Render_PI::pointer()->RenderMeshIn2D(pokeballmesh, false, Map::Pokemon_Offset(ballPos), Vector3(getPokeballScale()));
+		Render_PI::pointer()->RenderMeshIn2D(pokeballmesh, false, Map::Pokemon_Offset(ballPos), Vector3(sc));
 		Render_PI::pointer()->modelStack_Set(false);
 	}
 }

@@ -283,3 +283,8 @@ Vector3 Enemy_Poison::Poison(Vector3 Movement)
 
 	return Movement;
 }
+
+Vector3 Enemy_Poison::GetPos()
+{
+	return Map::Pokemon_Offset(Pos);
+}
