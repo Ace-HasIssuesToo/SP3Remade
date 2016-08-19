@@ -10,7 +10,8 @@ void Enemy_Poison::Init()
 	Vel = Vector3();
 	Poisonous = false;
 	CoolDown = LastTime = ChangeEffect = 0;
-
+	Poisoned_effect = MeshBuilder::GenerateQuad("Poisoned", Color());
+	Poisoned_effect->textureArray[0] = LoadTGA("Data//Texture//Poisoned.tga");
 	// Poison sprite
 	Poison_Mesh = MeshBuilder::GenerateSpriteAnimation("Poison", 1, 8);
 	Poison_Mesh->textureArray[0] = LoadTGA("Data//Texture//Poison.tga");
@@ -183,14 +184,21 @@ void Enemy_Poison::render()
 	Vector3 Render_Pos = Map::Pokemon_Offset(Pos);
 	Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Render_Pos, Vector3(10, 10, 1));
 	Render_PI::pointer()->modelStack_Set(false);
-	if (Poisonous && FlipType[ShadowClone])
+	if (Poisonous)
 	{
-		for (int i = 0; i < 5; i++)
+		Render_PI::pointer()->modelStack_Set(true);
+		Vector3 Render_Pos = Render_PI::Window_Scale()*0.5 + Vector3(Math::RandFloatMinMax(-4, 4), Math::RandFloatMinMax(-4, 4), 0);
+		Render_PI::pointer()->RenderMeshIn2D(Poisoned_effect, false, Render_Pos, Render_PI::Window_Scale()*1.1);
+		Render_PI::pointer()->modelStack_Set(false);
+		if (FlipType[ShadowClone])
 		{
-			Render_PI::pointer()->modelStack_Set(true);
-			Vector3 Render_Pos = Map::Pokemon_Offset(Clones[i]);
-			Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Render_Pos, Vector3(10, 10, 1));
-			Render_PI::pointer()->modelStack_Set(false);
+			for (int i = 0; i < 5; i++)
+			{
+				Render_PI::pointer()->modelStack_Set(true);
+				Vector3 Render_Pos = Map::Pokemon_Offset(Clones[i]);
+				Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Render_Pos, Vector3(10, 10, 1));
+				Render_PI::pointer()->modelStack_Set(false);
+			}
 		}
 	}
 }
