@@ -3,6 +3,7 @@
 #include "Map_PI.h"
 #include "Player.h"
 #include "PokeInfo.h"
+#include "StoryPlot.h"
 
 class GameState
 {
@@ -20,6 +21,7 @@ public:
 		FLOOR5,
 		LOSE,
 		WIN,
+		INTRODUCTION,
 	};
 	Game state;
 	//Game GetState(double dt);
