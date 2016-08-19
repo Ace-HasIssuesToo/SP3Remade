@@ -3,6 +3,7 @@
 
 #include "Support_Codes.h"
 #include "Render_PI.h"
+#include "Map_PI.h"
 
 class StoryPlot
 {
