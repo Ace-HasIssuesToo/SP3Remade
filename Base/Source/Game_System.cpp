@@ -232,7 +232,14 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
+<<<<<<< HEAD
+	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
+	//Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
+	PlayerClass::pointer()->Renderplayer();
+	if (Pokemon_On_Loose[0])
+=======
 	if (state == START)
+>>>>>>> 46fbf9a5e02a456040358d59a8f5f5cae7269cb1
 	{
 		Render_PI::pointer()->modelStack_Set(true);
 		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
