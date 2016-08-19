@@ -26,12 +26,16 @@ void PlayerClass::Init()
 {
 	movementSpeed = 20;
 	//throwSpeed = -9.8;
+<<<<<<< HEAD
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	//dPlayerPos = Render_PI::Window_Scale() * 0.5;
 	//PlayerPos = Render_PI::Window_Scale();
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	PlayerPos = Render_PI::Window_Scale();
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
+=======
+	PlayerPos = Render_PI::Window_Scale() * 0.5;
+>>>>>>> 98ba16415be6ec04b2ddf466ed25f5496e6410d6
 	sc.Set(5.f, 5.f, 5.f);
 	//sc.Set(10.f, 10.f, 10.f);
 	//sc.Set(5.f, 5.f, 5.f);

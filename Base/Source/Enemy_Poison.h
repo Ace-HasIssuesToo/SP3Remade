@@ -34,6 +34,7 @@ private:
 	float ChangeEffect;
 	bool FlipType[All_debuff];
 	Mesh* Poison_Mesh;
+	Mesh* Poisoned_effect;
 	Vector3 Clones[5];
 
 };
