@@ -209,7 +209,8 @@ Mesh* Enemy_Dark::getEnemyMesh()
 void Enemy_Dark::RenderEnemyDark()
 {
 	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Enemy_Dark::getEnemyMesh(), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(EnemyDarkScale));
+	Vector3 Pos = Map::Pokemon_Offset(EnemyDarkPos);
+	Render_PI::pointer()->RenderMeshIn2D(Enemy_Dark::getEnemyMesh(), false, Pos, Vector3(EnemyDarkScale));
 	Render_PI::pointer()->modelStack_Set(false);
 }
 

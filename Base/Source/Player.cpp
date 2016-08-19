@@ -75,11 +75,15 @@ void PlayerClass::Init()
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
 	//playerMesh = nullptr;
+	RunBar = MeshBuilder::GenerateQuad("Runbar", Color(0, 1, 0));
+
 }
 
 void PlayerClass::Update(double dt, Map* map)
 {
+
 	playerShadow = PlayerPos;
+	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
 	movementSpeed = 20;
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Run])
@@ -94,7 +98,7 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		if (Runtime <= Max_Speed)
 		{
-			Runtime += dt;
+			Runtime += dt*0.5;
 		}
 		
 	}
@@ -239,6 +243,7 @@ Vector3 PlayerClass::getPlayerPosOffSet()
 }
 Vector3 PlayerClass::getPlayerScale()
 {
+	sc.z = 0;
 	return sc;
 }
 
@@ -270,5 +275,9 @@ void PlayerClass::Renderplayer()
 {
 	Render_PI::pointer()->modelStack_Set(true);
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
+	Render_PI::pointer()->modelStack_Set(false);
+	Render_PI::pointer()->modelStack_Set(true);
+	Vector3 Pos = (Vector3(5, 5, 0) + Vector3(Runtime * 10, 10, 0))*0.5f;
+	Render_PI::pointer()->RenderMeshIn2D(RunBar, false, Pos, Vector3(Runtime * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
 }

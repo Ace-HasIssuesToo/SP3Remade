@@ -48,6 +48,7 @@ private:
 	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
 	Mesh *Pokeball_Mesh;
 	float Runtime;
+	Mesh* RunBar;
 };
 
 const float Max_Speed = 6.f;

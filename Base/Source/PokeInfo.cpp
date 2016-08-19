@@ -88,6 +88,17 @@ void PokeballInfo::Update(double dt, Map* map)
 		{
 			ClearBallStatus();
 		}
+		else
+		{
+			Vector3 radius = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - ballPos;
+			double range = radius.x*radius.x + radius.y*radius.y;
+			Vector3 Scale = Render_PI::Window_Scale();
+			float Max_Range = Scale.x*Scale.y*0.8;
+			if (range > Max_Range)
+			{
+				ClearBallStatus();
+			}
+		}
 	}
 }
 Vector3 PokeballInfo::getPokeballPos()
