@@ -17,7 +17,8 @@ void Enemy_Ghost::Init()
 		sa->m_anim = new Animation();
 		sa->m_anim->Set(0, 7, 0, 1.f, true);
 	}
-	
+	theSoundEngine = createIrrKlangDevice();
+	haunt = theSoundEngine->addSoundSourceFromFile("Data//Sound//239-ghastly.mp3");
 }
 Vector3 Enemy_Ghost::GetGhostPos()
 {
@@ -71,14 +72,15 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostPos = ghostShadow;
 	}
-	if (ghostTimer > 5.f)
+	if (ghostTimer > 30.f)
 	{
 		//teleport ghost to player position
 		if (ghostStayTimer == 0.0f)
 		{
+			
 			//teleport first time
 			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
-
+			theSoundEngine->play2D(haunt);
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
@@ -93,7 +95,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 5.f)
+	else if (ghostTimer < 30.f)
 	{
 		ghostStayTimer = 0.0f;
 	}

@@ -74,6 +74,10 @@ void Game_System::Init()
 
 	losescreen = MeshBuilder::GenerateQuad("losescreen", Color(0, 0, 0), 1.f);
 	losescreen->textureArray[0] = LoadTGA("Data//Texture//losescreen.tga");
+
+	helpscreen = MeshBuilder::GenerateQuad("helpscreen", Color(0, 0, 0), 1.f);
+	helpscreen->textureArray[0] = LoadTGA("Data//Texture//helpscreen.tga");
+
 	for (int i = 0; i < 3; i++)
 	{
 		Pokemon_On_Loose[i] = true;
@@ -163,13 +167,18 @@ void Game_System::GameState(double dt)
 			{
 				state = FLOOR1;
 			}
+			else if (Application::IsKeyPressed('H'))
+			{
+				state = GUIDE;
+			}
 			break;
 		}
 		case GUIDE:
 		{
-			/*Render_PI::pointer()->modelStack_Set(true);
-			Render_PI::pointer()->RenderMesh(startscreen, false);
-			Render_PI::pointer()->modelStack_Set(false);*/
+			if (Application::IsKeyPressed('B'))
+			{
+				state = START;
+			}
 			break;
 		}
 		case FLOOR1:
@@ -233,13 +242,13 @@ void Game_System::Render()
 	if (state == GUIDE)
 	{
 		Render_PI::pointer()->modelStack_Set(true);
-
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(134, 100, 1));
+		Render_PI::pointer()->RenderMesh(helpscreen, false);
 		Render_PI::pointer()->modelStack_Set(false);
 	}
 	if (state == FLOOR1)
 	{
 		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
-		//Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 		PlayerClass::pointer()->Renderplayer();
 		if (Pokemon_On_Loose[0])
 		{

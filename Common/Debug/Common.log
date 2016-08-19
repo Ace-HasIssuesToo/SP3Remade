@@ -1,64 +1,8 @@
-<<<<<<< HEAD
-﻿Build started 18/8/2016 4:46:31 PM.
-=======
-<<<<<<< HEAD
-﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
-=======
-<<<<<<< 90f614bc8842528d6ad9b64bac7bd132565c3bf4
-<<<<<<< HEAD
-﻿Build started 18/8/2016 3:29:40 PM.
->>>>>>> 06a2e5378cb5aeec21216dbb53db371a7dee1469
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MathUtility.cpp Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector2.cpp Source\Vector3.cpp
-         Vector3.cpp
-         Vector2.cpp
-         timer.cpp
-         Mtx44.cpp
-         MatrixStack.cpp
-         MathUtility.cpp
-         Generating Code...
-       Lib:
-         D:\Visual Studio 2013\VC\bin\Lib.exe /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib" /NOLOGO Debug\MathUtility.obj
-         Debug\MatrixStack.obj
-         Debug\Mtx44.obj
-         Debug\timer.obj
-         Debug\Vector2.obj
-         Debug\Vector3.obj
-         Common.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-<<<<<<< HEAD
-Time Elapsed 00:00:01.68
-=======
-Time Elapsed 00:00:01.79
-=======
-<<<<<<< HEAD
-﻿Build started 18/8/2016 3:31:59 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\Debug\Common.lib
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\Common\Common.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.03
-=======
-﻿生成启动时间为 18/8/2016 下午 3:16:38。
-=======
-﻿生成启动时间为 18/8/2016 下午 4:10:28。
->>>>>>> Edited EveryBody Codes SomeHow...
-     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
-     1>Lib:
-         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
-
-生成成功。
-
-已用时间 00:00:00.04
->>>>>>> 21858782562119ac917dad4e1ae1cbacc19fa733
->>>>>>> 4d8716b9829dfeb5165f7d74c4e382a4520fa6db
->>>>>>> 64288ea87af5eac17ecdc10032715e7ff4dce870
->>>>>>> 06a2e5378cb5aeec21216dbb53db371a7dee1469
+﻿  Vector3.cpp
+  Vector2.cpp
+  timer.cpp
+  Mtx44.cpp
+  MatrixStack.cpp
+  MathUtility.cpp
+  Generating Code...
+  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
