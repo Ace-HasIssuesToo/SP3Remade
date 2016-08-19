@@ -127,10 +127,15 @@ void Enemy_Psychic::Update(double dt, Map* map)
 		screamTimer += (dt);
 	if (screamTimer > 3.f)
 	{
-		currState = STATE_GG;	//TEMP KILL/ CAUGHT
+		//currState = STATE_GG;	//TEMP KILL/ CAUGHT
 		GameState::pointer()->SetState(GameState::LOSE);
+		finalScream = false;
+		lastResort = false;
 	}
-	//cout << screamTimer << endl;
+
+	if (!finalScream)
+		screamTimer = 0.f;
+	cout << screamTimer << endl;
 }
 
 void Enemy_Psychic::RenderPsychic()

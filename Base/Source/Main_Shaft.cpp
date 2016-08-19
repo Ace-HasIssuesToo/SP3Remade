@@ -30,7 +30,7 @@ void Main_Shaft::Init()
 
 void Main_Shaft::Update(double dt)
 {
-	std::cout << 1 / dt << std::endl;
+	//std::cout << 1 / dt << std::endl;
 	Input_PI::pointer()->Update(dt);
 	Game_System::pointer()->Update(dt);
 }
