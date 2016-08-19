@@ -16,18 +16,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-	for (int i = 0; i < 4; i++)
-	{
-		pokemonCount++;
-		Pokemon_On_Loose[i] = false;
-	}
-
-	PlayerClass::pointer()->Init();
-	PokeballInfo::pointer()->Init();
-	Enemy_Psychic::pointer()->Init();
-	Enemy_Ghost::pointer()->Init();
-	Enemy_Poison::pointer()->Init();
-	Enemy_Dark::pointer()->Init();
+	
 	state = START;
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -75,10 +64,7 @@ void GameState::Init()
 	helpscreen = MeshBuilder::GenerateQuad("helpscreen", Color(0, 0, 0), 1.f);
 	helpscreen->textureArray[0] = LoadTGA("Data//Texture//helpscreen.tga");
 
-	for (int i = 0; i < 4; i++)
-	{
-		Pokemon_On_Loose[i] = true;
-	}
+	
 }
 
 Mesh* GameState::GetText()
@@ -244,6 +230,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
 						state = WIN;
+						
 					}
 				}
 				PokeballInfo::pointer()->ClearBallStatus();
@@ -261,6 +248,23 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed('S'))
 		{
 			state = FLOOR1;
+			for (int i = 0; i < 4; i++)
+			{
+				pokemonCount++;
+				Pokemon_On_Loose[i] = false;
+			}
+
+			PlayerClass::pointer()->Init();
+			PokeballInfo::pointer()->Init();
+			Enemy_Psychic::pointer()->Init();
+			Enemy_Ghost::pointer()->Init();
+			Enemy_Poison::pointer()->Init();
+			Enemy_Dark::pointer()->Init();
+
+			for (int i = 0; i < 4; i++)
+			{
+				Pokemon_On_Loose[i] = true;
+			}
 		}
 		else if (Application::IsKeyPressed('H'))
 		{
@@ -306,16 +310,18 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed(VK_SPACE))
 		{
 			state = START;
+			break;
 		}
-		break;
+		
 	}
 	case LOSE:
 	{
 		if (Application::IsKeyPressed('R'))
 		{
 			state = START;
+			break;
 		}
-		break;
+		
 	}
 	break;
 	}
