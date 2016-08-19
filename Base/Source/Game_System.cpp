@@ -83,6 +83,7 @@ void Game_System::Init()
 		Pokemon_On_Loose[i] = true;
 	}
 }
+
 Mesh* Game_System::GetText()
 {
 	return text;
@@ -112,6 +113,8 @@ void Game_System::Update_Stuffs(double dt, Map* map)
 	Vector3 Radius = Vector3();
 	double range = 0;
 	float min_range = 10;
+	int catchrate = rand() % 101; 
+	int min_catchrate = 50;
 	if (PokeballInfo::pointer()->getBallStatus())
 	{
 		if (Pokemon_On_Loose[0])
@@ -120,7 +123,10 @@ void Game_System::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				Pokemon_On_Loose[0] = false;
+				if (catchrate > min_catchrate)
+				{
+					Pokemon_On_Loose[0] = false;
+				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
 		}
@@ -130,7 +136,10 @@ void Game_System::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				Pokemon_On_Loose[1] = false;
+				if (catchrate > min_catchrate)
+				{
+					Pokemon_On_Loose[1] = false;
+				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
 		}
@@ -140,7 +149,10 @@ void Game_System::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				Pokemon_On_Loose[2] = false;
+				if (catchrate > min_catchrate)
+				{
+					Pokemon_On_Loose[2] = false;
+				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
 		}
@@ -150,7 +162,10 @@ void Game_System::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				Pokemon_On_Loose[3] = false;
+				if (catchrate > min_catchrate)
+				{
+					Pokemon_On_Loose[3] = false;
+				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
 		}
@@ -225,6 +240,7 @@ void Game_System::GameState(double dt)
 		break;
 	}
 }
+
 void Game_System::Update(double dt)
 {
 	GameState(dt);
@@ -232,14 +248,10 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
-<<<<<<< HEAD
 	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	//Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
 	PlayerClass::pointer()->Renderplayer();
-	if (Pokemon_On_Loose[0])
-=======
 	if (state == START)
->>>>>>> 46fbf9a5e02a456040358d59a8f5f5cae7269cb1
 	{
 		Render_PI::pointer()->modelStack_Set(true);
 		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
