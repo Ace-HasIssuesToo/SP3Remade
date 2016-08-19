@@ -169,29 +169,30 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 
 	//Keep Player in window
-	if (PlayerPos.x > (Render_PI::Window_Scale().x - 10))
+	float Limitation_size = 30;
+	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
 	{
-		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - 10);
+		double difference = PlayerPos.x - (Render_PI::Window_Scale().x - Limitation_size);
 		PlayerPosOffSet.x += difference;
-		PlayerPos.x = (Render_PI::Window_Scale().x - 10);
+		PlayerPos.x = (Render_PI::Window_Scale().x - Limitation_size);
 	}
-	else if (PlayerPos.x < 10)
+	else if (PlayerPos.x < Limitation_size)
 	{
-		double difference = PlayerPos.x - (10);
+		double difference = PlayerPos.x - (Limitation_size);
 		PlayerPosOffSet.x += difference;
-		PlayerPos.x = (10);
+		PlayerPos.x = (Limitation_size);
 	}
-	if (PlayerPos.y >(Render_PI::Window_Scale().y - 10))
+	if (PlayerPos.y >(Render_PI::Window_Scale().y - Limitation_size))
 	{
-		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - 10);
+		double difference = PlayerPos.y - (Render_PI::Window_Scale().y - Limitation_size);
 		PlayerPosOffSet.y += difference;
-		PlayerPos.y = (Render_PI::Window_Scale().y - 10);
+		PlayerPos.y = (Render_PI::Window_Scale().y - Limitation_size);
 	}
-	else if (PlayerPos.y < 10)
+	else if (PlayerPos.y < Limitation_size)
 	{
-		double difference = PlayerPos.y - (10);
+		double difference = PlayerPos.y - (Limitation_size);
 		PlayerPosOffSet.y += difference;
-		PlayerPos.y = (10);
+		PlayerPos.y = (Limitation_size);
 	}
 }
 

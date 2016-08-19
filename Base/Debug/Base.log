@@ -1,3 +1,4 @@
+<<<<<<< e0a105094eac8aa8b06f7b4aaf097a0f6dfbb09d
 <<<<<<< HEAD
 ﻿  Player.cpp
 c:\users\user\documents\sp3remade\base\source\player.cpp(88): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
@@ -34,35 +35,38 @@ LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; us
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
 =======
 ﻿生成启动时间为 19/8/2016 上午 10:09:43。
+=======
+﻿生成启动时间为 19/8/2016 上午 11:23:48。
+>>>>>>> Adjustable size for map
      1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Poison.cpp Source\Game_System.cpp Source\Player.cpp
-         Enemy_Poison.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(46): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(97): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(155): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(164): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(173): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(191): warning C4305: “参数”: 从“double”到“float”截断
-         正在生成代码...
-         正在编译...
-         Player.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(82): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(86): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(90): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(94): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(169): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(175): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(181): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(187): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Poison.cpp Source\Enemy_Psychic.cpp Source\GameEnvironmentEvent.cpp Source\Game_System.cpp Source\Main_Shaft.cpp Source\Map_PI.cpp Source\Player.cpp Source\PokeInfo.cpp Source\StoryPlot.cpp
+         Map_PI.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(64): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(66): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(81): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
          Game_System.cpp
      1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(229): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(265): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(272): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
          正在生成代码...
+<<<<<<< e0a105094eac8aa8b06f7b4aaf097a0f6dfbb09d
      1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(237): warning C4715: “PlayerClass::getPlayerMesh2”: 不是所有的控件路径都返回值
      1>cl : 命令行 warning D9028: 最小重新生成失败，正在转换为标准生成
 >>>>>>> 46fbf9a5e02a456040358d59a8f5f5cae7269cb1
+=======
+         正在跳过...(未检测到相关更改)
+         StoryPlot.cpp
+         PokeInfo.cpp
+         Player.cpp
+         Main_Shaft.cpp
+         GameEnvironmentEvent.cpp
+         Enemy_Psychic.cpp
+         Enemy_Poison.cpp
+         Enemy_Ghost.cpp
+         EnemyDark.cpp
+>>>>>>> Adjustable size for map
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
          Debug\Application.obj
@@ -91,6 +95,7 @@ LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; us
 
 生成成功。
 
+<<<<<<< e0a105094eac8aa8b06f7b4aaf097a0f6dfbb09d
 <<<<<<< HEAD
 Time Elapsed 00:00:01.16
 =======
@@ -98,3 +103,6 @@ Time Elapsed 00:00:01.16
 >>>>>>> 98ba16415be6ec04b2ddf466ed25f5496e6410d6
 >>>>>>> 46fbf9a5e02a456040358d59a8f5f5cae7269cb1
 >>>>>>> e5d94a69067c9dc6e11ca9811b2e8156697d0f26
+=======
+已用时间 00:00:02.63
+>>>>>>> Adjustable size for map

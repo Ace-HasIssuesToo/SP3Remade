@@ -12,6 +12,7 @@ public:
 private:
 	std::map<std::string, std::string> Map_Data;
 	Vector3 Limitation;
+	float sizes = 20;
 };
 
 #endif
