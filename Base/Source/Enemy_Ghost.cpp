@@ -34,6 +34,7 @@ Vector3 Enemy_Ghost::Freeze(Vector3 Movement)
 	if (ghostStayTimer > 0.0f)
 	{
 		Movement = Vector3(0, 0, 0);
+		cout << "Freeze" << endl;
 	}
 	return Movement;
 }
