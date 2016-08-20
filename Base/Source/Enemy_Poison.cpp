@@ -4,6 +4,11 @@
 
 Enemy_Poison* Enemy_Poison::m_pointer = new Enemy_Poison();
 
+void Enemy_Poison::ClearPoison()
+{
+	Poisonous = false;
+}
+
 void Enemy_Poison::Init()
 {
 	Pos = Render_PI::Window_Scale()*0.25;

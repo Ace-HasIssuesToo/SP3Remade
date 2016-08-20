@@ -109,7 +109,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				if (catchrate > min_catchrate)
+				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[0] = false;
 					pokemonCount--;
@@ -142,7 +142,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				if (catchrate > min_catchrate)
+				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[1] = false;
 					pokemonCount--;
@@ -175,9 +175,10 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				if (catchrate > min_catchrate)
+				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[2] = false;
+					Enemy_Poison::pointer()->ClearPoison();
 					pokemonCount--;
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
@@ -208,7 +209,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
-				if (catchrate > min_catchrate)
+				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[3] = false;
 					pokemonCount--;
