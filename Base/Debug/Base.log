@@ -1,41 +1,28 @@
-﻿生成启动时间为 19/8/2016 上午 11:57:15。
+﻿生成启动时间为 19/8/2016 下午 12:44:20。
      1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Poison.cpp Source\Enemy_Psychic.cpp Source\Game_System.cpp Source\Main_Shaft.cpp Source\Map_PI.cpp Source\Player.cpp Source\PokeInfo.cpp Source\StoryPlot.cpp
-         Player.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(89): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(90): warning C4244: “*=”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(97): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(111): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(115): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(119): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(123): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(199): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(205): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(211): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(217): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-         正在生成代码...
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(267): warning C4715: “PlayerClass::getPlayerMesh2”: 不是所有的控件路径都返回值
-         正在编译...
-         StoryPlot.cpp
-         PokeInfo.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(41): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(46): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(51): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(63): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(78): warning C4305: “参数”: 从“double”到“float”截断
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Poison.cpp Source\Enemy_Psychic.cpp Source\Game_System.cpp Source\Map_PI.cpp Source\Render_PI.cpp
+         Render_PI.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(38): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(40): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(42): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(44): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(46): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(48): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(50): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(52): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(165): warning C4305: “参数”: 从“double”到“float”截断
          Map_PI.cpp
      1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(64): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(66): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(81): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-         Main_Shaft.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(80): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(86): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
          Game_System.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(257): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(264): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(293): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(300): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(254): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(261): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(291): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\game_system.cpp(298): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
          Enemy_Psychic.cpp
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(25): warning C4305: “参数”: 从“double”到“float”截断
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(82): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
@@ -47,7 +34,7 @@
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(155): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(164): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(173): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(191): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(192): warning C4305: “参数”: 从“double”到“float”截断
          Enemy_Ghost.cpp
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(10): warning C4305: “参数”: 从“double”到“float”截断
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(44): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
@@ -91,4 +78,4 @@
 
 生成成功。
 
-已用时间 00:00:10.31
+已用时间 00:00:07.75

@@ -248,9 +248,6 @@ void Game_System::Update(double dt)
 
 void Game_System::Render()
 {
-	Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet());
-	//Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet());
-	PlayerClass::pointer()->Renderplayer();
 	if (state == START)
 	{
 		Render_PI::pointer()->modelStack_Set(true);
@@ -286,6 +283,7 @@ void Game_System::Render()
 			Enemy_Dark::pointer()->RenderEnemyDark();
 		}
 		PokeballInfo::pointer()->Render();
+		PlayerClass::pointer()->Renderplayer();
 	}
 	if (state == WIN)
 	{
@@ -301,6 +299,7 @@ void Game_System::Render()
 		Render_PI::pointer()->RenderMesh(losescreen, false);
 		Render_PI::pointer()->modelStack_Set(false);
 	}
+
 }
 
 void Game_System::Exit()
