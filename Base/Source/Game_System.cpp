@@ -114,7 +114,7 @@ void Game_System::Update_Stuffs(double dt, Map* map)
 	double range = 0;
 	float min_range = 10;
 	int catchrate = rand() % 101; 
-	int min_catchrate = 50;
+	int min_catchrate = 20;
 	if (PokeballInfo::pointer()->getBallStatus())
 	{
 		if (Pokemon_On_Loose[0])
@@ -282,8 +282,8 @@ void Game_System::Render()
 		{
 			Enemy_Dark::pointer()->RenderEnemyDark();
 		}
-		PokeballInfo::pointer()->Render();
 		PlayerClass::pointer()->Renderplayer();
+		PokeballInfo::pointer()->Render();
 	}
 	if (state == WIN)
 	{
