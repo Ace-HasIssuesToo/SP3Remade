@@ -1,21 +1,12 @@
-﻿生成启动时间为 20/8/2016 上午 11:00:34。
+﻿生成启动时间为 20/8/2016 下午 12:53:34。
      1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Ghost.cpp Source\Enemy_Psychic.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Psychic.cpp
          Enemy_Psychic.cpp
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(26): warning C4305: “参数”: 从“double”到“float”截断
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(83): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(87): warning C4305: “参数”: 从“double”到“float”截断
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(127): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-         Enemy_Ghost.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(11): warning C4305: “参数”: 从“double”到“float”截断
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(46): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(47): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(48): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(86): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(94): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(95): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-         正在生成代码...
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(125): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
          Debug\Application.obj
@@ -44,4 +35,4 @@
 
 生成成功。
 
-已用时间 00:00:02.81
+已用时间 00:00:01.89

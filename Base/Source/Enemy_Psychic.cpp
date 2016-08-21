@@ -154,19 +154,19 @@ void Enemy_Psychic::Exit()
 {
 	if (theSoundEngine != nullptr)
 	{
-		delete theSoundEngine;
+		theSoundEngine->drop();
 		theSoundEngine = nullptr;
 	}
 	
 	if (runScream != nullptr)
 	{
-		delete runScream;
+		runScream->drop();
 		runScream = nullptr;
 	}
 
 	if (killScream != nullptr)
 	{
-		delete killScream;
+		killScream->drop();
 		killScream = nullptr;
 	}
 
