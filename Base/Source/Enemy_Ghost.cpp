@@ -3,6 +3,7 @@
 #include "Texture_PI.h"
 #include "Player.h"
 #include "Game_System.h"
+#include "GameState.h"
 Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 
 void Enemy_Ghost::Init()
@@ -33,6 +34,7 @@ Vector3 Enemy_Ghost::Freeze(Vector3 Movement)
 	if (ghostStayTimer > 0.0f)
 	{
 		Movement = Vector3(0, 0, 0);
+		cout << "Freeze" << endl;
 	}
 	return Movement;
 }
@@ -77,7 +79,6 @@ void Enemy_Ghost::Update(double dt, Map* map)
 		//teleport ghost to player position
 		if (ghostStayTimer == 0.0f)
 		{
-			
 			//teleport first time
 			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
 			theSoundEngine->play2D(haunt);
@@ -99,13 +100,13 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostStayTimer = 0.0f;
 	}
-	Vector3 radiusRange;
+	/*Vector3 radiusRange;
 	radiusRange = (ghostPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
 	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
 	if (radRange < 10.f)
 	{
-		life -= 1; //unconfirmed
-	}
+		GameState::pointer()->SetState(GameState::LOSE);
+	}*/
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
 	{
@@ -118,11 +119,10 @@ void Enemy_Ghost::RenderGhost()
 	//ghost will disppear when it is on top of the player
 	if (ghostStayTimer == 0.0f)
 	{
-		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
-		Render_PI::pointer()->modelStack_Set(true);
-		Vector3 Pos = Map::Pokemon_Offset(ghostPos);
-		Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Pos, Vector3(10, 10, 1));
-		Render_PI::pointer()->modelStack_Set(false);
+			Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
+			Render_PI::pointer()->modelStack_Set(true);
+			Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
+			Render_PI::pointer()->modelStack_Set(false);
 	}
 	/*std::ostringstream ss;
 	ss.precision(5);
@@ -131,6 +131,16 @@ void Enemy_Ghost::RenderGhost()
 }
 void Enemy_Ghost::Exit()
 {
+	if (theSoundEngine != nullptr)
+	{
+		theSoundEngine->drop();
+		theSoundEngine = nullptr;
+	}
+	if (haunt != nullptr)
+	{
+		haunt->drop();
+		haunt = nullptr;
+	}
 	if (ghostSprite != nullptr)
 	{
 		delete ghostSprite;

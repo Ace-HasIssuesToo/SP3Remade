@@ -49,7 +49,7 @@ bool Map::Init(std::string Filename)
 	return true;
 }
 
-void Map::Render(Vector3 pos)
+void Map::Render(Vector3 pos, bool Shadow)
 {
 	//Map Amount
 	//Offset Calculation
@@ -59,33 +59,51 @@ void Map::Render(Vector3 pos)
 	Vector3 Displacement = Vector3(pos.x - Math::Max(floor(pos.x), 0.f), pos.y - Math::Max(floor(pos.y), 0.f), 0)*-1;
 
 	Vector3 Character_Pos = PlayerClass::pointer()->getPlayerPos();
-	Character_Pos = (Vector3(Character_Pos.y / Render_PI::Window_Scale().y, Character_Pos.x / Render_PI::Window_Scale().x, 0) * sizes);
+	Character_Pos = pos + (Vector3((Character_Pos.y) / Render_PI::Window_Scale().y, (Character_Pos.x) / Render_PI::Window_Scale().x, 0) * sizes);
 
 	for (int X = Math::Min(ceil(pos.x + sizes), Limitation.x); Math::Max(floor(pos.x), 0.f) <= X; X--)
 	{
 		for (int Y = Math::Min(ceil(pos.y + sizes), Limitation.y); Math::Max(floor(pos.y), 0.f) <= Y; Y--)
 		{
-			Location.str(std::string());
-			Location.clear();
-			Location << X << " / " << Y;
-			std::map<std::string, std::string>::iterator it;
-			string Strings = Location.str();
-			it = Map_Data.find(Strings);
-			if (it == Map_Data.end())
+			if (X <= int((Character_Pos.x + 1) + Light_Range) && X >= int((Character_Pos.x - 1) - Light_Range) && Y <= int((Character_Pos.y + 1) + Light_Range) && Y >= int((Character_Pos.y - 1) - Light_Range))
 			{
-				return;
+				if (!Shadow)
+				{
+					Location.str(std::string());
+					Location.clear();
+					Location << X << " / " << Y;
+					std::map<std::string, std::string>::iterator it;
+					string Strings = Location.str();
+					it = Map_Data.find(Strings);
+					if (it == Map_Data.end())
+					{
+						Render_PI::pointer()->modelStack_Set(true);
+						Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+						Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Something"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+						Render_PI::pointer()->modelStack_Set(false);
+					}
+					else
+					{
+						Render_PI::pointer()->modelStack_Set(true);
+						Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+						Render_PI::pointer()->RenderMeshIn2D(Texture::Get(Map_Data.at(Location.str())), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+						Render_PI::pointer()->modelStack_Set(false);
+					}
+				}
 			}
 			else
 			{
-				Render_PI::pointer()->modelStack_Set(true);
-				Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
-				Render_PI::pointer()->RenderMeshIn2D(Texture::Get(Map_Data.at(Location.str())),false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
-				Render_PI::pointer()->modelStack_Set(false);
+				if (Shadow)
+				{
+					Render_PI::pointer()->modelStack_Set(true);
+					Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+					Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Mist"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+					Render_PI::pointer()->modelStack_Set(false);
+				}
 			}
 		}
 	}
 }
-
 std::string Map::Get_Type(Vector3 pos)
 {
 	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
@@ -104,4 +122,22 @@ std::string Map::Get_Type(Vector3 pos)
 Vector3 Map::Pokemon_Offset(Vector3 pos)
 {
 	return (pos - PlayerClass::pointer()->getPlayerPosOffSet());
+}
+
+
+bool Map::In_Range(Vector3 WorldPos, Vector3 pos)
+{
+	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
+	std::stringstream Location;
+	Vector3 Size = Render_PI::Window_Scale()*(1.f / sizes);
+
+	Vector3 Character_Pos = PlayerClass::pointer()->getPlayerPos();
+	Character_Pos = pos + (Vector3((Character_Pos.y) / Render_PI::Window_Scale().y, (Character_Pos.x) / Render_PI::Window_Scale().x, 0) * sizes);
+	Vector3  Current_Pos = (Vector3((WorldPos.y) / Render_PI::Window_Scale().y, (WorldPos.x) / Render_PI::Window_Scale().x, 0) * sizes);
+
+	if (Current_Pos.x <= int((Character_Pos.x + 2) + Light_Range) && Current_Pos.x >= int((Character_Pos.x - 2) - Light_Range) && Current_Pos.y <= int((Character_Pos.y + 2) + Light_Range) && Current_Pos.y >= int((Character_Pos.y - 2) - Light_Range))
+	{
+		return true;
+	}
+	return false;
 }

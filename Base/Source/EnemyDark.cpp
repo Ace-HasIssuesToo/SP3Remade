@@ -2,6 +2,7 @@
 #include "Input_PI.h"
 #include "Render_PI.h"
 #include "Texture_PI.h"
+#include "GameState.h"
 
 Enemy_Dark* Enemy_Dark::m_pointer = new Enemy_Dark();
 
@@ -177,6 +178,13 @@ void Enemy_Dark::Update(double dt, Map* map)
 		{
 			ballOnScreen = false;
 		}
+		Vector3 radiusRange;
+		radiusRange = (darkBallPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
+		float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
+		if (radRange < 10.f)
+		{
+			GameState::pointer()->SetState(GameState::LOSE);
+		}
 	}
 }
 
@@ -222,9 +230,9 @@ Mesh* Enemy_Dark::getEnemyMesh()
 
 void Enemy_Dark::RenderEnemyDark()
 {
-	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Enemy_Dark::getEnemyMesh(), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(EnemyDarkScale));
-	Render_PI::pointer()->modelStack_Set(false);
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->RenderMeshIn2D(Enemy_Dark::getEnemyMesh(), false, Map::Pokemon_Offset(EnemyDarkPos), Vector3(EnemyDarkScale));
+		Render_PI::pointer()->modelStack_Set(false); 
 	RenderDarkball();
 }
 

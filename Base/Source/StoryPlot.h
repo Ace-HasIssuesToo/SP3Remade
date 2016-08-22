@@ -15,13 +15,15 @@ public:
 
 	void Init();
 	void Update(double dt, Map* map);
-	void RenderStoryPlot();
 	void Exit();
 
 	void RenderPartOne();
+	void RenderEnd();
 
 private:
 	static StoryPlot* c_StoryPlot;
+
+	float dialogueTimer;
 
 	Mesh* introduction;
 	Mesh* intro_dialogue;

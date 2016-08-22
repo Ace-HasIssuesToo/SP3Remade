@@ -1,6 +1,7 @@
 #include "Enemy_Psychic.h"
 #include "Texture_PI.h"
 #include "Player.h"
+#include "GameState.h"
 
 Enemy_Psychic* Enemy_Psychic::c_enemyPsychic = new Enemy_Psychic();
 
@@ -115,38 +116,78 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			// Plays enemy sound: KILL
 			killScream = theSoundEngine->play2D("Data//Sound//psychic_468.mp3", false, false, false, ESM_AUTO_DETECT, true);
 			finalScream = true;
+			
 		}
 	}
-	//cout << lastResort << "     " << counterFound << endl;
-
 	//cout << lastResort << "     " << counterFound << endl;
 	// Kill the player or be caught by player
 	if (finalScream)
 		screamTimer += (dt);
 	if (screamTimer > 3.f)
-		currState = STATE_GG;	//TEMP KILL/ CAUGHT
+	{
+		//currState = STATE_GG;	//TEMP KILL/ CAUGHT
+		GameState::pointer()->SetState(GameState::LOSE);
+		finalScream = false;
+		lastResort = false;
+	}
 
-	//cout << screamTimer << endl;
+	if (!finalScream)
+		screamTimer = 0.f;
 }
 
 void Enemy_Psychic::RenderPsychic()
 {
-	Render_PI::pointer()->modelStack_Set(true);
-	Vector3 Pos = Map::Pokemon_Offset(psychicPos);
-	//if (currState == STATE_HIDE)
+		Render_PI::pointer()->modelStack_Set(true);
+		//if (currState == STATE_HIDE)
 		//Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
-	if (currState == STATE_APPEAR)
-		Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Pos, Vector3(7, 7, 1));
-	if (currState == STATE_KILL)
-		Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Pos, Vector3(7, 7, 1));
-	if (currState == STATE_GG)
-		Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Pos, Vector3(6, 6, 1));
+		if (currState == STATE_APPEAR)
+			Render_PI::pointer()->RenderMeshIn2D(appear_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
+		if (currState == STATE_KILL)
+			Render_PI::pointer()->RenderMeshIn2D(kill_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(7, 7, 1));
+		if (currState == STATE_GG)
+			Render_PI::pointer()->RenderMeshIn2D(hide_psychic, false, Map::Pokemon_Offset(psychicPos), Vector3(6, 6, 1));
 
-	Render_PI::pointer()->modelStack_Set(false);
-}
+		Render_PI::pointer()->modelStack_Set(false);
+	}
 
 void Enemy_Psychic::Exit()
 {
+	if (theSoundEngine != nullptr)
+	{
+		theSoundEngine->drop();
+		theSoundEngine = nullptr;
+	}
+	
+	if (runScream != nullptr)
+	{
+		runScream->drop();
+		runScream = nullptr;
+	}
+
+	if (killScream != nullptr)
+	{
+		killScream->drop();
+		killScream = nullptr;
+	}
+
+	if (hide_psychic != nullptr)
+	{
+		delete hide_psychic;
+		hide_psychic = nullptr;
+	}
+
+	if (appear_psychic != nullptr)
+	{
+		delete appear_psychic;
+		appear_psychic = nullptr;
+	}
+
+	if (kill_psychic != nullptr)
+	{
+		delete kill_psychic;
+		kill_psychic = nullptr;
+	}
+
 	if (c_enemyPsychic != nullptr)
 	{
 		delete c_enemyPsychic;

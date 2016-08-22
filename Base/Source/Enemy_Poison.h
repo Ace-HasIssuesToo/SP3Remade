@@ -9,7 +9,7 @@ public:
 	static Enemy_Poison* pointer(){ return m_pointer; };
 	void Init();
 	void Update(double dt, Map* map);
-	void render();
+	void render(Vector3 Offset);
 	void Exit();
 	Vector3 Poison(Vector3 Movement);
 	Vector3 GetPos();
@@ -25,6 +25,8 @@ private:
 		All_debuff,
 	};
 	static Enemy_Poison* m_pointer;
+	Mesh* Poison_Mesh;
+	Mesh* Poisoned_effect;
 	Enemy_Poison(){};
 	~Enemy_Poison(){};
 	Vector3 Pos;
@@ -34,8 +36,6 @@ private:
 	float LastTime;
 	float ChangeEffect;
 	bool FlipType[All_debuff];
-	Mesh* Poison_Mesh;
-	Mesh* Poisoned_effect;
 	Vector3 Clones[5];
 
 };
