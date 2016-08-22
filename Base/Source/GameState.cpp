@@ -119,7 +119,6 @@ void GameState::Update_Stuffs(double dt, Map* map)
 				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[0] = false;
-					Enemy_Psychic::pointer()->clearPsychic();
 					pokemonCount--;
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
@@ -130,6 +129,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 						Enemy_Poison::pointer()->Init();
 						Enemy_Dark::pointer()->Init();
 						PokeballInfo::pointer()->Init();
+						Enemy_Psychic::pointer()->clearPsychic();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;

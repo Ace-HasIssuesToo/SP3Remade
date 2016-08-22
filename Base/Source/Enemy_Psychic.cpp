@@ -24,6 +24,11 @@ Vector3 Enemy_Psychic::GetPos()
 void Enemy_Psychic::clearPsychic()
 {
 	psycho = false;
+	screamTimer = 0.f;
+	playerIntrude = false;
+	defMechanism = false;
+	finalScream = false;
+	lastResort = false;
 }
 
 void Enemy_Psychic::Init()
@@ -143,15 +148,6 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			defMechanism = false;
 			psycho = false;
 		}
-	}
-
-	if (!psycho)
-	{
-		screamTimer = 0.f;
-		playerIntrude = false;
-		defMechanism = false;
-		finalScream = false;
-		lastResort = false;
 	}
 }
 
