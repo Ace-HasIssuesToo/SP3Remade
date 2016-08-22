@@ -3,7 +3,6 @@
 #include "Map_PI.h"
 #include "Player.h"
 #include "PokeInfo.h"
-#include "StoryPlot.h"
 #include "Support_Codes.h"
 
 class GameState
@@ -43,6 +42,9 @@ public:
 	Mesh* losescreen;
 	Mesh* helpscreen;
 	Mesh* creditscreen;
+
+	Mesh* introduction;
+	Mesh* intro_dialogue;
 
 	Mesh* GetText();
 private:
