@@ -336,6 +336,7 @@ void GameState::GetState(double dt)
 			Enemy_Ghost::pointer()->Init();
 			Enemy_Poison::pointer()->Init();
 			Enemy_Dark::pointer()->Init();
+			Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
 		}
 		break;
@@ -351,6 +352,7 @@ void GameState::GetState(double dt)
 			Enemy_Ghost::pointer()->Init();
 			Enemy_Poison::pointer()->Init();
 			Enemy_Dark::pointer()->Init();
+			Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
 		}
 		break;
