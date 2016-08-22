@@ -2,6 +2,7 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 #include "Player.h"
+#include "GameEnvironmentEvent.h"
 
 
 bool Map::Init(std::string Filename)
@@ -127,6 +128,8 @@ Vector3 Map::Pokemon_Offset(Vector3 pos)
 
 bool Map::In_Range(Vector3 WorldPos, Vector3 pos)
 {
+	//float light_range = float();
+	//light_range = GameEnvironmentEvent::pointer()->ChangeLightRange(light_range);
 	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
 	std::stringstream Location;
 	Vector3 Size = Render_PI::Window_Scale()*(1.f / sizes);

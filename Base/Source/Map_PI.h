@@ -13,7 +13,8 @@ public:
 private:
 	std::map<std::string, std::string> Map_Data;
 	Vector3 Limitation;
+	
 };
-static const float Light_Range = 3;
+const float Light_Range = 3;
 const float sizes = 10;
 #endif
