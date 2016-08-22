@@ -98,7 +98,7 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		if (Runtime <= Max_Speed)
 		{
-			Runtime += dt*0.5;
+			Runtime += 0.5 * dt;
 		}
 		
 	}
@@ -194,7 +194,14 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		PlayerPos = playerShadow;
 	}
-
+	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "VendingMachine")
+	{
+		Runtime += 5 * dt;
+		if (Runtime > Max_Speed)
+		{
+			Runtime = Max_Speed;
+		}
+	}
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))

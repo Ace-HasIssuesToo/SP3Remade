@@ -39,7 +39,6 @@ Vector3 Enemy_Ghost::Freeze(Vector3 Movement)
 	if (ghostStayTimer > 0.0f)
 	{
 		Movement = Vector3(0, 0, 0);
-		cout << "Freeze" << endl;
 	}
 	return Movement;
 }
@@ -91,7 +90,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 		ghostStayTimer += dt;
 		dirX = 0;
 		dirY = 0;
-		if (ghostStayTimer > 3.f)
+		if (ghostStayTimer > 2.5f)
 		{
 			//ghost will move away again
 			dirX += Math::RandFloatMinMax(-5, 5);
@@ -117,10 +116,10 @@ void Enemy_Ghost::RenderGhost()
 	//ghost will disppear when it is on top of the player
 	if (ghostStayTimer == 0.0f)
 	{
-			Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
-			Render_PI::pointer()->modelStack_Set(true);
-			Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
-			Render_PI::pointer()->modelStack_Set(false);
+		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
+		Render_PI::pointer()->modelStack_Set(false);
 	}
 	/*std::ostringstream ss;
 	ss.precision(5);

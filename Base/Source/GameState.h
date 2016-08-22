@@ -7,8 +7,6 @@
 
 class GameState
 {
-	
-	
 public:
 	enum Game
 	{
@@ -26,6 +24,7 @@ public:
 	};
 	Game state;
 	//Game GetState(double dt);
+	void GameInIt();
 	void GetState(double dt);
 	void SetState(Game gamestate);
 	void RenderFloors();

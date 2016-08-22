@@ -29,6 +29,11 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Input_PI.cpp" />
     <ClCompile Include="Source\Game_System.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="Source\Sensor.cpp" />
+    <ClCompile Include="Source\StoryPlot.cpp" />
+>>>>>>> eaa8e15d39084d02afbe803069435f610faa4c5b
     <ClCompile Include="Source\Support_Codes.cpp" />
     <ClCompile Include="Source\Texture_PI.cpp" />
   </ItemGroup>
@@ -51,6 +56,11 @@
     <ClInclude Include="Source\Input_PI.h" />
     <ClInclude Include="Source\Game_System.h" />
     <ClInclude Include="Source\Scene.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="Source\Sensor.h" />
+    <ClInclude Include="Source\StoryPlot.h" />
+>>>>>>> eaa8e15d39084d02afbe803069435f610faa4c5b
     <ClInclude Include="Source\Support_Codes.h" />
     <ClInclude Include="Source\Texture_PI.h" />
   </ItemGroup>

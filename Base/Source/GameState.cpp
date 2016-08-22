@@ -4,6 +4,7 @@
 #include "Enemy_Psychic.h"
 #include "Enemy_Ghost.h"
 #include "EnemyDark.h"
+#include "Sensor.h"
 
 GameState* GameState::c_pointer = new GameState();
 GameState::GameState()
@@ -16,13 +17,19 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
+<<<<<<< HEAD
 	state = INTRODUCTION;
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
+=======
+	state = START;
+	GameInIt();
+>>>>>>> eaa8e15d39084d02afbe803069435f610faa4c5b
 	PokeballInfo::pointer()->Init();
+	Sensor::pointer()->Init();
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -78,7 +85,15 @@ void GameState::Init()
 	intro_dialogue = MeshBuilder::GenerateText("intro_dialogue", 16, 16);
 	intro_dialogue->textureID = LoadTGA("Data//Texture//pokeFont.tga");
 }
-
+void GameState::GameInIt()
+{
+	PlayerClass::pointer()->Init();
+	Enemy_Psychic::pointer()->Init();
+	Enemy_Ghost::pointer()->Init();
+	Enemy_Poison::pointer()->Init();
+	Enemy_Dark::pointer()->Init();
+	PokeballInfo::pointer()->Init();
+}
 Mesh* GameState::GetText()
 {
 	return text;
@@ -89,6 +104,7 @@ void GameState::SetState(Game gamestate)
 }
 void GameState::Update_Stuffs(double dt, Map* map)
 {
+	Sensor::pointer()->Update(dt);
 	PlayerClass::pointer()->Update(dt, map);
 	if (Pokemon_On_Loose[0])
 	{
@@ -112,7 +128,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 	double range = 0;
 	float min_range = 10;
 	int catchrate = rand() % 101;
-	int min_catchrate = 20;
+	int min_catchrate = 40;
 	if (PokeballInfo::pointer()->getBallStatus())
 	{
 		if (Pokemon_On_Loose[0])
@@ -128,12 +144,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						PlayerClass::pointer()->Init();
-						Enemy_Psychic::pointer()->Init();
-						Enemy_Ghost::pointer()->Init();
-						Enemy_Poison::pointer()->Init();
-						Enemy_Dark::pointer()->Init();
-						PokeballInfo::pointer()->Init();
+						GameInIt();
 						Enemy_Psychic::pointer()->clearPsychic();
 						for (int i = 0; i < 4; i++)
 						{
@@ -158,17 +169,12 @@ void GameState::Update_Stuffs(double dt, Map* map)
 				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[1] = false;
-					Enemy_Ghost::pointer()->ClearGhost();
 					pokemonCount--;
+					Enemy_Ghost::pointer()->ClearGhost();
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						PlayerClass::pointer()->Init();
-						Enemy_Psychic::pointer()->Init();
-						Enemy_Ghost::pointer()->Init();
-						Enemy_Poison::pointer()->Init();
-						Enemy_Dark::pointer()->Init();
-						PokeballInfo::pointer()->Init();
+						GameInIt();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;
@@ -197,12 +203,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						PlayerClass::pointer()->Init();
-						Enemy_Psychic::pointer()->Init();
-						Enemy_Ghost::pointer()->Init();
-						Enemy_Poison::pointer()->Init();
-						Enemy_Dark::pointer()->Init();
-						PokeballInfo::pointer()->Init();
+						GameInIt();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;
@@ -230,12 +231,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						PlayerClass::pointer()->Init();
-						Enemy_Psychic::pointer()->Init();
-						Enemy_Ghost::pointer()->Init();
-						Enemy_Poison::pointer()->Init();
-						Enemy_Dark::pointer()->Init();
-						PokeballInfo::pointer()->Init();
+						GameInIt();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;
@@ -268,12 +264,6 @@ void GameState::GetState(double dt)
 				pokemonCount++;
 				Pokemon_On_Loose[i] = false;
 			}
-			/*PlayerClass::pointer()->Init();
-			PokeballInfo::pointer()->Init();
-			Enemy_Psychic::pointer()->Init();
-			Enemy_Ghost::pointer()->Init();
-			Enemy_Poison::pointer()->Init();
-			Enemy_Dark::pointer()->Init();*/
 
 			for (int i = 0; i < 4; i++)
 			{
@@ -336,14 +326,10 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed(VK_SPACE))
 		{
 			state = START;
-			PlayerClass::pointer()->Init();
-			PokeballInfo::pointer()->Init();
-			Enemy_Psychic::pointer()->Init();
-			Enemy_Ghost::pointer()->Init();
-			Enemy_Poison::pointer()->Init();
-			Enemy_Dark::pointer()->Init();
+			GameInIt();
 			Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
+			pokemonCount = 0;
 		}
 		break;
 	}
@@ -352,14 +338,10 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed('R'))
 		{
 			state = START;
-			PlayerClass::pointer()->Init();
-			PokeballInfo::pointer()->Init();
-			Enemy_Psychic::pointer()->Init();
-			Enemy_Ghost::pointer()->Init();
-			Enemy_Poison::pointer()->Init();
-			Enemy_Dark::pointer()->Init();
+			GameInIt();
 			Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
+			pokemonCount = 0;
 		}
 		break;
 	}
@@ -439,6 +421,8 @@ void GameState::RenderFloors()
 		PokeballInfo::pointer()->Render();
 		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
 		PlayerClass::pointer()->Renderplayer();
+		Enemy_Poison::pointer()->render_Poison();
+		Sensor::pointer()->Render();
 	}
 	else if (state == FLOOR2)
 	{
@@ -462,6 +446,8 @@ void GameState::RenderFloors()
 		PokeballInfo::pointer()->Render();
 		Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
 		PlayerClass::pointer()->Renderplayer();
+		Enemy_Poison::pointer()->render_Poison();
+		Sensor::pointer()->Render();
 	}
 }
 void GameState::Render()
