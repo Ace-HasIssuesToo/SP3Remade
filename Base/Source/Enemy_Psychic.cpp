@@ -120,8 +120,6 @@ void Enemy_Psychic::Update(double dt, Map* map)
 		}
 	}
 	//cout << lastResort << "     " << counterFound << endl;
-
-	//cout << lastResort << "     " << counterFound << endl;
 	// Kill the player or be caught by player
 	if (finalScream)
 		screamTimer += (dt);
@@ -135,7 +133,6 @@ void Enemy_Psychic::Update(double dt, Map* map)
 
 	if (!finalScream)
 		screamTimer = 0.f;
-	cout << screamTimer << endl;
 }
 
 void Enemy_Psychic::RenderPsychic()
@@ -157,19 +154,19 @@ void Enemy_Psychic::Exit()
 {
 	if (theSoundEngine != nullptr)
 	{
-		delete theSoundEngine;
+		theSoundEngine->drop();
 		theSoundEngine = nullptr;
 	}
 	
 	if (runScream != nullptr)
 	{
-		delete runScream;
+		runScream->drop();
 		runScream = nullptr;
 	}
 
 	if (killScream != nullptr)
 	{
-		delete killScream;
+		killScream->drop();
 		killScream = nullptr;
 	}
 
