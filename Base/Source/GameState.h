@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "PokeInfo.h"
 #include "Support_Codes.h"
+#include "ReadTxtFile.h"
 
 class GameState
 {

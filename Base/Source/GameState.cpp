@@ -458,6 +458,7 @@ void GameState::Exit()
 	Enemy_Ghost::pointer()->Exit();
 	Enemy_Poison::pointer()->Exit();
 	Enemy_Dark::pointer()->Exit();
+	ReadTxtFile::pointer()->Exit();
 	if (text != nullptr)
 	{
 		delete text;
