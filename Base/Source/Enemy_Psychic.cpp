@@ -139,6 +139,9 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			GameState::pointer()->SetState(GameState::LOSE);
 			finalScream = false;
 			lastResort = false;
+			playerIntrude = false;
+			defMechanism = false;
+			psycho = false;
 		}
 	}
 
