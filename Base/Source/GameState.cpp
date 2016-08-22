@@ -16,7 +16,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-	state = START;
+	state = INTRODUCTION;
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
@@ -71,6 +71,12 @@ void GameState::Init()
 
 	creditscreen = MeshBuilder::GenerateQuad("creditscreen", Color(0, 0, 0), 1.f);
 	creditscreen->textureArray[0] = LoadTGA("Data//Texture//creditscreen.tga");
+
+	introduction = MeshBuilder::GenerateQuad("introduction", Color(0, 0, 0), 1.f);
+	introduction->textureArray[0] = LoadTGA("Data//Texture//cityscape.tga");
+
+	intro_dialogue = MeshBuilder::GenerateText("intro_dialogue", 16, 16);
+	intro_dialogue->textureID = LoadTGA("Data//Texture//pokeFont.tga");
 }
 
 Mesh* GameState::GetText()
@@ -378,6 +384,13 @@ void GameState::RenderScreens()
 		Render_PI::pointer()->modelStack_Set(true);
 		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(134, 100, 1));
 		Render_PI::pointer()->RenderMesh(helpscreen, false);
+		Render_PI::pointer()->modelStack_Set(false);
+	}
+	if (state == INTRODUCTION)
+	{
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
+		Render_PI::pointer()->RenderMesh(introduction, false);
 		Render_PI::pointer()->modelStack_Set(false);
 	}
 	if (state == CREDIT)
