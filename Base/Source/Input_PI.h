@@ -23,6 +23,8 @@ public:
 		PokeThrowRight,
 		Interact,
 		Run,
+		OnLight,
+		OffLight,
 		Phone_Switch,
 		All_Control,
 	};

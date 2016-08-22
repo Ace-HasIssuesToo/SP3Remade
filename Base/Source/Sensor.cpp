@@ -73,7 +73,6 @@ void Sensor::Update(double dt)
 	Range_Cal(Enemy_Psychic::pointer()->GetPos());
 	Range_Cal(Enemy_Ghost::pointer()->GetGhostPos());
 	Range_Cal(Enemy_Dark::pointer()->getEnemyDarkPos());
-	cout << Range << endl;
 }
 
 void Sensor::Render()
@@ -114,5 +113,10 @@ void Sensor::Exit()
 	{
 		delete dead;
 		dead = nullptr;
+	}
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
 	}
 }

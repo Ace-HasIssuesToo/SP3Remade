@@ -24,19 +24,8 @@ public:
 	//ISound* haunt;
 private:
 	int life = 1;
-	Enemy_Ghost()
-		: ghostTimer(0)
-		, ghostStayTimer(0)
-		, dirX(Math::RandFloatMinMax(-5.f, 5.f))
-		, dirY(Math::RandFloatMinMax(-5.f, 5.f))
-		, ghostPos(0, 0, 0)
-		, ghostShadow(0, 0, 0)
-		, ghostoffset(0, 0, 0)
-	{
-	}
-	~Enemy_Ghost()
-	{
-	}
+	Enemy_Ghost();
+	~Enemy_Ghost();
 	static Enemy_Ghost* c_Enemy_Ghost;
 	float dirX;
 	float dirY;

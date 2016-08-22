@@ -197,12 +197,9 @@ void Enemy_Poison::render_Poison()
 
 void Enemy_Poison::render(Vector3 Offset)
 {
-	if (Map::In_Range(Pos, Offset))
-	{
 		Render_PI::pointer()->modelStack_Set(true);
 		Render_PI::pointer()->RenderMeshIn2D(Poison_Mesh, false, Map::Pokemon_Offset(Pos), Vector3(10, 10, 1));
 		Render_PI::pointer()->modelStack_Set(false);
-	}
 	if (Poisonous)
 	{
 		if (FlipType[ShadowClone])

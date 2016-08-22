@@ -127,6 +127,24 @@ void Input_PI::Update(double dt)
 		IsBeingPressed[Run] = false;
 		HaveBeenPressed[Run] = true;
 	}
+	if (Application::IsKeyPressed('F'))
+	{
+		IsBeingPressed[OnLight] = true;
+	}
+	else if (IsBeingPressed[OnLight] == true)
+	{
+		IsBeingPressed[OnLight] = false;
+		HaveBeenPressed[OnLight] = true;
+	}
+	if (Application::IsKeyPressed('G'))
+	{
+		IsBeingPressed[OffLight] = true;
+	}
+	else if (IsBeingPressed[OffLight] == true)
+	{
+		IsBeingPressed[OffLight] = false;
+		HaveBeenPressed[OffLight] = true;
+	}
 }
 
 
