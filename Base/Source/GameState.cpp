@@ -147,6 +147,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[1] = false;
+					Enemy_Ghost::pointer()->ClearGhost();
 					pokemonCount--;
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
@@ -233,7 +234,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
 						state = WIN;
-						
+
 					}
 				}
 				PokeballInfo::pointer()->ClearBallStatus();
