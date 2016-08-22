@@ -331,11 +331,11 @@ void GameState::GetState(double dt)
 		{
 			state = START;
 			PlayerClass::pointer()->Init();
+			PokeballInfo::pointer()->Init();
 			Enemy_Psychic::pointer()->Init();
 			Enemy_Ghost::pointer()->Init();
 			Enemy_Poison::pointer()->Init();
 			Enemy_Dark::pointer()->Init();
-			PokeballInfo::pointer()->Init();
 		}
 		break;
 	}
@@ -345,11 +345,11 @@ void GameState::GetState(double dt)
 		{
 			state = START;
 			PlayerClass::pointer()->Init();
+			PokeballInfo::pointer()->Init();
 			Enemy_Psychic::pointer()->Init();
 			Enemy_Ghost::pointer()->Init();
 			Enemy_Poison::pointer()->Init();
 			Enemy_Dark::pointer()->Init();
-			PokeballInfo::pointer()->Init();
 		}
 		break;
 	}
