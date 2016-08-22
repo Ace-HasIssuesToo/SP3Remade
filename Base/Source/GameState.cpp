@@ -16,14 +16,13 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-
+	state = START;
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
-	state = START;
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -331,6 +330,12 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed(VK_SPACE))
 		{
 			state = START;
+			PlayerClass::pointer()->Init();
+			PokeballInfo::pointer()->Init();
+			Enemy_Psychic::pointer()->Init();
+			Enemy_Ghost::pointer()->Init();
+			Enemy_Poison::pointer()->Init();
+			Enemy_Dark::pointer()->Init();
 		}
 		break;
 	}
@@ -339,6 +344,12 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed('R'))
 		{
 			state = START;
+			PlayerClass::pointer()->Init();
+			PokeballInfo::pointer()->Init();
+			Enemy_Psychic::pointer()->Init();
+			Enemy_Ghost::pointer()->Init();
+			Enemy_Poison::pointer()->Init();
+			Enemy_Dark::pointer()->Init();
 		}
 		break;
 	}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 22/8/2016 10:48:56 AM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -37,3 +38,14 @@
 Build succeeded.
 
 Time Elapsed 00:00:01.34
+=======
+﻿  GameState.cpp
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(368): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(375): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(382): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(389): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(396): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+>>>>>>> 4362110db25faf204eae4a5c5db9601ba037ab47
