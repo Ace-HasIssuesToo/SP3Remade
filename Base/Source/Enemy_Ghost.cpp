@@ -21,6 +21,11 @@ void Enemy_Ghost::Init()
 	theSoundEngine = createIrrKlangDevice();
 	haunt = theSoundEngine->addSoundSourceFromFile("Data//Sound//239-ghastly.mp3");
 }
+void Enemy_Ghost::ClearGhost()
+{
+	ghostTimer = 0.0f;
+	ghostStayTimer = 0.0f;
+}
 Vector3 Enemy_Ghost::GetGhostPos()
 {
 	return Map::Pokemon_Offset(ghostPos);
@@ -73,7 +78,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostPos = ghostShadow;
 	}
-	if (ghostTimer > 30.f)
+	if (ghostTimer > 5.f)
 	{
 		//teleport ghost to player position
 		if (ghostStayTimer == 0.0f)
@@ -95,17 +100,10 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 30.f)
+	else if (ghostTimer < 5.f)
 	{
 		ghostStayTimer = 0.0f;
 	}
-	/*Vector3 radiusRange;
-	radiusRange = (ghostPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
-	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
-	if (radRange < 10.f)
-	{
-		GameState::pointer()->SetState(GameState::LOSE);
-	}*/
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
 	{

@@ -13,6 +13,7 @@ public:
 	void Update(double dt, Map* map);
 	void RenderGhost();
 	void Exit();
+	void ClearGhost();
 
 	Vector3 GetGhostPos();
 	Vector3 GetGhostOffSet();
