@@ -6,7 +6,7 @@
 Enemy_Psychic* Enemy_Psychic::c_enemyPsychic = new Enemy_Psychic();
 
 Enemy_Psychic::Enemy_Psychic()
-: psychicPos(Vector3(0, 0, 0)), countFound(0), playerIntrude(false), defMechanism(false), lastResort(true), locationDir(Vector3(0, 0, 0)), screamTimer(0), finalScream(false)
+: psychicPos(Vector3(0, 0, 0)), countFound(0), playerIntrude(false), defMechanism(false), lastResort(true), locationDir(Vector3(0, 0, 0)), screamTimer(0), finalScream(false), psycho(false)
 {
 
 }
@@ -20,6 +20,12 @@ Vector3 Enemy_Psychic::GetPos()
 {
 	return Map::Pokemon_Offset(psychicPos);
 }
+
+void Enemy_Psychic::clearPsychic()
+{
+	psycho = false;
+}
+
 void Enemy_Psychic::Init()
 {
 	// Position of enemy
@@ -72,67 +78,78 @@ void Enemy_Psychic::Update(double dt, Map* map)
 	if (radRange < 200.f)
 	{
 		playerIntrude = true;
+		psycho = true;
 		countFound++;
 	}
 
-	if (playerIntrude && currState == STATE_HIDE)
+	if (psycho)
 	{
-		defMechanism = true;
-	}
-
-	Vector3 colliDetect = psychicPos + (locationDir * dt);
-	if (map->Get_Type(colliDetect) == "Floor")
-	{
-		psychicPos = colliDetect;
-		locationDir *= 0.99;
-		if (locationDir.x > -0.1 && locationDir.x < 0.1)
-			locationDir.x = 0;
-		if (locationDir.y > -0.1 && locationDir.y < 0.1)
-			locationDir.y = 0;
-	}
-
-	// State of enemy: HIDE to APPEAR
-	if (defMechanism)
-	{
-		currState = STATE_APPEAR;
-
-		// Runs to another location
-		locationDir = (psychicPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*100.0;
-		
-		// Plays enemy sound: RUN
-		theSoundEngine->play2D(runScream);
-	}
-	
-	// State of enemy: APPEAR to KILL
-	if (currState == STATE_APPEAR)
-	{
-		playerIntrude = false;
-		defMechanism = false;
-
-		if (lastResort && countFound > 2)
+		if (playerIntrude && currState == STATE_HIDE)
 		{
-			currState = STATE_KILL;
+			defMechanism = true;
+		}
 
-			// Plays enemy sound: KILL
-			killScream = theSoundEngine->play2D("Data//Sound//psychic_468.mp3", false, false, false, ESM_AUTO_DETECT, true);
-			finalScream = true;
-			
+		Vector3 colliDetect = psychicPos + (locationDir * dt);
+		if (map->Get_Type(colliDetect) == "Floor")
+		{
+			psychicPos = colliDetect;
+			locationDir *= 0.99;
+			if (locationDir.x > -0.1 && locationDir.x < 0.1)
+				locationDir.x = 0;
+			if (locationDir.y > -0.1 && locationDir.y < 0.1)
+				locationDir.y = 0;
+		}
+
+		// State of enemy: HIDE to APPEAR
+		if (defMechanism)
+		{
+			currState = STATE_APPEAR;
+
+			// Runs to another location
+			locationDir = (psychicPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*100.0;
+
+			// Plays enemy sound: RUN
+			theSoundEngine->play2D(runScream);
+		}
+
+		// State of enemy: APPEAR to KILL
+		if (currState == STATE_APPEAR)
+		{
+			playerIntrude = false;
+			defMechanism = false;
+			lastResort = true;
+
+			if (lastResort && countFound > 2)
+			{
+				currState = STATE_KILL;
+
+				// Plays enemy sound: KILL
+				killScream = theSoundEngine->play2D("Data//Sound//psychic_468.mp3", false, false, false, ESM_AUTO_DETECT, true);
+				finalScream = true;
+
+			}
+		}
+		//cout << lastResort << "     " << counterFound << endl;
+		// Kill the player or be caught by player
+		if (finalScream)
+			screamTimer += (dt);
+		if (screamTimer > 3.f)
+		{
+			//currState = STATE_GG;	//TEMP KILL/ CAUGHT
+			GameState::pointer()->SetState(GameState::LOSE);
+			finalScream = false;
+			lastResort = false;
 		}
 	}
-	//cout << lastResort << "     " << counterFound << endl;
-	// Kill the player or be caught by player
-	if (finalScream)
-		screamTimer += (dt);
-	if (screamTimer > 3.f)
+
+	if (!psycho)
 	{
-		//currState = STATE_GG;	//TEMP KILL/ CAUGHT
-		GameState::pointer()->SetState(GameState::LOSE);
+		screamTimer = 0.f;
+		playerIntrude = false;
+		defMechanism = false;
 		finalScream = false;
 		lastResort = false;
 	}
-
-	if (!finalScream)
-		screamTimer = 0.f;
 }
 
 void Enemy_Psychic::RenderPsychic()
