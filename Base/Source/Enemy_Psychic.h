@@ -24,6 +24,8 @@ public:
 	void SpriteUpdate(double dt);
 	Vector3 GetPos();
 
+	void clearPsychic();
+
 	enum STATE_TYPE
 	{
 		STATE_HIDE,
@@ -44,6 +46,7 @@ private:
 
 	Vector3 psychicPos, psychicPosOffset, locationDir;
 
+	bool psycho;
 	bool finalScream;
 	float screamTimer;
 

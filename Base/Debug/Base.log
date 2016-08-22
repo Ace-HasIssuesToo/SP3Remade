@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  GameState.cpp
 c:\users\user\documents\sp3remade\base\source\gamestate.cpp(356): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 c:\users\user\documents\sp3remade\base\source\gamestate.cpp(363): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
@@ -7,3 +8,75 @@ c:\users\user\documents\sp3remade\base\source\gamestate.cpp(384): warning C4244:
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+<<<<<<< HEAD
+﻿Build started 22/8/2016 9:59:15 AM.
+     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+=======
+<<<<<<< HEAD
+﻿  Enemy_Ghost.cpp
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(11): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(50): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(51): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(52): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(90): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(98): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(99): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+<<<<<<< HEAD
+﻿Build started 19/8/2016 4:24:27 PM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
+=======
+﻿生成启动时间为 20/8/2016 下午 12:53:34。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
+>>>>>>> ceb92c3f1a51c8ccb72b29bdb1cf9402e590d88c
+>>>>>>> 306aa90f50f67e6f006074af6b75429f4a9d6a0c
+     1>ClCompile:
+         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Psychic.cpp
+         Enemy_Psychic.cpp
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(32): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(92): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(96): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\nyp projects\sp3\edited pull\base\source\enemy_psychic.cpp(135): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+       Link:
+         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
+         Debug\Application.obj
+         Debug\Camera_PI.obj
+         Debug\EnemyDark.obj
+         Debug\Enemy_Ghost.obj
+         Debug\Enemy_Poison.obj
+         Debug\Enemy_Psychic.obj
+         Debug\GameEnvironmentEvent.obj
+         Debug\GameState.obj
+         Debug\Main_Shaft.obj
+         Debug\Map_PI.obj
+         Debug\Player.obj
+         Debug\PokeInfo.obj
+         Debug\Render_PI.obj
+         Debug\main.obj
+         Debug\Input_PI.obj
+         Debug\Game_System.obj
+         Debug\StoryPlot.obj
+         Debug\Support_Codes.obj
+         Debug\Texture_PI.obj
+     1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
+     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+<<<<<<< HEAD
+Time Elapsed 00:00:01.33
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:01.40
+=======
+已用时间 00:00:01.89
+>>>>>>> ceb92c3f1a51c8ccb72b29bdb1cf9402e590d88c
+>>>>>>> 63b7f65d03fdc6b1b09c106c4b36d50e4319405f
+>>>>>>> 306aa90f50f67e6f006074af6b75429f4a9d6a0c
+>>>>>>> ac90fb25c704e17c59e182802940b2d2cde429fe

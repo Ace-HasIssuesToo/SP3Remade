@@ -119,6 +119,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 				if (catchrate < min_catchrate)
 				{
 					Pokemon_On_Loose[0] = false;
+					Enemy_Psychic::pointer()->clearPsychic();
 					pokemonCount--;
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
