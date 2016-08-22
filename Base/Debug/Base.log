@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-﻿Build started 22/8/2016 10:48:56 AM.
+﻿Build started 22/8/2016 10:52:58 AM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp
-         GameState.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(357): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(364): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(371): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(378): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(385): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
+     1>Link:
          D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
          Debug\Application.obj
          Debug\Camera_PI.obj
@@ -32,20 +23,27 @@
          Debug\Texture_PI.obj
      1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>Texture_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Texture_PI.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Support_Codes.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Support_Codes.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>StoryPlot.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'StoryPlot.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Game_System.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Game_System.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Input_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Input_PI.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>main.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'main.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Render_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Render_PI.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>PokeInfo.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'PokeInfo.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Player.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Player.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Map_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Map_PI.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Main_Shaft.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Main_Shaft.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>GameEnvironmentEvent.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'GameEnvironmentEvent.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Enemy_Poison.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Enemy_Poison.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Enemy_Ghost.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Enemy_Ghost.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>EnemyDark.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'EnemyDark.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Camera_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera_PI.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Application.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Application.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
+     1>Angle_And_Target.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Angle_And_Target.obj' or at 'D:\NYP Projects\SP3\Edited Pull\Debug\vc120.pdb'; linking object as if no debug info
          Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
      1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.34
-=======
-﻿  GameState.cpp
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(368): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(375): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(382): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(389): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(396): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
->>>>>>> 4362110db25faf204eae4a5c5db9601ba037ab47
+Time Elapsed 00:00:00.40
