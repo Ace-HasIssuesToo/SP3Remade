@@ -15,10 +15,6 @@ private:
 	Vector3 Limitation;
 	
 };
-<<<<<<< HEAD
-const float Light_Range = 3;
-=======
-static const float Light_Range = 1;
->>>>>>> b76d3bc2a9360425fbd4e2fd91ee7242b22d5c60
+static const float Light_Range = 3;
 const float sizes = 10;
 #endif

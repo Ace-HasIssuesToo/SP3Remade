@@ -17,17 +17,12 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
 	state = INTRODUCTION;
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
-=======
-	state = START;
-	GameInIt();
->>>>>>> eaa8e15d39084d02afbe803069435f610faa4c5b
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
 	Floor1 = new Map();
