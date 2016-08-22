@@ -137,11 +137,6 @@ void Enemy_Psychic::Update(double dt, Map* map)
 		{
 			//currState = STATE_GG;	//TEMP KILL/ CAUGHT
 			GameState::pointer()->SetState(GameState::LOSE);
-			finalScream = false;
-			lastResort = false;
-			playerIntrude = false;
-			defMechanism = false;
-			psycho = false;
 		}
 	}
 }

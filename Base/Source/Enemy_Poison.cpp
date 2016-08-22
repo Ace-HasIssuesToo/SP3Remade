@@ -183,6 +183,18 @@ void Enemy_Poison::Update(double dt, Map* map)
 		}
 	}
 }
+
+void Enemy_Poison::render_Poison()
+{
+	if (Poisonous)
+	{
+		Render_PI::pointer()->modelStack_Set(true);
+		Vector3 Render_Pos = Render_PI::Window_Scale()*0.5 + Vector3(Math::RandFloatMinMax(-4, 4), Math::RandFloatMinMax(-4, 4), 0);
+		Render_PI::pointer()->RenderMeshIn2D(Poisoned_effect, false, Render_Pos, Render_PI::Window_Scale()*1.1);
+		Render_PI::pointer()->modelStack_Set(false);
+	}
+}
+
 void Enemy_Poison::render(Vector3 Offset)
 {
 	if (Map::In_Range(Pos, Offset))
@@ -193,10 +205,6 @@ void Enemy_Poison::render(Vector3 Offset)
 	}
 	if (Poisonous)
 	{
-		Render_PI::pointer()->modelStack_Set(true);
-		Vector3 Render_Pos = Render_PI::Window_Scale()*0.5 + Vector3(Math::RandFloatMinMax(-4, 4), Math::RandFloatMinMax(-4, 4), 0);
-		Render_PI::pointer()->RenderMeshIn2D(Poisoned_effect, false, Render_Pos, Render_PI::Window_Scale()*1.1);
-		Render_PI::pointer()->modelStack_Set(false);
 		if (FlipType[ShadowClone])
 		{
 			for (int i = 0; i < 5; i++)
