@@ -17,10 +17,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
-	state = START;
 	GameInIt();
-=======
 	state = INTRODUCTION;
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
@@ -29,7 +26,6 @@ void GameState::Init()
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
->>>>>>> e1f2b08474274f781166d292e7189ed83919bd43
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -465,11 +461,7 @@ void GameState::Exit()
 	Enemy_Ghost::pointer()->Exit();
 	Enemy_Poison::pointer()->Exit();
 	Enemy_Dark::pointer()->Exit();
-<<<<<<< HEAD
-	ReadTxtFile::pointer()->Exit();
-=======
 	Sensor::pointer()->Exit();
->>>>>>> e380b52510cf0d0c53d455f5e1ba4385724e3748
 	if (text != nullptr)
 	{
 		delete text;
