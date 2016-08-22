@@ -23,7 +23,7 @@ Vector3 Enemy_Psychic::GetPos()
 
 void Enemy_Psychic::clearPsychic()
 {
-	psycho = false;
+	psycho = finalScream = screamTimer = countFound = playerIntrude = defMechanism = lastResort = 0;
 }
 
 void Enemy_Psychic::Init()
@@ -145,14 +145,6 @@ void Enemy_Psychic::Update(double dt, Map* map)
 		}
 	}
 
-	if (!psycho)
-	{
-		screamTimer = 0.f;
-		playerIntrude = false;
-		defMechanism = false;
-		finalScream = false;
-		lastResort = false;
-	}
 }
 
 void Enemy_Psychic::RenderPsychic()
