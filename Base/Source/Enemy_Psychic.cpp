@@ -177,13 +177,13 @@ void Enemy_Psychic::Exit()
 	
 	if (runScream != nullptr)
 	{
-		runScream->drop();
+		//runScream->drop();
 		runScream = nullptr;
 	}
 
 	if (killScream != nullptr)
 	{
-		killScream->drop();
+		//killScream->drop();
 		killScream = nullptr;
 	}
 

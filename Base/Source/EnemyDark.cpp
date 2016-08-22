@@ -252,11 +252,6 @@ void Enemy_Dark::RenderDarkball()
 
 void Enemy_Dark::Exit()
 {
-	if (m_pointer != nullptr)
-	{
-		delete m_pointer;
-		m_pointer = nullptr;
-	};
 	if (enemyDarkMeshLeft != nullptr)
 	{
 		delete enemyDarkMeshLeft;
@@ -281,5 +276,10 @@ void Enemy_Dark::Exit()
 	{
 		delete Darkball_Mesh;
 		Darkball_Mesh = nullptr;
+	};
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
 	};
 }
