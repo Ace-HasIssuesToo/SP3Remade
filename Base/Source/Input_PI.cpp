@@ -23,15 +23,6 @@ void Input_PI::Clear()
 void Input_PI::Update(double dt)
 {
 	Clear();
-	/*if (Application::IsKeyPressed(VK_LBUTTON))
-	{
-		IsBeingPressed[PokeThrow] = true;
-	}
-	else if (IsBeingPressed[PokeThrow] == true)
-	{
-		IsBeingPressed[PokeThrow] = false;
-		HaveBeenPressed[PokeThrow] = true;
-	}*/
 	if (Application::IsKeyPressed(VK_UP))
 	{
 		IsBeingPressed[PokeThrowFront] = true;
@@ -126,6 +117,15 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[Run] = false;
 		HaveBeenPressed[Run] = true;
+	}
+	if (Application::IsKeyPressed(VK_RETURN))
+	{
+		IsBeingPressed[NextStatement] = true;
+	}
+	else if (IsBeingPressed[NextStatement] == true)
+	{
+		IsBeingPressed[NextStatement] = false;
+		HaveBeenPressed[NextStatement] = true;
 	}
 }
 
