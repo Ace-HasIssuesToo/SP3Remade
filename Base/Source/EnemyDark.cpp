@@ -151,15 +151,24 @@ void Enemy_Dark::Update(double dt, Map* map)
 	EnemyDarkShadow += Movement;
 
 	//Kind of Collision
-	if (map->Get_Type(EnemyDarkShadow) == "Wall")
-	{
-
-	}
-	else if (map->Get_Type(EnemyDarkShadow) == "Floor")
+	
+	if (map->Get_Type(EnemyDarkShadow) == "Floor") // imma hot ass nigga mang
 	{
 		EnemyDarkPos = EnemyDarkShadow;
 	}
-
+	else
+	{
+		Vector3 offset = (EnemyDarkPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize() * 50;
+		if (rand() % 2)
+		{
+			offset.x *= -1;
+		}
+		if (rand() % 3)
+		{
+			offset.y *= -1;
+		}
+		EnemyDarkPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
+	}
 
 	if ((distSq <= combinedRadSq) && (ballOnScreen == false))
 	{
@@ -186,6 +195,7 @@ void Enemy_Dark::Update(double dt, Map* map)
 			GameState::pointer()->SetState(GameState::LOSE);
 		}
 	}
+	cout << EnemyDarkPos << endl;
 }
 
 Vector3 Enemy_Dark::getRadSq()

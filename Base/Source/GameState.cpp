@@ -17,6 +17,10 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
+<<<<<<< HEAD
+	state = START;
+	GameInIt();
+=======
 	state = INTRODUCTION;
 	PlayerClass::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
@@ -25,6 +29,7 @@ void GameState::Init()
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
+>>>>>>> e1f2b08474274f781166d292e7189ed83919bd43
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -88,6 +93,7 @@ void GameState::GameInIt()
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
+	Sensor::pointer()->Init();
 }
 Mesh* GameState::GetText()
 {
@@ -244,7 +250,6 @@ void GameState::Update_Stuffs(double dt, Map* map)
 		}
 	}
 }
-//GameState::Game GameState::GetState(double dt)
 void GameState::GetState(double dt)
 {
 	switch (state)
@@ -321,9 +326,10 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed(VK_SPACE))
 		{
 			state = START;
-			GameInIt();
 			Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
+			PlayerClass::pointer()->ClearLight();
+			GameInIt();
 			pokemonCount = 0;
 		}
 		break;
@@ -333,9 +339,10 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed('R'))
 		{
 			state = START;
-			GameInIt();
 			Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
+			PlayerClass::pointer()->ClearLight();
+			GameInIt();
 			pokemonCount = 0;
 		}
 		break;
@@ -458,7 +465,11 @@ void GameState::Exit()
 	Enemy_Ghost::pointer()->Exit();
 	Enemy_Poison::pointer()->Exit();
 	Enemy_Dark::pointer()->Exit();
+<<<<<<< HEAD
 	ReadTxtFile::pointer()->Exit();
+=======
+	Sensor::pointer()->Exit();
+>>>>>>> e380b52510cf0d0c53d455f5e1ba4385724e3748
 	if (text != nullptr)
 	{
 		delete text;
