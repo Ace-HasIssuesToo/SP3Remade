@@ -217,12 +217,12 @@ void Enemy_Poison::Exit()
 	if (Poison_Mesh != nullptr)
 	{
 		delete Poison_Mesh;
-		Poison_Mesh;
+		Poison_Mesh = nullptr;
 	}
 	if (Poisoned_effect != nullptr)
 	{
-		delete Poison_Mesh;
-		Poison_Mesh;
+		delete Poisoned_effect;
+		Poisoned_effect = nullptr;
 	}
 	if (m_pointer != nullptr)
 	{

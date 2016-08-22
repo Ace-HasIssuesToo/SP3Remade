@@ -46,7 +46,7 @@ private:
 
 	PlayerMeshes playerMesh;
 	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
-	Mesh *Pokeball_Mesh;
+	//Mesh *Pokeball_Mesh;
 	float Runtime;
 	Mesh* RunBar;
 };

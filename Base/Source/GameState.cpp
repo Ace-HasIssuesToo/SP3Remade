@@ -16,7 +16,13 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-	
+
+	PlayerClass::pointer()->Init();
+	Enemy_Psychic::pointer()->Init();
+	Enemy_Ghost::pointer()->Init();
+	Enemy_Poison::pointer()->Init();
+	Enemy_Dark::pointer()->Init();
+	PokeballInfo::pointer()->Init();
 	state = START;
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -256,12 +262,12 @@ void GameState::GetState(double dt)
 				pokemonCount++;
 				Pokemon_On_Loose[i] = false;
 			}
-			PlayerClass::pointer()->Init();
+			/*PlayerClass::pointer()->Init();
 			PokeballInfo::pointer()->Init();
 			Enemy_Psychic::pointer()->Init();
 			Enemy_Ghost::pointer()->Init();
 			Enemy_Poison::pointer()->Init();
-			Enemy_Dark::pointer()->Init();
+			Enemy_Dark::pointer()->Init();*/
 
 			for (int i = 0; i < 4; i++)
 			{

@@ -128,6 +128,11 @@ void PokeballInfo::Render()
 
 void PokeballInfo::Exit()
 {
+	if (pokeballmesh != nullptr)
+	{
+		delete pokeballmesh;
+		pokeballmesh = nullptr;
+	}
 	if (m_pointer != nullptr)
 	{
 		delete m_pointer;

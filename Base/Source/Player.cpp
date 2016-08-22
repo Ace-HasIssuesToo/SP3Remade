@@ -225,11 +225,6 @@ void PlayerClass::Update(double dt, Map* map)
 
 void PlayerClass::Exit()
 {
-	if (m_pointer != nullptr)
-	{
-		delete m_pointer;
-		m_pointer = nullptr;
-	};
 	if (playerMeshLeft != nullptr)
 	{
 		delete playerMeshLeft;
@@ -250,15 +245,20 @@ void PlayerClass::Exit()
 		delete playerMeshDownward;
 		playerMeshDownward = nullptr;
 	};
-	if (Pokeball_Mesh != nullptr)
+	/*if (Pokeball_Mesh != nullptr)
 	{
 		delete Pokeball_Mesh;
 		Pokeball_Mesh = nullptr;
-	};
+	};*/
 	if (RunBar != nullptr)
 	{
 		delete RunBar;
 		RunBar = nullptr;
+	};
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
 	};
 }
 

@@ -79,7 +79,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostPos = ghostShadow;
 	}
-	if (ghostTimer > 5.f)
+	if (ghostTimer > 30.f)
 	{
 		//teleport ghost to player position
 		if (ghostStayTimer == 0.0f)
@@ -101,7 +101,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 			ghostTimer = 0.0f;
 		}
 	}
-	else if (ghostTimer < 5.f)
+	else if (ghostTimer < 30.f)
 	{
 		ghostStayTimer = 0.0f;
 	}
@@ -136,7 +136,7 @@ void Enemy_Ghost::Exit()
 	}
 	if (haunt != nullptr)
 	{
-		haunt->drop();
+		//haunt->drop();
 		haunt = nullptr;
 	}
 	if (ghostSprite != nullptr)

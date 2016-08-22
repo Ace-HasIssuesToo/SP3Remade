@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "PokeInfo.h"
 #include "StoryPlot.h"
+#include "Support_Codes.h"
 
 class GameState
 {
