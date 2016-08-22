@@ -15,6 +15,8 @@ PlayerClass::PlayerClass()
 	, playerShadow(0,0,0)
 	, pokeballShadow(0,0,0)
 	, sc(0,0,0)
+	, LightOn(false)
+	, LightRange(1)
 {
 }
 
@@ -26,14 +28,12 @@ void PlayerClass::Init()
 {
 	movementSpeed = 20;
 	Runtime = 30;
+	LightPower = 10.f;
 	//throwSpeed = -9.8;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	//dPlayerPos = Render_PI::Window_Scale() * 0.5;
 	//PlayerPos = Render_PI::Window_Scale();
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
-	sc.Set(5.f, 5.f, 5.f);
-	//sc.Set(10.f, 10.f, 10.f);
-	//sc.Set(5.f, 5.f, 5.f);
 	sc.Set(10.f, 10.f, 10.f);
 
 	setPlayerMesh(Top);
@@ -76,12 +76,29 @@ void PlayerClass::Init()
 	}
 	//playerMesh = nullptr;
 	RunBar = MeshBuilder::GenerateQuad("Runbar", Color(0, 1, 0));
+	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
 
 }
-
+void PlayerClass::ClearLight()
+{
+	LightOn = false;
+	LightPower = 10.f;
+	LightRange = 1.f;
+}
+float PlayerClass::GetLightRange()
+{
+	if (LightOn == true)
+	{
+		LightRange = 3.f;
+	}
+	else if (LightOn == false)
+	{
+		LightRange = 1.f;
+	}
+	return LightRange;
+}
 void PlayerClass::Update(double dt, Map* map)
 {
-
 	playerShadow = PlayerPos;
 	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
@@ -98,9 +115,8 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		if (Runtime <= Max_Speed)
 		{
-			Runtime += dt*0.5;
+			Runtime += 0.5 * dt;
 		}
-		
 	}
 	if (Runtime > Max_Speed)
 	{
@@ -110,6 +126,7 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		Runtime = 0;
 	}
+
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
 	{
 		Movement.y += movementSpeed * dt;
@@ -125,6 +142,29 @@ void PlayerClass::Update(double dt, Map* map)
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::Rightward] == true)
 	{
 		Movement.x += movementSpeed * dt;
+	}
+
+
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
+	{
+		LightOn = false;
+	}
+	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
+	{
+		LightOn = true;
+	}
+
+	if (LightOn == true)
+	{
+		if (LightPower > 0.f)
+		{
+			LightPower -= 0.25 * dt;
+		}
+		else if (LightPower <= 0.f)
+		{
+			LightPower = 0.f;
+			LightOn = false;
+		}
 	}
 
 	if (getPlayerMesh2() == playerMeshForward)
@@ -164,7 +204,6 @@ void PlayerClass::Update(double dt, Map* map)
 		}
 	}
 
-
 	Movement = Enemy_Poison::pointer()->Poison(Movement);
 	Movement = Enemy_Ghost::pointer()->Freeze(Movement);
 
@@ -194,7 +233,18 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		PlayerPos = playerShadow;
 	}
-
+	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "VendingMachine")
+	{
+		Runtime += 5 * dt;
+		if (Runtime > Max_Speed)
+		{
+			Runtime = Max_Speed;
+		}
+	}
+	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Treasure")
+	{
+		LightPower = 10.f;
+	}
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
@@ -225,11 +275,6 @@ void PlayerClass::Update(double dt, Map* map)
 
 void PlayerClass::Exit()
 {
-	if (m_pointer != nullptr)
-	{
-		delete m_pointer;
-		m_pointer = nullptr;
-	};
 	if (playerMeshLeft != nullptr)
 	{
 		delete playerMeshLeft;
@@ -250,15 +295,20 @@ void PlayerClass::Exit()
 		delete playerMeshDownward;
 		playerMeshDownward = nullptr;
 	};
-	if (Pokeball_Mesh != nullptr)
-	{
-		delete Pokeball_Mesh;
-		Pokeball_Mesh = nullptr;
-	};
 	if (RunBar != nullptr)
 	{
 		delete RunBar;
 		RunBar = nullptr;
+	};
+	if (LightBar != nullptr)
+	{
+		delete LightBar;
+		LightBar = nullptr;
+	}
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
 	};
 }
 
@@ -305,8 +355,14 @@ void PlayerClass::Renderplayer()
 	Render_PI::pointer()->modelStack_Set(true);
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
+
 	Render_PI::pointer()->modelStack_Set(true);
 	Vector3 Pos = (Vector3(5, 5, 0) + Vector3(Runtime * 10, 10, 0))*0.5f;
 	Render_PI::pointer()->RenderMeshIn2D(RunBar, false, Pos, Vector3(Runtime * 10, 10, 5));
+	Render_PI::pointer()->modelStack_Set(false);
+
+	Render_PI::pointer()->modelStack_Set(true);
+	Vector3 Pos2 = (Vector3(5, 5, 0) + Vector3(LightPower * 10, 180, 0))*0.5f;
+	Render_PI::pointer()->RenderMeshIn2D(LightBar, false, Pos2, Vector3(LightPower * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
 }

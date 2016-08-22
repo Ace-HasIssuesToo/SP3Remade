@@ -6,9 +6,25 @@ void GameEnvironmentEvent::Init()
 {
 
 }
-void GameEnvironmentEvent::Update(double dt, Map* map)
+float GameEnvironmentEvent::ChangeLightRange(float lightrange)
 {
-
+	if (lightTrigger > 5.f)
+	{
+		lightrange = 1.f;
+	}
+	if (debuffTimer > 5.f)
+	{
+		lightrange = 3.f;
+	}
+	return lightrange;
+}
+void GameEnvironmentEvent::Update(double dt)
+{
+	lightTrigger += dt;
+	if (lightTrigger > 5.f)
+	{
+		debuffTimer += dt;
+	}
 }
 void GameEnvironmentEvent::Render()
 {

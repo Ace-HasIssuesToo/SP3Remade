@@ -6,6 +6,20 @@
 #include "GameState.h"
 Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 
+Enemy_Ghost::Enemy_Ghost() : ghostTimer(0)
+, ghostStayTimer(0)
+, dirX(Math::RandFloatMinMax(-5.f, 5.f))
+, dirY(Math::RandFloatMinMax(-5.f, 5.f))
+, ghostPos(0, 0, 0)
+, ghostShadow(0, 0, 0)
+, ghostoffset(0, 0, 0)
+{
+
+}
+Enemy_Ghost::~Enemy_Ghost()
+{
+
+}
 void Enemy_Ghost::Init()
 {
 	ghostPos = (Render_PI::Window_Scale() * 0.8);
@@ -21,6 +35,11 @@ void Enemy_Ghost::Init()
 	theSoundEngine = createIrrKlangDevice();
 	haunt = theSoundEngine->addSoundSourceFromFile("Data//Sound//239-ghastly.mp3");
 }
+void Enemy_Ghost::ClearGhost()
+{
+	ghostTimer = 0.0f;
+	ghostStayTimer = 0.0f;
+}
 Vector3 Enemy_Ghost::GetGhostPos()
 {
 	return Map::Pokemon_Offset(ghostPos);
@@ -34,7 +53,6 @@ Vector3 Enemy_Ghost::Freeze(Vector3 Movement)
 	if (ghostStayTimer > 0.0f)
 	{
 		Movement = Vector3(0, 0, 0);
-		cout << "Freeze" << endl;
 	}
 	return Movement;
 }
@@ -86,7 +104,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 		ghostStayTimer += dt;
 		dirX = 0;
 		dirY = 0;
-		if (ghostStayTimer > 3.f)
+		if (ghostStayTimer > 2.5f)
 		{
 			//ghost will move away again
 			dirX += Math::RandFloatMinMax(-5, 5);
@@ -100,13 +118,6 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostStayTimer = 0.0f;
 	}
-	/*Vector3 radiusRange;
-	radiusRange = (ghostPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
-	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
-	if (radRange < 10.f)
-	{
-		GameState::pointer()->SetState(GameState::LOSE);
-	}*/
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)
 	{
@@ -119,10 +130,10 @@ void Enemy_Ghost::RenderGhost()
 	//ghost will disppear when it is on top of the player
 	if (ghostStayTimer == 0.0f)
 	{
-			Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
-			Render_PI::pointer()->modelStack_Set(true);
-			Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
-			Render_PI::pointer()->modelStack_Set(false);
+		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
+		Render_PI::pointer()->modelStack_Set(false);
 	}
 	/*std::ostringstream ss;
 	ss.precision(5);
@@ -138,7 +149,7 @@ void Enemy_Ghost::Exit()
 	}
 	if (haunt != nullptr)
 	{
-		haunt->drop();
+		//haunt->drop();
 		haunt = nullptr;
 	}
 	if (ghostSprite != nullptr)

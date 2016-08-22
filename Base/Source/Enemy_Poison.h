@@ -14,6 +14,7 @@ public:
 	Vector3 Poison(Vector3 Movement);
 	Vector3 GetPos();
 	void ClearPoison();
+	void render_Poison();
 private:
 	enum Debuff_Effects
 	{

@@ -4,7 +4,7 @@ Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Clothes,Floor,Floor,Fl
 Wall,Floor,Bookshelf,Floor,Floor,Hanger,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
-Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
+Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,VendingMachine,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
@@ -21,7 +21,7 @@ Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floo
 Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
-Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
+Wall,Floor,Floor,Floor,Floor,VendingMachine,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
@@ -37,5 +37,5 @@ Wall,Floor,Floor,Floor,SpilledChemical,Floor,Wall,Floor,Floor,Floor,Floor,Floor,
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,ToiletBowl,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
-Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
+Wall,Floor,Floor,Floor,Floor,Floor,Wall,Floor,VendingMachine,Floor,Floor,Floor,Floor,Floor,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall

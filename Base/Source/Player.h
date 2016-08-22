@@ -17,7 +17,8 @@ public:
 	Vector3 getPlayerPos();
 	Vector3 getPlayerScale();
 	Vector3 getPlayerPosOffSet();
-
+	void ClearLight();
+	float GetLightRange();
 	enum PlayerMeshes
 	{
 		Left = 0,
@@ -46,9 +47,12 @@ private:
 
 	PlayerMeshes playerMesh;
 	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
-	Mesh *Pokeball_Mesh;
 	float Runtime;
+	float LightPower;
+	float LightRange;
+	bool LightOn;
 	Mesh* RunBar;
+	Mesh* LightBar;
 };
 
 const float Max_Speed = 6.f;

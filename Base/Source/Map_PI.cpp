@@ -2,6 +2,7 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 #include "Player.h"
+#include "GameEnvironmentEvent.h"
 
 
 bool Map::Init(std::string Filename)
@@ -51,6 +52,7 @@ bool Map::Init(std::string Filename)
 
 void Map::Render(Vector3 pos, bool Shadow)
 {
+	float LR = PlayerClass::pointer()->GetLightRange();
 	//Map Amount
 	//Offset Calculation
 	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
@@ -65,7 +67,7 @@ void Map::Render(Vector3 pos, bool Shadow)
 	{
 		for (int Y = Math::Min(ceil(pos.y + sizes), Limitation.y); Math::Max(floor(pos.y), 0.f) <= Y; Y--)
 		{
-			if (X <= int((Character_Pos.x + 1) + Light_Range) && X >= int((Character_Pos.x - 1) - Light_Range) && Y <= int((Character_Pos.y + 1) + Light_Range) && Y >= int((Character_Pos.y - 1) - Light_Range))
+			if (X <= int((Character_Pos.x + 1) + LR) && X >= int((Character_Pos.x - 1) - LR) && Y <= int((Character_Pos.y + 1) + LR) && Y >= int((Character_Pos.y - 1) - LR))
 			{
 				if (!Shadow)
 				{
@@ -127,17 +129,19 @@ Vector3 Map::Pokemon_Offset(Vector3 pos)
 
 bool Map::In_Range(Vector3 WorldPos, Vector3 pos)
 {
-	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
-	std::stringstream Location;
-	Vector3 Size = Render_PI::Window_Scale()*(1.f / sizes);
-
-	Vector3 Character_Pos = PlayerClass::pointer()->getPlayerPos();
-	Character_Pos = pos + (Vector3((Character_Pos.y) / Render_PI::Window_Scale().y, (Character_Pos.x) / Render_PI::Window_Scale().x, 0) * sizes);
-	Vector3  Current_Pos = (Vector3((WorldPos.y) / Render_PI::Window_Scale().y, (WorldPos.x) / Render_PI::Window_Scale().x, 0) * sizes);
-
-	if (Current_Pos.x <= int((Character_Pos.x + 2) + Light_Range) && Current_Pos.x >= int((Character_Pos.x - 2) - Light_Range) && Current_Pos.y <= int((Character_Pos.y + 2) + Light_Range) && Current_Pos.y >= int((Character_Pos.y - 2) - Light_Range))
-	{
-		return true;
-	}
+//	//float LR = float();
+//	//LR = GameEnvironmentEvent::pointer()->ChangeLightRange(LR);
+//	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
+//	std::stringstream Location;
+//	Vector3 Size = Render_PI::Window_Scale()*(1.f / sizes);
+//
+//	Vector3 Character_Pos = PlayerClass::pointer()->getPlayerPos();
+//	Character_Pos = pos + (Vector3((Character_Pos.y) / Render_PI::Window_Scale().y, (Character_Pos.x) / Render_PI::Window_Scale().x, 0) * sizes);
+//	Vector3  Current_Pos = (Vector3((WorldPos.y) / Render_PI::Window_Scale().y, (WorldPos.x) / Render_PI::Window_Scale().x, 0) * sizes);
+//
+//	if (Current_Pos.x <= int((Character_Pos.x + 2) + LR) && Current_Pos.x >= int((Character_Pos.x - 2) - LR) && Current_Pos.y <= int((Character_Pos.y + 2) + LR) && Current_Pos.y >= int((Character_Pos.y - 2) - LR))
+//	{
+//		return true;
+//	}
 	return false;
 }

@@ -3,12 +3,10 @@
 #include "Map_PI.h"
 #include "Player.h"
 #include "PokeInfo.h"
-#include "StoryPlot.h"
+#include "Support_Codes.h"
 
 class GameState
 {
-	
-	
 public:
 	enum Game
 	{
@@ -26,6 +24,7 @@ public:
 	};
 	Game state;
 	//Game GetState(double dt);
+	void GameInIt();
 	void GetState(double dt);
 	void SetState(Game gamestate);
 	void RenderFloors();
@@ -43,6 +42,9 @@ public:
 	Mesh* losescreen;
 	Mesh* helpscreen;
 	Mesh* creditscreen;
+
+	Mesh* introduction;
+	Mesh* intro_dialogue;
 
 	Mesh* GetText();
 private:
