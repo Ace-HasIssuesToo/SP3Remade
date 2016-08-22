@@ -249,5 +249,29 @@ void Enemy_Dark::Exit()
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
-
+	if (enemyDarkMeshLeft != nullptr)
+	{
+		delete enemyDarkMeshLeft;
+		enemyDarkMeshLeft = nullptr;
+	};
+	if (enemyDarkMeshRight != nullptr)
+	{
+		delete enemyDarkMeshRight;
+		enemyDarkMeshRight = nullptr;
+	};
+	if (enemyDarkMeshForward != nullptr)
+	{
+		delete enemyDarkMeshForward;
+		enemyDarkMeshForward = nullptr;
+	};
+	if (enemyDarkMeshDownward != nullptr)
+	{
+		delete enemyDarkMeshDownward;
+		enemyDarkMeshDownward = nullptr;
+	};
+	if (Darkball_Mesh != nullptr)
+	{
+		delete Darkball_Mesh;
+		Darkball_Mesh = nullptr;
+	};
 }

@@ -230,7 +230,36 @@ void PlayerClass::Exit()
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
-
+	if (playerMeshLeft != nullptr)
+	{
+		delete playerMeshLeft;
+		playerMeshLeft = nullptr;
+	};
+	if (playerMeshRight != nullptr)
+	{
+		delete playerMeshRight;
+		playerMeshRight = nullptr;
+	};
+	if (playerMeshForward != nullptr)
+	{
+		delete playerMeshForward;
+		playerMeshForward = nullptr;
+	};
+	if (playerMeshDownward != nullptr)
+	{
+		delete playerMeshDownward;
+		playerMeshDownward = nullptr;
+	};
+	if (Pokeball_Mesh != nullptr)
+	{
+		delete Pokeball_Mesh;
+		Pokeball_Mesh = nullptr;
+	};
+	if (RunBar != nullptr)
+	{
+		delete RunBar;
+		RunBar = nullptr;
+	};
 }
 
 Vector3 PlayerClass::getPlayerPos()
