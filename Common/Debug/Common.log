@@ -1,24 +1,9 @@
-﻿Build started 22/8/2016 10:52:56 AM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MathUtility.cpp Source\MatrixStack.cpp Source\Mtx44.cpp Source\Vector2.cpp Source\Vector3.cpp Source\timer.cpp
-         timer.cpp
-         Vector3.cpp
-         Vector2.cpp
-         Mtx44.cpp
-         MatrixStack.cpp
-         MathUtility.cpp
-         Generating Code...
-       Lib:
-         D:\Visual Studio 2013\VC\bin\Lib.exe /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib" /NOLOGO Debug\MathUtility.obj
-         Debug\MatrixStack.obj
-         Debug\Mtx44.obj
-         Debug\timer.obj
-         Debug\Vector2.obj
-         Debug\Vector3.obj
-         Common.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" (Build target(s)).
+﻿生成启动时间为 22/8/2016 上午 11:16:36。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
+     1>Lib:
+         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
 
-Build succeeded.
+生成成功。
 
-Time Elapsed 00:00:01.81
+已用时间 00:00:00.05

@@ -23,16 +23,7 @@ Vector3 Enemy_Psychic::GetPos()
 
 void Enemy_Psychic::clearPsychic()
 {
-<<<<<<< HEAD
 	psycho = finalScream = screamTimer = countFound = playerIntrude = defMechanism = lastResort = 0;
-=======
-	psycho = false;
-	screamTimer = 0.f;
-	playerIntrude = false;
-	defMechanism = false;
-	finalScream = false;
-	lastResort = false;
->>>>>>> dec5fa655b5700be5a758127d615e72a4a77f1de
 }
 
 void Enemy_Psychic::Init()
@@ -146,17 +137,8 @@ void Enemy_Psychic::Update(double dt, Map* map)
 		{
 			//currState = STATE_GG;	//TEMP KILL/ CAUGHT
 			GameState::pointer()->SetState(GameState::LOSE);
-			finalScream = false;
-			lastResort = false;
-			playerIntrude = false;
-			defMechanism = false;
-			psycho = false;
 		}
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> dec5fa655b5700be5a758127d615e72a4a77f1de
 }
 
 void Enemy_Psychic::RenderPsychic()

@@ -4,6 +4,7 @@
 #include "Enemy_Psychic.h"
 #include "Enemy_Ghost.h"
 #include "EnemyDark.h"
+#include "Sensor.h"
 
 GameState* GameState::c_pointer = new GameState();
 GameState::GameState()
@@ -23,6 +24,7 @@ void GameState::Init()
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
+	Sensor::pointer()->Init();
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -83,6 +85,7 @@ void GameState::SetState(Game gamestate)
 }
 void GameState::Update_Stuffs(double dt, Map* map)
 {
+	Sensor::pointer()->Update(dt);
 	PlayerClass::pointer()->Update(dt, map);
 	if (Pokemon_On_Loose[0])
 	{
@@ -426,6 +429,8 @@ void GameState::RenderFloors()
 		PokeballInfo::pointer()->Render();
 		Floor1->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
 		PlayerClass::pointer()->Renderplayer();
+		Enemy_Poison::pointer()->render_Poison();
+		Sensor::pointer()->Render();
 	}
 	else if (state == FLOOR2)
 	{
@@ -449,6 +454,8 @@ void GameState::RenderFloors()
 		PokeballInfo::pointer()->Render();
 		Floor2->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
 		PlayerClass::pointer()->Renderplayer();
+		Enemy_Poison::pointer()->render_Poison();
+		Sensor::pointer()->Render();
 	}
 }
 void GameState::Render()
