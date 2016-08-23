@@ -138,27 +138,32 @@ void PlayerClass::Update(double dt, Map* map)
 
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
 	{
-		//LightOn = false;
-		LightRange -= dt;
+		LightOn = false;
+		LightRange = 1.f;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
 	{
 		LightOn = true;
 		LightRange += dt;
+		if (LightRange >= Max_LightRange)
+		{
+			LightRange = Max_LightRange;
+		}
 	}
-/*
+
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
 		{
-			LightPower -= 0.25 * dt;
+			LightPower -= 0.2 * LightRange * dt;
 		}
 		else if (LightPower <= 0.f)
 		{
 			LightPower = 0.f;
+			LightRange = 1.f;
 			LightOn = false;
 		}
-	}*/
+	}
 
 	if (getPlayerMesh2() == playerMeshForward)
 	{
@@ -237,6 +242,7 @@ void PlayerClass::Update(double dt, Map* map)
 	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Treasure")
 	{
 		LightPower = 10.f;
+		LightRange = 1.f;
 	}
 	//Keep Player in window
 	float Limitation_size = 30;
