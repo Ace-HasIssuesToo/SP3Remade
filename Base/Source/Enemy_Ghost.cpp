@@ -41,6 +41,8 @@ void Enemy_Ghost::ClearGhost()
 	ghostPos = (Render_PI::Window_Scale() * 0.8);
 	ghostShadow = Vector3(0, 0, 0);
 	ghostoffset = Vector3(0, 0, 0);
+	dirX = (Math::RandFloatMinMax(-5.f, 5.f));
+	dirY = (Math::RandFloatMinMax(-5.f, 5.f));
 }
 Vector3 Enemy_Ghost::GetGhostPos()
 {

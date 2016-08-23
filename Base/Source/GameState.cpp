@@ -323,10 +323,6 @@ void GameState::GetState(double dt)
 			GameReset();
 			pokemonCount = 0;
 			state = START;
-			/*Enemy_Ghost::pointer()->ClearGhost();
-			Enemy_Psychic::pointer()->clearPsychic();
-			PlayerClass::pointer()->ClearLight();
-			GameInIt();*/
 		}
 		break;
 	}
@@ -337,11 +333,6 @@ void GameState::GetState(double dt)
 			GameReset();
 			pokemonCount = 0;
 			state = START;
-			/*Enemy_Ghost::pointer()->ClearGhost();
-			Enemy_Psychic::pointer()->clearPsychic();
-			PlayerClass::pointer()->ClearLight();
-			GameInIt();*/
-			
 		}
 		break;
 	}
