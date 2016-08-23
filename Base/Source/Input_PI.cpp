@@ -118,7 +118,6 @@ void Input_PI::Update(double dt)
 		IsBeingPressed[Run] = false;
 		HaveBeenPressed[Run] = true;
 	}
-<<<<<<< HEAD
 	if (Application::IsKeyPressed(VK_RETURN))
 	{
 		IsBeingPressed[NextStatement] = true;
@@ -127,7 +126,7 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[NextStatement] = false;
 		HaveBeenPressed[NextStatement] = true;
-=======
+	}
 	if (Application::IsKeyPressed('F'))
 	{
 		IsBeingPressed[OnLight] = true;
@@ -145,7 +144,6 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[OffLight] = false;
 		HaveBeenPressed[OffLight] = true;
->>>>>>> e2ba5fac5723b1d9338c08871fea3697e66ae6c3
 	}
 }
 

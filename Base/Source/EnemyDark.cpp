@@ -195,7 +195,6 @@ void Enemy_Dark::Update(double dt, Map* map)
 			GameState::pointer()->SetState(GameState::LOSE);
 		}
 	}
-	cout << EnemyDarkPos << endl;
 }
 
 Vector3 Enemy_Dark::getRadSq()
@@ -258,6 +257,17 @@ void Enemy_Dark::RenderDarkball()
 	{
 
 	}
+}
+
+void Enemy_Dark::clearEnemyDark()
+{
+	movementSpeed = 10;
+	throwSpeed = 30;
+	EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
+	EnemyDarkScale.Set(5.f, 5.f, 5.f);
+	//EnemyDarkScale.Set(10.f, 10.f, 10.f);
+	ballOnScreen = false;
+	darkBallDirection = darkBallPos = Vector3();
 }
 
 void Enemy_Dark::Exit()
