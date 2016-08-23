@@ -1,83 +1,20 @@
-<<<<<<< HEAD
-﻿  GameState.cpp
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(355): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(362): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(369): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(376): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(383): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(390): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+﻿  Player.cpp
+c:\users\user\documents\sp3remade\base\source\player.cpp(102): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(103): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(110): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(124): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(128): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(132): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(136): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(152): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(230): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(245): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(251): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(257): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(263): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(378): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\player.cpp(378): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\player.cpp(357): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
-=======
-<<<<<<< HEAD
-﻿Build started 23/8/2016 12:46:45 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp
-         GameState.cpp
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(360): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(367): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(374): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(381): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(388): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(395): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-=======
-﻿生成启动时间为 23/8/2016 上午 11:29:19。
-     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
-         Player.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(102): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(103): warning C4244: “*=”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(110): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(124): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(128): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(132): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(136): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(152): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(230): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(245): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(251): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(257): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(263): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(376): warning C4305: “参数”: 从“double”到“float”截断
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(376): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(355): warning C4715: “PlayerClass::getPlayerMesh2”: 不是所有的控件路径都返回值
->>>>>>> ebb525acd5af5f51cb6a72d3264f2d1cb4567d35
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
-         Debug\Application.obj
-         Debug\Camera_PI.obj
-         Debug\EnemyDark.obj
-         Debug\Enemy_Ghost.obj
-         Debug\Enemy_Poison.obj
-         Debug\Enemy_Psychic.obj
-         Debug\GameEnvironmentEvent.obj
-         Debug\GameState.obj
-         Debug\Main_Shaft.obj
-         Debug\Map_PI.obj
-         Debug\Player.obj
-         Debug\PokeInfo.obj
-         Debug\ReadTxtFile.obj
-         Debug\Render_PI.obj
-         Debug\main.obj
-         Debug\Input_PI.obj
-         Debug\Game_System.obj
-         Debug\Sensor.obj
-         Debug\SoundEngine.obj
-         Debug\Support_Codes.obj
-         Debug\Texture_PI.obj
-     1>Angle_And_Target.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
-     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
-
-生成成功。
-
-<<<<<<< HEAD
-Time Elapsed 00:00:02.70
-=======
-已用时间 00:00:01.55
->>>>>>> ebb525acd5af5f51cb6a72d3264f2d1cb4567d35
->>>>>>> 638c4f68d1b1efb54ee0bae8de7f380f7389497b
