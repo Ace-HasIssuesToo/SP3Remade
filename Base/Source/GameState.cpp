@@ -17,20 +17,8 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
 	state = START;
 	GameInIt();
-=======
-	GameInIt();
-	state = INTRODUCTION;
-	PlayerClass::pointer()->Init();
-	Enemy_Psychic::pointer()->Init();
-	Enemy_Ghost::pointer()->Init();
-	Enemy_Poison::pointer()->Init();
-	Enemy_Dark::pointer()->Init();
-	PokeballInfo::pointer()->Init();
-	Sensor::pointer()->Init();
->>>>>>> e3c8338a71d9bc390390b76a2b0afdacf581a559
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -100,7 +88,7 @@ void GameState::GameReset()
 {
 	Enemy_Ghost::pointer()->ClearGhost();
 	Enemy_Psychic::pointer()->clearPsychic();
-	PlayerClass::pointer()->ClearLight();
+	PlayerClass::pointer()->ClearPlayer();
 	Enemy_Poison::pointer()->ClearPoison();
 	PokeballInfo::pointer()->ClearBallStatus();
 }
