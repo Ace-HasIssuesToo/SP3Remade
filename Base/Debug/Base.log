@@ -1,82 +1,10 @@
-<<<<<<< HEAD
 ﻿  GameState.cpp
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(351): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(358): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(365): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(372): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(379): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(386): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Enemy_Ghost.cpp
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(26): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(41): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(68): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(69): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(70): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(108): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(116): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(117): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-  Generating Code...
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(353): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(360): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(367): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(374): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(381): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(388): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
-=======
-﻿Build started 23/8/2016 10:53:24 AM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
-         Player.cpp
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(107): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(108): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(115): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(129): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(133): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(137): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(141): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(157): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(234): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(249): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(255): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(261): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(267): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(378): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(378): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(357): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
-         Debug\Application.obj
-         Debug\Camera_PI.obj
-         Debug\EnemyDark.obj
-         Debug\Enemy_Ghost.obj
-         Debug\Enemy_Poison.obj
-         Debug\Enemy_Psychic.obj
-         Debug\GameEnvironmentEvent.obj
-         Debug\GameState.obj
-         Debug\Main_Shaft.obj
-         Debug\Map_PI.obj
-         Debug\Player.obj
-         Debug\PokeInfo.obj
-         Debug\ReadTxtFile.obj
-         Debug\Render_PI.obj
-         Debug\main.obj
-         Debug\Input_PI.obj
-         Debug\Game_System.obj
-         Debug\Sensor.obj
-         Debug\SoundEngine.obj
-         Debug\Support_Codes.obj
-         Debug\Texture_PI.obj
-     1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-     1>Texture_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Texture_PI.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
-     1>Support_Codes.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Support_Codes.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
-     1>main.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'main.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
-     1>Render_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Render_PI.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
-     1>Camera_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera_PI.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
-     1>Application.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Application.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
-     1>Angle_And_Target.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Angle_And_Target.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
-         Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:01.14
->>>>>>> 32ab8293719867f24459cd34d222b725029f00b8

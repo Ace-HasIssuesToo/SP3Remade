@@ -77,8 +77,8 @@ void GameState::Init()
 void GameState::GameInIt()
 {
 	PlayerClass::pointer()->Init();
-	Enemy_Psychic::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
+	Enemy_Psychic::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
@@ -86,10 +86,11 @@ void GameState::GameInIt()
 }
 void GameState::GameReset()
 {
+	PlayerClass::pointer()->clearPlayer();
 	Enemy_Ghost::pointer()->ClearGhost();
 	Enemy_Psychic::pointer()->clearPsychic();
-	PlayerClass::pointer()->ClearPlayer();
 	Enemy_Poison::pointer()->ClearPoison();
+	Enemy_Dark::pointer()->clearEnemyDark();
 	PokeballInfo::pointer()->ClearBallStatus();
 }
 Mesh* GameState::GetText()
@@ -167,6 +168,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 				{
 					Pokemon_On_Loose[1] = false;
 					pokemonCount--;
+					Enemy_Ghost::pointer()->ClearGhost();
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;

@@ -77,12 +77,6 @@ void PlayerClass::Init()
 	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
 
 }
-void PlayerClass::ClearPlayer()
-{
-	LightOn = false;
-	LightPower = 10.f;
-	LightRange = 1.f;
-}
 float PlayerClass::GetLightRange()
 {
 	if (LightOn == true)
@@ -273,10 +267,12 @@ void PlayerClass::clearPlayer()
 {
 	movementSpeed = 20;
 	Runtime = 30;
-	LightPower = 10.f;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f);
+	LightOn = false;
+	LightPower = 10.f;
+	LightRange = 1.f;
 }
 
 void PlayerClass::Exit()

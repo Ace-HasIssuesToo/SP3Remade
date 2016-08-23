@@ -17,7 +17,6 @@ public:
 	Vector3 getPlayerPos();
 	Vector3 getPlayerScale();
 	Vector3 getPlayerPosOffSet();
-	void ClearPlayer();
 	float GetLightRange();
 	enum PlayerMeshes
 	{
