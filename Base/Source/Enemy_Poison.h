@@ -6,6 +6,7 @@
 class Enemy_Poison
 {
 public:
+	void Clear();
 	static Enemy_Poison* pointer(){ return m_pointer; };
 	void Init();
 	void Update(double dt, Map* map);
