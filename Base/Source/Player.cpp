@@ -4,6 +4,7 @@
 #include "Texture_PI.h"
 #include "Enemy_Poison.h"
 #include "Enemy_Ghost.h"
+#include "GameState.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -370,4 +371,9 @@ void PlayerClass::Renderplayer()
 	Vector3 Pos2 = (Vector3(5, 5, 0) + Vector3(LightPower * 10, 180, 0))*0.5f;
 	Render_PI::pointer()->RenderMeshIn2D(LightBar, false, Pos2, Vector3(LightPower * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
+
+	std::ostringstream ss;
+	ss.precision(5);
+	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
+	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
 }

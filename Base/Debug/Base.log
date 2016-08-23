@@ -1,27 +1,26 @@
-<<<<<<< HEAD
-﻿Build started 23/8/2016 10:20:20 AM.
+﻿Build started 23/8/2016 10:53:24 AM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\PokeInfo.cpp
-         PokeInfo.cpp
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\pokeinfo.cpp(44): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\pokeinfo.cpp(50): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\pokeinfo.cpp(56): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\pokeinfo.cpp(62): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\pokeinfo.cpp(70): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\pokeinfo.cpp(79): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\pokeinfo.cpp(97): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
+         Player.cpp
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(107): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(108): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(115): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(129): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(133): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(137): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(141): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(157): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(234): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(249): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(255): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(261): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(267): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(378): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(378): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(357): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
-=======
-﻿生成启动时间为 23/8/2016 上午 10:21:05。
-     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Main_Shaft.cpp
-         Main_Shaft.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
->>>>>>> 34d9f04e4f205f880f3da3d7dec468c3e732b109
          Debug\Application.obj
          Debug\Camera_PI.obj
          Debug\EnemyDark.obj
@@ -43,22 +42,18 @@
          Debug\SoundEngine.obj
          Debug\Support_Codes.obj
          Debug\Texture_PI.obj
-<<<<<<< HEAD
      1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>Texture_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Texture_PI.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
+     1>Support_Codes.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Support_Codes.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
+     1>main.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'main.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
+     1>Render_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Render_PI.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
+     1>Camera_PI.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Camera_PI.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
+     1>Application.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Application.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
+     1>Angle_And_Target.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Angle_And_Target.obj' or at 'D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\vc120.pdb'; linking object as if no debug info
          Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe
      1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" (Build target(s)).
-=======
-     1>Angle_And_Target.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
-     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
->>>>>>> 34d9f04e4f205f880f3da3d7dec468c3e732b109
 
-生成成功。
+Build succeeded.
 
-<<<<<<< HEAD
-Time Elapsed 00:00:01.12
-=======
-已用时间 00:00:02.64
->>>>>>> 34d9f04e4f205f880f3da3d7dec468c3e732b109
+Time Elapsed 00:00:01.14
