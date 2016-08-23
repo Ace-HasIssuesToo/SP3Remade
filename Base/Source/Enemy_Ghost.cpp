@@ -154,6 +154,12 @@ void Enemy_Ghost::Exit()
 	
 	if (ghostSprite != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete ghostSprite;
 		ghostSprite = nullptr;
 	}

@@ -57,4 +57,5 @@ private:
 };
 
 const float Max_Speed = 6.f;
+const float Max_LightRange = 4.f;
 #endif

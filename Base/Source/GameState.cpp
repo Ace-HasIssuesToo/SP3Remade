@@ -70,9 +70,6 @@ void GameState::Init()
 
 	introduction = MeshBuilder::GenerateQuad("introduction", Color(0, 0, 0), 1.f);
 	introduction->textureArray[0] = LoadTGA("Data//Texture//cityscape.tga");
-
-	intro_dialogue = MeshBuilder::GenerateText("intro_dialogue", 16, 16);
-	intro_dialogue->textureID = LoadTGA("Data//Texture//pokeFont.tga");
 }
 void GameState::GameInIt()
 {
@@ -83,6 +80,8 @@ void GameState::GameInIt()
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
+	ReadTxtFile::pointer()->Init();
+	ReadTxtFile::pointer()->ReadFromTextFile();
 }
 void GameState::GameReset()
 {
@@ -365,10 +364,11 @@ void GameState::RenderScreens()
 	}
 	if (state == INTRODUCTION)
 	{
-		Render_PI::pointer()->modelStack_Set(true);
-		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
-		Render_PI::pointer()->RenderMesh(introduction, false);
-		Render_PI::pointer()->modelStack_Set(false);
+		ReadTxtFile::pointer()->Render();
+		//Render_PI::pointer()->modelStack_Set(true);
+		//Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
+		//Render_PI::pointer()->RenderMesh(introduction, false);
+		//Render_PI::pointer()->modelStack_Set(false);
 	}
 	if (state == CREDIT)
 	{
@@ -541,6 +541,7 @@ void GameState::Exit()
 	Enemy_Poison::pointer()->Exit();
 	Enemy_Dark::pointer()->Exit();
 	Sensor::pointer()->Exit();
+	ReadTxtFile::pointer()->Exit();
 	if (text != nullptr)
 	{
 		delete text;
@@ -571,28 +572,38 @@ void GameState::Exit()
 		delete losescreen;
 		losescreen = nullptr;
 	}
+	if (introduction != nullptr)
+	{
+		delete introduction;
+		introduction = nullptr;
+	}
 	if (Floor1 != nullptr)
 	{
+		Floor1->Clear();
 		delete Floor1;
 		Floor1 = nullptr;
 	}
 	if (Floor2 != nullptr)
 	{
+		Floor2->Clear();
 		delete Floor2;
 		Floor2 = nullptr;
 	}
 	if (Floor3 != nullptr)
 	{
+		Floor3->Clear();
 		delete Floor3;
 		Floor3 = nullptr;
 	}
 	if (Floor4 != nullptr)
 	{
+		Floor4->Clear();
 		delete Floor4;
 		Floor4 = nullptr;
 	}
 	if (Floor5 != nullptr)
 	{
+		Floor5->Clear();
 		delete Floor5;
 		Floor5 = nullptr;
 	}

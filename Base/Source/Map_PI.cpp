@@ -145,3 +145,8 @@ bool Map::In_Range(Vector3 WorldPos, Vector3 pos)
 //	}
 	return false;
 }
+
+void Map::Clear()
+{
+	Map_Data.clear();
+}

@@ -79,14 +79,14 @@ void PlayerClass::Init()
 }
 float PlayerClass::GetLightRange()
 {
-	if (LightOn == true)
+	/*if (LightOn == true)
 	{
 		LightRange = 3.f;
 	}
 	else if (LightOn == false)
 	{
 		LightRange = 1.f;
-	}
+	}*/
 	return LightRange;
 }
 void PlayerClass::Update(double dt, Map* map)
@@ -139,21 +139,28 @@ void PlayerClass::Update(double dt, Map* map)
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
 	{
 		LightOn = false;
+		LightRange = 1.f;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
 	{
 		LightOn = true;
+		LightRange += dt;
+		if (LightRange >= Max_LightRange)
+		{
+			LightRange = Max_LightRange;
+		}
 	}
 
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
 		{
-			LightPower -= 0.25 * dt;
+			LightPower -= 0.2 * LightRange * dt;
 		}
 		else if (LightPower <= 0.f)
 		{
 			LightPower = 0.f;
+			LightRange = 1.f;
 			LightOn = false;
 		}
 	}
@@ -216,7 +223,6 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 	playerShadow += Movement;
 	//Kind of Collision
-	cout << movementSpeed<<" / "<< Movement.x << " / " << Movement.y << endl;
 	if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{
 
@@ -236,6 +242,7 @@ void PlayerClass::Update(double dt, Map* map)
 	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Treasure")
 	{
 		LightPower = 10.f;
+		LightRange = 1.f;
 	}
 	//Keep Player in window
 	float Limitation_size = 30;
@@ -284,21 +291,45 @@ void PlayerClass::Exit()
 {
 	if (playerMeshLeft != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshLeft;
 		playerMeshLeft = nullptr;
 	};
 	if (playerMeshRight != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshRight);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshRight;
 		playerMeshRight = nullptr;
 	};
 	if (playerMeshForward != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshForward);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshForward;
 		playerMeshForward = nullptr;
 	};
 	if (playerMeshDownward != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshDownward);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshDownward;
 		playerMeshDownward = nullptr;
 	};

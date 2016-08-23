@@ -23,6 +23,15 @@ Main_Shaft* Main_Shaft::c_pointer = new Main_Shaft();
 
 void Main_Shaft::Init()
 {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	_CrtSetBreakAlloc(1612);
+	_CrtSetBreakAlloc(178);
+	_CrtSetBreakAlloc(177);
+	_CrtSetBreakAlloc(176);
+	_CrtSetBreakAlloc(174);
+	_CrtSetBreakAlloc(173);
+	_CrtSetBreakAlloc(172);
+
 	Texture::Init();
 	SoundEngine::Init();
 	Render_PI::pointer()->Init();
@@ -48,11 +57,11 @@ void Main_Shaft::Render()
 
 void Main_Shaft::Exit()
 {
+	SoundEngine::Exit();
 	Render_PI::pointer()->Exit();
 	Input_PI::pointer()->Exit();
-	Game_System::pointer()->Exit();
 	Texture::Exit();
-	SoundEngine::Exit();
+	Game_System::pointer()->Exit();
 
 	if (c_pointer != nullptr)
 	{
