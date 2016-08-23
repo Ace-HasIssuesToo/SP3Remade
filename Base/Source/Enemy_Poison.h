@@ -41,5 +41,5 @@ private:
 	Vector3 Clones[5];
 
 };
-const float Moving_Speed = 30;
+const float Moving_Speed = 20;
 #endif

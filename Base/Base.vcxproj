@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Additional_Functions.cpp" />
     <ClCompile Include="Source\Angle_And_Target.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Camera_PI.cpp" />
@@ -35,6 +36,7 @@
     <ClCompile Include="Source\Texture_PI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Additional_Functions.h" />
     <ClInclude Include="Source\Angle_And_Target.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Camera_PI.h" />
