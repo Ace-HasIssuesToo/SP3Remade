@@ -2,6 +2,7 @@
 #include "Texture_PI.h"
 #include "Player.h"
 #include "GameState.h"
+#include "SoundEngine.h"
 
 Enemy_Psychic* Enemy_Psychic::c_enemyPsychic = new Enemy_Psychic();
 
@@ -24,6 +25,8 @@ Vector3 Enemy_Psychic::GetPos()
 void Enemy_Psychic::clearPsychic()
 {
 	psycho = finalScream = screamTimer = countFound = playerIntrude = defMechanism = lastResort = 0;
+	currState = STATE_HIDE;
+	psychicPos = (Render_PI::Window_Scale() * 0.7);
 }
 
 void Enemy_Psychic::Init()
@@ -49,10 +52,8 @@ void Enemy_Psychic::Init()
 
 	// Enemy State
 	currState = STATE_HIDE;
-
 	// Sound Engine
-	theSoundEngine = createIrrKlangDevice();
-	runScream = theSoundEngine->addSoundSourceFromFile("Data//Sound//psychic_461.mp3");
+	runScream = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//psychic_461.mp3");
 }
 
 void Enemy_Psychic::SpriteUpdate(double dt)
@@ -109,7 +110,7 @@ void Enemy_Psychic::Update(double dt, Map* map)
 			locationDir = (psychicPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*100.0;
 
 			// Plays enemy sound: RUN
-			theSoundEngine->play2D(runScream);
+			SoundEngine::Use()->play2D(runScream);
 		}
 
 		// State of enemy: APPEAR to KILL
@@ -124,7 +125,7 @@ void Enemy_Psychic::Update(double dt, Map* map)
 				currState = STATE_KILL;
 
 				// Plays enemy sound: KILL
-				killScream = theSoundEngine->play2D("Data//Sound//psychic_468.mp3", false, false, false, ESM_AUTO_DETECT, true);
+				killScream = SoundEngine::Use()->play2D("Data//Sound//psychic_468.mp3", false, false, false, ESM_AUTO_DETECT, true);
 				finalScream = true;
 
 			}
@@ -158,24 +159,17 @@ void Enemy_Psychic::RenderPsychic()
 
 void Enemy_Psychic::Exit()
 {
-	if (theSoundEngine != nullptr)
-	{
-		theSoundEngine->drop();
-		theSoundEngine = nullptr;
-	}
-	
 	if (runScream != nullptr)
 	{
 		//runScream->drop();
 		runScream = nullptr;
 	}
-
 	if (killScream != nullptr)
 	{
 		//killScream->drop();
 		killScream = nullptr;
 	}
-
+	
 	if (hide_psychic != nullptr)
 	{
 		delete hide_psychic;

@@ -3,6 +3,7 @@
 #include "Input_PI.h"
 #include "Texture_PI.h"
 #include "Player.h"
+#include "SoundEngine.h"
 
 #ifdef _DEBUG
 #ifndef DBG_NEW
@@ -23,6 +24,7 @@ Main_Shaft* Main_Shaft::c_pointer = new Main_Shaft();
 void Main_Shaft::Init()
 {
 	Texture::Init();
+	SoundEngine::Init();
 	Render_PI::pointer()->Init();
 	Input_PI::pointer()->Init();
 	Game_System::pointer()->Init();
@@ -50,6 +52,7 @@ void Main_Shaft::Exit()
 	Input_PI::pointer()->Exit();
 	Game_System::pointer()->Exit();
 	Texture::Exit();
+	SoundEngine::Exit();
 
 	if (c_pointer != nullptr)
 	{

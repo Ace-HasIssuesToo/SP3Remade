@@ -76,7 +76,7 @@ void PlayerClass::Init()
 	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
 
 }
-void PlayerClass::ClearLight()
+void PlayerClass::ClearPlayer()
 {
 	LightOn = false;
 	LightPower = 10.f;

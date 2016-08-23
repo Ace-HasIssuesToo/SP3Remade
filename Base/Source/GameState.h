@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "PokeInfo.h"
 #include "Support_Codes.h"
+#include "ReadTxtFile.h"
 
 class GameState
 {
@@ -25,6 +26,7 @@ public:
 	Game state;
 	//Game GetState(double dt);
 	void GameInIt();
+	void GameReset();
 	void GetState(double dt);
 	void SetState(Game gamestate);
 	void RenderFloors();

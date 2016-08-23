@@ -18,10 +18,7 @@ public:
 	Vector3 GetGhostPos();
 	Vector3 GetGhostOffSet();
 	Vector3 Freeze(Vector3 Movement);
-	// Sound Engine
-	ISoundEngine* theSoundEngine;
 	ISoundSource* haunt;
-	//ISound* haunt;
 private:
 	int life = 1;
 	Enemy_Ghost();
