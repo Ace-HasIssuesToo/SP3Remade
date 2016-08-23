@@ -26,6 +26,7 @@ public:
 		OnLight,
 		OffLight,
 		Phone_Switch,
+		NextStatement,
 		All_Control,
 	};
 	bool IsBeingPressed[All_Control];

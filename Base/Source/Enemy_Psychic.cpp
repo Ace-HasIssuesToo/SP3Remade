@@ -24,6 +24,8 @@ Vector3 Enemy_Psychic::GetPos()
 void Enemy_Psychic::clearPsychic()
 {
 	psycho = finalScream = screamTimer = countFound = playerIntrude = defMechanism = lastResort = 0;
+	currState = STATE_HIDE;
+	psychicPos = (Render_PI::Window_Scale() * 0.7);
 }
 
 void Enemy_Psychic::Init()
