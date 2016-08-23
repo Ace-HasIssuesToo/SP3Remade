@@ -1,63 +1,10 @@
-<<<<<<< HEAD
-﻿  Sensor.cpp
-c:\users\user\documents\sp3remade\base\source\sensor.cpp(60): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-c:\users\user\documents\sp3remade\base\source\sensor.cpp(83): warning C4305: '*=' : truncation from 'double' to 'float'
-  Player.cpp
-c:\users\user\documents\sp3remade\base\source\player.cpp(110): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(111): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(118): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(132): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(136): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(140): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(144): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(161): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(238): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(253): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(259): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(265): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(271): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-  GameState.cpp
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(345): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(352): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(359): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(366): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(373): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-c:\users\user\documents\sp3remade\base\source\player.cpp(351): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
+﻿  GameState.cpp
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(360): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(367): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(374): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(381): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(388): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(395): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
-=======
-﻿Build started 22/8/2016 3:55:47 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Angle_And_Target.obj
-         Debug\Application.obj
-         Debug\Camera_PI.obj
-         Debug\EnemyDark.obj
-         Debug\Enemy_Ghost.obj
-         Debug\Enemy_Poison.obj
-         Debug\Enemy_Psychic.obj
-         Debug\GameEnvironmentEvent.obj
-         Debug\GameState.obj
-         Debug\Main_Shaft.obj
-         Debug\Map_PI.obj
-         Debug\Player.obj
-         Debug\PokeInfo.obj
-         Debug\ReadFromTextFile.obj
-         Debug\Render_PI.obj
-         Debug\main.obj
-         Debug\Input_PI.obj
-         Debug\Game_System.obj
-         Debug\Sensor.obj
-         Debug\Support_Codes.obj
-         Debug\Texture_PI.obj
-     1>Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.39
->>>>>>> e1f2b08474274f781166d292e7189ed83919bd43

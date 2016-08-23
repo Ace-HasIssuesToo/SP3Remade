@@ -17,19 +17,8 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
 	state = START;
 	GameInIt();
-=======
-	state = INTRODUCTION;
-	PlayerClass::pointer()->Init();
-	Enemy_Psychic::pointer()->Init();
-	Enemy_Ghost::pointer()->Init();
-	Enemy_Poison::pointer()->Init();
-	Enemy_Dark::pointer()->Init();
-	PokeballInfo::pointer()->Init();
-	Sensor::pointer()->Init();
->>>>>>> e1f2b08474274f781166d292e7189ed83919bd43
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -95,6 +84,14 @@ void GameState::GameInIt()
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
 }
+void GameState::GameReset()
+{
+	Enemy_Ghost::pointer()->ClearGhost();
+	Enemy_Psychic::pointer()->clearPsychic();
+	PlayerClass::pointer()->ClearLight();
+	Enemy_Poison::pointer()->ClearPoison();
+	PokeballInfo::pointer()->ClearBallStatus();
+}
 Mesh* GameState::GetText()
 {
 	return text;
@@ -145,8 +142,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						GameInIt();
-						Enemy_Psychic::pointer()->clearPsychic();
+						GameReset();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;
@@ -171,11 +167,10 @@ void GameState::Update_Stuffs(double dt, Map* map)
 				{
 					Pokemon_On_Loose[1] = false;
 					pokemonCount--;
-					Enemy_Ghost::pointer()->ClearGhost();
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						GameInIt();
+						GameReset();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;
@@ -204,7 +199,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						GameInIt();
+						GameReset();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;
@@ -232,7 +227,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					if (pokemonCount <= 0 && state == FLOOR1)
 					{
 						state = FLOOR2;
-						GameInIt();
+						GameReset();
 						for (int i = 0; i < 4; i++)
 						{
 							pokemonCount++;
@@ -261,12 +256,12 @@ void GameState::GetState(double dt)
 			state = FLOOR1;
 			for (int i = 0; i < 4; i++)
 			{
-				pokemonCount++;
 				Pokemon_On_Loose[i] = false;
 			}
 
 			for (int i = 0; i < 4; i++)
 			{
+				pokemonCount++;
 				Pokemon_On_Loose[i] = true;
 			}
 		}
@@ -325,12 +320,13 @@ void GameState::GetState(double dt)
 	{
 		if (Application::IsKeyPressed(VK_SPACE))
 		{
+			GameReset();
+			pokemonCount = 0;
 			state = START;
-			Enemy_Ghost::pointer()->ClearGhost();
+			/*Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
 			PlayerClass::pointer()->ClearLight();
-			GameInIt();
-			pokemonCount = 0;
+			GameInIt();*/
 		}
 		break;
 	}
@@ -338,12 +334,14 @@ void GameState::GetState(double dt)
 	{
 		if (Application::IsKeyPressed('R'))
 		{
+			GameReset();
+			pokemonCount = 0;
 			state = START;
-			Enemy_Ghost::pointer()->ClearGhost();
+			/*Enemy_Ghost::pointer()->ClearGhost();
 			Enemy_Psychic::pointer()->clearPsychic();
 			PlayerClass::pointer()->ClearLight();
-			GameInIt();
-			pokemonCount = 0;
+			GameInIt();*/
+			
 		}
 		break;
 	}
