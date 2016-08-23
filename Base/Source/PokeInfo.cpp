@@ -99,6 +99,11 @@ void PokeballInfo::Update(double dt, Map* map)
 		}
 	}
 }
+void PokeballInfo::setNumOfBalls(int balls)
+{
+	this->numOfBalls = balls;
+}
+
 Vector3 PokeballInfo::getPokeballPos()
 {
 	return Map::Pokemon_Offset(ballPos);
@@ -108,7 +113,6 @@ void PokeballInfo::ClearBallStatus()
 	ballOnScreen = false;
 	ballDirection = Vector3(0, 0, 0);
 	ballPos = Vector3(-1000, -1000, 0);
-	numOfBalls = 1;
 }
 
 int PokeballInfo::getNumOfBalls()

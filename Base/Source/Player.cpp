@@ -272,6 +272,7 @@ void PlayerClass::clearPlayer()
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f);
+	PokeballInfo::pointer()->setNumOfBalls(100);
 }
 void PlayerClass::clearLights()
 {
