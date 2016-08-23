@@ -33,7 +33,6 @@ void Enemy_Ghost::Init()
 		sa->m_anim = new Animation();
 		sa->m_anim->Set(0, 7, 0, 1.f, true);
 	}
-	SoundEngine::Init();
 	haunt = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//239-ghastly.mp3");
 }
 void Enemy_Ghost::ClearGhost()
@@ -145,7 +144,6 @@ void Enemy_Ghost::RenderGhost()
 }
 void Enemy_Ghost::Exit()
 {
-	SoundEngine::Exit();
 	if (haunt != nullptr)
 	{
 		//haunt->drop();

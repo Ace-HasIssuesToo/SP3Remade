@@ -53,7 +53,6 @@ void Enemy_Psychic::Init()
 	// Enemy State
 	currState = STATE_HIDE;
 	// Sound Engine
-	SoundEngine::Init();
 	runScream = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//psychic_461.mp3");
 }
 
@@ -160,7 +159,6 @@ void Enemy_Psychic::RenderPsychic()
 
 void Enemy_Psychic::Exit()
 {
-	SoundEngine::Exit();
 	if (runScream != nullptr)
 	{
 		//runScream->drop();
