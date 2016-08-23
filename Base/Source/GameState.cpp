@@ -323,6 +323,7 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed(VK_SPACE))
 		{
 			GameReset();
+			PlayerClass::pointer()->clearLights();
 			pokemonCount = 0;
 			state = START;
 		}
@@ -333,6 +334,7 @@ void GameState::GetState(double dt)
 		if (Application::IsKeyPressed('R'))
 		{
 			GameReset();
+			PlayerClass::pointer()->clearLights();
 			pokemonCount = 0;
 			state = START;
 		}
@@ -441,6 +443,88 @@ void GameState::RenderFloors()
 		PlayerClass::pointer()->Renderplayer();
 		Enemy_Poison::pointer()->render_Poison();
 		Sensor::pointer()->Render();
+	}
+	else if (state == FLOOR3)
+	{
+		Floor3->Render(PlayerClass::pointer()->getPlayerPosOffSet(), false);
+		if (Pokemon_On_Loose[0])
+		{
+			Enemy_Psychic::pointer()->RenderPsychic();
+		}
+		if (Pokemon_On_Loose[1])
+		{
+			Enemy_Ghost::pointer()->RenderGhost();
+		}
+		if (Pokemon_On_Loose[2])
+		{
+			Enemy_Poison::pointer()->render(PlayerClass::pointer()->getPlayerPosOffSet());
+		}
+		if (Pokemon_On_Loose[3])
+		{
+			Enemy_Dark::pointer()->RenderEnemyDark();
+		}
+		PokeballInfo::pointer()->Render();
+		Floor3->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
+		PlayerClass::pointer()->Renderplayer();
+		Enemy_Poison::pointer()->render_Poison();
+		Sensor::pointer()->Render();
+	}
+	else if (state == FLOOR4)
+	{
+		Floor4->Render(PlayerClass::pointer()->getPlayerPosOffSet(), false);
+		if (Pokemon_On_Loose[0])
+		{
+			Enemy_Psychic::pointer()->RenderPsychic();
+		}
+		if (Pokemon_On_Loose[1])
+		{
+			Enemy_Ghost::pointer()->RenderGhost();
+		}
+		if (Pokemon_On_Loose[2])
+		{
+			Enemy_Poison::pointer()->render(PlayerClass::pointer()->getPlayerPosOffSet());
+		}
+		if (Pokemon_On_Loose[3])
+		{
+			Enemy_Dark::pointer()->RenderEnemyDark();
+		}
+		PokeballInfo::pointer()->Render();
+		Floor4->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
+		PlayerClass::pointer()->Renderplayer();
+		Enemy_Poison::pointer()->render_Poison();
+		Sensor::pointer()->Render();
+	}
+	else if (state == FLOOR5)
+	{
+		Floor5->Render(PlayerClass::pointer()->getPlayerPosOffSet(), false);
+		if (Pokemon_On_Loose[0])
+		{
+			Enemy_Psychic::pointer()->RenderPsychic();
+		}
+		if (Pokemon_On_Loose[1])
+		{
+			Enemy_Ghost::pointer()->RenderGhost();
+		}
+		if (Pokemon_On_Loose[2])
+		{
+			Enemy_Poison::pointer()->render(PlayerClass::pointer()->getPlayerPosOffSet());
+		}
+		if (Pokemon_On_Loose[3])
+		{
+			Enemy_Dark::pointer()->RenderEnemyDark();
+		}
+		PokeballInfo::pointer()->Render();
+		Floor5->Render(PlayerClass::pointer()->getPlayerPosOffSet(), true);
+		PlayerClass::pointer()->Renderplayer();
+		Enemy_Poison::pointer()->render_Poison();
+		Sensor::pointer()->Render();
+	}
+	if (state == FLOOR1 || state == FLOOR2 || state == FLOOR3 || state == FLOOR4 || state == FLOOR5)
+	{
+		std::ostringstream ss;
+		ss.precision(5);
+		ss << "Pokemon Left: " << pokemonCount;
+		Render_PI::pointer()->RenderTextOnScreen(GetText(), ss.str(), Color(1, 0.25f, 0), Vector3(0, 80, 0), Vector3(5, 5, 1));
 	}
 }
 void GameState::Render()

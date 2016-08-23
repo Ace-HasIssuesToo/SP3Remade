@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 ﻿Build started 23/8/2016 12:49:26 PM.
+=======
+<<<<<<< HEAD
+﻿  GameState.cpp
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(355): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(362): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(369): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(376): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(383): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(390): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Angle_And_Target.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+<<<<<<< HEAD
+﻿Build started 23/8/2016 12:46:45 PM.
+>>>>>>> 0f8b7d3e39758e1b91a3b36776076cb0211c62a2
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Poison.cpp Source\Enemy_Psychic.cpp Source\Game_System.cpp Source\Main_Shaft.cpp Source\Map_PI.cpp Source\Player.cpp Source\PokeInfo.cpp Source\Sensor.cpp
@@ -103,4 +120,13 @@
 
 Build FAILED.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:08.98
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:02.70
+=======
+已用时间 00:00:01.55
+>>>>>>> ebb525acd5af5f51cb6a72d3264f2d1cb4567d35
+>>>>>>> 638c4f68d1b1efb54ee0bae8de7f380f7389497b
+>>>>>>> 0f8b7d3e39758e1b91a3b36776076cb0211c62a2
