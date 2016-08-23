@@ -30,6 +30,7 @@
     <ClCompile Include="Source\Input_PI.cpp" />
     <ClCompile Include="Source\Game_System.cpp" />
     <ClCompile Include="Source\Sensor.cpp" />
+    <ClCompile Include="Source\SoundEngine.cpp" />
     <ClCompile Include="Source\Support_Codes.cpp" />
     <ClCompile Include="Source\Texture_PI.cpp" />
   </ItemGroup>
@@ -53,6 +54,7 @@
     <ClInclude Include="Source\Game_System.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\Sensor.h" />
+    <ClInclude Include="Source\SoundEngine.h" />
     <ClInclude Include="Source\Support_Codes.h" />
     <ClInclude Include="Source\Texture_PI.h" />
   </ItemGroup>

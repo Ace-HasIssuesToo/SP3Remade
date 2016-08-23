@@ -3,6 +3,7 @@
 
 #include "Support_Codes.h"
 
+//Sound Engine Class
 class SoundEngine
 {
 public:
@@ -13,5 +14,6 @@ private:
 	SoundEngine();
 	~SoundEngine();
 	static ISoundEngine* m_Engine;
+
 };
 #endif

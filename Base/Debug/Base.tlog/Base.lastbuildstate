@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< 62d40b3a4cbadd8c1eb9546438fba879dfe6c5ee
 Debug|Win32|C:\Users\user\Documents\SP3Remade\|
+=======
+Debug|Win32|C:\Users\sword_000\Desktop\SP3\|
+>>>>>>> Sound Engine 2
