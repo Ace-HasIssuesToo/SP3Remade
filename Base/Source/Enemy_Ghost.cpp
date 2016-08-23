@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Game_System.h"
 #include "GameState.h"
+#include "SoundEngine.h"
 Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
 
 Enemy_Ghost::Enemy_Ghost() : ghostTimer(0)
@@ -32,8 +33,8 @@ void Enemy_Ghost::Init()
 		sa->m_anim = new Animation();
 		sa->m_anim->Set(0, 7, 0, 1.f, true);
 	}
-	theSoundEngine = createIrrKlangDevice();
-	haunt = theSoundEngine->addSoundSourceFromFile("Data//Sound//239-ghastly.mp3");
+	SoundEngine::Init();
+	haunt = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//239-ghastly.mp3");
 }
 void Enemy_Ghost::ClearGhost()
 {
@@ -101,7 +102,7 @@ void Enemy_Ghost::Update(double dt, Map* map)
 		{
 			//teleport first time
 			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
-			theSoundEngine->play2D(haunt);
+			SoundEngine::Use()->play2D(haunt);
 		}
 		ghostStayTimer += dt;
 		dirX = 0;
@@ -144,21 +145,19 @@ void Enemy_Ghost::RenderGhost()
 }
 void Enemy_Ghost::Exit()
 {
-	if (theSoundEngine != nullptr)
-	{
-		theSoundEngine->drop();
-		theSoundEngine = nullptr;
-	}
+	SoundEngine::Exit();
 	if (haunt != nullptr)
 	{
 		//haunt->drop();
 		haunt = nullptr;
 	}
+	
 	if (ghostSprite != nullptr)
 	{
 		delete ghostSprite;
 		ghostSprite = nullptr;
 	}
+	
 	if (c_Enemy_Ghost != nullptr)
 	{
 		delete c_Enemy_Ghost;

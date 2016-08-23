@@ -20,7 +20,11 @@ void SoundEngine::Init()
 
 void SoundEngine::Exit()
 {
-	m_Engine->drop();
+	if (m_Engine != nullptr)
+	{
+		m_Engine->drop();
+		m_Engine = nullptr;
+	}
 }
 
 ISoundEngine* SoundEngine::Use()

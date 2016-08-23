@@ -37,7 +37,6 @@ public:
 	STATE_TYPE currState;
 
 	// Sound Engine
-	ISoundEngine* theSoundEngine;
 	ISoundSource* runScream;
 	ISound* killScream;
 
