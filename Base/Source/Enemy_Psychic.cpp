@@ -159,31 +159,50 @@ void Enemy_Psychic::RenderPsychic()
 
 void Enemy_Psychic::Exit()
 {
+	/*
 	if (runScream != nullptr)
 	{
-		//runScream->drop();
+		runScream->drop();
 		runScream = nullptr;
 	}
 	if (killScream != nullptr)
 	{
-		//killScream->drop();
+		killScream->drop();
 		killScream = nullptr;
-	}
+	}*/
 	
 	if (hide_psychic != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(hide_psychic);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete hide_psychic;
 		hide_psychic = nullptr;
 	}
 
 	if (appear_psychic != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(appear_psychic);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete appear_psychic;
 		appear_psychic = nullptr;
 	}
 
 	if (kill_psychic != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(kill_psychic);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete kill_psychic;
 		kill_psychic = nullptr;
 	}
@@ -193,4 +212,5 @@ void Enemy_Psychic::Exit()
 		delete c_enemyPsychic;
 		c_enemyPsychic = nullptr;
 	}
+
 }

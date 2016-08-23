@@ -101,16 +101,31 @@ void Sensor::Exit()
 {
 	if (Save != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Save);
+		if (sa)
+		{
+			delete sa->m_anim;
+		}
 		delete Save;
 		Save = nullptr;
 	}
 	if (Danger != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Danger);
+		if (sa)
+		{
+			delete sa->m_anim;
+		}
 		delete Danger;
 		Danger = nullptr;
 	}
 	if (dead != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(dead);
+		if (sa)
+		{
+			delete sa->m_anim;
+		}
 		delete dead;
 		dead = nullptr;
 	}

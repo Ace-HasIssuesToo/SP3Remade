@@ -46,7 +46,6 @@ public:
 	Mesh* creditscreen;
 
 	Mesh* introduction;
-	Mesh* intro_dialogue;
 
 	Mesh* GetText();
 private:
