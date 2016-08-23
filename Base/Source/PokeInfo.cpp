@@ -9,6 +9,7 @@ PokeballInfo::PokeballInfo()
 	, sc(0, 0, 0)
 	, vel(0, 0, 0)
 	, throwSpeed(0)
+	, numOfBalls(0)
 {
 
 }
@@ -26,34 +27,37 @@ void PokeballInfo::Init()
 	throwSpeed = 40;
 	movementTime = 0;
 	sc.Set(3, 3, 3);
-
+	numOfBalls = 1;
 	pokeballmesh = MeshBuilder::GenerateQuad("Pokeball", Color(0, 0, 0), 1.f);
 	pokeballmesh->textureArray[0] = LoadTGA("Data//Texture//PokeBall.tga");
-
 }
 void PokeballInfo::Update(double dt, Map* map)
 {
 	if (ballOnScreen == false)
 	{
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowFront] == true)
+		if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowFront] == true && numOfBalls >= 1)
 		{
 			ballOnScreen = true;
 			ballDirection.y = throwSpeed;
+			numOfBalls--;
 		}
-		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowBack] == true)
+		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowBack] == true && numOfBalls >= 1)
 		{
 			ballOnScreen = true;
 			ballDirection.y = -throwSpeed;
+			numOfBalls--;
 		}
-		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowLeft] == true)
+		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowLeft] == true && numOfBalls >= 1)
 		{
 			ballOnScreen = true;
 			ballDirection.x = -throwSpeed;
+			numOfBalls--;
 		}
-		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowRight] == true)
+		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowRight] == true && numOfBalls >= 1)
 		{
 			ballOnScreen = true;
 			ballDirection.x = throwSpeed;
+			numOfBalls--;
 		}
 		ballPos = PlayerClass::pointer()->getPlayerPos() + PlayerClass::pointer()->getPlayerPosOffSet();
 		movementTime = 0;
@@ -69,12 +73,6 @@ void PokeballInfo::Update(double dt, Map* map)
 		{
 			ballDirection *= -1;
 		}
-		/*
-		movementTime += dt;
-		if (movementTime >= 3)
-		{
-			ClearBallStatus();
-		}*/
 		ballDirection *= 0.989;
 		if (ballDirection.x > -1 && ballDirection.x < 1)
 		{
@@ -111,6 +109,12 @@ void PokeballInfo::ClearBallStatus()
 	ballDirection = Vector3(0, 0, 0);
 	ballPos = Vector3(-1000, -1000, 0);
 }
+
+int PokeballInfo::getNumOfBalls()
+{
+	return numOfBalls;
+}
+
 bool PokeballInfo::getBallStatus()
 {
 	return ballOnScreen;

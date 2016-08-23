@@ -4,6 +4,7 @@
 #include "Texture_PI.h"
 #include "Enemy_Poison.h"
 #include "Enemy_Ghost.h"
+#include "GameState.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -29,10 +30,7 @@ void PlayerClass::Init()
 	movementSpeed = 20;
 	Runtime = 30;
 	LightPower = 10.f;
-	//throwSpeed = -9.8;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
-	//dPlayerPos = Render_PI::Window_Scale() * 0.5;
-	//PlayerPos = Render_PI::Window_Scale();
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f);
 
@@ -102,7 +100,6 @@ void PlayerClass::Update(double dt, Map* map)
 	playerShadow = PlayerPos;
 	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
-	movementSpeed = 20;
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Run])
 	{
 		if (Runtime > 0.f)
@@ -143,7 +140,6 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		Movement.x += movementSpeed * dt;
 	}
-
 
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
 	{
@@ -273,6 +269,16 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 }
 
+void PlayerClass::clearPlayer()
+{
+	movementSpeed = 20;
+	Runtime = 30;
+	LightPower = 10.f;
+	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
+	PlayerPos = Render_PI::Window_Scale() * 0.5;
+	sc.Set(10.f, 10.f, 10.f);
+}
+
 void PlayerClass::Exit()
 {
 	if (playerMeshLeft != nullptr)
@@ -365,4 +371,9 @@ void PlayerClass::Renderplayer()
 	Vector3 Pos2 = (Vector3(5, 5, 0) + Vector3(LightPower * 10, 180, 0))*0.5f;
 	Render_PI::pointer()->RenderMeshIn2D(LightBar, false, Pos2, Vector3(LightPower * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
+
+	std::ostringstream ss;
+	ss.precision(5);
+	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
+	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
 }
