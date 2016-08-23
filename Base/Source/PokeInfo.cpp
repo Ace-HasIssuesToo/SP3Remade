@@ -27,7 +27,7 @@ void PokeballInfo::Init()
 	throwSpeed = 40;
 	movementTime = 0;
 	sc.Set(3, 3, 3);
-	numOfBalls = 1;
+	numOfBalls = 100;
 	pokeballmesh = MeshBuilder::GenerateQuad("Pokeball", Color(0, 0, 0), 1.f);
 	pokeballmesh->textureArray[0] = LoadTGA("Data//Texture//PokeBall.tga");
 }
@@ -108,6 +108,7 @@ void PokeballInfo::ClearBallStatus()
 	ballOnScreen = false;
 	ballDirection = Vector3(0, 0, 0);
 	ballPos = Vector3(-1000, -1000, 0);
+	numOfBalls = 1;
 }
 
 int PokeballInfo::getNumOfBalls()

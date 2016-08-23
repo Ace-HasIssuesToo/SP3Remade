@@ -77,12 +77,6 @@ void PlayerClass::Init()
 	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
 
 }
-void PlayerClass::ClearPlayer()
-{
-	LightOn = false;
-	LightPower = 10.f;
-	LightRange = 1.f;
-}
 float PlayerClass::GetLightRange()
 {
 	if (LightOn == true)
@@ -100,6 +94,7 @@ void PlayerClass::Update(double dt, Map* map)
 	playerShadow = PlayerPos;
 	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
+	movementSpeed = 20;
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Run])
 	{
 		if (Runtime > 0.f)
@@ -221,6 +216,7 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 	playerShadow += Movement;
 	//Kind of Collision
+	cout << movementSpeed<<" / "<< Movement.x << " / " << Movement.y << endl;
 	if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{
 
@@ -273,10 +269,12 @@ void PlayerClass::clearPlayer()
 {
 	movementSpeed = 20;
 	Runtime = 30;
-	LightPower = 10.f;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f);
+	LightOn = false;
+	LightPower = 10.f;
+	LightRange = 1.f;
 }
 
 void PlayerClass::Exit()
