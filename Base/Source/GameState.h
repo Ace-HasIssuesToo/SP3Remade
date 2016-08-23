@@ -26,6 +26,7 @@ public:
 	Game state;
 	//Game GetState(double dt);
 	void GameInIt();
+	void GameReset();
 	void GetState(double dt);
 	void SetState(Game gamestate);
 	void RenderFloors();

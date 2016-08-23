@@ -34,6 +34,7 @@ private:
 	Vector3 vel;
 
 	float movementTime;
+	int numOfBalls;
 
 	double throwSpeed;
 

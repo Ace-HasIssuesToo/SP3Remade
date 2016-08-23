@@ -32,6 +32,8 @@ public:
 	Vector3 getRadSq();
 	Vector3 getDisSq();
 
+	void clearEnemyDark();
+
 	static Enemy_Dark* pointer()
 	{
 		return m_pointer;
