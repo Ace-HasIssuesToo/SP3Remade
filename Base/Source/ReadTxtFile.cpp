@@ -5,7 +5,7 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0)
+ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), TimerStart(false)
 {
 
 }
@@ -15,10 +15,26 @@ ReadTxtFile::~ReadTxtFile()
 
 }
 
+void ReadTxtFile::clearIntro()
+{
+	fullIntro = { 0 };
+}
+
 void ReadTxtFile::Init()
 {
 	intro_dialogue = MeshBuilder::GenerateText("intro_dialogue", 16, 16);
 	intro_dialogue->textureArray[0] = LoadTGA("Data//Texture//Redressed.tga");
+}
+
+void ReadTxtFile::Update(double dt)
+{
+	if (TimerStart)
+		introTimer += dt;
+
+	if (introTimer > 5.f)
+	{
+		//Loop every 5 seconds
+	}
 }
 
 void ReadTxtFile::ReadFromTextFile()
@@ -73,12 +89,13 @@ vector<string> ReadTxtFile::lineSplit(string input)
 
 void ReadTxtFile::Render()
 {
-	//Render_PI::pointer()->modelStack_Set(true);
-	//Render_PI::pointer()->modelStack_Set(false);
+	// Every 5 secs, change to next line of array
 	vector<string> tempIntro;
 
-	//for (int i = 0; fullIntro.size(); i++)
-		tempIntro = lineSplit(fullIntro.at(0));
+	for (int i = 0; i < fullIntro.size(); i++)
+	{
+		tempIntro = lineSplit(fullIntro.at(i));
+	}
 
 	for (int i = 0; i < tempIntro.size(); i++)
 	{

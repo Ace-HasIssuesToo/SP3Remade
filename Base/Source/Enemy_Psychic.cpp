@@ -7,7 +7,8 @@
 Enemy_Psychic* Enemy_Psychic::c_enemyPsychic = new Enemy_Psychic();
 
 Enemy_Psychic::Enemy_Psychic()
-: psychicPos(Vector3(0, 0, 0)), countFound(0), playerIntrude(false), defMechanism(false), lastResort(true), locationDir(Vector3(0, 0, 0)), screamTimer(0), finalScream(false), psycho(false)
+: psychicPos(Vector3(0, 0, 0)), countFound(0), playerIntrude(false), defMechanism(false), lastResort(true), locationDir(Vector3(0, 0, 0)), screamTimer(0), finalScream(false), psycho(false),
+runScream(nullptr), killScream(nullptr), hide_psychic(nullptr), appear_psychic(nullptr), kill_psychic(nullptr)
 {
 
 }
