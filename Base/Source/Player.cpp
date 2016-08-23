@@ -4,6 +4,7 @@
 #include "Texture_PI.h"
 #include "Enemy_Poison.h"
 #include "Enemy_Ghost.h"
+#include "GameState.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -76,22 +77,16 @@ void PlayerClass::Init()
 	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
 
 }
-void PlayerClass::ClearPlayer()
-{
-	LightOn = false;
-	LightPower = 10.f;
-	LightRange = 1.f;
-}
 float PlayerClass::GetLightRange()
 {
-	if (LightOn == true)
+	/*if (LightOn == true)
 	{
 		LightRange = 3.f;
 	}
 	else if (LightOn == false)
 	{
 		LightRange = 1.f;
-	}
+	}*/
 	return LightRange;
 }
 void PlayerClass::Update(double dt, Map* map)
@@ -99,6 +94,7 @@ void PlayerClass::Update(double dt, Map* map)
 	playerShadow = PlayerPos;
 	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
+	movementSpeed = 20;
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Run])
 	{
 		if (Runtime > 0.f)
@@ -142,13 +138,15 @@ void PlayerClass::Update(double dt, Map* map)
 
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
 	{
-		LightOn = false;
+		//LightOn = false;
+		LightRange -= dt;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
 	{
 		LightOn = true;
+		LightRange += dt;
 	}
-
+/*
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
@@ -160,7 +158,7 @@ void PlayerClass::Update(double dt, Map* map)
 			LightPower = 0.f;
 			LightOn = false;
 		}
-	}
+	}*/
 
 	if (getPlayerMesh2() == playerMeshForward)
 	{
@@ -272,12 +270,16 @@ void PlayerClass::clearPlayer()
 {
 	movementSpeed = 20;
 	Runtime = 30;
-	LightPower = 10.f;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f);
 }
-
+void PlayerClass::clearLights()
+{
+	LightOn = false;
+	LightPower = 10.f;
+	LightRange = 1.f;
+}
 void PlayerClass::Exit()
 {
 	if (playerMeshLeft != nullptr)
@@ -370,4 +372,9 @@ void PlayerClass::Renderplayer()
 	Vector3 Pos2 = (Vector3(5, 5, 0) + Vector3(LightPower * 10, 180, 0))*0.5f;
 	Render_PI::pointer()->RenderMeshIn2D(LightBar, false, Pos2, Vector3(LightPower * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
+
+	std::ostringstream ss;
+	ss.precision(5);
+	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
+	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
 }

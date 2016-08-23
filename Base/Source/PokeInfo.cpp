@@ -27,86 +27,77 @@ void PokeballInfo::Init()
 	throwSpeed = 40;
 	movementTime = 0;
 	sc.Set(3, 3, 3);
-	numOfBalls = 1;
+	numOfBalls = 100;
 	pokeballmesh = MeshBuilder::GenerateQuad("Pokeball", Color(0, 0, 0), 1.f);
 	pokeballmesh->textureArray[0] = LoadTGA("Data//Texture//PokeBall.tga");
-
 }
 void PokeballInfo::Update(double dt, Map* map)
 {
-	if (numOfBalls > 0)
+	if (ballOnScreen == false)
 	{
-		if (ballOnScreen == false)
+		if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowFront] == true && numOfBalls >= 1)
 		{
-			if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowFront] == true)
-			{
-				ballOnScreen = true;
-				ballDirection.y = throwSpeed;
-				numOfBalls--;
-			}
-			else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowBack] == true)
-			{
-				ballOnScreen = true;
-				ballDirection.y = -throwSpeed;
-				numOfBalls--;
-			}
-			else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowLeft] == true)
-			{
-				ballOnScreen = true;
-				ballDirection.x = -throwSpeed;
-				numOfBalls--;
-			}
-			else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowRight] == true)
-			{
-				ballOnScreen = true;
-				ballDirection.x = throwSpeed;
-				numOfBalls--;
-			}
-			ballPos = PlayerClass::pointer()->getPlayerPos() + PlayerClass::pointer()->getPlayerPosOffSet();
-			movementTime = 0;
+			ballOnScreen = true;
+			ballDirection.y = throwSpeed;
+			numOfBalls--;
+		}
+		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowBack] == true && numOfBalls >= 1)
+		{
+			ballOnScreen = true;
+			ballDirection.y = -throwSpeed;
+			numOfBalls--;
+		}
+		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowLeft] == true && numOfBalls >= 1)
+		{
+			ballOnScreen = true;
+			ballDirection.x = -throwSpeed;
+			numOfBalls--;
+		}
+		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowRight] == true && numOfBalls >= 1)
+		{
+			ballOnScreen = true;
+			ballDirection.x = throwSpeed;
+			numOfBalls--;
+		}
+		ballPos = PlayerClass::pointer()->getPlayerPos() + PlayerClass::pointer()->getPlayerPosOffSet();
+		movementTime = 0;
+	}
+	else
+	{
+		Vector3 Shadow = ballPos + (ballDirection * dt);
+		if (map->Get_Type(Shadow) == "Floor")
+		{
+			ballPos = Shadow;
 		}
 		else
 		{
-			Vector3 Shadow = ballPos + (ballDirection * dt);
-			if (map->Get_Type(Shadow) == "Floor")
-			{
-				ballPos = Shadow;
-			}
-			else
-			{
-				ballDirection *= -1;
-			}
-			ballDirection *= 0.989;
-			if (ballDirection.x > -1 && ballDirection.x < 1)
-			{
-				ballDirection.x = 0;
-			}
-			if (ballDirection.y > -1 && ballDirection.y < 1)
-			{
-				ballDirection.y = 0;
-			}
-			if (ballDirection == Vector3())
+			ballDirection *= -1;
+		}
+		ballDirection *= 0.989;
+		if (ballDirection.x > -1 && ballDirection.x < 1)
+		{
+			ballDirection.x = 0;
+		}
+		if (ballDirection.y > -1 && ballDirection.y < 1)
+		{
+			ballDirection.y = 0;
+		}
+		if (ballDirection == Vector3())
+		{
+			ClearBallStatus();
+		}
+		else
+		{
+			Vector3 radius = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - ballPos;
+			double range = radius.x*radius.x + radius.y*radius.y;
+			Vector3 Scale = Render_PI::Window_Scale();
+			float Max_Range = Scale.x*Scale.y*0.8;
+			if (range > Max_Range)
 			{
 				ClearBallStatus();
 			}
-			else
-			{
-				Vector3 radius = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - ballPos;
-				double range = radius.x*radius.x + radius.y*radius.y;
-				Vector3 Scale = Render_PI::Window_Scale();
-				float Max_Range = Scale.x*Scale.y*0.8;
-				if (range > Max_Range)
-				{
-					ClearBallStatus();
-				}
-			}
 		}
 	}
-	else if (numOfBalls <= 0)
-	{
-
-	}
-	cout << numOfBalls << endl;
 }
 Vector3 PokeballInfo::getPokeballPos()
 {
@@ -117,7 +108,14 @@ void PokeballInfo::ClearBallStatus()
 	ballOnScreen = false;
 	ballDirection = Vector3(0, 0, 0);
 	ballPos = Vector3(-1000, -1000, 0);
+	numOfBalls = 1;
 }
+
+int PokeballInfo::getNumOfBalls()
+{
+	return numOfBalls;
+}
+
 bool PokeballInfo::getBallStatus()
 {
 	return ballOnScreen;

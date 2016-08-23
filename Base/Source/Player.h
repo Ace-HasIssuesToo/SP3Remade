@@ -17,7 +17,6 @@ public:
 	Vector3 getPlayerPos();
 	Vector3 getPlayerScale();
 	Vector3 getPlayerPosOffSet();
-	void ClearPlayer();
 	float GetLightRange();
 	enum PlayerMeshes
 	{
@@ -30,6 +29,7 @@ public:
 	void setPlayerMesh(PlayerClass::PlayerMeshes mesh);
 	Mesh* getPlayerMesh2();
 	void clearPlayer();
+	void clearLights();
 	static PlayerClass* pointer()
 	{
 		return m_pointer;

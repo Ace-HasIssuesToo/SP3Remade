@@ -17,7 +17,7 @@ public:
 	Vector3 getPokeballPos();
 	bool getBallStatus();
 	void ClearBallStatus();
-
+	int getNumOfBalls();
 	static PokeballInfo* pointer()
 	{
 		return m_pointer;
