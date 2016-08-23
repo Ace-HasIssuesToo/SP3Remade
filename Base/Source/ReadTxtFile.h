@@ -15,6 +15,7 @@ public:
 
 	void Init();
 	void ReadFromTextFile();
+	vector<string> lineSplit(string input);
 	void Render();
 	void Exit();
 
@@ -22,6 +23,8 @@ private:
 	static ReadTxtFile* c_ReadTxtFile;
 
 	vector<string> fullIntro;
+
+	float introTimer;
 
 	Mesh* intro_dialogue;
 };
