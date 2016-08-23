@@ -29,7 +29,7 @@ private:
 	static Enemy_Poison* m_pointer;
 	Mesh* Poison_Mesh;
 	Mesh* Poisoned_effect;
-	Enemy_Poison(){};
+	Enemy_Poison() :Poison_Mesh(nullptr), Poisoned_effect(nullptr){};
 	~Enemy_Poison(){};
 	Vector3 Pos;
 	Vector3 Vel;
@@ -41,5 +41,5 @@ private:
 	Vector3 Clones[5];
 
 };
-const float Moving_Speed = 20;
+const float Moving_Speed = 10;
 #endif

@@ -108,7 +108,6 @@ void Enemy_Poison::Update(double dt, Map* map)
 		//Vel = ((PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - Pos).Normalize()*Moving_Speed;
 		Vel = Functions::PathFinding(Pos, (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()), -Moving_Speed*dt, map);
 	}
-	cout << Pos.x << " / " << Pos.y << endl;
 	if (Vel != Vector3())
 	{
 		Pos += Vel;
@@ -182,7 +181,7 @@ void Enemy_Poison::Update(double dt, Map* map)
 			CoolDown = 20;
 			LastTime = 10;
 			ChangeEffect = 0;
-			//Poisonous = true;
+			Poisonous = true;
 			for (int i = 0; i < All_debuff; i++)
 			{
 				FlipType[i] = false;
@@ -262,6 +261,12 @@ void Enemy_Poison::Exit()
 	}
 	if (Poisoned_effect != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poisoned_effect);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete Poisoned_effect;
 		Poisoned_effect = nullptr;
 	}

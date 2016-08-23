@@ -5,6 +5,7 @@
 class Map
 {
 public:
+	void Clear();
 	void Render(Vector3 pos , bool Shadow);
 	bool Init(std::string Filename);
 	std::string Get_Type(Vector3 pos);

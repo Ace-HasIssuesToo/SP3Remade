@@ -2,7 +2,6 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 #include "Player.h"
-#include "GameEnvironmentEvent.h"
 
 
 bool Map::Init(std::string Filename)
@@ -67,16 +66,17 @@ void Map::Render(Vector3 pos, bool Shadow)
 	{
 		for (int Y = Math::Min(ceil(pos.y + sizes), Limitation.y); Math::Max(floor(pos.y), 0.f) <= Y; Y--)
 		{
+			Location.str(std::string());
+			Location.clear();
+			Location << X << " / " << Y;
+			std::map<std::string, std::string>::iterator it;
+			string Strings = Location.str();
+			it = Map_Data.find(Strings);
 			if (X <= int((Character_Pos.x + 1) + LR) && X >= int((Character_Pos.x - 1) - LR) && Y <= int((Character_Pos.y + 1) + LR) && Y >= int((Character_Pos.y - 1) - LR))
 			{
 				if (!Shadow)
 				{
-					Location.str(std::string());
-					Location.clear();
-					Location << X << " / " << Y;
-					std::map<std::string, std::string>::iterator it;
-					string Strings = Location.str();
-					it = Map_Data.find(Strings);
+
 					if (it == Map_Data.end())
 					{
 						Render_PI::pointer()->modelStack_Set(true);
@@ -97,10 +97,20 @@ void Map::Render(Vector3 pos, bool Shadow)
 			{
 				if (Shadow)
 				{
-					Render_PI::pointer()->modelStack_Set(true);
-					Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
-					Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Mist"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
-					Render_PI::pointer()->modelStack_Set(false);
+					if (Map_Data.at(Location.str()) == "Wall")
+					{
+						Render_PI::pointer()->modelStack_Set(true);
+						Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+						Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Mist_Wall"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+						Render_PI::pointer()->modelStack_Set(false);
+					}
+					else
+					{
+						Render_PI::pointer()->modelStack_Set(true);
+						Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+						Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Mist_Floor"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+						Render_PI::pointer()->modelStack_Set(false);
+					}
 				}
 			}
 		}
@@ -144,4 +154,9 @@ bool Map::In_Range(Vector3 WorldPos, Vector3 pos)
 //		return true;
 //	}
 	return false;
+}
+
+void Map::Clear()
+{
+	Map_Data.clear();
 }

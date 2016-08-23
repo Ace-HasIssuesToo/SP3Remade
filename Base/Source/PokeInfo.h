@@ -18,6 +18,7 @@ public:
 	bool getBallStatus();
 	void ClearBallStatus();
 	int getNumOfBalls();
+	void setNumOfBalls(int balls);
 	static PokeballInfo* pointer()
 	{
 		return m_pointer;

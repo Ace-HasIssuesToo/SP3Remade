@@ -2,7 +2,6 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 #include "Player.h"
-#include "Game_System.h"
 #include "GameState.h"
 #include "SoundEngine.h"
 Enemy_Ghost* Enemy_Ghost::c_Enemy_Ghost = new Enemy_Ghost();
@@ -154,6 +153,12 @@ void Enemy_Ghost::Exit()
 	
 	if (ghostSprite != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete ghostSprite;
 		ghostSprite = nullptr;
 	}

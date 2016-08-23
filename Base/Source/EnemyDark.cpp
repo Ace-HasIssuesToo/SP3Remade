@@ -274,21 +274,45 @@ void Enemy_Dark::Exit()
 {
 	if (enemyDarkMeshLeft != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(enemyDarkMeshLeft);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete enemyDarkMeshLeft;
 		enemyDarkMeshLeft = nullptr;
 	};
 	if (enemyDarkMeshRight != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(enemyDarkMeshRight);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete enemyDarkMeshRight;
 		enemyDarkMeshRight = nullptr;
 	};
 	if (enemyDarkMeshForward != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(enemyDarkMeshForward);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete enemyDarkMeshForward;
 		enemyDarkMeshForward = nullptr;
 	};
 	if (enemyDarkMeshDownward != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(enemyDarkMeshDownward);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete enemyDarkMeshDownward;
 		enemyDarkMeshDownward = nullptr;
 	};
