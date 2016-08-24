@@ -10,9 +10,13 @@ Enemy_Ghost::Enemy_Ghost() : ghostTimer(0)
 , ghostStayTimer(0)
 , dirX(Math::RandFloatMinMax(-5.f, 5.f))
 , dirY(Math::RandFloatMinMax(-5.f, 5.f))
+//, dirX(Math::RandFloatMinMax(0.f, 0.f))
+//, dirY(Math::RandFloatMinMax(0.f, 0.f))
 , ghostPos(0, 0, 0)
 , ghostShadow(0, 0, 0)
 , ghostoffset(0, 0, 0)
+, haunt(nullptr)
+, ghostSprite(nullptr)
 {
 
 }
@@ -22,7 +26,8 @@ Enemy_Ghost::~Enemy_Ghost()
 }
 void Enemy_Ghost::Init()
 {
-	ghostPos = (Render_PI::Window_Scale() * 0.8);
+	//ghostPos = (Render_PI::Window_Scale() * 0.25f) + Vector3(0, 320, 0);
+	ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
 	//ghostoffset = (Math::RandFloatMinMax(5.f, 10.f), 0, Math::RandFloatMinMax(5.f, 10.f));
 	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
@@ -37,7 +42,8 @@ void Enemy_Ghost::Init()
 void Enemy_Ghost::ClearGhost()
 {
 	ghostTimer = ghostStayTimer = 0.0f;
-	ghostPos = (Render_PI::Window_Scale() * 0.8);
+	//ghostPos = (Render_PI::Window_Scale() * 0.8);
+	ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
 	ghostShadow = Vector3(0, 0, 0);
 	ghostoffset = Vector3(0, 0, 0);
 	dirX = (Math::RandFloatMinMax(-5.f, 5.f));
@@ -131,13 +137,13 @@ void Enemy_Ghost::Update(double dt, Map* map)
 void Enemy_Ghost::RenderGhost()
 {
 	//ghost will disppear when it is on top of the player
-	if (ghostStayTimer == 0.0f)
+	/*if (ghostStayTimer == 0.0f)
 	{
 		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 		Render_PI::pointer()->modelStack_Set(true);
 		Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
 		Render_PI::pointer()->modelStack_Set(false);
-	}
+	}*/
 	/*std::ostringstream ss;
 	ss.precision(5);
 	ss << "Life: " << life;
@@ -154,11 +160,8 @@ void Enemy_Ghost::Exit()
 	if (ghostSprite != nullptr)
 	{
 		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
-		if (sa)
-		{
 			delete sa->m_anim;
 			sa->m_anim = nullptr;
-		}
 		delete ghostSprite;
 		ghostSprite = nullptr;
 	}
