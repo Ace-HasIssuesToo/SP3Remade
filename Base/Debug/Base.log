@@ -1,3 +1,4 @@
+<<<<<<< 168625b88cc3a9bca5470cfe7a5e16d060b3fbad
 <<<<<<< HEAD
 ﻿Build started 23/8/2016 6:00:27 PM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
@@ -25,17 +26,24 @@
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
 =======
 ﻿生成启动时间为 24/8/2016 上午 9:16:54。
+=======
+﻿生成启动时间为 24/8/2016 上午 9:23:21。
+>>>>>>> DVHBREIDYEWDWIMYTIDWYTIRWDIHYG
      1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Enemy_Poison.cpp
-         Enemy_Poison.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(62): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(106): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(111): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(197): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(206): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(215): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(230): warning C4305: “参数”: 从“double”到“float”截断
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp Source\Sensor.cpp
+         Sensor.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\sensor.cpp(60): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\sensor.cpp(83): warning C4305: “*=”: 从“double”到“float”截断
+         正在生成代码...
+         正在编译...
+         GameState.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(407): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(414): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(429): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(436): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(443): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+         正在生成代码...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
 >>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
@@ -76,5 +84,9 @@ Time Elapsed 00:00:01.17
 
 生成成功。
 
+<<<<<<< 168625b88cc3a9bca5470cfe7a5e16d060b3fbad
 已用时间 00:00:01.45
 >>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
+=======
+已用时间 00:00:02.35
+>>>>>>> DVHBREIDYEWDWIMYTIDWYTIRWDIHYG
