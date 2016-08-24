@@ -10,6 +10,7 @@ PokeballInfo::PokeballInfo()
 	, vel(0, 0, 0)
 	, throwSpeed(0)
 	, numOfBalls(0)
+	, pokeballmesh(nullptr)
 {
 
 }
@@ -137,13 +138,13 @@ void PokeballInfo::Render()
 
 void PokeballInfo::Exit()
 {
+	if (m_pointer != nullptr)
+	{
 	if (pokeballmesh != nullptr)
 	{
 		delete pokeballmesh;
 		pokeballmesh = nullptr;
 	}
-	if (m_pointer != nullptr)
-	{
 		delete m_pointer;
 		m_pointer = nullptr;
 	};

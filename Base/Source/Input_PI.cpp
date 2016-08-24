@@ -159,5 +159,8 @@ void Input_PI::Render()
 
 void Input_PI::Exit()
 {
-	delete m_pointer;
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+	}
 }

@@ -183,7 +183,7 @@ void Enemy_Poison::Update(double dt, Map* map)
 			CoolDown = 20;
 			LastTime = 10;
 			ChangeEffect = 0;
-			//Poisonous = true;
+			Poisonous = true;
 			for (int i = 0; i < All_debuff; i++)
 			{
 				FlipType[i] = false;
@@ -256,24 +256,24 @@ void Enemy_Poison::render(Vector3 Offset)
 
 void Enemy_Poison::Exit()
 {
-	if (Poison_Mesh != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poison_Mesh);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete Poison_Mesh;
-		Poison_Mesh = nullptr;
-	}
-	if (Poisoned_effect != nullptr)
-	{
-		delete Poisoned_effect;
-		Poisoned_effect = nullptr;
-	}
 	if (m_pointer != nullptr)
 	{
+		if (Poison_Mesh != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poison_Mesh);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete Poison_Mesh;
+			Poison_Mesh = nullptr;
+		}
+		if (Poisoned_effect != nullptr)
+		{
+			delete Poisoned_effect;
+			Poisoned_effect = nullptr;
+		}
 		delete m_pointer;
 		m_pointer = nullptr;
 	}

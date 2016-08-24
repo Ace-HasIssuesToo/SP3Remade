@@ -79,23 +79,13 @@ void GameState::Init()
 }
 void GameState::GameInIt()
 {
-<<<<<<< HEAD
-	//PlayerClass::pointer()->Init();
-	Enemy_Ghost::pointer()->Init();
-=======
 	PlayerClass::pointer()->Init();
-	//Enemy_Ghost::pointer()->Init();
-<<<<<<< 168625b88cc3a9bca5470cfe7a5e16d060b3fbad
->>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
+	Enemy_Ghost::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
-=======
-	//Enemy_Psychic::pointer()->Init();
-	//Enemy_Poison::pointer()->Init();
->>>>>>> DVHBREIDYEWDWIMYTIDWYTIRWDIHYG
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
-	//Sensor::pointer()->Init();
+	Sensor::pointer()->Init();
 	ReadTxtFile::pointer()->Init();
 	ReadTxtFile::pointer()->ReadFromTextFile();
 }
@@ -416,7 +406,7 @@ void GameState::GetState(double dt)
 }
 void GameState::Update(double dt)
 {
-	//GetState(dt);
+	GetState(dt);
 }
 void GameState::RenderScreens()
 {
@@ -437,10 +427,10 @@ void GameState::RenderScreens()
 	if (state == INTRODUCTION)
 	{
 		ReadTxtFile::pointer()->Render();
-		//Render_PI::pointer()->modelStack_Set(true);
-		//Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
-		//Render_PI::pointer()->RenderMesh(introduction, false);
-		//Render_PI::pointer()->modelStack_Set(false);
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
+		Render_PI::pointer()->RenderMesh(introduction, false);
+		Render_PI::pointer()->modelStack_Set(false);
 	}
 	if (state == CREDIT)
 	{
@@ -601,86 +591,86 @@ void GameState::RenderFloors()
 }
 void GameState::Render()
 {
-	//RenderScreens();
-	//RenderFloors();
+	RenderScreens();
+	RenderFloors();
 }
 void GameState::Exit()
 {
-	PlayerClass::pointer()->Exit();
-	PokeballInfo::pointer()->Exit();
-	Enemy_Psychic::pointer()->Exit();
-	Enemy_Ghost::pointer()->Exit();
-	Enemy_Poison::pointer()->Exit();
-	Enemy_Dark::pointer()->Exit();
-	Sensor::pointer()->Exit();
-	ReadTxtFile::pointer()->Exit();
-	if (text != nullptr)
-	{
-		delete text;
-		text = nullptr;
-	}
-	if (startscreen != nullptr)
-	{
-		delete startscreen;
-		startscreen = nullptr;
-	}
-	if (helpscreen != nullptr)
-	{
-		delete helpscreen;
-		helpscreen = nullptr;
-	}
-	if (creditscreen != nullptr)
-	{
-		delete creditscreen;
-		creditscreen = nullptr;
-	}
-	if (winscreen != nullptr)
-	{
-		delete winscreen;
-		winscreen = nullptr;
-	}
-	if (losescreen != nullptr)
-	{
-		delete losescreen;
-		losescreen = nullptr;
-	}
-	if (introduction != nullptr)
-	{
-		delete introduction;
-		introduction = nullptr;
-	}
-	if (Floor1 != nullptr)
-	{
-		Floor1->Clear();
-		delete Floor1;
-		Floor1 = nullptr;
-	}
-	if (Floor2 != nullptr)
-	{
-		Floor2->Clear();
-		delete Floor2;
-		Floor2 = nullptr;
-	}
-	if (Floor3 != nullptr)
-	{
-		Floor3->Clear();
-		delete Floor3;
-		Floor3 = nullptr;
-	}
-	if (Floor4 != nullptr)
-	{
-		Floor4->Clear();
-		delete Floor4;
-		Floor4 = nullptr;
-	}
-	if (Floor5 != nullptr)
-	{
-		Floor5->Clear();
-		delete Floor5;
-		Floor5 = nullptr;
-	}
 	if (c_pointer != nullptr)
 	{
+		PlayerClass::pointer()->Exit();
+		PokeballInfo::pointer()->Exit();
+		Enemy_Psychic::pointer()->Exit();
+		Enemy_Ghost::pointer()->Exit();
+		Enemy_Poison::pointer()->Exit();
+		Enemy_Dark::pointer()->Exit();
+		Sensor::pointer()->Exit();
+		ReadTxtFile::pointer()->Exit();
+		if (text != nullptr)
+		{
+			delete text;
+			text = nullptr;
+		}
+		if (startscreen != nullptr)
+		{
+			delete startscreen;
+			startscreen = nullptr;
+		}
+		if (helpscreen != nullptr)
+		{
+			delete helpscreen;
+			helpscreen = nullptr;
+		}
+		if (creditscreen != nullptr)
+		{
+			delete creditscreen;
+			creditscreen = nullptr;
+		}
+		if (winscreen != nullptr)
+		{
+			delete winscreen;
+			winscreen = nullptr;
+		}
+		if (losescreen != nullptr)
+		{
+			delete losescreen;
+			losescreen = nullptr;
+		}
+		if (introduction != nullptr)
+		{
+			delete introduction;
+			introduction = nullptr;
+		}
+		if (Floor1 != nullptr)
+		{
+			Floor1->Clear();
+			delete Floor1;
+			Floor1 = nullptr;
+		}
+		if (Floor2 != nullptr)
+		{
+			Floor2->Clear();
+			delete Floor2;
+			Floor2 = nullptr;
+		}
+		if (Floor3 != nullptr)
+		{
+			Floor3->Clear();
+			delete Floor3;
+			Floor3 = nullptr;
+		}
+		if (Floor4 != nullptr)
+		{
+			Floor4->Clear();
+			delete Floor4;
+			Floor4 = nullptr;
+		}
+		if (Floor5 != nullptr)
+		{
+			Floor5->Clear();
+			delete Floor5;
+			Floor5 = nullptr;
+		}
 		delete c_pointer;
 		c_pointer = nullptr;
 	}

@@ -1,3 +1,4 @@
+<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
 <<<<<<< HEAD
 ﻿Build started 24/8/2016 9:52:37 AM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
@@ -8,6 +9,10 @@
 <<<<<<< HEAD
 ﻿Build started 23/8/2016 4:07:31 PM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" on node 2 (Rebuild target(s)).
+=======
+﻿生成启动时间为 24/8/2016 上午 11:31:37。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
+>>>>>>> soyiuhn9im[oiwhm9mght
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MathUtility.cpp Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector2.cpp Source\Vector3.cpp
          Vector3.cpp
@@ -16,33 +21,27 @@
          Mtx44.cpp
          MatrixStack.cpp
          MathUtility.cpp
-         Generating Code...
+         正在生成代码...
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Common.lib" /NOLOGO Debug\MathUtility.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Common.lib" /NOLOGO Debug\MathUtility.obj
          Debug\MatrixStack.obj
          Debug\Mtx44.obj
          Debug\timer.obj
          Debug\Vector2.obj
          Debug\Vector3.obj
-         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Common.lib
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" (Rebuild target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:01.84
-=======
-﻿生成启动时间为 24/8/2016 上午 9:06:26。
-     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
-     1>Lib:
          Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
      1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
 >>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
 
 Build succeeded.
 
+<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
 <<<<<<< HEAD
 Time Elapsed 00:00:00.33
 =======
 已用时间 00:00:00.04
 >>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
 >>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
+=======
+已用时间 00:00:02.06
+>>>>>>> soyiuhn9im[oiwhm9mght

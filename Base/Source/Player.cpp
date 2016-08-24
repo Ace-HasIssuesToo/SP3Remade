@@ -292,62 +292,62 @@ void PlayerClass::clearLights()
 }
 void PlayerClass::Exit()
 {
-	if (playerMeshLeft != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshLeft;
-		playerMeshLeft = nullptr;
-	};
-	if (playerMeshRight != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshRight);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshRight;
-		playerMeshRight = nullptr;
-	};
-	if (playerMeshForward != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshForward);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshForward;
-		playerMeshForward = nullptr;
-	};
-	if (playerMeshDownward != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshDownward);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshDownward;
-		playerMeshDownward = nullptr;
-	};
-	if (RunBar != nullptr)
-	{
-		delete RunBar;
-		RunBar = nullptr;
-	};
-	if (LightBar != nullptr)
-	{
-		delete LightBar;
-		LightBar = nullptr;
-	}
 	if (m_pointer != nullptr)
 	{
+		if (playerMeshLeft != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshLeft;
+			playerMeshLeft = nullptr;
+		};
+		if (playerMeshRight != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshRight);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshRight;
+			playerMeshRight = nullptr;
+		};
+		if (playerMeshForward != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshForward);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshForward;
+			playerMeshForward = nullptr;
+		};
+		if (playerMeshDownward != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshDownward);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshDownward;
+			playerMeshDownward = nullptr;
+		};
+		if (RunBar != nullptr)
+		{
+			delete RunBar;
+			RunBar = nullptr;
+		};
+		if (LightBar != nullptr)
+		{
+			delete LightBar;
+			LightBar = nullptr;
+		}
 		delete m_pointer;
 		m_pointer = nullptr;
 	};

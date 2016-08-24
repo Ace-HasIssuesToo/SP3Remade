@@ -1,12 +1,12 @@
 #include "Texture_PI.h"
 
-std::map<std::string, Mesh*> Texture::Textures_Data;
+Texture* Texture::m_pointer = new Texture();
 
 void Texture::Init()
 {
-	Mesh* X = MeshBuilder::GenerateQuad("Default",Color(1,1,1));
+    Mesh* X = MeshBuilder::GenerateQuad("Default",Color(1,1,1));
 	X->textureArray[0] = LoadTGA("Data\\Default\\Default_Texture.tga");
-	Textures_Data.insert(std::pair<std::string, Mesh*>(X->name, X));
+	m_pointer->Textures_Data.insert(std::pair<std::string, Mesh*>(X->name, X));
 	if (Set("Data\\Texture\\Texture.csv") == false)
 	{
 		cout << "Error" << endl;
@@ -15,33 +15,35 @@ void Texture::Init()
 
 void Texture::Exit()
 {
-	for (auto& x : Textures_Data)
+	std::map<std::string, Mesh*>::iterator it;
+	for (it = m_pointer->Textures_Data.begin(); it != m_pointer->Textures_Data.end(); ++it)
 	{
-		if (x.second != nullptr)
-		{
-			delete x.second;
-			x.second = nullptr;
-		}
+		delete it->second;
+		it->second = nullptr;
 	}
-	Textures_Data.clear();
+	if (m_pointer != nullptr)
+	{
+		delete m_pointer;
+		m_pointer = nullptr;
+	}
+	
 }
 
 Mesh* Texture::Get(std::string Mesh_Name)
 {
 	std::map<std::string, Mesh*>::iterator it;
-	it = Textures_Data.find(Mesh_Name);
-	if (it == Textures_Data.end())
+	it = m_pointer->Textures_Data.find(Mesh_Name);
+	if (it == m_pointer->Textures_Data.end())
 	{
-		it = Textures_Data.find("Default");
+		it = m_pointer->Textures_Data.find("Default");
 	}
-	Mesh* return_mesh = it->second;
-	return return_mesh;
+	return it->second;
 }
 
 bool Texture::Set(Mesh* Mesh_)
 {
 	std::pair<std::map<std::string, Mesh*>::iterator, bool> ret;
-	ret = Textures_Data.insert(std::pair<std::string, Mesh*>(Mesh_->name, Mesh_));
+	ret = m_pointer->Textures_Data.insert(std::pair<std::string, Mesh*>(Mesh_->name, Mesh_));
 	if (ret.second == false) {
 		return false;
 	}

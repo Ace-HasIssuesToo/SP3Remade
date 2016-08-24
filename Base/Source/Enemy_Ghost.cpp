@@ -137,13 +137,13 @@ void Enemy_Ghost::Update(double dt, Map* map)
 void Enemy_Ghost::RenderGhost()
 {
 	//ghost will disppear when it is on top of the player
-	/*if (ghostStayTimer == 0.0f)
+	if (ghostStayTimer == 0.0f)
 	{
 		Vector3 Diff = Render_PI::Window_Scale() - ghostPos;
 		Render_PI::pointer()->modelStack_Set(true);
 		Render_PI::pointer()->RenderMeshIn2D(ghostSprite, false, Map::Pokemon_Offset(ghostPos), Vector3(10, 10, 1));
 		Render_PI::pointer()->modelStack_Set(false);
-	}*/
+	}
 	/*std::ostringstream ss;
 	ss.precision(5);
 	ss << "Life: " << life;
@@ -151,23 +151,23 @@ void Enemy_Ghost::RenderGhost()
 }
 void Enemy_Ghost::Exit()
 {
-	if (haunt != nullptr)
-	{
-		//haunt->drop();
-		haunt = nullptr;
-	}
-	
-	if (ghostSprite != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		delete ghostSprite;
-		ghostSprite = nullptr;
-	}
-	
 	if (c_Enemy_Ghost != nullptr)
 	{
+		if (haunt != nullptr)
+		{
+			//haunt->drop();
+			haunt = nullptr;
+		}
+
+		if (ghostSprite != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+			delete ghostSprite;
+			ghostSprite = nullptr;
+		}
+
 		delete c_Enemy_Ghost;
 		c_Enemy_Ghost = nullptr;
 	}

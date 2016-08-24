@@ -5,7 +5,11 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
+<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
 ReadTxtFile::ReadTxtFile() : fullIntro{0}, introTimer(0), TimerStart(false)
+=======
+ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), TimerStart(false), intro_dialogue(nullptr)
+>>>>>>> soyiuhn9im[oiwhm9mght
 {
 
 }
