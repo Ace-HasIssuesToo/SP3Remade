@@ -18,7 +18,7 @@ ReadTxtFile::~ReadTxtFile()
 
 }
 
-void ReadTxtFile::clearIntro()
+void ReadTxtFile::clearIntro()                                                                          
 {
 	fullIntro = { 0 };
 	introTimer = 0;
