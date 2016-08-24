@@ -19,7 +19,6 @@
     <ClCompile Include="Source\Enemy_Ghost.cpp" />
     <ClCompile Include="Source\Enemy_Poison.cpp" />
     <ClCompile Include="Source\Enemy_Psychic.cpp" />
-    <ClCompile Include="Source\GameEnvironmentEvent.cpp" />
     <ClCompile Include="Source\GameState.cpp" />
     <ClCompile Include="Source\Main_Shaft.cpp" />
     <ClCompile Include="Source\Map_PI.cpp" />
@@ -29,7 +28,6 @@
     <ClCompile Include="Source\Render_PI.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Input_PI.cpp" />
-    <ClCompile Include="Source\Game_System.cpp" />
     <ClCompile Include="Source\Sensor.cpp" />
     <ClCompile Include="Source\SoundEngine.cpp" />
     <ClCompile Include="Source\Support_Codes.cpp" />
@@ -44,7 +42,6 @@
     <ClInclude Include="Source\Enemy_Ghost.h" />
     <ClInclude Include="Source\Enemy_Poison.h" />
     <ClInclude Include="Source\Enemy_Psychic.h" />
-    <ClInclude Include="Source\GameEnvironmentEvent.h" />
     <ClInclude Include="Source\GameState.h" />
     <ClInclude Include="Source\Main_Shaft.h" />
     <ClInclude Include="Source\Map_PI.h" />
@@ -53,7 +50,6 @@
     <ClInclude Include="Source\ReadTxtFile.h" />
     <ClInclude Include="Source\Render_PI.h" />
     <ClInclude Include="Source\Input_PI.h" />
-    <ClInclude Include="Source\Game_System.h" />
     <ClInclude Include="Source\Scene.h" />
     <ClInclude Include="Source\Sensor.h" />
     <ClInclude Include="Source\SoundEngine.h" />
