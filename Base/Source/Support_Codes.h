@@ -18,7 +18,6 @@
 #include <irrKlang.h>
 #include "MatrixStack.h"
 #include "Application.h"
-#include "Angle_And_Target.h"
 #include "Camera_PI.h"
 using namespace irrklang;
 using namespace std;

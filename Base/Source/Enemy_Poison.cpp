@@ -254,8 +254,9 @@ void Enemy_Poison::render(Vector3 Offset)
 
 void Enemy_Poison::Exit()
 {
-	if (Poison_Mesh != nullptr)
+	if (m_pointer != nullptr)
 	{
+<<<<<<< HEAD
 		delete Poison_Mesh;
 		Poison_Mesh = nullptr;
 	}
@@ -272,6 +273,24 @@ void Enemy_Poison::Exit()
 	}
 	if (m_pointer != nullptr)
 	{
+=======
+		if (Poison_Mesh != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poison_Mesh);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete Poison_Mesh;
+			Poison_Mesh = nullptr;
+		}
+		if (Poisoned_effect != nullptr)
+		{
+			delete Poisoned_effect;
+			Poisoned_effect = nullptr;
+		}
+>>>>>>> 093d788504374de79944b509d414af8733b0e6b8
 		delete m_pointer;
 		m_pointer = nullptr;
 	}

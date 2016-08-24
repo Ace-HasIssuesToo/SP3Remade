@@ -145,14 +145,9 @@ void Enemy_Ghost::RenderGhost()
 }
 void Enemy_Ghost::Exit()
 {
-	if (haunt != nullptr)
+	if (c_Enemy_Ghost != nullptr)
 	{
-		//haunt->drop();
-		haunt = nullptr;
-	}
-	
-	if (ghostSprite != nullptr)
-	{
+<<<<<<< HEAD
 		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 		if (sa)
 		{
@@ -165,6 +160,23 @@ void Enemy_Ghost::Exit()
 	
 	if (c_Enemy_Ghost != nullptr)
 	{
+=======
+		if (haunt != nullptr)
+		{
+			//haunt->drop();
+			haunt = nullptr;
+		}
+
+		if (ghostSprite != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+			delete ghostSprite;
+			ghostSprite = nullptr;
+		}
+
+>>>>>>> 093d788504374de79944b509d414af8733b0e6b8
 		delete c_Enemy_Ghost;
 		c_Enemy_Ghost = nullptr;
 	}

@@ -1,11 +1,11 @@
 Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
+Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,VendingMachine,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
+Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Treasure,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
-Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
-Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall
+Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,VendingMachine,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
-Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
@@ -19,11 +19,11 @@ Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wal
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
-Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
+Wall,Floor,Floor,VendingMachine,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,VendingMachine,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
-Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
+Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,VendingMachine,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
@@ -34,7 +34,7 @@ Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wal
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
-Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
+Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Treasure,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Treasure,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall
 Wall,Wall,Wall,Wall,Wall,Wall,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Floor,Wall,Wall,Wall,Wall,Wall,Wall

@@ -280,12 +280,12 @@ void Render_PI::modelStack_Define(Vector3 Translate, float Angle, Vector3 Rotate
 
 void Render_PI::Exit()
 {
+	glDeleteProgram(m_programID);
+	glDeleteVertexArrays(1, &m_vertexArrayID);
 	if (m_pointer != nullptr)
 	{
 		delete m_pointer;
 	}
-	glDeleteProgram(m_programID);
-	glDeleteVertexArrays(1, &m_vertexArrayID);
 }
 
 void Render_PI::RenderText(Mesh* mesh, std::string text, Color color)

@@ -5,16 +5,6 @@
 #include "Player.h"
 #include "SoundEngine.h"
 
-#ifdef _DEBUG
-#ifndef DBG_NEW
-#define DBG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
-#define new DBG_NEW
-#endif
-#endif //_DEBUG
-
-#define _CRTDBG_MAP_ALLOC
-#include<stdlib.h>
-#include<crtdbg.h>
 
 Main_Shaft* Main_Shaft::c_pointer = new Main_Shaft();
 
@@ -23,14 +13,6 @@ Main_Shaft* Main_Shaft::c_pointer = new Main_Shaft();
 
 void Main_Shaft::Init()
 {
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	_CrtSetBreakAlloc(1612);
-	_CrtSetBreakAlloc(178);
-	_CrtSetBreakAlloc(177);
-	_CrtSetBreakAlloc(176);
-	_CrtSetBreakAlloc(174);
-	_CrtSetBreakAlloc(173);
-	_CrtSetBreakAlloc(172);
 
 	Render_PI::pointer()->Init();
 	Camera_PI camera;
@@ -44,14 +26,14 @@ void Main_Shaft::Init()
 
 void Main_Shaft::Update(double dt)
 {
-	//std::cout << 1 / dt << std::endl;
+	////std::cout << 1 / dt << std::endl;
 	Input_PI::pointer()->Update(dt);
 	GameState::pointer()->Update(dt);
 }
 
 
 void Main_Shaft::Render()
-{
+{ 
 	Render_PI::pointer()->Render_Set();
 	Render_PI::pointer()->Ortho_Set(true);
 	GameState::pointer()->Render();
@@ -71,7 +53,6 @@ void Main_Shaft::Exit()
 		delete c_pointer;
 		c_pointer = nullptr;
 	};
-	_CrtDumpMemoryLeaks();
 
 
 }
