@@ -78,7 +78,7 @@ void GameState::GameInIt()
 	PlayerClass::pointer()->Init();
 	//Enemy_Ghost::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
-	Enemy_Poison::pointer()->Init();
+	//Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
@@ -397,7 +397,7 @@ void GameState::GetState(double dt)
 }
 void GameState::Update(double dt)
 {
-	GetState(dt);
+	//GetState(dt);
 }
 void GameState::RenderScreens()
 {
@@ -582,8 +582,8 @@ void GameState::RenderFloors()
 }
 void GameState::Render()
 {
-	RenderScreens();
-	RenderFloors();
+	//RenderScreens();
+	//RenderFloors();
 }
 void GameState::Exit()
 {
