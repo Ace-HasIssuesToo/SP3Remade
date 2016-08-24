@@ -12,20 +12,20 @@ PlayerClass::PlayerClass()
 	:movementSpeed(0)
 	, PlayerPos(0, 0, 0)
 	, PlayerPosOffSet(0, 0, 0)
+	, PokeballPos(0,0,0)
 	, playerShadow(0,0,0)
+<<<<<<< HEAD
 	, sc(0, 0, 0)
 	, batteryTimer(0)
 	, drinkTimer(0)
 	, GetBattery(false)
 	, GetDrink(false)
+=======
+	, pokeballShadow(0,0,0)
+	, sc(0,0,0)
+>>>>>>> 8db38ad2c45ea1b61036a20ac9ac8b48c36d698a
 	, LightOn(false)
 	, LightRange(1)
-	, playerMeshRight(nullptr)
-	, playerMeshLeft(nullptr)
-	, playerMeshForward(nullptr)
-	, playerMeshDownward(nullptr)
-	, RunBar(nullptr)
-	, LightBar(nullptr)
 {
 }
 
@@ -35,23 +35,23 @@ PlayerClass::~PlayerClass()
 
 void PlayerClass::Init()
 {
-	setPlayerMesh(Top);
-
 	movementSpeed = 20;
 	Stamina = 30.f;
 	LightPower = 10.f;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.2 + Vector3(-10, 100, 0);
 	PlayerPos = Render_PI::Window_Scale() * 0.2 + Vector3(-10, 100, 0);
 	sc.Set(10.f, 10.f, 10.f);
-
 	setPlayerMesh(Top);
+<<<<<<< HEAD
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f); 
+=======
+>>>>>>> 8db38ad2c45ea1b61036a20ac9ac8b48c36d698a
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
 	playerMeshLeft = MeshBuilder::GenerateSpriteAnimation("playerMeshLeft", 1, 4);
-	playerMeshLeft->textureArray[0] = LoadTGA("Data//Texture//playerLeft.tga");
+	playerMeshLeft->textureArray[0] = LoadTGA("Data//Texture//playerLeft.tga");		
 	saL = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
 	if (saL)
 	{
@@ -85,9 +85,10 @@ void PlayerClass::Init()
 		saR->m_anim = new Animation();
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
-
+	//playerMesh = nullptr;
 	RunBar = MeshBuilder::GenerateQuad("Runbar", Color(0, 1, 0));
 	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
+
 }
 float PlayerClass::GetLightRange()
 {
@@ -435,7 +436,11 @@ void PlayerClass::Renderplayer()
 	Vector3 Pos2 = (Vector3(5, 5, 0) + Vector3(LightPower * 10, 180, 0))*0.5f;
 	Render_PI::pointer()->RenderMeshIn2D(LightBar, false, Pos2, Vector3(LightPower * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
+<<<<<<< HEAD
 	//cout << playerShadow.x << "/" << playerShadow.y << endl;
+=======
+
+>>>>>>> 8db38ad2c45ea1b61036a20ac9ac8b48c36d698a
 	std::ostringstream ss;
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();

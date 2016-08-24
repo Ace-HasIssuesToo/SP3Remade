@@ -13,11 +13,12 @@ public:
 private:
 	void Mesh_Update(Mesh* mesh,double dt);
 	void Range_Cal(Vector3 Enemy_Pos);
-	Sensor() :Save(nullptr), Danger(nullptr), dead(nullptr){};
+	Sensor(){};
 	~Sensor(){};
 	Mesh* Save;
 	Mesh* Danger;
 	Mesh*dead;
+	Mesh* Battery;
 	int Range;
 	Vector3 Player_Pos;
 	static Sensor* m_pointer;

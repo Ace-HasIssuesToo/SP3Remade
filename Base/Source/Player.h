@@ -42,8 +42,8 @@ private:
 
 	int movementSpeed;
 
-	Vector3 PlayerPos, PlayerPosOffSet;
-	Vector3 playerShadow;
+	Vector3 PlayerPos, PokeballPos, PlayerPosOffSet;
+	Vector3 playerShadow, pokeballShadow;
 	Vector3 sc;
 
 	PlayerMeshes playerMesh;

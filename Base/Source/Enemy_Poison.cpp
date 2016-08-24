@@ -7,8 +7,7 @@ Enemy_Poison* Enemy_Poison::m_pointer = new Enemy_Poison();
 
 void  Enemy_Poison::Clear()
 {
-	//Pos = Render_PI::Window_Scale()*0.25;
-	Pos = (Render_PI::Window_Scale() * 2) + Vector3(-20, -125, 0);
+	Pos = Render_PI::Window_Scale()*0.25;
 	Vel = Vector3();
 	Poisonous = false;
 	CoolDown = LastTime = ChangeEffect = 0;
@@ -21,8 +20,7 @@ void Enemy_Poison::ClearPoison()
 
 void Enemy_Poison::Init()
 {
-	//Pos = Render_PI::Window_Scale()*0.25;
-	Pos = (Render_PI::Window_Scale() * 2) + Vector3(-20, -125, 0);
+	Pos = Render_PI::Window_Scale()*0.25;
 	Vel = Vector3();
 	Poisonous = false;
 	CoolDown = LastTime = ChangeEffect = 0;
