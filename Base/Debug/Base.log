@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  GameState.cpp
 c:\users\user\documents\sp3remade\base\source\gamestate.cpp(407): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 c:\users\user\documents\sp3remade\base\source\gamestate.cpp(414): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
@@ -7,3 +8,121 @@ c:\users\user\documents\sp3remade\base\source\gamestate.cpp(443): warning C4244:
 Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
+<<<<<<< HEAD
+﻿Build started 24/8/2016 10:06:49 AM.
+     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\ReadTxtFile.cpp
+         ReadTxtFile.cpp
+     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(34): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(105): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(110): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(113): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+       Link:
+         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
+=======
+<<<<<<< 168625b88cc3a9bca5470cfe7a5e16d060b3fbad
+<<<<<<< HEAD
+﻿Build started 23/8/2016 6:00:27 PM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
+         Player.cpp
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(105): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(106): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(113): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(127): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(131): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(135): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(139): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(150): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(161): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(239): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(255): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(261): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(267): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(273): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(413): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(413): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(392): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
+=======
+﻿生成启动时间为 24/8/2016 上午 9:16:54。
+=======
+﻿生成启动时间为 24/8/2016 上午 9:23:21。
+>>>>>>> DVHBREIDYEWDWIMYTIDWYTIRWDIHYG
+=======
+﻿生成启动时间为 24/8/2016 上午 11:32:28。
+>>>>>>> soyiuhn9im[oiwhm9mght
+     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp
+         EnemyDark.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(91): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(95): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(99): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(103): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
+<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
+>>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
+>>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
+         Debug\Angle_And_Target.obj
+=======
+>>>>>>> soyiuhn9im[oiwhm9mght
+         Debug\Application.obj
+         Debug\Camera_PI.obj
+         Debug\EnemyDark.obj
+         Debug\Enemy_Ghost.obj
+         Debug\Enemy_Poison.obj
+         Debug\Enemy_Psychic.obj
+         Debug\GameState.obj
+         Debug\Main_Shaft.obj
+         Debug\Map_PI.obj
+         Debug\Player.obj
+         Debug\PokeInfo.obj
+         Debug\ReadTxtFile.obj
+         Debug\Render_PI.obj
+         Debug\main.obj
+         Debug\Input_PI.obj
+         Debug\Sensor.obj
+         Debug\SoundEngine.obj
+         Debug\Support_Codes.obj
+         Debug\Texture_PI.obj
+<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
+     1>Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe
+     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+<<<<<<< HEAD
+Time Elapsed 00:00:02.43
+=======
+Time Elapsed 00:00:01.17
+=======
+=======
+>>>>>>> soyiuhn9im[oiwhm9mght
+     1>Additional_Functions.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
+     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
+<<<<<<< 168625b88cc3a9bca5470cfe7a5e16d060b3fbad
+已用时间 00:00:01.45
+>>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
+=======
+已用时间 00:00:02.35
+>>>>>>> DVHBREIDYEWDWIMYTIDWYTIRWDIHYG
+>>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
+=======
+已用时间 00:00:01.42
+>>>>>>> soyiuhn9im[oiwhm9mght
+>>>>>>> 4e5e040bf68cded48af8d838a5af5d93eee931fa

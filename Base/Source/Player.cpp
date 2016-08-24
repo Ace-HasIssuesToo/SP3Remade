@@ -12,12 +12,16 @@ PlayerClass::PlayerClass()
 	:movementSpeed(0)
 	, PlayerPos(0, 0, 0)
 	, PlayerPosOffSet(0, 0, 0)
-	, PokeballPos(0,0,0)
 	, playerShadow(0,0,0)
-	, pokeballShadow(0,0,0)
 	, sc(0,0,0)
 	, LightOn(false)
 	, LightRange(1)
+	, playerMeshRight(nullptr)
+	, playerMeshLeft(nullptr)
+	, playerMeshForward(nullptr)
+	, playerMeshDownward(nullptr)
+	, RunBar(nullptr)
+	, LightBar(nullptr)
 {
 }
 
@@ -27,18 +31,26 @@ PlayerClass::~PlayerClass()
 
 void PlayerClass::Init()
 {
+	setPlayerMesh(Top);
+
 	movementSpeed = 20;
 	Runtime = 30;
 	LightPower = 10.f;
+<<<<<<< HEAD
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.2 + Vector3(-10, 100, 0);
 	PlayerPos = Render_PI::Window_Scale() * 0.2 + Vector3(-10, 100, 0);
 	sc.Set(10.f, 10.f, 10.f);
 
 	setPlayerMesh(Top);
+=======
+	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
+	PlayerPos = Render_PI::Window_Scale() * 0.5;
+	sc.Set(10.f, 10.f, 10.f); 
+>>>>>>> 4e5e040bf68cded48af8d838a5af5d93eee931fa
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
 	playerMeshLeft = MeshBuilder::GenerateSpriteAnimation("playerMeshLeft", 1, 4);
-	playerMeshLeft->textureArray[0] = LoadTGA("Data//Texture//playerLeft.tga");		
+	playerMeshLeft->textureArray[0] = LoadTGA("Data//Texture//playerLeft.tga");
 	saL = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
 	if (saL)
 	{
@@ -72,10 +84,9 @@ void PlayerClass::Init()
 		saR->m_anim = new Animation();
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
-	//playerMesh = nullptr;
+
 	RunBar = MeshBuilder::GenerateQuad("Runbar", Color(0, 1, 0));
 	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
-
 }
 float PlayerClass::GetLightRange()
 {
@@ -289,62 +300,62 @@ void PlayerClass::clearLights()
 }
 void PlayerClass::Exit()
 {
-	if (playerMeshLeft != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshLeft;
-		playerMeshLeft = nullptr;
-	};
-	if (playerMeshRight != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshRight);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshRight;
-		playerMeshRight = nullptr;
-	};
-	if (playerMeshForward != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshForward);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshForward;
-		playerMeshForward = nullptr;
-	};
-	if (playerMeshDownward != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshDownward);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete playerMeshDownward;
-		playerMeshDownward = nullptr;
-	};
-	if (RunBar != nullptr)
-	{
-		delete RunBar;
-		RunBar = nullptr;
-	};
-	if (LightBar != nullptr)
-	{
-		delete LightBar;
-		LightBar = nullptr;
-	}
 	if (m_pointer != nullptr)
 	{
+		if (playerMeshLeft != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshLeft;
+			playerMeshLeft = nullptr;
+		};
+		if (playerMeshRight != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshRight);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshRight;
+			playerMeshRight = nullptr;
+		};
+		if (playerMeshForward != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshForward);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshForward;
+			playerMeshForward = nullptr;
+		};
+		if (playerMeshDownward != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshDownward);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete playerMeshDownward;
+			playerMeshDownward = nullptr;
+		};
+		if (RunBar != nullptr)
+		{
+			delete RunBar;
+			RunBar = nullptr;
+		};
+		if (LightBar != nullptr)
+		{
+			delete LightBar;
+			LightBar = nullptr;
+		}
 		delete m_pointer;
 		m_pointer = nullptr;
 	};

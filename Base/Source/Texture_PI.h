@@ -12,7 +12,10 @@ public:
 	static void Init();
 	static void Exit();
 private:
-	static std::map<std::string, Mesh*> Textures_Data;
+	Texture(){};
+	~Texture(){};
+	static Texture* m_pointer;
+	std::map<std::string, Mesh*> Textures_Data;
 };
 
 #endif

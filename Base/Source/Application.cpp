@@ -151,6 +151,8 @@ void Application::Init()
 
 	// Hide the cursor
 	glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+
+	Main_Shaft::pointer()->Init();
 }
 
 void Application::Run()
@@ -158,7 +160,6 @@ void Application::Run()
 	//Main Loop
 
 	glfwSetCursorPos(m_window, 300, 200);
-	Main_Shaft::pointer()->Init();
 	m_timer.startTimer();    // Start timer to calculate how long it takes to render this frame
 
 	while (!glfwWindowShouldClose(m_window) && ! Application::IsKeyPressed(VK_ESCAPE))
@@ -177,11 +178,11 @@ void Application::Run()
 
 	} //Check if the ESC key had been pressed or if the window had been closed
 
-	Main_Shaft::pointer()->Exit();
 }
 
 void Application::Exit()
 {
+	Main_Shaft::pointer()->Exit();
 	//Close OpenGL window and terminate GLFW
 	glfwDestroyWindow(m_window);
 	//Finalize and clean up GLFW
