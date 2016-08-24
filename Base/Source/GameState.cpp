@@ -7,9 +7,7 @@
 #include "Sensor.h"
 
 GameState* GameState::c_pointer = new GameState();
-GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
-, losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr), introduction(nullptr)
-, Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
+GameState::GameState()
 {
 
 }
@@ -19,12 +17,8 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
 	state = INTRODUCTION;
-=======
->>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
 	GameInIt();
-	state = START;
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -79,23 +73,13 @@ void GameState::Init()
 }
 void GameState::GameInIt()
 {
-<<<<<<< HEAD
-	//PlayerClass::pointer()->Init();
-	Enemy_Ghost::pointer()->Init();
-=======
 	PlayerClass::pointer()->Init();
-	//Enemy_Ghost::pointer()->Init();
-<<<<<<< 168625b88cc3a9bca5470cfe7a5e16d060b3fbad
->>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
+	Enemy_Ghost::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
-=======
-	//Enemy_Psychic::pointer()->Init();
-	//Enemy_Poison::pointer()->Init();
->>>>>>> DVHBREIDYEWDWIMYTIDWYTIRWDIHYG
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
-	//Sensor::pointer()->Init();
+	Sensor::pointer()->Init();
 	ReadTxtFile::pointer()->Init();
 	ReadTxtFile::pointer()->ReadFromTextFile();
 }
@@ -167,18 +151,6 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
-						state = FLOOR3;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
 						state = WIN;
 					}
 				}
@@ -207,18 +179,6 @@ void GameState::Update_Stuffs(double dt, Map* map)
 						}
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
-					{
-						state = FLOOR3;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
 					{
 						state = WIN;
 					}
@@ -249,18 +209,6 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
-						state = FLOOR3;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
 						state = WIN;
 					}
 				}
@@ -289,19 +237,8 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
-						state = FLOOR3;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
 						state = WIN;
+
 					}
 				}
 				PokeballInfo::pointer()->ClearBallStatus();
@@ -349,12 +286,8 @@ void GameState::GetState(double dt)
 	}
 	case INTRODUCTION:
 	{
-<<<<<<< HEAD
 		ReadTxtFile::pointer()->TimerStart = true;
 		ReadTxtFile::pointer()->Update(dt);
-=======
-		//ReadTxtFile::pointer()->TimerStart = true;
->>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
 	}
 	case CREDIT:
 	{
@@ -416,7 +349,7 @@ void GameState::GetState(double dt)
 }
 void GameState::Update(double dt)
 {
-	//GetState(dt);
+	GetState(dt);
 }
 void GameState::RenderScreens()
 {
@@ -601,8 +534,8 @@ void GameState::RenderFloors()
 }
 void GameState::Render()
 {
-	//RenderScreens();
-	//RenderFloors();
+	RenderScreens();
+	RenderFloors();
 }
 void GameState::Exit()
 {

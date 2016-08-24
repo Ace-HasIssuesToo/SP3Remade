@@ -24,8 +24,7 @@ void Enemy_Dark::Init()
 {
 	movementSpeed = 10;
 	throwSpeed = 30;
-	//EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
-	EnemyDarkPos = (Render_PI::Window_Scale() * 0.25f) + Vector3(0, 320, 0);
+	EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
 	EnemyDarkScale.Set(5.f, 5.f, 5.f);
 	//EnemyDarkScale.Set(10.f, 10.f, 10.f);
 	ballOnScreen = false;
@@ -153,49 +152,49 @@ void Enemy_Dark::Update(double dt, Map* map)
 
 	//Kind of Collision
 	
-	//if (map->Get_Type(EnemyDarkShadow) == "Floor") // imma hot ass nigga mang
-	//{
-	//	EnemyDarkPos = EnemyDarkShadow;
-	//}
-	//else
-	//{
-	//	Vector3 offset = (EnemyDarkPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize() * 50;
-	//	if (rand() % 2)
-	//	{
-	//		offset.x *= -1;
-	//	}
-	//	if (rand() % 3)
-	//	{
-	//		offset.y *= -1;
-	//	}
-	//	EnemyDarkPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
-	//}
+	if (map->Get_Type(EnemyDarkShadow) == "Floor") // imma hot ass nigga mang
+	{
+		EnemyDarkPos = EnemyDarkShadow;
+	}
+	else
+	{
+		Vector3 offset = (EnemyDarkPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize() * 50;
+		if (rand() % 2)
+		{
+			offset.x *= -1;
+		}
+		if (rand() % 3)
+		{
+			offset.y *= -1;
+		}
+		EnemyDarkPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
+	}
 
-	//if ((distSq <= combinedRadSq) && (ballOnScreen == false))
-	//{
-	//	ballOnScreen = true;
-	//	darkBallPos = EnemyDarkPos;
-	//	darkBallDirection = (Vector3((PlayerClass::pointer()->getPlayerPos() + PlayerClass::pointer()->getPlayerPosOffSet()) - darkBallPos).Normalize()) * throwSpeed;
-	//}
-	//else if (ballOnScreen == true)
-	//{
-	//	Vector3 shadow = darkBallPos + (darkBallDirection * dt);
-	//	if (map->Get_Type(shadow) == "Floor")
-	//	{
-	//		darkBallPos = shadow;
-	//	}
-	//	else
-	//	{
-	//		ballOnScreen = false;
-	//	}
-	//	Vector3 radiusRange;
-	//	radiusRange = (darkBallPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
-	//	float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
-	//	if (radRange < 10.f)
-	//	{
-	//		GameState::pointer()->SetState(GameState::LOSE);
-	//	}
-	//}
+	if ((distSq <= combinedRadSq) && (ballOnScreen == false))
+	{
+		ballOnScreen = true;
+		darkBallPos = EnemyDarkPos;
+		darkBallDirection = (Vector3((PlayerClass::pointer()->getPlayerPos() + PlayerClass::pointer()->getPlayerPosOffSet()) - darkBallPos).Normalize()) * throwSpeed;
+	}
+	else if (ballOnScreen == true)
+	{
+		Vector3 shadow = darkBallPos + (darkBallDirection * dt);
+		if (map->Get_Type(shadow) == "Floor")
+		{
+			darkBallPos = shadow;
+		}
+		else
+		{
+			ballOnScreen = false;
+		}
+		Vector3 radiusRange;
+		radiusRange = (darkBallPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
+		float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
+		if (radRange < 10.f)
+		{
+			GameState::pointer()->SetState(GameState::LOSE);
+		}
+	}
 }
 
 Vector3 Enemy_Dark::getRadSq()
@@ -264,8 +263,7 @@ void Enemy_Dark::clearEnemyDark()
 {
 	movementSpeed = 10;
 	throwSpeed = 30;
-	EnemyDarkPos = (Render_PI::Window_Scale() * 0.25f) + Vector3(0, 325, 0);
-	//EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
+	EnemyDarkPos = Render_PI::Window_Scale() * 0.7f;
 	EnemyDarkScale.Set(5.f, 5.f, 5.f);
 	//EnemyDarkScale.Set(10.f, 10.f, 10.f);
 	ballOnScreen = false;

@@ -5,7 +5,8 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-ReadTxtFile::ReadTxtFile() : fullIntro{0}, introTimer(0), TimerStart(false)
+ReadTxtFile::ReadTxtFile() : fullIntro{ 0 }, introTimer(0), sequence(0),
+TimerStart(false), timerTime(false), timerReset(false)
 {
 
 }
@@ -20,6 +21,9 @@ void ReadTxtFile::clearIntro()
 	fullIntro = { 0 };
 	introTimer = 0;
 	TimerStart = false;
+	timerTime = false;
+	timerReset = false;
+	sequence = 0;
 }
 
 void ReadTxtFile::Init()
@@ -86,31 +90,48 @@ vector<string> ReadTxtFile::lineSplit(string input)
 
 void ReadTxtFile::Render()
 {
-	// Every 5 secs, change to next line of array
 	vector<string> tempIntro;
 
-	float tempTimer = 0.f;
-	//while (introTimer > 5.f)
-	//{
-	//	//Loop every 5 seconds
-
-
-	//	introTimer = tempTimer;
-	//}
-
-	cout << "False / True : " << TimerStart << endl;
-	cout << "introTimer : " << introTimer << endl;
-	cout << "tempTimer : " << tempTimer << endl;
-
-	for (int i = 0; i < fullIntro.size(); i++)
+	// Re-loop timer back to 0 secs
+	if (sequence < fullIntro.size())
 	{
-		tempIntro = lineSplit(fullIntro.at(i));
+		tempIntro = lineSplit(fullIntro.at(sequence));
+
+		// Re-loop timer back to 0 secs
+		if (introTimer > 5.f)
+		{
+			introTimer = 0.f;
+			timerTime = true;
+		}
+		// Go to next line
+		if (timerTime == true)
+		{
+			sequence++;
+			timerReset = true;
+		}
+		// Reset variables
+		if (timerReset == true)
+		{
+			timerReset = false;
+			timerTime = false;
+		}
+
+		for (int i = 0; i < tempIntro.size(); i++)
+		{
+			int Y = tempIntro.size() - i;
+			Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempIntro.at(i), Color(1, 1, 1), Vector3(1, 5 * Y, 1), Vector3(5, 5, 1));
+		}
 	}
 
-	for (int i = 0; i < tempIntro.size(); i++)
+	cout << sequence << endl;
+	//cout << timerTime << endl;
+
+	if (sequence == fullIntro.size())
 	{
-		int Y = tempIntro.size() - i;
-		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempIntro.at(i), Color(1, 1, 1), Vector3(1, 5*Y, 1), Vector3(5, 5, 1));
+		ostringstream ss;
+		ss.str("");
+		ss << "Press 'Enter'  to continue...";
+		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, ss.str(), Color(1, 1, 1), Vector3(1, 5, 1), Vector3(5, 5, 1));
 	}
 }
 

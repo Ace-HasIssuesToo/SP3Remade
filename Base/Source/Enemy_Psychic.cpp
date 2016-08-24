@@ -27,15 +27,14 @@ void Enemy_Psychic::clearPsychic()
 {
 	psycho = finalScream = screamTimer = countFound = playerIntrude = defMechanism = lastResort = 0;
 	currState = STATE_HIDE;
-	//psychicPos = (Render_PI::Window_Scale() * 0.7);
-	psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
+	psychicPos = (Render_PI::Window_Scale() * 0.7);
 }
 
 void Enemy_Psychic::Init()
 {
 	// Position of enemy
-	psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
-	//psychicPos = (Render_PI::Window_Scale() * 0.7);
+	psychicPos = (Render_PI::Window_Scale() * 0.7);
+
 	// Psychic camouflage image
 	hide_psychic = MeshBuilder::GenerateQuad("hide_psychic", Color(1, 1, 1));
 	hide_psychic->textureArray[0] = LoadTGA("Data//Texture//psychicHide.tga");
@@ -53,7 +52,7 @@ void Enemy_Psychic::Init()
 	kill_psychic->textureArray[0] = LoadTGA("Data//Texture//psychicKill.tga");
 
 	// Enemy State
-	currState = STATE_APPEAR;
+	currState = STATE_HIDE;
 	// Sound Engine
 	runScream = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//psychic_461.mp3");
 }
