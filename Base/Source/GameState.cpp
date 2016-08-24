@@ -19,14 +19,6 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
-	state = FLOOR5;
-=======
-<<<<<<< HEAD
-	state = INTRODUCTION;
-=======
->>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
->>>>>>> 4e5e040bf68cded48af8d838a5af5d93eee931fa
 	GameInIt();
 	state = START;
 	Floor1 = new Map();
@@ -343,12 +335,8 @@ void GameState::GetState(double dt)
 	}
 	case INTRODUCTION:
 	{
-<<<<<<< HEAD
 		ReadTxtFile::pointer()->TimerStart = true;
 		ReadTxtFile::pointer()->Update(dt);
-=======
-		//ReadTxtFile::pointer()->TimerStart = true;
->>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
 	}
 	case CREDIT:
 	{
