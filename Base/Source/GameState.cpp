@@ -73,7 +73,7 @@ void GameState::Init()
 }
 void GameState::GameInIt()
 {
-	PlayerClass::pointer()->Init();
+	//PlayerClass::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Poison::pointer()->Init();

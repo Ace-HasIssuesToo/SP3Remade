@@ -12,12 +12,16 @@ PlayerClass::PlayerClass()
 	:movementSpeed(0)
 	, PlayerPos(0, 0, 0)
 	, PlayerPosOffSet(0, 0, 0)
-	, PokeballPos(0,0,0)
 	, playerShadow(0,0,0)
-	, pokeballShadow(0,0,0)
 	, sc(0,0,0)
 	, LightOn(false)
 	, LightRange(1)
+	, playerMeshRight(nullptr)
+	, playerMeshLeft(nullptr)
+	, playerMeshForward(nullptr)
+	, playerMeshDownward(nullptr)
+	, RunBar(nullptr)
+	, LightBar(nullptr)
 {
 }
 
@@ -27,18 +31,18 @@ PlayerClass::~PlayerClass()
 
 void PlayerClass::Init()
 {
+	setPlayerMesh(Top);
+
 	movementSpeed = 20;
 	Runtime = 30;
 	LightPower = 10.f;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
-	sc.Set(10.f, 10.f, 10.f);
-
-	setPlayerMesh(Top);
+	sc.Set(10.f, 10.f, 10.f); 
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
 	playerMeshLeft = MeshBuilder::GenerateSpriteAnimation("playerMeshLeft", 1, 4);
-	playerMeshLeft->textureArray[0] = LoadTGA("Data//Texture//playerLeft.tga");		
+	playerMeshLeft->textureArray[0] = LoadTGA("Data//Texture//playerLeft.tga");
 	saL = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
 	if (saL)
 	{
@@ -72,10 +76,9 @@ void PlayerClass::Init()
 		saR->m_anim = new Animation();
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
-	//playerMesh = nullptr;
+
 	RunBar = MeshBuilder::GenerateQuad("Runbar", Color(0, 1, 0));
 	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
-
 }
 float PlayerClass::GetLightRange()
 {
