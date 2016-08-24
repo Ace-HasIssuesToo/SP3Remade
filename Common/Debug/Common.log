@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
+=======
 ﻿Build started 24/8/2016 1:08:05 PM.
      1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>Lib:
@@ -7,3 +10,4 @@
 Build succeeded.
 
 Time Elapsed 00:00:00.04
+>>>>>>> 8db38ad2c45ea1b61036a20ac9ac8b48c36d698a
