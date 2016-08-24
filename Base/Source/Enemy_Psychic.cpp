@@ -27,15 +27,14 @@ void Enemy_Psychic::clearPsychic()
 {
 	psycho = finalScream = screamTimer = countFound = playerIntrude = defMechanism = lastResort = 0;
 	currState = STATE_HIDE;
-	//psychicPos = (Render_PI::Window_Scale() * 0.7);
-	psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
+	psychicPos = (Render_PI::Window_Scale() * 0.7);
 }
 
 void Enemy_Psychic::Init()
 {
 	// Position of enemy
-	psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
-	//psychicPos = (Render_PI::Window_Scale() * 0.7);
+	psychicPos = (Render_PI::Window_Scale() * 0.7);
+
 	// Psychic camouflage image
 	hide_psychic = MeshBuilder::GenerateQuad("hide_psychic", Color(1, 1, 1));
 	hide_psychic->textureArray[0] = LoadTGA("Data//Texture//psychicHide.tga");
@@ -53,7 +52,7 @@ void Enemy_Psychic::Init()
 	kill_psychic->textureArray[0] = LoadTGA("Data//Texture//psychicKill.tga");
 
 	// Enemy State
-	currState = STATE_APPEAR;
+	currState = STATE_HIDE;
 	// Sound Engine
 	runScream = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//psychic_461.mp3");
 }
@@ -161,56 +160,56 @@ void Enemy_Psychic::RenderPsychic()
 
 void Enemy_Psychic::Exit()
 {
-	/*
-	if (runScream != nullptr)
-	{
-		runScream->drop();
-		runScream = nullptr;
-	}
-	if (killScream != nullptr)
-	{
-		killScream->drop();
-		killScream = nullptr;
-	}*/
-	
-	if (hide_psychic != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(hide_psychic);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete hide_psychic;
-		hide_psychic = nullptr;
-	}
-
-	if (appear_psychic != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(appear_psychic);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete appear_psychic;
-		appear_psychic = nullptr;
-	}
-
-	if (kill_psychic != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(kill_psychic);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete kill_psychic;
-		kill_psychic = nullptr;
-	}
-
 	if (c_enemyPsychic != nullptr)
 	{
+		/*
+		if (runScream != nullptr)
+		{
+		runScream->drop();
+		runScream = nullptr;
+		}
+		if (killScream != nullptr)
+		{
+		killScream->drop();
+		killScream = nullptr;
+		}*/
+
+		if (hide_psychic != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(hide_psychic);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete hide_psychic;
+			hide_psychic = nullptr;
+		}
+
+		if (appear_psychic != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(appear_psychic);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete appear_psychic;
+			appear_psychic = nullptr;
+		}
+
+		if (kill_psychic != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(kill_psychic);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete kill_psychic;
+			kill_psychic = nullptr;
+		}
+
 		delete c_enemyPsychic;
 		c_enemyPsychic = nullptr;
 	}

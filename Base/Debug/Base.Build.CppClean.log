@@ -1,72 +1,65 @@
 <<<<<<< HEAD
 d:\nyp projects\sp3\edited pull\base\debug\vc120.pdb
 d:\nyp projects\sp3\edited pull\base\debug\vc120.idb
+d:\nyp projects\sp3\edited pull\base\debug\angle_and_target.obj
+d:\nyp projects\sp3\edited pull\base\debug\application.obj
 d:\nyp projects\sp3\edited pull\base\debug\camera_pi.obj
 d:\nyp projects\sp3\edited pull\base\debug\enemydark.obj
 d:\nyp projects\sp3\edited pull\base\debug\enemy_ghost.obj
 d:\nyp projects\sp3\edited pull\base\debug\enemy_poison.obj
 d:\nyp projects\sp3\edited pull\base\debug\enemy_psychic.obj
-d:\nyp projects\sp3\edited pull\base\debug\gameenvironmentevent.obj
 d:\nyp projects\sp3\edited pull\base\debug\gamestate.obj
 d:\nyp projects\sp3\edited pull\base\debug\main_shaft.obj
 d:\nyp projects\sp3\edited pull\base\debug\map_pi.obj
 d:\nyp projects\sp3\edited pull\base\debug\player.obj
 d:\nyp projects\sp3\edited pull\base\debug\pokeinfo.obj
+d:\nyp projects\sp3\edited pull\base\debug\readtxtfile.obj
 d:\nyp projects\sp3\edited pull\base\debug\render_pi.obj
 d:\nyp projects\sp3\edited pull\base\debug\main.obj
 d:\nyp projects\sp3\edited pull\base\debug\input_pi.obj
-d:\nyp projects\sp3\edited pull\base\debug\game_system.obj
 d:\nyp projects\sp3\edited pull\base\debug\sensor.obj
 d:\nyp projects\sp3\edited pull\base\debug\soundengine.obj
 d:\nyp projects\sp3\edited pull\base\debug\support_codes.obj
 d:\nyp projects\sp3\edited pull\base\debug\texture_pi.obj
-d:\nyp projects\sp3\edited pull\base\debug\angle_and_target.obj
-d:\nyp projects\sp3\edited pull\base\debug\application.obj
-d:\nyp projects\sp3\edited pull\base\debug\readtxtfile.obj
 d:\nyp projects\sp3\edited pull\base\debug\additional_functions.obj
+d:\nyp projects\sp3\edited pull\debug\base.exe
 d:\nyp projects\sp3\edited pull\debug\base.pdb
 d:\nyp projects\sp3\edited pull\base\debug\base.tlog\cl.command.1.tlog
 d:\nyp projects\sp3\edited pull\base\debug\base.tlog\cl.read.1.tlog
 d:\nyp projects\sp3\edited pull\base\debug\base.tlog\cl.write.1.tlog
-d:\nyp projects\sp3\edited pull\base\debug\base.tlog\link-cvtres.read.1.tlog
-d:\nyp projects\sp3\edited pull\base\debug\base.tlog\link-cvtres.write.1.tlog
-d:\nyp projects\sp3\edited pull\base\debug\base.tlog\link-rc.read.1.tlog
-d:\nyp projects\sp3\edited pull\base\debug\base.tlog\link-rc.write.1.tlog
 d:\nyp projects\sp3\edited pull\base\debug\base.tlog\link.command.1.tlog
 d:\nyp projects\sp3\edited pull\base\debug\base.tlog\link.read.1.tlog
 d:\nyp projects\sp3\edited pull\base\debug\base.tlog\link.write.1.tlog
 =======
-c:\users\user\documents\sp3remade\base\debug\vc120.pdb
-c:\users\user\documents\sp3remade\base\debug\vc120.idb
-c:\users\user\documents\sp3remade\base\debug\camera_pi.obj
-c:\users\user\documents\sp3remade\base\debug\enemydark.obj
-c:\users\user\documents\sp3remade\base\debug\enemy_ghost.obj
-c:\users\user\documents\sp3remade\base\debug\enemy_poison.obj
-c:\users\user\documents\sp3remade\base\debug\enemy_psychic.obj
-c:\users\user\documents\sp3remade\base\debug\gameenvironmentevent.obj
-c:\users\user\documents\sp3remade\base\debug\gamestate.obj
-c:\users\user\documents\sp3remade\base\debug\main_shaft.obj
-c:\users\user\documents\sp3remade\base\debug\map_pi.obj
-c:\users\user\documents\sp3remade\base\debug\player.obj
-c:\users\user\documents\sp3remade\base\debug\pokeinfo.obj
-c:\users\user\documents\sp3remade\base\debug\readtxtfile.obj
-c:\users\user\documents\sp3remade\base\debug\render_pi.obj
-c:\users\user\documents\sp3remade\base\debug\main.obj
-c:\users\user\documents\sp3remade\base\debug\input_pi.obj
-c:\users\user\documents\sp3remade\base\debug\game_system.obj
-c:\users\user\documents\sp3remade\base\debug\sensor.obj
-c:\users\user\documents\sp3remade\base\debug\soundengine.obj
-c:\users\user\documents\sp3remade\base\debug\support_codes.obj
-c:\users\user\documents\sp3remade\base\debug\texture_pi.obj
-c:\users\user\documents\sp3remade\base\debug\additional_functions.obj
-c:\users\user\documents\sp3remade\base\debug\angle_and_target.obj
-c:\users\user\documents\sp3remade\base\debug\application.obj
-c:\users\user\documents\sp3remade\debug\base.exe
-c:\users\user\documents\sp3remade\debug\base.pdb
-c:\users\user\documents\sp3remade\base\debug\base.tlog\cl.command.1.tlog
-c:\users\user\documents\sp3remade\base\debug\base.tlog\cl.read.1.tlog
-c:\users\user\documents\sp3remade\base\debug\base.tlog\cl.write.1.tlog
-c:\users\user\documents\sp3remade\base\debug\base.tlog\link.command.1.tlog
-c:\users\user\documents\sp3remade\base\debug\base.tlog\link.read.1.tlog
-c:\users\user\documents\sp3remade\base\debug\base.tlog\link.write.1.tlog
->>>>>>> 0ad54f6fc64a6b5dac736098c7bbb232b00536cf
+c:\users\sword_000\desktop\sp3\base\debug\vc120.pdb
+c:\users\sword_000\desktop\sp3\base\debug\vc120.idb
+c:\users\sword_000\desktop\sp3\base\debug\angle_and_target.obj
+c:\users\sword_000\desktop\sp3\base\debug\application.obj
+c:\users\sword_000\desktop\sp3\base\debug\camera_pi.obj
+c:\users\sword_000\desktop\sp3\base\debug\enemydark.obj
+c:\users\sword_000\desktop\sp3\base\debug\enemy_ghost.obj
+c:\users\sword_000\desktop\sp3\base\debug\enemy_poison.obj
+c:\users\sword_000\desktop\sp3\base\debug\enemy_psychic.obj
+c:\users\sword_000\desktop\sp3\base\debug\gamestate.obj
+c:\users\sword_000\desktop\sp3\base\debug\main_shaft.obj
+c:\users\sword_000\desktop\sp3\base\debug\map_pi.obj
+c:\users\sword_000\desktop\sp3\base\debug\player.obj
+c:\users\sword_000\desktop\sp3\base\debug\pokeinfo.obj
+c:\users\sword_000\desktop\sp3\base\debug\readtxtfile.obj
+c:\users\sword_000\desktop\sp3\base\debug\render_pi.obj
+c:\users\sword_000\desktop\sp3\base\debug\main.obj
+c:\users\sword_000\desktop\sp3\base\debug\input_pi.obj
+c:\users\sword_000\desktop\sp3\base\debug\sensor.obj
+c:\users\sword_000\desktop\sp3\base\debug\soundengine.obj
+c:\users\sword_000\desktop\sp3\base\debug\support_codes.obj
+c:\users\sword_000\desktop\sp3\base\debug\texture_pi.obj
+c:\users\sword_000\desktop\sp3\base\debug\additional_functions.obj
+c:\users\sword_000\desktop\sp3\debug\base.exe
+c:\users\sword_000\desktop\sp3\debug\base.pdb
+c:\users\sword_000\desktop\sp3\base\debug\base.tlog\cl.command.1.tlog
+c:\users\sword_000\desktop\sp3\base\debug\base.tlog\cl.read.1.tlog
+c:\users\sword_000\desktop\sp3\base\debug\base.tlog\cl.write.1.tlog
+c:\users\sword_000\desktop\sp3\base\debug\base.tlog\link.command.1.tlog
+c:\users\sword_000\desktop\sp3\base\debug\base.tlog\link.read.1.tlog
+c:\users\sword_000\desktop\sp3\base\debug\base.tlog\link.write.1.tlog
+>>>>>>> 093d788504374de79944b509d414af8733b0e6b8

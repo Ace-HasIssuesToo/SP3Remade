@@ -7,8 +7,7 @@ Enemy_Poison* Enemy_Poison::m_pointer = new Enemy_Poison();
 
 void  Enemy_Poison::Clear()
 {
-	//Pos = Render_PI::Window_Scale()*0.25;
-	Pos = (Render_PI::Window_Scale() * 2) + Vector3(-20, -125, 0);
+	Pos = Render_PI::Window_Scale()*0.25;
 	Vel = Vector3();
 	Poisonous = false;
 	CoolDown = LastTime = ChangeEffect = 0;
@@ -21,8 +20,7 @@ void Enemy_Poison::ClearPoison()
 
 void Enemy_Poison::Init()
 {
-	//Pos = Render_PI::Window_Scale()*0.25;
-	Pos = (Render_PI::Window_Scale() * 2) + Vector3(-20, -125, 0);
+	Pos = Render_PI::Window_Scale()*0.25;
 	Vel = Vector3();
 	Poisonous = false;
 	CoolDown = LastTime = ChangeEffect = 0;
@@ -183,7 +181,7 @@ void Enemy_Poison::Update(double dt, Map* map)
 			CoolDown = 20;
 			LastTime = 10;
 			ChangeEffect = 0;
-			//Poisonous = true;
+			Poisonous = true;
 			for (int i = 0; i < All_debuff; i++)
 			{
 				FlipType[i] = false;
@@ -256,24 +254,43 @@ void Enemy_Poison::render(Vector3 Offset)
 
 void Enemy_Poison::Exit()
 {
-	if (Poison_Mesh != nullptr)
+	if (m_pointer != nullptr)
 	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poison_Mesh);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
+<<<<<<< HEAD
 		delete Poison_Mesh;
 		Poison_Mesh = nullptr;
 	}
 	if (Poisoned_effect != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poisoned_effect);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete Poisoned_effect;
 		Poisoned_effect = nullptr;
 	}
 	if (m_pointer != nullptr)
 	{
+=======
+		if (Poison_Mesh != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poison_Mesh);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete Poison_Mesh;
+			Poison_Mesh = nullptr;
+		}
+		if (Poisoned_effect != nullptr)
+		{
+			delete Poisoned_effect;
+			Poisoned_effect = nullptr;
+		}
+>>>>>>> 093d788504374de79944b509d414af8733b0e6b8
 		delete m_pointer;
 		m_pointer = nullptr;
 	}
