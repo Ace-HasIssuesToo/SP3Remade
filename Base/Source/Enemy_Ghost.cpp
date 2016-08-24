@@ -10,9 +10,13 @@ Enemy_Ghost::Enemy_Ghost() : ghostTimer(0)
 , ghostStayTimer(0)
 , dirX(Math::RandFloatMinMax(-5.f, 5.f))
 , dirY(Math::RandFloatMinMax(-5.f, 5.f))
+//, dirX(Math::RandFloatMinMax(0.f, 0.f))
+//, dirY(Math::RandFloatMinMax(0.f, 0.f))
 , ghostPos(0, 0, 0)
 , ghostShadow(0, 0, 0)
 , ghostoffset(0, 0, 0)
+, haunt(nullptr)
+, ghostSprite(nullptr)
 {
 
 }
@@ -22,7 +26,8 @@ Enemy_Ghost::~Enemy_Ghost()
 }
 void Enemy_Ghost::Init()
 {
-	ghostPos = (Render_PI::Window_Scale() * 0.8);
+	//ghostPos = (Render_PI::Window_Scale() * 0.25f) + Vector3(0, 320, 0);
+	ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
 	//ghostoffset = (Math::RandFloatMinMax(5.f, 10.f), 0, Math::RandFloatMinMax(5.f, 10.f));
 	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
@@ -37,7 +42,8 @@ void Enemy_Ghost::Init()
 void Enemy_Ghost::ClearGhost()
 {
 	ghostTimer = ghostStayTimer = 0.0f;
-	ghostPos = (Render_PI::Window_Scale() * 0.8);
+	//ghostPos = (Render_PI::Window_Scale() * 0.8);
+	ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
 	ghostShadow = Vector3(0, 0, 0);
 	ghostoffset = Vector3(0, 0, 0);
 	dirX = (Math::RandFloatMinMax(-5.f, 5.f));
@@ -144,7 +150,11 @@ void Enemy_Ghost::RenderGhost()
 	Render_PI::pointer()->RenderTextOnScreen(Game_System::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), Render_PI::Window_Scale() * 0.3, Vector3(5, 5, 1));*/
 }
 void Enemy_Ghost::Exit()
+<<<<<<< HEAD
 {	
+=======
+{
+>>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
 	if (c_Enemy_Ghost != nullptr)
 	{
 		if (haunt != nullptr)

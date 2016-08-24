@@ -7,7 +7,8 @@ Enemy_Poison* Enemy_Poison::m_pointer = new Enemy_Poison();
 
 void  Enemy_Poison::Clear()
 {
-	Pos = Render_PI::Window_Scale()*0.25;
+	//Pos = Render_PI::Window_Scale()*0.25;
+	Pos = (Render_PI::Window_Scale() * 2) + Vector3(-20, -125, 0);
 	Vel = Vector3();
 	Poisonous = false;
 	CoolDown = LastTime = ChangeEffect = 0;
@@ -20,7 +21,8 @@ void Enemy_Poison::ClearPoison()
 
 void Enemy_Poison::Init()
 {
-	Pos = Render_PI::Window_Scale()*0.25;
+	//Pos = Render_PI::Window_Scale()*0.25;
+	Pos = (Render_PI::Window_Scale() * 2) + Vector3(-20, -125, 0);
 	Vel = Vector3();
 	Poisonous = false;
 	CoolDown = LastTime = ChangeEffect = 0;
@@ -256,6 +258,7 @@ void Enemy_Poison::Exit()
 {
 	if (m_pointer != nullptr)
 	{
+<<<<<<< HEAD
 		delete Poison_Mesh;
 		Poison_Mesh = nullptr;
 	}
@@ -272,6 +275,8 @@ void Enemy_Poison::Exit()
 	}
 	if (m_pointer != nullptr)
 	{
+=======
+>>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
 		if (Poison_Mesh != nullptr)
 		{
 			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poison_Mesh);

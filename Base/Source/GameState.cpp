@@ -7,7 +7,9 @@
 #include "Sensor.h"
 
 GameState* GameState::c_pointer = new GameState();
-GameState::GameState()
+GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
+, losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr), introduction(nullptr)
+, Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 {
 
 }
@@ -17,8 +19,12 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
+<<<<<<< HEAD
 	state = START;
+=======
+>>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
 	GameInIt();
+	state = START;
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -149,6 +155,18 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
+						state = FLOOR3;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR3)
+					{
+						state = FLOOR4;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR4)
+					{
+						state = FLOOR5;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR5)
+					{
 						state = WIN;
 					}
 				}
@@ -177,6 +195,18 @@ void GameState::Update_Stuffs(double dt, Map* map)
 						}
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
+					{
+						state = FLOOR3;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR3)
+					{
+						state = FLOOR4;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR4)
+					{
+						state = FLOOR5;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR5)
 					{
 						state = WIN;
 					}
@@ -207,6 +237,18 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
+						state = FLOOR3;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR3)
+					{
+						state = FLOOR4;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR4)
+					{
+						state = FLOOR5;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR5)
+					{
 						state = WIN;
 					}
 				}
@@ -235,8 +277,19 @@ void GameState::Update_Stuffs(double dt, Map* map)
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
+						state = FLOOR3;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR3)
+					{
+						state = FLOOR4;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR4)
+					{
+						state = FLOOR5;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR5)
+					{
 						state = WIN;
-
 					}
 				}
 				PokeballInfo::pointer()->ClearBallStatus();

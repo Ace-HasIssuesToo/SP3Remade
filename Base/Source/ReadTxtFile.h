@@ -35,10 +35,13 @@ private:
 	vector<string> fullIntro;
 
 	float introTimer;
+<<<<<<< HEAD
 	bool timerTime, timerReset;
 	int sequence;
 	float bgTimer;
 	bool flashON, asylumON;
+=======
+>>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
 
 	Mesh* intro_dialogue;
 	Mesh* city;
