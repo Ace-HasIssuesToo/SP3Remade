@@ -181,7 +181,7 @@ void Enemy_Poison::Update(double dt, Map* map)
 			CoolDown = 20;
 			LastTime = 10;
 			ChangeEffect = 0;
-			//Poisonous = true;
+			Poisonous = true;
 			for (int i = 0; i < All_debuff; i++)
 			{
 				FlipType[i] = false;

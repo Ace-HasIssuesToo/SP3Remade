@@ -16,3 +16,5 @@ Cell,Data//Texture//cell.tga
 SpilledChemical,Data//Texture//spilledchemicals.tga
 Mist,Data//Texture//Mist.tga
 VendingMachine,Data//Texture//vendingmachine.tga
+Mist_Floor,Data//Texture//Mist_Floor.tga
+Mist_Wall,Data//Texture//Mist_Wall.tga
