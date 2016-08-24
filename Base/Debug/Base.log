@@ -1,88 +1,9 @@
-<<<<<<< HEAD
-﻿  Enemy_Ghost.cpp
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(74): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(75): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(76): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(114): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(122): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(123): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+﻿  GameState.cpp
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(407): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(414): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(429): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(436): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(443): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
 Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
-=======
-<<<<<<< HEAD
-﻿Build started 23/8/2016 5:58:44 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp
-         GameState.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(358): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(365): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(380): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(387): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(394): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
-         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
-=======
-﻿生成启动时间为 23/8/2016 下午 5:57:10。
-     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp Source\Map_PI.cpp
-         Map_PI.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(25): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(65): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(67): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(83): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(90): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(103): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(110): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-         GameState.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(354): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(361): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(376): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(383): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(390): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-         正在生成代码...
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
->>>>>>> 0ad54f6fc64a6b5dac736098c7bbb232b00536cf
-         Debug\Angle_And_Target.obj
-         Debug\Application.obj
-         Debug\Camera_PI.obj
-         Debug\EnemyDark.obj
-         Debug\Enemy_Ghost.obj
-         Debug\Enemy_Poison.obj
-         Debug\Enemy_Psychic.obj
-         Debug\GameState.obj
-         Debug\Main_Shaft.obj
-         Debug\Map_PI.obj
-         Debug\Player.obj
-         Debug\PokeInfo.obj
-         Debug\ReadTxtFile.obj
-         Debug\Render_PI.obj
-         Debug\main.obj
-         Debug\Input_PI.obj
-         Debug\Sensor.obj
-         Debug\SoundEngine.obj
-         Debug\Support_Codes.obj
-         Debug\Texture_PI.obj
-<<<<<<< HEAD
-     1>Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:01.22
-=======
-     1>Additional_Functions.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
-     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
-
-生成成功。
-
-已用时间 00:00:02.33
->>>>>>> 0ad54f6fc64a6b5dac736098c7bbb232b00536cf
->>>>>>> 389165b2236c323e1b1d2fd40dcc1390c4023a91

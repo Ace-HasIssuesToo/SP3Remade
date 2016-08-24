@@ -19,7 +19,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-	state = START;
+	state = FLOOR5;
 	GameInIt();
 	Floor1 = new Map();
 	Floor2 = new Map();
