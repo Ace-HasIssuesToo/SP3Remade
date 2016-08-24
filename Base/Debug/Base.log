@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 24/8/2016 4:28:00 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -13,6 +14,100 @@
      1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(197): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
        Link:
          D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
+=======
+<<<<<<< HEAD
+﻿Build started 24/8/2016 4:56:34 PM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" on node 2 (Build target(s)).
+=======
+<<<<<<< HEAD
+﻿  GameState.cpp
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(110): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(414): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(421): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(429): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(436): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(443): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(450): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+=======
+<<<<<<< f2c81b6922f0da6789e95eb98719df3bad92551f
+<<<<<<< HEAD
+﻿Build started 24/8/2016 4:06:18 PM.
+     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+=======
+﻿生成启动时间为 24/8/2016 下午 3:52:28。
+=======
+﻿生成启动时间为 24/8/2016 下午 4:46:51。
+>>>>>>> added function in additional_Functions to prevent character from walking into wall.
+     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
+>>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
+>>>>>>> 838ff66356b36601a1c7edd1213c4b29db182104
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Additional_Functions.cpp Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Poison.cpp Source\Enemy_Psychic.cpp Source\GameState.cpp Source\Main_Shaft.cpp Source\Map_PI.cpp Source\Player.cpp Source\PokeInfo.cpp Source\ReadTxtFile.cpp Source\Sensor.cpp Source\UI_PI.cpp
+         UI_PI.cpp
+         ReadTxtFile.cpp
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(57): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(78): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(143): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(151): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(159): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(169): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(192): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\readtxtfile.cpp(195): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Player.cpp
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(106): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(107): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(114): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(128): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(132): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(136): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(140): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(151): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(162): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(241): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(257): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(263): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(269): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(275): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(396): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(396): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Map_PI.cpp
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\map_pi.cpp(25): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\map_pi.cpp(65): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\map_pi.cpp(67): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\map_pi.cpp(83): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\map_pi.cpp(90): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\map_pi.cpp(103): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\map_pi.cpp(110): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         GameState.cpp
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(412): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(419): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(430): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(437): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\gamestate.cpp(444): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         Enemy_Poison.cpp
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\enemy_poison.cpp(62): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\enemy_poison.cpp(106): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\enemy_poison.cpp(111): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\enemy_poison.cpp(197): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\enemy_poison.cpp(206): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\enemy_poison.cpp(215): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\enemy_poison.cpp(230): warning C4305: 'argument' : truncation from 'double' to 'float'
+         Additional_Functions.cpp
+         Generating Code...
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\base\source\player.cpp(384): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
+         Skipping... (no relevant changes detected)
+         Sensor.cpp
+         PokeInfo.cpp
+         Main_Shaft.cpp
+         Enemy_Psychic.cpp
+         Enemy_Ghost.cpp
+         EnemyDark.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
+>>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
          Debug\Application.obj
          Debug\Camera_PI.obj
          Debug\EnemyDark.obj
@@ -32,11 +127,41 @@
          Debug\SoundEngine.obj
          Debug\Support_Codes.obj
          Debug\Texture_PI.obj
+<<<<<<< HEAD
+=======
+         Debug\UI_PI.obj
+>>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
      1>Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
+         Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Base.exe
+     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Base\Base.vcxproj" (Build target(s)).
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:01.28
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:06.76
+=======
+Time Elapsed 00:00:01.33
+=======
+=======
+         Debug\UI_PI.obj
+>>>>>>> added function in additional_Functions to prevent character from walking into wall.
+     1>Additional_Functions.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
+     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+<<<<<<< f2c81b6922f0da6789e95eb98719df3bad92551f
+已用时间 00:00:15.83
+>>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
+=======
+已用时间 00:00:02.26
+>>>>>>> added function in additional_Functions to prevent character from walking into wall.
+>>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
+>>>>>>> 838ff66356b36601a1c7edd1213c4b29db182104
+>>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
 #include "ReadTxtFile.h"
 #include "Texture_PI.h"
 #include "Player.h"
@@ -246,3 +250,5 @@ void ReadTxtFile::Exit()
 		c_ReadTxtFile = nullptr;
 	}
 }
+>>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
+>>>>>>> 838ff66356b36601a1c7edd1213c4b29db182104

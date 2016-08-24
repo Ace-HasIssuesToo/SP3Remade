@@ -34,6 +34,8 @@ public:
 	{
 		return m_pointer;
 	}
+	float return_LightPower(){ return LightPower; };
+	float return_Runtime(){ return Runtime; };
 private:
 	PlayerClass();
 	~PlayerClass();
@@ -48,12 +50,19 @@ private:
 
 	PlayerMeshes playerMesh;
 	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
-	float Runtime;
+	float Stamina;
 	float LightPower;
 	float LightRange;
+	float batteryTimer;
+	float drinkTimer;
 	bool LightOn;
+<<<<<<< HEAD
+	bool GetBattery;
+	bool GetDrink;
 	Mesh* RunBar;
 	Mesh* LightBar;
+=======
+>>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
 };
 
 const float Max_Speed = 6.f;

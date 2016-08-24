@@ -31,6 +31,7 @@
     <ClCompile Include="Source\SoundEngine.cpp" />
     <ClCompile Include="Source\Support_Codes.cpp" />
     <ClCompile Include="Source\Texture_PI.cpp" />
+    <ClCompile Include="Source\UI_PI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Additional_Functions.h" />
@@ -53,6 +54,7 @@
     <ClInclude Include="Source\SoundEngine.h" />
     <ClInclude Include="Source\Support_Codes.h" />
     <ClInclude Include="Source\Texture_PI.h" />
+    <ClInclude Include="Source\UI_PI.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9B172635-4E2B-46F1-A403-08F4194D00F5}</ProjectGuid>

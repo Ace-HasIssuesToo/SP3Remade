@@ -150,7 +150,11 @@ void Enemy_Ghost::RenderGhost()
 	Render_PI::pointer()->RenderTextOnScreen(Game_System::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), Render_PI::Window_Scale() * 0.3, Vector3(5, 5, 1));*/
 }
 void Enemy_Ghost::Exit()
+<<<<<<< HEAD
 {	
+=======
+{
+>>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
 	if (c_Enemy_Ghost != nullptr)
 	{
 		if (haunt != nullptr)
