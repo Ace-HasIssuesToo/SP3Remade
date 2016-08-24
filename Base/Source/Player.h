@@ -34,6 +34,8 @@ public:
 	{
 		return m_pointer;
 	}
+	float return_LightPower(){ return LightPower; };
+	float return_Runtime(){ return Runtime; };
 private:
 	PlayerClass();
 	~PlayerClass();
@@ -52,8 +54,6 @@ private:
 	float LightPower;
 	float LightRange;
 	bool LightOn;
-	Mesh* RunBar;
-	Mesh* LightBar;
 };
 
 const float Max_Speed = 6.f;

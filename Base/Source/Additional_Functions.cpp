@@ -46,3 +46,24 @@ Vector3 Functions::PathFinding(Vector3 Current_Pos, Vector3 Target_Pos, float Sp
 
 	return Vector3();
 }
+
+Vector3 Functions::DisplaceWall(Vector3 movement, Vector3 Size)
+{
+	if (movement.y > 0)
+	{
+		movement.y += Size.y;
+	}
+	else if (movement.y < 0)
+	{
+		movement.y -= Size.y;
+	}
+	if (movement.x < 0)
+	{
+		movement.x -= Size.x;
+	}
+	else if (movement.x > 0)
+	{
+		movement.x += Size.x;
+	}
+	return movement;
+}
