@@ -17,10 +17,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
 	GameInIt();
-=======
->>>>>>> 8db38ad2c45ea1b61036a20ac9ac8b48c36d698a
 	state = START;
 	GameInIt();
 	Floor1 = new Map();

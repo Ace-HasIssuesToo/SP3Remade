@@ -5,14 +5,10 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-<<<<<<< HEAD
-ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), TimerStart(false), intro_dialogue(nullptr)
-=======
 ReadTxtFile::ReadTxtFile() 
 	: fullIntro(0)
 	, introTimer(0), sequence(0),
-	TimerStart(false), timerTime(false), timerReset(false)
->>>>>>> 8db38ad2c45ea1b61036a20ac9ac8b48c36d698a
+	TimerStart(false), timerTime(false), timerReset(false), intro_dialogue(nullptr)
 {
 
 }
