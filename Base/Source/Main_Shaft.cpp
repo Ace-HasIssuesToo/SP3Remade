@@ -48,11 +48,11 @@ void Main_Shaft::Render()
 
 void Main_Shaft::Exit()
 {
+	SoundEngine::Exit();
 	Render_PI::pointer()->Exit();
 	Input_PI::pointer()->Exit();
-	Game_System::pointer()->Exit();
 	Texture::Exit();
-	SoundEngine::Exit();
+	Game_System::pointer()->Exit();
 
 	if (c_pointer != nullptr)
 	{

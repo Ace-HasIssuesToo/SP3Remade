@@ -284,21 +284,45 @@ void PlayerClass::Exit()
 {
 	if (playerMeshLeft != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshLeft);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshLeft;
 		playerMeshLeft = nullptr;
 	};
 	if (playerMeshRight != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshRight);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshRight;
 		playerMeshRight = nullptr;
 	};
 	if (playerMeshForward != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshForward);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshForward;
 		playerMeshForward = nullptr;
 	};
 	if (playerMeshDownward != nullptr)
 	{
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(playerMeshDownward);
+		if (sa)
+		{
+			delete sa->m_anim;
+			sa->m_anim = nullptr;
+		}
 		delete playerMeshDownward;
 		playerMeshDownward = nullptr;
 	};

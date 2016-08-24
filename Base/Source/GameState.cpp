@@ -579,26 +579,31 @@ void GameState::Exit()
 	}
 	if (Floor1 != nullptr)
 	{
+		Floor1->Clear();
 		delete Floor1;
 		Floor1 = nullptr;
 	}
 	if (Floor2 != nullptr)
 	{
+		Floor2->Clear();
 		delete Floor2;
 		Floor2 = nullptr;
 	}
 	if (Floor3 != nullptr)
 	{
+		Floor3->Clear();
 		delete Floor3;
 		Floor3 = nullptr;
 	}
 	if (Floor4 != nullptr)
 	{
+		Floor4->Clear();
 		delete Floor4;
 		Floor4 = nullptr;
 	}
 	if (Floor5 != nullptr)
 	{
+		Floor5->Clear();
 		delete Floor5;
 		Floor5 = nullptr;
 	}

@@ -38,8 +38,8 @@ void Game_System::Render()
 
 void Game_System::Exit()
 {
-	GameState::pointer()->Exit();
 	GameEnvironmentEvent::pointer()->Exit();
+	GameState::pointer()->Exit();
 	if (c_pointer != nullptr)
 	{
 		delete c_pointer;

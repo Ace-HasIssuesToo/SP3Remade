@@ -1,3 +1,4 @@
+<<<<<<< 005f038b86372f91f4bd06de6fc3a01ef3c7a13e
 <<<<<<< HEAD
 ﻿Build started 23/8/2016 12:45:42 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
@@ -41,9 +42,17 @@ Time Elapsed 00:00:01.76
 =======
          Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Common.lib
      1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" (Build target(s)).
+=======
+﻿生成启动时间为 23/8/2016 下午 1:30:38。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
+     1>Lib:
+         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
+>>>>>>> LALALALALALALALALALALALALA
 
-Build succeeded.
+生成成功。
 
+<<<<<<< 005f038b86372f91f4bd06de6fc3a01ef3c7a13e
 Time Elapsed 00:00:02.40
 =======
 ﻿  Vector3.cpp
@@ -56,3 +65,6 @@ Time Elapsed 00:00:02.40
   Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
 >>>>>>> 0f8b7d3e39758e1b91a3b36776076cb0211c62a2
 >>>>>>> 9faa5c2913acd95b6b646e5400e10979cbdd2298
+=======
+已用时间 00:00:00.04
+>>>>>>> LALALALALALALALALALALALALA
