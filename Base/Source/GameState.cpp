@@ -10,6 +10,7 @@ GameState* GameState::c_pointer = new GameState();
 GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr), introduction(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
+, pokemonCount(0), cageTimer(0), isReleased(false)
 {
 
 }
@@ -82,8 +83,8 @@ void GameState::GameInIt()
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
-	ReadTxtFile::pointer()->Init();
-	ReadTxtFile::pointer()->ReadFromTextFile();
+	//ReadTxtFile::pointer()->Init();
+	//ReadTxtFile::pointer()->ReadFromTextFile();
 }
 void GameState::GameReset()
 {
@@ -106,22 +107,27 @@ void GameState::Update_Stuffs(double dt, Map* map)
 {
 	Sensor::pointer()->Update(dt);
 	PlayerClass::pointer()->Update(dt, map);
-	if (Pokemon_On_Loose[0])
-	{
-		Enemy_Psychic::pointer()->Update(dt, map);
-	}
-	if (Pokemon_On_Loose[1])
-	{
-		Enemy_Ghost::pointer()->Update(dt, map);
-	}
-	if (Pokemon_On_Loose[2])
-	{
-		Enemy_Poison::pointer()->Update(dt, map);
-	}
-	if (Pokemon_On_Loose[3])
-	{
-		Enemy_Dark::pointer()->Update(dt, map);
-	}
+	cageTimer += dt;
+	//if (cageTimer > 30.f)
+	//{
+		//isReleased = true;
+		if (Pokemon_On_Loose[0])
+		{
+			Enemy_Psychic::pointer()->Update(dt, map);
+		}
+		if (Pokemon_On_Loose[1])
+		{
+			Enemy_Ghost::pointer()->Update(dt, map);
+		}
+		if (Pokemon_On_Loose[2])
+		{
+			Enemy_Poison::pointer()->Update(dt, map);
+		}
+		if (Pokemon_On_Loose[3])
+		{
+			Enemy_Dark::pointer()->Update(dt, map);
+		}
+	//}
 	PokeballInfo::pointer()->Update(dt, map);
 
 	Vector3 Radius = Vector3();
@@ -335,8 +341,8 @@ void GameState::GetState(double dt)
 	}
 	case INTRODUCTION:
 	{
-		ReadTxtFile::pointer()->TimerStart = true;
-		ReadTxtFile::pointer()->Update(dt);
+		//ReadTxtFile::pointer()->TimerStart = true;
+		//ReadTxtFile::pointer()->Update(dt);
 	}
 	case CREDIT:
 	{
@@ -418,7 +424,7 @@ void GameState::RenderScreens()
 	}
 	if (state == INTRODUCTION)
 	{
-		ReadTxtFile::pointer()->Render();
+		//ReadTxtFile::pointer()->Render();
 		Render_PI::pointer()->modelStack_Set(true);
 		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
 		Render_PI::pointer()->RenderMesh(introduction, false);
@@ -585,6 +591,7 @@ void GameState::Render()
 {
 	RenderScreens();
 	RenderFloors();
+	cout << cageTimer << endl;
 }
 void GameState::Exit()
 {
@@ -597,7 +604,7 @@ void GameState::Exit()
 		Enemy_Poison::pointer()->Exit();
 		Enemy_Dark::pointer()->Exit();
 		Sensor::pointer()->Exit();
-		ReadTxtFile::pointer()->Exit();
+		//ReadTxtFile::pointer()->Exit();
 		if (text != nullptr)
 		{
 			delete text;

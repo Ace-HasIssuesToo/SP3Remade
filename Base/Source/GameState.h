@@ -58,6 +58,10 @@ private:
 	Map* Floor5;
 	bool Pokemon_On_Loose[4];
 	void Update_Stuffs(double dt, Map* map);
-	int pokemonCount = 0;
+	int pokemonCount;
+	float cageTimer;
 	static GameState* c_pointer;
+	bool isReleased;
+	bool GetPokemonState();
+	
 };

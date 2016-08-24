@@ -14,6 +14,10 @@ PlayerClass::PlayerClass()
 	, PlayerPosOffSet(0, 0, 0)
 	, playerShadow(0,0,0)
 	, sc(0,0,0)
+	, batteryTimer(0)
+	, drinkTimer(0)
+	, GetBattery(false)
+	, GetDrink(false)
 	, LightOn(false)
 	, LightRange(1)
 	, playerMeshRight(nullptr)
@@ -34,7 +38,7 @@ void PlayerClass::Init()
 	setPlayerMesh(Top);
 
 	movementSpeed = 20;
-	Runtime = 30;
+	Stamina = 30;
 	LightPower = 10.f;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
@@ -100,26 +104,26 @@ void PlayerClass::Update(double dt, Map* map)
 	movementSpeed = 20;
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Run])
 	{
-		if (Runtime > 0.f)
+		if (Stamina > 0.f)
 		{
-			Runtime -= dt;
-			movementSpeed *= Math::Max(1.f, Runtime);
+			Stamina -= dt;
+			movementSpeed *= Math::Max(1.f, Stamina);
 		}
 	}
 	else
 	{
-		if (Runtime <= Max_Speed)
+		if (Stamina <= Max_Speed)
 		{
-			Runtime += 0.5 * dt;
+			Stamina += 0.5 * dt;
 		}
 	}
-	if (Runtime > Max_Speed)
+	if (Stamina > Max_Speed)
 	{
-		Runtime = Max_Speed;
+		Stamina = Max_Speed;
 	}
-	else if (Runtime < 0.f)
+	else if (Stamina < 0.f)
 	{
-		Runtime = 0;
+		Stamina = 0;
 	}
 
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::Forward] == true)
@@ -236,16 +240,35 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "VendingMachine")
 	{
-		Runtime += 5 * dt;
-		if (Runtime > Max_Speed)
+		GetDrink = true;
+	}
+	if (GetDrink == true)
+	{
+		drinkTimer += dt;
+		if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink])
 		{
-			Runtime = Max_Speed;
+			drinkTimer = 0.0f;
+			Stamina = 30.f;
+			/*if (Stamina >= 30.f)
+			{
+			Stamina = 30.f;
+			}*/
+			GetDrink = false;
 		}
 	}
 	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Treasure")
 	{
-		LightPower = 10.f;
-		LightRange = 1.f;
+		GetBattery = true;
+	}
+	if (GetBattery == true)
+	{
+		batteryTimer += dt;
+		if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseBattery])
+		{
+			batteryTimer = 0.0f;
+			LightPower = 10.f;
+			GetBattery = false;
+		}
 	}
 	//Keep Player in window
 	float Limitation_size = 30;
@@ -278,7 +301,7 @@ void PlayerClass::Update(double dt, Map* map)
 void PlayerClass::clearPlayer()
 {
 	movementSpeed = 20;
-	Runtime = 30;
+	Stamina = 30;
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f);
@@ -398,8 +421,8 @@ void PlayerClass::Renderplayer()
 	Render_PI::pointer()->modelStack_Set(false);
 
 	Render_PI::pointer()->modelStack_Set(true);
-	Vector3 Pos = (Vector3(5, 5, 0) + Vector3(Runtime * 10, 10, 0))*0.5f;
-	Render_PI::pointer()->RenderMeshIn2D(RunBar, false, Pos, Vector3(Runtime * 10, 10, 5));
+	Vector3 Pos = (Vector3(5, 5, 0) + Vector3(Stamina * 10, 10, 0))*0.5f;
+	Render_PI::pointer()->RenderMeshIn2D(RunBar, false, Pos, Vector3(Stamina * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
 
 	Render_PI::pointer()->modelStack_Set(true);
@@ -411,4 +434,17 @@ void PlayerClass::Renderplayer()
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
 	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
+
+	if (GetBattery == true && batteryTimer < 3.f)
+	{
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
+		//cout << batteryTimer << endl;
+	}
+	else if (GetDrink == true && drinkTimer < 3.f)
+	{
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Got drink", Color(1, 1, 0), Vector3(38, 51, 0), Vector3(5, 5, 1));
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 2 to restore stamina", Color(1, 1, 0), Vector3(5, 45, 0), Vector3(5, 5, 1));
+		//cout << drinkTimer << endl;
+	}
 }

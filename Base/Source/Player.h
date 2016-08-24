@@ -48,10 +48,14 @@ private:
 
 	PlayerMeshes playerMesh;
 	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
-	float Runtime;
+	float Stamina;
 	float LightPower;
 	float LightRange;
+	float batteryTimer;
+	float drinkTimer;
 	bool LightOn;
+	bool GetBattery;
+	bool GetDrink;
 	Mesh* RunBar;
 	Mesh* LightBar;
 };

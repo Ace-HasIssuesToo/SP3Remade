@@ -20,7 +20,6 @@ public:
 	Vector3 Freeze(Vector3 Movement);
 	ISoundSource* haunt;
 private:
-	int life = 1;
 	Enemy_Ghost();
 	~Enemy_Ghost();
 	static Enemy_Ghost* c_Enemy_Ghost;
