@@ -1,47 +1,9 @@
-<<<<<<< HEAD
-﻿  Vector3.cpp
-  Vector2.cpp
-  timer.cpp
-  Mtx44.cpp
-  MatrixStack.cpp
-  MathUtility.cpp
-  Generating Code...
-  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
-=======
-<<<<<<< HEAD
-﻿Build started 23/8/2016 1:44:28 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MathUtility.cpp Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector2.cpp Source\Vector3.cpp
-         Vector3.cpp
-         Vector2.cpp
-         timer.cpp
-         Mtx44.cpp
-         MatrixStack.cpp
-         MathUtility.cpp
-         Generating Code...
-       Lib:
-         D:\Visual Studio 2013\VC\bin\Lib.exe /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib" /NOLOGO Debug\MathUtility.obj
-         Debug\MatrixStack.obj
-         Debug\Mtx44.obj
-         Debug\timer.obj
-         Debug\Vector2.obj
-         Debug\Vector3.obj
-         Common.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" (Build target(s)).
-=======
-﻿生成启动时间为 23/8/2016 下午 5:56:03。
+﻿生成启动时间为 24/8/2016 上午 9:06:26。
      1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
      1>Lib:
          Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
      1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
->>>>>>> 0ad54f6fc64a6b5dac736098c7bbb232b00536cf
 
 生成成功。
 
-<<<<<<< HEAD
-Time Elapsed 00:00:01.68
-=======
 已用时间 00:00:00.04
->>>>>>> 0ad54f6fc64a6b5dac736098c7bbb232b00536cf
->>>>>>> 389165b2236c323e1b1d2fd40dcc1390c4023a91

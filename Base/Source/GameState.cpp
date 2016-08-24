@@ -78,7 +78,7 @@ void GameState::GameInIt()
 	PlayerClass::pointer()->Init();
 	//Enemy_Ghost::pointer()->Init();
 	Enemy_Psychic::pointer()->Init();
-	//Enemy_Poison::pointer()->Init();
+	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
@@ -335,7 +335,7 @@ void GameState::GetState(double dt)
 	}
 	case INTRODUCTION:
 	{
-		ReadTxtFile::pointer()->TimerStart = true;
+		//ReadTxtFile::pointer()->TimerStart = true;
 	}
 	case CREDIT:
 	{
