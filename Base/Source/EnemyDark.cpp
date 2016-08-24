@@ -153,7 +153,7 @@ void Enemy_Dark::Update(double dt, Map* map)
 
 	//Kind of Collision
 	
-	//if (map->Get_Type(EnemyDarkShadow) == "Floor") // imma hot ass nigga mang
+	//if (map->Get_Type(EnemyDarkShadow) == "Floor")
 	//{
 	//	EnemyDarkPos = EnemyDarkShadow;
 	//}

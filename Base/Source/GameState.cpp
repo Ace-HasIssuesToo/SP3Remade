@@ -75,13 +75,8 @@ void GameState::Init()
 }
 void GameState::GameInIt()
 {
-<<<<<<< HEAD
-	//PlayerClass::pointer()->Init();
 	Enemy_Ghost::pointer()->Init();
-=======
 	PlayerClass::pointer()->Init();
-	//Enemy_Ghost::pointer()->Init();
->>>>>>> ac4bf9fd129f560f342f36ddd9cc71269688df96
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
