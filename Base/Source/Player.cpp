@@ -36,7 +36,6 @@ void PlayerClass::Init()
 	movementSpeed = 20;
 	Runtime = 30;
 	LightPower = 10.f;
-<<<<<<< HEAD
 
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.2 + Vector3(-10, 100, 0);
 	PlayerPos = Render_PI::Window_Scale() * 0.2 + Vector3(-10, 100, 0);
@@ -48,11 +47,6 @@ void PlayerClass::Init()
 	//sc.Set(10.f, 10.f, 10.f);
 	//setPlayerMesh(Top);
 
-=======
-	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
-	PlayerPos = Render_PI::Window_Scale() * 0.5;
-	sc.Set(10.f, 10.f, 10.f); 
->>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
 	playerMeshLeft = MeshBuilder::GenerateSpriteAnimation("playerMeshLeft", 1, 4);
