@@ -256,7 +256,6 @@ void Enemy_Poison::Exit()
 {
 	if (m_pointer != nullptr)
 	{
-<<<<<<< HEAD
 		delete Poison_Mesh;
 		Poison_Mesh = nullptr;
 	}
@@ -273,7 +272,6 @@ void Enemy_Poison::Exit()
 	}
 	if (m_pointer != nullptr)
 	{
-=======
 		if (Poison_Mesh != nullptr)
 		{
 			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(Poison_Mesh);
@@ -290,7 +288,6 @@ void Enemy_Poison::Exit()
 			delete Poisoned_effect;
 			Poisoned_effect = nullptr;
 		}
->>>>>>> 093d788504374de79944b509d414af8733b0e6b8
 		delete m_pointer;
 		m_pointer = nullptr;
 	}

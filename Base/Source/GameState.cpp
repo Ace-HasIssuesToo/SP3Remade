@@ -17,18 +17,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
-	state = INTRODUCTION;
-=======
-<<<<<<< HEAD
-	state = FLOOR5;
-=======
-<<<<<<< HEAD
-	state = INTRODUCTION;
-=======
->>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
->>>>>>> 4e5e040bf68cded48af8d838a5af5d93eee931fa
->>>>>>> 093d788504374de79944b509d414af8733b0e6b8
+	state = START;
 	GameInIt();
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -78,9 +67,6 @@ void GameState::Init()
 
 	creditscreen = MeshBuilder::GenerateQuad("creditscreen", Color(0, 0, 0), 1.f);
 	creditscreen->textureArray[0] = LoadTGA("Data//Texture//creditscreen.tga");
-
-	introduction = MeshBuilder::GenerateQuad("introduction", Color(0, 0, 0), 1.f);
-	introduction->textureArray[0] = LoadTGA("Data//Texture//cityscape.tga");
 }
 void GameState::GameInIt()
 {
@@ -102,6 +88,7 @@ void GameState::GameReset()
 	Enemy_Poison::pointer()->ClearPoison();
 	Enemy_Dark::pointer()->clearEnemyDark();
 	PokeballInfo::pointer()->ClearBallStatus();
+	ReadTxtFile::pointer()->clearIntro();
 }
 Mesh* GameState::GetText()
 {
@@ -265,17 +252,7 @@ void GameState::GetState(double dt)
 	{
 		if (Application::IsKeyPressed('S'))
 		{
-			state = FLOOR1;
-			for (int i = 0; i < 4; i++)
-			{
-				Pokemon_On_Loose[i] = false;
-			}
-
-			for (int i = 0; i < 4; i++)
-			{
-				pokemonCount++;
-				Pokemon_On_Loose[i] = true;
-			}
+			state = INTRODUCTION;
 		}
 		else if (Application::IsKeyPressed('H'))
 		{
@@ -299,6 +276,21 @@ void GameState::GetState(double dt)
 	{
 		ReadTxtFile::pointer()->TimerStart = true;
 		ReadTxtFile::pointer()->Update(dt);
+
+		if (Application::IsKeyPressed(VK_RETURN))
+		{
+			state = FLOOR1;
+			for (int i = 0; i < 4; i++)
+			{
+				Pokemon_On_Loose[i] = false;
+			}
+
+			for (int i = 0; i < 4; i++)
+			{
+				pokemonCount++;
+				Pokemon_On_Loose[i] = true;
+			}
+		}
 	}
 	case CREDIT:
 	{
@@ -381,10 +373,6 @@ void GameState::RenderScreens()
 	if (state == INTRODUCTION)
 	{
 		ReadTxtFile::pointer()->Render();
-		Render_PI::pointer()->modelStack_Set(true);
-		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
-		Render_PI::pointer()->RenderMesh(introduction, false);
-		Render_PI::pointer()->modelStack_Set(false);
 	}
 	if (state == CREDIT)
 	{
@@ -589,11 +577,6 @@ void GameState::Exit()
 		{
 			delete losescreen;
 			losescreen = nullptr;
-		}
-		if (introduction != nullptr)
-		{
-			delete introduction;
-			introduction = nullptr;
 		}
 		if (Floor1 != nullptr)
 		{

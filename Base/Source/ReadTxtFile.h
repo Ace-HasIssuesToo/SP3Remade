@@ -22,6 +22,11 @@ public:
 
 	void clearIntro();
 
+	void RenderCity();
+	void RenderFlash();
+	void RenderAsylum();
+	void RenderText();
+
 	bool TimerStart;
 
 private:
@@ -32,8 +37,13 @@ private:
 	float introTimer;
 	bool timerTime, timerReset;
 	int sequence;
+	float bgTimer;
+	bool flashON, asylumON;
 
 	Mesh* intro_dialogue;
+	Mesh* city;
+	Mesh* flash;
+	Mesh* asylum;
 };
 
 #endif

@@ -45,8 +45,6 @@ public:
 	Mesh* helpscreen;
 	Mesh* creditscreen;
 
-	Mesh* introduction;
-
 	Mesh* GetText();
 private:
 	GameState();

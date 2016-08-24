@@ -144,23 +144,9 @@ void Enemy_Ghost::RenderGhost()
 	Render_PI::pointer()->RenderTextOnScreen(Game_System::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), Render_PI::Window_Scale() * 0.3, Vector3(5, 5, 1));*/
 }
 void Enemy_Ghost::Exit()
-{
+{	
 	if (c_Enemy_Ghost != nullptr)
 	{
-<<<<<<< HEAD
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete ghostSprite;
-		ghostSprite = nullptr;
-	}
-	
-	if (c_Enemy_Ghost != nullptr)
-	{
-=======
 		if (haunt != nullptr)
 		{
 			//haunt->drop();
@@ -176,7 +162,6 @@ void Enemy_Ghost::Exit()
 			ghostSprite = nullptr;
 		}
 
->>>>>>> 093d788504374de79944b509d414af8733b0e6b8
 		delete c_Enemy_Ghost;
 		c_Enemy_Ghost = nullptr;
 	}
