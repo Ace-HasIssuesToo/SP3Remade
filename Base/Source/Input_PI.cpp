@@ -145,6 +145,24 @@ void Input_PI::Update(double dt)
 		IsBeingPressed[OffLight] = false;
 		HaveBeenPressed[OffLight] = true;
 	}
+	if (Application::IsKeyPressed('1'))
+	{
+		IsBeingPressed[UseBattery] = true;
+	}
+	else if (IsBeingPressed[UseBattery] == true)
+	{
+		IsBeingPressed[UseBattery] = false;
+		HaveBeenPressed[UseBattery] = true;
+	}
+	if (Application::IsKeyPressed('2'))
+	{
+		IsBeingPressed[UseDrink] = true;
+	}
+	else if (IsBeingPressed[UseDrink] == true)
+	{
+		IsBeingPressed[UseDrink] = false;
+		HaveBeenPressed[UseDrink] = true;
+	}
 }
 
 

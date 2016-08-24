@@ -25,6 +25,8 @@ public:
 		Run,
 		OnLight,
 		OffLight,
+		UseBattery,
+		UseDrink,
 		Phone_Switch,
 		NextStatement,
 		All_Control,

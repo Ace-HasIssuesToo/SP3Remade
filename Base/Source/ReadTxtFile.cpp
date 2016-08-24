@@ -8,7 +8,7 @@ ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 ReadTxtFile::ReadTxtFile() 
 	: fullIntro(0)
 	, introTimer(0), sequence(0),
-	TimerStart(false), timerTime(false), timerReset(false)
+	TimerStart(false), timerTime(false), timerReset(false), intro_dialogue(nullptr)
 {
 
 }
