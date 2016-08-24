@@ -155,29 +155,8 @@ void Enemy_Dark::Update(double dt, Map* map)
 		setEnemyDarkMesh(Right);
 	}
 	EnemyDarkShadow += Movement;
-
-	//Kind of Collision
-	
-<<<<<<< HEAD
-	//if (map->Get_Type(EnemyDarkShadow) == "Floor")
-	//{
-	//	EnemyDarkPos = EnemyDarkShadow;
-	//}
-	//else
-	//{
-	//	Vector3 offset = (EnemyDarkPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize() * 50;
-	//	if (rand() % 2)
-	//	{
-	//		offset.x *= -1;
-	//	}
-	//	if (rand() % 3)
-	//	{
-	//		offset.y *= -1;
-	//	}
-	//	EnemyDarkPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
-	//}
-=======
-	if (map->Get_Type(EnemyDarkShadow) == "Floor") // imma hot ass nigga mang
+	//Kinda Collision
+	if (map->Get_Type(EnemyDarkShadow) == "Floor")
 	{
 		EnemyDarkPos = EnemyDarkShadow;
 	}
@@ -194,8 +173,6 @@ void Enemy_Dark::Update(double dt, Map* map)
 		}
 		EnemyDarkPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
 	}
->>>>>>> 4b30126165a72631a8e68883d63b9ad4fb543658
-
 	if ((distSq <= combinedRadSq) && (ballOnScreen == false))
 	{
 		ballOnScreen = true;

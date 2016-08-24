@@ -5,16 +5,10 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-<<<<<<< HEAD
-ReadTxtFile::ReadTxtFile() : fullIntro{ 0 }, introTimer(0), sequence(0),
-TimerStart(false), timerTime(false), timerReset(false)
-=======
-<<<<<<< 935234dff003fa4408d8b9249ac625a1184b447e
-ReadTxtFile::ReadTxtFile() : fullIntro{0}, introTimer(0), TimerStart(false)
-=======
-ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), TimerStart(false), intro_dialogue(nullptr)
->>>>>>> soyiuhn9im[oiwhm9mght
->>>>>>> 093d788504374de79944b509d414af8733b0e6b8
+ReadTxtFile::ReadTxtFile() 
+	: fullIntro(0)
+	, introTimer(0), sequence(0),
+	TimerStart(false), timerTime(false), timerReset(false)
 {
 
 }
@@ -57,7 +51,7 @@ void ReadTxtFile::ReadFromTextFile()
 	string sentence;
 
 	inStory.open("Data//Text//story.txt");
-	
+
 	while (!inStory.eof())
 	{
 		getline(inStory, sentence);
@@ -144,7 +138,7 @@ void ReadTxtFile::Render()
 }
 
 void ReadTxtFile::Exit()
-{ 
+{
 	if (intro_dialogue != nullptr)
 	{
 		delete intro_dialogue;

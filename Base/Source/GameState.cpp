@@ -17,18 +17,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
-	state = INTRODUCTION;
-=======
-<<<<<<< HEAD
-	state = FLOOR5;
-=======
-<<<<<<< HEAD
-	state = INTRODUCTION;
-=======
->>>>>>> 6eb569dbd7e04fbb96058ec09a592af959d4245d
->>>>>>> 4e5e040bf68cded48af8d838a5af5d93eee931fa
->>>>>>> 093d788504374de79944b509d414af8733b0e6b8
+	state = START;
 	GameInIt();
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -84,13 +73,8 @@ void GameState::Init()
 }
 void GameState::GameInIt()
 {
-<<<<<<< HEAD
 	Enemy_Ghost::pointer()->Init();
 	PlayerClass::pointer()->Init();
-=======
-	PlayerClass::pointer()->Init();
-	Enemy_Ghost::pointer()->Init();
->>>>>>> 4b30126165a72631a8e68883d63b9ad4fb543658
 	Enemy_Psychic::pointer()->Init();
 	Enemy_Poison::pointer()->Init();
 	Enemy_Dark::pointer()->Init();
