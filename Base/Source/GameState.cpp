@@ -17,7 +17,7 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-	state = START;
+	state = INTRODUCTION;
 	GameInIt();
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -287,6 +287,7 @@ void GameState::GetState(double dt)
 	case INTRODUCTION:
 	{
 		ReadTxtFile::pointer()->TimerStart = true;
+		ReadTxtFile::pointer()->Update(dt);
 	}
 	case CREDIT:
 	{

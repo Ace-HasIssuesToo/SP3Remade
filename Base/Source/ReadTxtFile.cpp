@@ -5,7 +5,7 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), TimerStart(false)
+ReadTxtFile::ReadTxtFile() : fullIntro{0}, introTimer(0), TimerStart(false)
 {
 
 }
@@ -18,6 +18,8 @@ ReadTxtFile::~ReadTxtFile()
 void ReadTxtFile::clearIntro()
 {
 	fullIntro = { 0 };
+	introTimer = 0;
+	TimerStart = false;
 }
 
 void ReadTxtFile::Init()
@@ -30,11 +32,6 @@ void ReadTxtFile::Update(double dt)
 {
 	if (TimerStart)
 		introTimer += dt;
-
-	if (introTimer > 5.f)
-	{
-		//Loop every 5 seconds
-	}
 }
 
 void ReadTxtFile::ReadFromTextFile()
@@ -53,7 +50,7 @@ void ReadTxtFile::ReadFromTextFile()
 	{
 		getline(inStory, sentence);
 		fullIntro.push_back(sentence);
-		cout << "Sentence taken in" << endl;
+		//cout << "Sentence taken in" << endl;
 	}
 	inStory.close();
 }
@@ -91,6 +88,19 @@ void ReadTxtFile::Render()
 {
 	// Every 5 secs, change to next line of array
 	vector<string> tempIntro;
+
+	float tempTimer = 0.f;
+	//while (introTimer > 5.f)
+	//{
+	//	//Loop every 5 seconds
+
+
+	//	introTimer = tempTimer;
+	//}
+
+	cout << "False / True : " << TimerStart << endl;
+	cout << "introTimer : " << introTimer << endl;
+	cout << "tempTimer : " << tempTimer << endl;
 
 	for (int i = 0; i < fullIntro.size(); i++)
 	{
