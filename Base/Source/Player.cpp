@@ -79,14 +79,14 @@ void PlayerClass::Init()
 }
 float PlayerClass::GetLightRange()
 {
-	if (LightOn == true)
+	/*if (LightOn == true)
 	{
 		LightRange = 3.f;
 	}
 	else if (LightOn == false)
 	{
 		LightRange = 1.f;
-	}
+	}*/
 	return LightRange;
 }
 void PlayerClass::Update(double dt, Map* map)
@@ -138,13 +138,15 @@ void PlayerClass::Update(double dt, Map* map)
 
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
 	{
-		LightOn = false;
+		//LightOn = false;
+		LightRange -= dt;
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
 	{
 		LightOn = true;
+		LightRange += dt;
 	}
-
+/*
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
@@ -156,7 +158,7 @@ void PlayerClass::Update(double dt, Map* map)
 			LightPower = 0.f;
 			LightOn = false;
 		}
-	}
+	}*/
 
 	if (getPlayerMesh2() == playerMeshForward)
 	{
@@ -216,7 +218,6 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 	playerShadow += Movement;
 	//Kind of Collision
-	cout << movementSpeed<<" / "<< Movement.x << " / " << Movement.y << endl;
 	if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
 	{
 
