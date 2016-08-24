@@ -8,7 +8,7 @@
 
 GameState* GameState::c_pointer = new GameState();
 GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
-, losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr), introduction(nullptr)
+, losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 {
 
@@ -19,10 +19,6 @@ GameState::~GameState()
 }
 void GameState::Init()
 {
-<<<<<<< HEAD
-	state = START;
-=======
->>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
 	GameInIt();
 	state = START;
 	Floor1 = new Map();
