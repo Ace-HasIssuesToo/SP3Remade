@@ -9,14 +9,9 @@
 
 GameState* GameState::c_pointer = new GameState();
 GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
-<<<<<<< HEAD
-, losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr),
-Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
-=======
 , losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
->>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
 {
 
 }
@@ -86,8 +81,8 @@ void GameState::GameInIt()
 	Enemy_Dark::pointer()->Init();
 	PokeballInfo::pointer()->Init();
 	Sensor::pointer()->Init();
-	//ReadTxtFile::pointer()->Init();
-	//ReadTxtFile::pointer()->ReadFromTextFile();
+	ReadTxtFile::pointer()->Init();
+	ReadTxtFile::pointer()->ReadFromTextFile();
 }
 void GameState::GameReset()
 {
@@ -335,10 +330,6 @@ void GameState::GetState(double dt)
 	}
 	case INTRODUCTION:
 	{
-<<<<<<< HEAD
-		//ReadTxtFile::pointer()->TimerStart = true;
-		//ReadTxtFile::pointer()->Update(dt);
-=======
 		ReadTxtFile::pointer()->TimerStart = true;
 		ReadTxtFile::pointer()->Update(dt);
 
@@ -356,7 +347,6 @@ void GameState::GetState(double dt)
 				Pokemon_On_Loose[i] = true;
 			}
 		}
->>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
 	}
 	case CREDIT:
 	{
@@ -438,15 +428,7 @@ void GameState::RenderScreens()
 	}
 	if (state == INTRODUCTION)
 	{
-<<<<<<< HEAD
-		//ReadTxtFile::pointer()->Render();
-		Render_PI::pointer()->modelStack_Set(true);
-		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(100, 100, 1));
-		Render_PI::pointer()->RenderMesh(introduction, false);
-		Render_PI::pointer()->modelStack_Set(false);
-=======
 		ReadTxtFile::pointer()->Render();
->>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
 	}
 	if (state == CREDIT)
 	{

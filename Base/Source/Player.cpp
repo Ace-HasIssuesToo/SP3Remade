@@ -39,26 +39,17 @@ void PlayerClass::Init()
 	movementSpeed = 20;
 	Stamina = 30;
 	LightPower = 10.f;
-<<<<<<< HEAD
 
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.2 + Vector3(-10, 100, 0);
 	PlayerPos = Render_PI::Window_Scale() * 0.2 + Vector3(-10, 100, 0);
 	sc.Set(10.f, 10.f, 10.f);
 	setPlayerMesh(Top);
 
-=======
->>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
 	//PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	//PlayerPos = Render_PI::Window_Scale() * 0.5;
 	//sc.Set(10.f, 10.f, 10.f);
 	//setPlayerMesh(Top);
-<<<<<<< HEAD
 
-=======
-	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
-	PlayerPos = Render_PI::Window_Scale() * 0.5;
-	sc.Set(10.f, 10.f, 10.f); 
->>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
 	playerMeshLeft = MeshBuilder::GenerateSpriteAnimation("playerMeshLeft", 1, 4);
@@ -244,6 +235,7 @@ void PlayerClass::Update(double dt, Map* map)
 	playerShadow += Movement;
 	Vector3 size = Vector3(5, 5, 1);
 	Vector3 DisplacedMovement = playerShadow + Functions::DisplaceWall(Movement, size);
+
 	//Kind of Collision
 	if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Wall")
 	{
@@ -425,18 +417,6 @@ void PlayerClass::Renderplayer()
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 
-<<<<<<< HEAD
-	Render_PI::pointer()->modelStack_Set(true);
-	Vector3 Pos = (Vector3(5, 5, 0) + Vector3(Stamina * 10, 10, 0))*0.5f;
-	Render_PI::pointer()->RenderMeshIn2D(RunBar, false, Pos, Vector3(Stamina * 10, 10, 5));
-	Render_PI::pointer()->modelStack_Set(false);
-
-	Render_PI::pointer()->modelStack_Set(true);
-	Vector3 Pos2 = (Vector3(5, 5, 0) + Vector3(LightPower * 10, 180, 0))*0.5f;
-	Render_PI::pointer()->RenderMeshIn2D(LightBar, false, Pos2, Vector3(LightPower * 10, 10, 5));
-	Render_PI::pointer()->modelStack_Set(false);
-=======
->>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
 	cout << playerShadow.x << "/" << playerShadow.y << endl;
 	std::ostringstream ss;
 	ss.precision(5);

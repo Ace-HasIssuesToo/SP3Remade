@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 #ifndef READTXTFILE_H
 #define READTXTFILE_H
 
@@ -51,5 +47,3 @@ private:
 };
 
 #endif
->>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
->>>>>>> 838ff66356b36601a1c7edd1213c4b29db182104

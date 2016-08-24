@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 #include "ReadTxtFile.h"
 #include "Texture_PI.h"
 #include "Player.h"
@@ -23,11 +19,10 @@ ReadTxtFile::~ReadTxtFile()
 
 void ReadTxtFile::clearIntro()
 {
-	fullIntro = { 0 };
 	sequence = 0;
 	introTimer = bgTimer = 0;
 	timerTime = TimerStart = timerReset = flashON = asylumON = false;
-	intro_dialogue = city = flash = asylum = nullptr;
+	//intro_dialogue = city = flash = asylum = nullptr;
 }
 
 void ReadTxtFile::Init()
@@ -250,5 +245,3 @@ void ReadTxtFile::Exit()
 		c_ReadTxtFile = nullptr;
 	}
 }
->>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
->>>>>>> 838ff66356b36601a1c7edd1213c4b29db182104

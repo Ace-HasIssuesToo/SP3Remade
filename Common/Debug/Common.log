@@ -1,24 +1,24 @@
-<<<<<<< HEAD
-﻿Build started 24/8/2016 4:11:06 PM.
+﻿Build started 24/8/2016 5:28:31 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
+     1>ClCompile:
+         D:\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\MathUtility.cpp Source\MatrixStack.cpp Source\Mtx44.cpp Source\timer.cpp Source\Vector2.cpp Source\Vector3.cpp
+         Vector3.cpp
+         Vector2.cpp
+         timer.cpp
+         Mtx44.cpp
+         MatrixStack.cpp
+         MathUtility.cpp
+         Generating Code...
+       Lib:
+         D:\Visual Studio 2013\VC\bin\Lib.exe /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib" /NOLOGO Debug\MathUtility.obj
+         Debug\MatrixStack.obj
+         Debug\Mtx44.obj
+         Debug\timer.obj
+         Debug\Vector2.obj
+         Debug\Vector3.obj
          Common.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib
      1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" (Build target(s)).
-=======
-<<<<<<< HEAD
-﻿Build started 24/8/2016 4:16:03 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Debug\Common.lib
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\Common\Common.vcxproj" (Build target(s)).
->>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
 
 Build succeeded.
 
-Time Elapsed 00:00:00.03
-<<<<<<< HEAD
-=======
-=======
-﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
->>>>>>> 838ff66356b36601a1c7edd1213c4b29db182104
->>>>>>> 07ae517d25146afea0c9e548f04773c2e28017a3
+Time Elapsed 00:00:01.79
