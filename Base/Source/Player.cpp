@@ -5,6 +5,7 @@
 #include "Enemy_Poison.h"
 #include "Enemy_Ghost.h"
 #include "GameState.h"
+#include "Additional_Functions.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -24,8 +25,6 @@ PlayerClass::PlayerClass()
 	, playerMeshLeft(nullptr)
 	, playerMeshForward(nullptr)
 	, playerMeshDownward(nullptr)
-	, RunBar(nullptr)
-	, LightBar(nullptr)
 {
 }
 
@@ -40,9 +39,23 @@ void PlayerClass::Init()
 	movementSpeed = 20;
 	Stamina = 30;
 	LightPower = 10.f;
+<<<<<<< HEAD
+
+	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.2 + Vector3(-10, 100, 0);
+	PlayerPos = Render_PI::Window_Scale() * 0.2 + Vector3(-10, 100, 0);
+	sc.Set(10.f, 10.f, 10.f);
+	setPlayerMesh(Top);
+
+	//PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
+	//PlayerPos = Render_PI::Window_Scale() * 0.5;
+	//sc.Set(10.f, 10.f, 10.f);
+	//setPlayerMesh(Top);
+
+=======
 	PlayerPosOffSet = PlayerPos = Render_PI::Window_Scale()*0.5;
 	PlayerPos = Render_PI::Window_Scale() * 0.5;
 	sc.Set(10.f, 10.f, 10.f); 
+>>>>>>> e190b5b384e4dd40ab510f42893726d263076b05
 	SpriteAnimation *saL, *saR, *saF, *saB;
 	//Left Texture
 	playerMeshLeft = MeshBuilder::GenerateSpriteAnimation("playerMeshLeft", 1, 4);
@@ -81,8 +94,6 @@ void PlayerClass::Init()
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
 
-	RunBar = MeshBuilder::GenerateQuad("Runbar", Color(0, 1, 0));
-	LightBar = MeshBuilder::GenerateQuad("Lightbar", Color(1, 1, 1));
 }
 float PlayerClass::GetLightRange()
 {
@@ -211,7 +222,6 @@ void PlayerClass::Update(double dt, Map* map)
 
 	Movement = Enemy_Poison::pointer()->Poison(Movement);
 	Movement = Enemy_Ghost::pointer()->Freeze(Movement);
-
 	if (Movement.y > 0)
 	{
 		setPlayerMesh(Top);
@@ -229,16 +239,18 @@ void PlayerClass::Update(double dt, Map* map)
 		setPlayerMesh(Right);
 	}
 	playerShadow += Movement;
+	Vector3 size = Vector3(5, 5, 1);
+	Vector3 DisplacedMovement = playerShadow + Functions::DisplaceWall(Movement, size);
 	//Kind of Collision
-	if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Wall")
+	if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Wall")
 	{
 
 	}
-	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Floor")
+	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Floor")
 	{
 		PlayerPos = playerShadow;
 	}
-	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "VendingMachine")
+	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "VendingMachine")
 	{
 		GetDrink = true;
 	}
@@ -256,7 +268,7 @@ void PlayerClass::Update(double dt, Map* map)
 			GetDrink = false;
 		}
 	}
-	else if (map->Get_Type(playerShadow + PlayerPosOffSet) == "Treasure")
+	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
 		GetBattery = true;
 	}
@@ -361,16 +373,6 @@ void PlayerClass::Exit()
 			delete playerMeshDownward;
 			playerMeshDownward = nullptr;
 		};
-		if (RunBar != nullptr)
-		{
-			delete RunBar;
-			RunBar = nullptr;
-		};
-		if (LightBar != nullptr)
-		{
-			delete LightBar;
-			LightBar = nullptr;
-		}
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
@@ -420,6 +422,7 @@ void PlayerClass::Renderplayer()
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 
+<<<<<<< HEAD
 	Render_PI::pointer()->modelStack_Set(true);
 	Vector3 Pos = (Vector3(5, 5, 0) + Vector3(Stamina * 10, 10, 0))*0.5f;
 	Render_PI::pointer()->RenderMeshIn2D(RunBar, false, Pos, Vector3(Stamina * 10, 10, 5));
@@ -429,6 +432,8 @@ void PlayerClass::Renderplayer()
 	Vector3 Pos2 = (Vector3(5, 5, 0) + Vector3(LightPower * 10, 180, 0))*0.5f;
 	Render_PI::pointer()->RenderMeshIn2D(LightBar, false, Pos2, Vector3(LightPower * 10, 10, 5));
 	Render_PI::pointer()->modelStack_Set(false);
+=======
+>>>>>>> 79ff990fb42d9294e37cbdfd317736105a83ef51
 	cout << playerShadow.x << "/" << playerShadow.y << endl;
 	std::ostringstream ss;
 	ss.precision(5);

@@ -31,6 +31,7 @@ public:
 	void SetState(Game gamestate);
 	void RenderFloors();
 	void RenderScreens();
+	void RenderFloorData(Map* map);
 
 	void Init();
 	void Update(double dt);
@@ -44,8 +45,6 @@ public:
 	Mesh* losescreen;
 	Mesh* helpscreen;
 	Mesh* creditscreen;
-
-	Mesh* introduction;
 
 	Mesh* GetText();
 private:
