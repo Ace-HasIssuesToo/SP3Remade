@@ -2,7 +2,6 @@
 #include "Render_PI.h"
 #include "Texture_PI.h"
 #include "Player.h"
-#include "GameEnvironmentEvent.h"
 
 
 bool Map::Init(std::string Filename)

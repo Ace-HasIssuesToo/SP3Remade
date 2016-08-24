@@ -333,6 +333,10 @@ void GameState::GetState(double dt)
 		}
 		break;
 	}
+	case INTRODUCTION:
+	{
+		ReadTxtFile::pointer()->TimerStart = true;
+	}
 	case CREDIT:
 	{
 		if (Application::IsKeyPressed('B'))

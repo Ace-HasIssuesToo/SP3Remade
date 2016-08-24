@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+d:\nyp projects\sp3\edited pull\common\debug\vc120.pdb
+d:\nyp projects\sp3\edited pull\common\debug\vc120.idb
+d:\nyp projects\sp3\edited pull\common\debug\mathutility.obj
+d:\nyp projects\sp3\edited pull\common\debug\matrixstack.obj
+d:\nyp projects\sp3\edited pull\common\debug\mtx44.obj
+d:\nyp projects\sp3\edited pull\common\debug\timer.obj
+d:\nyp projects\sp3\edited pull\common\debug\vector2.obj
+d:\nyp projects\sp3\edited pull\common\debug\vector3.obj
+d:\nyp projects\sp3\edited pull\debug\common.lib
+d:\nyp projects\sp3\edited pull\common\debug\common.tlog\cl.command.1.tlog
+d:\nyp projects\sp3\edited pull\common\debug\common.tlog\cl.read.1.tlog
+d:\nyp projects\sp3\edited pull\common\debug\common.tlog\cl.write.1.tlog
+d:\nyp projects\sp3\edited pull\common\debug\common.tlog\lib-link.read.1.tlog
+d:\nyp projects\sp3\edited pull\common\debug\common.tlog\lib-link.write.1.tlog
+d:\nyp projects\sp3\edited pull\common\debug\common.tlog\lib.command.1.tlog
+=======
 c:\users\user\documents\sp3remade\common\debug\vc120.pdb
 c:\users\user\documents\sp3remade\common\debug\vc120.idb
 c:\users\user\documents\sp3remade\common\debug\mathutility.obj
@@ -13,3 +30,4 @@ c:\users\user\documents\sp3remade\common\debug\common.tlog\cl.write.1.tlog
 c:\users\user\documents\sp3remade\common\debug\common.tlog\lib-link.read.1.tlog
 c:\users\user\documents\sp3remade\common\debug\common.tlog\lib-link.write.1.tlog
 c:\users\user\documents\sp3remade\common\debug\common.tlog\lib.command.1.tlog
+>>>>>>> 0ad54f6fc64a6b5dac736098c7bbb232b00536cf
