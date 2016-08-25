@@ -2,6 +2,7 @@
 #include "Texture_PI.h"
 #include "Player.h"
 #include "Additional_Functions.h"
+#include "GameState.h"
 
 Enemy_Poison* Enemy_Poison::m_pointer = new Enemy_Poison();
 
@@ -116,107 +117,77 @@ void Enemy_Poison::Update(double dt, Map* map)
 	}
 	else
 	{
-		if (Poisonous && FlipType[ShadowClone])
-		{
-			int random = rand() % 5;
-			Pos = Clones[random];
-		}
-		else
-		{
-			Vector3 offset = (Pos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*Moving_Speed;
-			if (rand() % 2)
-			{
-				offset.x *= -1;
-			}
-			if (rand() % 3)
-			{
-				offset.y *= -1;
-			}
-			Pos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
-		}
-	}
-	/*Vector3 Shadow = Pos + Vel*dt;
-	if (map->Get_Type(Shadow) == "Floor")
-	{
-	Pos = Shadow;
-	}
-	Vel *= 0.9f;
-	if (Vel.x > -1 && Vel.x < 1)
-	{
-	Vel.x = 0;
-	}
-	if (Vel.y > -1 && Vel.y < 1)
-	{
-	Vel.y = 0;
-	}
 
-	else
-	{
-	if (Poisonous && FlipType[ShadowClone])
-	{
-	int random = rand() % 5;
-	Pos = Clones[random];
-	}
-	else
-	{
-	Vector3 offset = (Pos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*Moving_Speed;
-	if (rand()% 2)
-	{
-	offset.x *= -1;
-	}
-	if (rand() % 3)
-	{
-	offset.y *= -1;
-	}
-	Pos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
-	}
-	}
-	*/
-	if (CoolDown == 0)
-	{
-		Vector3 Range = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - Pos;
-		double radius = (Range.x*Range.x) + (Range.y*Range.y);
-
-		if (radius < (10 * 10))
+		if (!GameState::pointer()->checkcaged())
 		{
-			Vel = Vector3();
-			CoolDown = 20;
-			LastTime = 10;
-			ChangeEffect = 0;
-			//Poisonous = true;
-			for (int i = 0; i < All_debuff; i++)
+			if (Poisonous && FlipType[ShadowClone])
 			{
-				FlipType[i] = false;
+				int random = rand() % 5;
+				Pos = Clones[random];
+			}
+			else
+			{
+				Vector3 offset = (Pos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize()*Moving_Speed;
+				if (rand() % 2)
+				{
+					offset.x *= -1;
+				}
+				if (rand() % 3)
+				{
+					offset.y *= -1;
+				}
+				Pos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
 			}
 		}
 	}
-	else
+	if (!GameState::pointer()->checkcaged())
 	{
-		if (CoolDown > 0)
+		if (CoolDown == 0)
 		{
-			CoolDown -= dt;
-		}
-		else
-		{
-			CoolDown = 0;
-		}
+			Vector3 Range = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - Pos;
+			double radius = (Range.x*Range.x) + (Range.y*Range.y);
 
-		if (LastTime > 0)
-		{
-			LastTime -= dt;
+			if (radius < (10 * 10))
+			{
+				Vel = Vector3();
+				CoolDown = 20;
+				LastTime = 10;
+				ChangeEffect = 0;
+				Poisonous = true;
+				for (int i = 0; i < All_debuff; i++)
+				{
+					FlipType[i] = false;
+				}
+			}
 		}
 		else
 		{
-			LastTime = 0;
-			Poisonous = false;
-		}
-		if (ChangeEffect > 0)
-		{
-			ChangeEffect -= dt;
-		}
-		else
-		{
-			ChangeEffect = 0;
+			if (CoolDown > 0)
+			{
+				CoolDown -= dt;
+			}
+			else
+			{
+				CoolDown = 0;
+			}
+
+			if (LastTime > 0)
+			{
+				LastTime -= dt;
+			}
+			else
+			{
+				LastTime = 0;
+				Poisonous = false;
+			}
+			if (ChangeEffect > 0)
+			{
+				ChangeEffect -= dt;
+			}
+			else
+			{
+				ChangeEffect = 0;
+			}
 		}
 	}
 }

@@ -75,6 +75,66 @@ bool Map::Init(std::string Filename)
 	return true;
 }
 
+void Map::RenderEvent(Vector3 pos, bool Dark)
+{
+	//Map Amount
+	//Offset Calculation
+	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
+	std::stringstream Location;
+	Vector3 Size = Render_PI::Window_Scale()*(1.f / sizes);
+	Vector3 Displacement = Vector3(pos.x - Math::Max(floor(pos.x), 0.f), pos.y - Math::Max(floor(pos.y), 0.f), 0)*-1;
+
+	Vector3 Character_Pos = PlayerClass::pointer()->getPlayerPos();
+	Character_Pos = pos + (Vector3((Character_Pos.y) / Render_PI::Window_Scale().y, (Character_Pos.x) / Render_PI::Window_Scale().x, 0) * sizes);
+
+	for (int X = Math::Min(ceil(pos.x + sizes), Limitation.x); Math::Max(floor(pos.x), 0.f) <= X; X--)
+	{
+		for (int Y = Math::Min(ceil(pos.y + sizes), Limitation.y); Math::Max(floor(pos.y), 0.f) <= Y; Y--)
+		{
+			Location.str(std::string());
+			Location.clear();
+			Location << X << " / " << Y;
+			std::map<std::string, std::string>::iterator it;
+			string Strings = Location.str();
+			it = Map_Data.find(Strings);
+			if (Dark)
+			{
+				if (Map_Data.at(Location.str()) == "Wall")
+				{
+					Render_PI::pointer()->modelStack_Set(true);
+					Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+					Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Mist_Wall"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+					Render_PI::pointer()->modelStack_Set(false);
+				}
+				else
+				{
+					Render_PI::pointer()->modelStack_Set(true);
+					Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+					Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Mist_Floor"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+					Render_PI::pointer()->modelStack_Set(false);
+				}
+			}
+			else
+			{
+				if (Map_Data.at(Location.str()) == "Wall")
+				{
+					Render_PI::pointer()->modelStack_Set(true);
+					Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+					Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Bright_Wall"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+					Render_PI::pointer()->modelStack_Set(false);
+				}
+				else
+				{
+					Render_PI::pointer()->modelStack_Set(true);
+					Vector3 Render_Pos = Displacement + Vector3((X - Math::Max(floor(pos.x), 0.f)) + 0.5, (Y - Math::Max(floor(pos.y), 0.f)) + 0.5, 0);
+					Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Bright_Floor"), false, Vector3(Render_Pos.y*Size.x, Render_Pos.x*Size.y, -1), Vector3(Size.x, Size.y, 1));
+					Render_PI::pointer()->modelStack_Set(false);
+				}
+			}
+		}
+	}
+}
+
 void Map::Render(Vector3 pos, bool Shadow)
 {
 	float LR = PlayerClass::pointer()->GetLightRange();

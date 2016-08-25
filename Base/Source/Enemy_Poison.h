@@ -16,6 +16,7 @@ public:
 	Vector3 GetPos();
 	void ClearPoison();
 	void render_Poison();
+	void Pos_Set(Vector3 Pos){ this->Pos = Pos; };
 private:
 	enum Debuff_Effects
 	{

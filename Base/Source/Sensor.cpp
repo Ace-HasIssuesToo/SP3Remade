@@ -55,7 +55,7 @@ void Sensor::Mesh_Update(Mesh* mesh, double dt)
 void Sensor::Range_Cal(Vector3 Enemy_Pos)
 {
 	Vector3 Dir = Player_Pos - (Enemy_Pos);
-	float Temp_Range = (Dir.x*Dir.x) + (Dir.y + Dir.y);
+	float Temp_Range = (Dir.x*Dir.x) + (Dir.y*Dir.y);
 	if (Temp_Range < Range)
 	{
 		Range = Temp_Range;
