@@ -86,7 +86,7 @@ void ReadTxtFile::Update(double dt)
 	if (bgTimer > 15.f)
 		asylumON = false;
 
-	cout << bgTimer << endl;
+	//cout << bgTimer << endl;
 }
 
 void ReadTxtFile::ReadFromTextFile()

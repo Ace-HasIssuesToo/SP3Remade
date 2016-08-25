@@ -139,7 +139,7 @@ void Enemy_Psychic::Update(double dt, Map* map)
 		if (screamTimer > 3.f)
 		{
 			//currState = STATE_GG;	//TEMP KILL/ CAUGHT
-			GameState::pointer()->SetState(GameState::LOSE);
+			GameState::pointer()->SetState(GameState::JUMPSCARE_P);
 		}
 	}
 }

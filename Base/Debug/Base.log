@@ -1,26 +1,28 @@
-﻿Build started 24/8/2016 5:42:52 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+﻿Build started 25/8/2016 12:11:35 PM.
+     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp Source\ReadTxtFile.cpp
-         ReadTxtFile.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(58): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(79): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(144): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(152): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(160): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(170): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(193): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\nyp projects\sp3\edited pull\base\source\readtxtfile.cpp(196): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Psychic.cpp Source\GameState.cpp Source\Main_Shaft.cpp Source\Player.cpp Source\ReadTxtFile.cpp
          GameState.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(109): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(418): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(425): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(436): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(443): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(450): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(123): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(427): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(441): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(466): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(473): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(484): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(491): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(498): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(505): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\gamestate.cpp(512): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
          Generating Code...
+         Skipping... (no relevant changes detected)
+         ReadTxtFile.cpp
+         Player.cpp
+         Main_Shaft.cpp
+         Enemy_Psychic.cpp
+         Enemy_Ghost.cpp
+         EnemyDark.cpp
        Link:
-         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
          Debug\Application.obj
          Debug\Camera_PI.obj
          Debug\EnemyDark.obj
@@ -43,9 +45,9 @@
          Debug\UI_PI.obj
      1>Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
+         Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.exe
+     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Base\Base.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.99
+Time Elapsed 00:00:01.23

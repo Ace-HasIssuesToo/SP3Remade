@@ -5,6 +5,9 @@
 #include "PokeInfo.h"
 #include "Support_Codes.h"
 #include "ReadTxtFile.h"
+#include "irrKlang.h"
+
+using namespace irrklang;
 
 class GameState
 {
@@ -21,6 +24,8 @@ public:
 		LOSE,
 		WIN,
 		INTRODUCTION,
+		JUMPSCARE_D,
+		JUMPSCARE_P,
 		CREDIT,
 	};
 	Game state;
@@ -46,8 +51,15 @@ public:
 	Mesh* helpscreen;
 	Mesh* creditscreen;
 
+	Mesh* D_Scare1;
+	Mesh* P_Scare1;
+
+	ISoundSource* ScareSound;
+	ISoundSource* LoseSound;
+
 	Mesh* GetText();
 private:
+	bool LoseSoundBool;
 	GameState();
 	~GameState();
 	Map* Floor1;
@@ -62,5 +74,5 @@ private:
 	static GameState* c_pointer;
 	bool isReleased;
 	bool GetPokemonState();
-	
+	float scareTime;
 };
