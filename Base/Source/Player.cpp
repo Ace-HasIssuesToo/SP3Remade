@@ -20,7 +20,6 @@ PlayerClass::PlayerClass()
 	, GetBattery(false)
 	, GetDrink(false)
 	, LightOn(false)
-	, LightRange(1)
 	, LightRange(0)
 	, playerMeshRight(nullptr)
 	, playerMeshLeft(nullptr)
@@ -180,7 +179,7 @@ void PlayerClass::Update(double dt, Map* map)
 		{
 			LightPower = 0.f;
 			LightRange = 1.f;
-			LightRange = 0.f;
+			//LightRange = 0.f;
 			LightOn = false;
 		}
 	}
@@ -425,7 +424,7 @@ void PlayerClass::Renderplayer()
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 
-	cout << playerShadow.x << "/" << playerShadow.y << endl;
+	//cout << playerShadow.x << "/" << playerShadow.y << endl;
 	std::ostringstream ss;
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
