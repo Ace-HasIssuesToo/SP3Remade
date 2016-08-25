@@ -44,6 +44,8 @@ public:
 	void Update_Pokemon(double dt, Map* map);
 	void Render();
 	void Exit();
+	bool checkcaged(){ return !isReleased; };
+	Game current_State(){ return state; };
 	static GameState* pointer(){ return c_pointer; };
 
 	Mesh* text;
@@ -58,6 +60,7 @@ public:
 
 	ISoundSource* ScareSound;
 	ISoundSource* LoseSound;
+	bool PlayTheme;
 
 	Mesh* GetText();
 private:
@@ -76,6 +79,5 @@ private:
 	float levelTimer;
 	static GameState* c_pointer;
 	bool isReleased;
-	bool GetPokemonState();
 	float scareTime;
 };

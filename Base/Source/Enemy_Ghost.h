@@ -14,6 +14,7 @@ public:
 	void RenderGhost();
 	void Exit();
 	void ClearGhost();
+	void Pos_Set(Vector3 Pos){ ghostPos = Pos; };
 
 	Vector3 GetGhostPos();
 	Vector3 GetGhostOffSet();

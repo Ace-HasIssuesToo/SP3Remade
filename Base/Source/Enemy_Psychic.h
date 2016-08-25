@@ -23,6 +23,7 @@ public:
 
 	void SpriteUpdate(double dt);
 	Vector3 GetPos();
+	void Pos_Set(Vector3 Pos){ psychicPos = Pos; };
 
 	void clearPsychic();
 
@@ -43,7 +44,7 @@ public:
 private:
 	static Enemy_Psychic* c_enemyPsychic;
 
-	Vector3 psychicPos, psychicPosOffset, locationDir;
+	Vector3 psychicPos, locationDir;
 
 	bool psycho;
 	bool finalScream;
