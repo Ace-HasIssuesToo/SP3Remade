@@ -27,15 +27,15 @@ void Enemy_Psychic::clearPsychic()
 {
 	psycho = finalScream = screamTimer = countFound = playerIntrude = defMechanism = lastResort = 0;
 	currState = STATE_HIDE;
-	//psychicPos = (Render_PI::Window_Scale() * 0.7);
-	psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
+	psychicPos = (Render_PI::Window_Scale() * 0.8);
+	//psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
 }
 
 void Enemy_Psychic::Init()
 {
 	// Position of enemy
-	psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
-	//psychicPos = (Render_PI::Window_Scale() * 0.7);
+	//psychicPos = (Render_PI::Window_Scale() * 0.25) + Vector3(0, 30, 0);
+	psychicPos = (Render_PI::Window_Scale() * 0.8);
 	// Psychic camouflage image
 	hide_psychic = MeshBuilder::GenerateQuad("hide_psychic", Color(1, 1, 1));
 	hide_psychic->textureArray[0] = LoadTGA("Data//Texture//psychicHide.tga");

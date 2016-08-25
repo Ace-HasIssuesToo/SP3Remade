@@ -20,7 +20,7 @@ PlayerClass::PlayerClass()
 	, GetBattery(false)
 	, GetDrink(false)
 	, LightOn(false)
-	, LightRange(1)
+	, LightRange(0)
 	, playerMeshRight(nullptr)
 	, playerMeshLeft(nullptr)
 	, playerMeshForward(nullptr)
@@ -89,6 +89,7 @@ void PlayerClass::Init()
 	}
 
 }
+
 float PlayerClass::GetLightRange()
 {
 	/*if (LightOn == true)
@@ -101,8 +102,10 @@ float PlayerClass::GetLightRange()
 	}*/
 	return LightRange;
 }
+
 void PlayerClass::Update(double dt, Map* map)
 {
+	
 	playerShadow = PlayerPos;
 	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
@@ -152,6 +155,8 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		LightOn = false;
 		LightRange = 1.f;
+		LightRange -= dt*5;
+		LightRange = Math::Max(LightRange, 0.f);
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
 	{
@@ -161,18 +166,26 @@ void PlayerClass::Update(double dt, Map* map)
 		{
 			LightRange = Max_LightRange;
 		}
+		LightRange += dt*5;
+		LightRange = Math::Min(LightRange, 5.f);
 	}
 
+<<<<<<< HEAD
+	//cout << LightPower << " / " << LightRange << endl;
+=======
+>>>>>>> 494432d42c0cb8d8bc650a745e912f8e4089319b
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
 		{
 			LightPower -= 0.2 * LightRange * dt;
+			LightPower -= 0.2* LightRange * dt;
 		}
 		else if (LightPower <= 0.f)
 		{
 			LightPower = 0.f;
 			LightRange = 1.f;
+			//LightRange = 0.f;
 			LightOn = false;
 		}
 	}
@@ -417,7 +430,7 @@ void PlayerClass::Renderplayer()
 	Render_PI::pointer()->RenderMeshIn2D(PlayerClass::getPlayerMesh2(), false, Vector3(PlayerPos), Vector3(getPlayerScale()));
 	Render_PI::pointer()->modelStack_Set(false);
 
-	cout << playerShadow.x << "/" << playerShadow.y << endl;
+	//cout << playerShadow.x << "/" << playerShadow.y << endl;
 	std::ostringstream ss;
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
