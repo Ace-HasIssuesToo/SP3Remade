@@ -715,7 +715,6 @@ void GameState::Render()
 	RenderScreens();
 	RenderFloors();
 	//cout << cageTimer << endl;
-	cout << pokemonCount << endl;
 }
 void GameState::Exit()
 {
