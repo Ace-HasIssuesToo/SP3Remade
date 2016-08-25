@@ -58,8 +58,14 @@ private:
 	bool LightOn;
 	bool GetBattery;
 	bool GetDrink;
+	bool DrinkExists;
+	bool BatteryExists;
+	bool displayBattteryExists;
+	bool displayDrinkExists;
 	Mesh* RunBar;
 	Mesh* LightBar;
+	Mesh* Battery;
+	Mesh* Drink;
 };
 
 const float Max_Speed = 6.f;

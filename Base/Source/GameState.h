@@ -54,6 +54,7 @@ public:
 	Mesh* losescreen;
 	Mesh* helpscreen;
 	Mesh* creditscreen;
+	//Mesh* timer;
 
 	Mesh* D_Scare1;
 	Mesh* P_Scare1;

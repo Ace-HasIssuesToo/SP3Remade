@@ -15,7 +15,7 @@ GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
 , D_Scare1(nullptr), P_Scare1(nullptr)
 , ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
-,levelTimer(0)
+, levelTimer(0)
 {
 
 }
@@ -83,9 +83,13 @@ void GameState::Init()
 	P_Scare1 = MeshBuilder::GenerateQuad("creditscreen", Color(0, 0, 0), 1.f);
 	P_Scare1->textureArray[0] = LoadTGA("Data//Texture//PScare1.tga");
 
+
+	
+
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
 	scareTime = 0;
+	levelTimer = 180.f;
 }
 void GameState::GameInIt()
 {
@@ -193,8 +197,9 @@ void GameState::Update_Pokemon(double dt, Map* map)
 }
 void GameState::Update_Stuffs(double dt, Map* map)
 {
-	levelTimer += dt;
-	if (levelTimer > 120.f)
+	levelTimer -= dt;
+	
+	if (levelTimer <= 0.f)
 	{
 		state = LOSE;
 	}
@@ -800,6 +805,9 @@ void GameState::Render()
 {
 	RenderScreens();
 	RenderFloors();
+	cout << levelTimer << endl;
+
+	
 }
 
 void GameState::Exit()
@@ -844,6 +852,7 @@ void GameState::Exit()
 			delete losescreen;
 			losescreen = nullptr;
 		}
+		
 		if (Floor1 != nullptr)
 		{
 			Floor1->Clear();
