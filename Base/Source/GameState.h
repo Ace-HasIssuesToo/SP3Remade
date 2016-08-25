@@ -35,6 +35,8 @@ public:
 
 	void Init();
 	void Update(double dt);
+	void Update_Stuffs(double dt, Map* map);
+	void Update_Pokemon(double dt, Map* map);
 	void Render();
 	void Exit();
 	static GameState* pointer(){ return c_pointer; };
@@ -56,7 +58,7 @@ private:
 	Map* Floor4;
 	Map* Floor5;
 	bool Pokemon_On_Loose[4];
-	void Update_Stuffs(double dt, Map* map);
+	
 	int pokemonCount;
 	float cageTimer;
 	static GameState* c_pointer;
