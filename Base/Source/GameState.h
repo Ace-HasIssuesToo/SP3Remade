@@ -31,6 +31,7 @@ public:
 	void SetState(Game gamestate);
 	void RenderFloors();
 	void RenderScreens();
+	void RenderFloorData(Map* map);
 
 	void Init();
 	void Update(double dt);

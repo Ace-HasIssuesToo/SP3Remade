@@ -116,6 +116,7 @@ void Map::Render(Vector3 pos, bool Shadow)
 		}
 	}
 }
+
 std::string Map::Get_Type(Vector3 pos)
 {
 	pos = (Vector3(pos.y / Render_PI::Window_Scale().y, pos.x / Render_PI::Window_Scale().x, 0) * sizes);
