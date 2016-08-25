@@ -20,7 +20,6 @@ PlayerClass::PlayerClass()
 	, GetBattery(false)
 	, GetDrink(false)
 	, LightOn(false)
-	, LightRange(1)
 	, LightRange(0)
 	, playerMeshRight(nullptr)
 	, playerMeshLeft(nullptr)
@@ -174,7 +173,6 @@ void PlayerClass::Update(double dt, Map* map)
 		if (LightPower > 0.f)
 		{
 			LightPower -= 0.2 * LightRange * dt;
-			LightPower -= 0.2* LightRange * dt;
 		}
 		else if (LightPower <= 0.f)
 		{
