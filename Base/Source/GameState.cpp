@@ -572,6 +572,7 @@ void GameState::GetState(double dt)
 		{
 			GameReset();
 			PlayerClass::pointer()->clearLights();
+			PlayerClass::pointer()->clearItems();
 			state = START;
 		}
 		break;
@@ -582,7 +583,7 @@ void GameState::GetState(double dt)
 		{
 			GameReset();
 			PlayerClass::pointer()->clearLights();
-			state = START;
+			PlayerClass::pointer()->clearItems();
 		}
 		if (LoseSoundBool)
 		{

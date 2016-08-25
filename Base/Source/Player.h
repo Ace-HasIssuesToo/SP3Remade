@@ -31,6 +31,7 @@ public:
 	Mesh* getPlayerMesh2();
 	void clearPlayer();
 	void clearLights();
+	void clearItems();
 	static PlayerClass* pointer()
 	{
 		return m_pointer;

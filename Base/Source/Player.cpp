@@ -116,7 +116,11 @@ float PlayerClass::GetLightRange()
 	}*/
 	return LightRange;
 }
-
+void PlayerClass::clearItems()
+{
+	GetDrink = false;
+	GetBattery = false;
+}
 void PlayerClass::Update(double dt, Map* map)
 {
 	
@@ -311,29 +315,9 @@ void PlayerClass::Update(double dt, Map* map)
 			GetBattery = false;
 		}
 	}
-	/*if (DrinkExists == true)
-	{
-	displayDrinkExists += dt;
-	}
-	if (BatteryExists == true)
-	{
-	}*/
+	
 
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink])
-	{
-		drinkTimer = 0.0f;
-		Stamina = 30.f;
-		/*if (Stamina >= 30.f)
-		{
-		Stamina = 30.f;
-		}*/
-	}
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseBattery])
-	{
-		batteryTimer = 0.0f;
-		LightPower = 10.f;
-		GetBattery = false;
-	}
+	
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
