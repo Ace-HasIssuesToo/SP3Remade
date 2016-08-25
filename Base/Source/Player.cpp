@@ -21,6 +21,7 @@ PlayerClass::PlayerClass()
 	, GetDrink(false)
 	, LightOn(false)
 	, LightRange(1)
+	, LightRange(0)
 	, playerMeshRight(nullptr)
 	, playerMeshLeft(nullptr)
 	, playerMeshForward(nullptr)
@@ -152,6 +153,8 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		LightOn = false;
 		LightRange = 1.f;
+		LightRange -= dt*5;
+		LightRange = Math::Max(LightRange, 0.f);
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
 	{
@@ -161,18 +164,23 @@ void PlayerClass::Update(double dt, Map* map)
 		{
 			LightRange = Max_LightRange;
 		}
+		LightRange += dt*5;
+		LightRange = Math::Min(LightRange, 5.f);
 	}
 
+	cout << LightPower << " / " << LightRange << endl;
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
 		{
 			LightPower -= 0.2 * LightRange * dt;
+			LightPower -= 0.2* LightRange * dt;
 		}
 		else if (LightPower <= 0.f)
 		{
 			LightPower = 0.f;
 			LightRange = 1.f;
+			LightRange = 0.f;
 			LightOn = false;
 		}
 	}
