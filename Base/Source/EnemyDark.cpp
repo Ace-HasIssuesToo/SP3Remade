@@ -199,7 +199,8 @@ void Enemy_Dark::Update(double dt, Map* map)
 		float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
 		if (radRange < 10.f)
 		{
-			GameState::pointer()->SetState(GameState::LOSE);
+			//GameState::pointer()->SetState(GameState::LOSE);
+			GameState::pointer()->SetState(GameState::JUMPSCARE_D);
 		}
 	}
 }

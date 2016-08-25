@@ -6,12 +6,16 @@
 #include "EnemyDark.h"
 #include "Sensor.h"
 #include "UI_PI.h"
+#include "SoundEngine.h"
 
 GameState* GameState::c_pointer = new GameState();
 GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
+, D_Scare1(nullptr), P_Scare1(nullptr)
+, ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
+,levelTimer(0)
 {
 
 }
@@ -23,6 +27,7 @@ void GameState::Init()
 {
 	GameInIt();
 	state = START;
+	LoseSoundBool = false;
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -67,10 +72,20 @@ void GameState::Init()
 	losescreen->textureArray[0] = LoadTGA("Data//Texture//losescreen.tga");
 
 	helpscreen = MeshBuilder::GenerateQuad("helpscreen", Color(0, 0, 0), 1.f);
-	helpscreen->textureArray[0] = LoadTGA("Data//Texture//helpscreen.tga");
+	helpscreen->textureArray[0] = LoadTGA("Data//Texture//helpscreen2.tga");
 
 	creditscreen = MeshBuilder::GenerateQuad("creditscreen", Color(0, 0, 0), 1.f);
 	creditscreen->textureArray[0] = LoadTGA("Data//Texture//creditscreen.tga");
+
+	D_Scare1 = MeshBuilder::GenerateQuad("creditscreen", Color(0, 0, 0), 1.f);
+	D_Scare1->textureArray[0] = LoadTGA("Data//Texture//DScare1.tga");
+
+	P_Scare1 = MeshBuilder::GenerateQuad("creditscreen", Color(0, 0, 0), 1.f);
+	P_Scare1->textureArray[0] = LoadTGA("Data//Texture//PScare1.tga");
+
+	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
+	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
+	scareTime = 0;
 }
 void GameState::GameInIt()
 {
@@ -106,7 +121,7 @@ void GameState::Update_Pokemon(double dt, Map* map)
 {
 	if (state == FLOOR1)
 	{
-		if (Pokemon_On_Loose[1])
+		if (Pokemon_On_Loose[0])
 		{
 			Enemy_Ghost::pointer()->Update(dt, map);
 		}
@@ -115,22 +130,22 @@ void GameState::Update_Pokemon(double dt, Map* map)
 	{
 		if (Pokemon_On_Loose[0])
 		{
-			Enemy_Psychic::pointer()->Update(dt, map);
+			Enemy_Ghost::pointer()->Update(dt, map);
 		}
 		if (Pokemon_On_Loose[1])
 		{
-			Enemy_Ghost::pointer()->Update(dt, map);
+			Enemy_Psychic::pointer()->Update(dt, map);
 		}
 	}
 	else if (state == FLOOR3)
 	{
 		if (Pokemon_On_Loose[0])
 		{
-			Enemy_Psychic::pointer()->Update(dt, map);
+			Enemy_Ghost::pointer()->Update(dt, map);
 		}
 		if (Pokemon_On_Loose[1])
 		{
-			Enemy_Ghost::pointer()->Update(dt, map);
+			Enemy_Psychic::pointer()->Update(dt, map);
 		}
 		if (Pokemon_On_Loose[2])
 		{
@@ -141,11 +156,11 @@ void GameState::Update_Pokemon(double dt, Map* map)
 	{
 		if (Pokemon_On_Loose[0])
 		{
-			Enemy_Psychic::pointer()->Update(dt, map);
+			Enemy_Ghost::pointer()->Update(dt, map);
 		}
 		if (Pokemon_On_Loose[1])
 		{
-			Enemy_Ghost::pointer()->Update(dt, map);
+			Enemy_Psychic::pointer()->Update(dt, map);
 		}
 		if (Pokemon_On_Loose[2])
 		{
@@ -160,11 +175,11 @@ void GameState::Update_Pokemon(double dt, Map* map)
 	{
 		if (Pokemon_On_Loose[0])
 		{
-			Enemy_Psychic::pointer()->Update(dt, map);
+			Enemy_Ghost::pointer()->Update(dt, map);
 		}
 		if (Pokemon_On_Loose[1])
 		{
-			Enemy_Ghost::pointer()->Update(dt, map);
+			Enemy_Psychic::pointer()->Update(dt, map);
 		}
 		if (Pokemon_On_Loose[2])
 		{
@@ -178,6 +193,11 @@ void GameState::Update_Pokemon(double dt, Map* map)
 }
 void GameState::Update_Stuffs(double dt, Map* map)
 {
+	levelTimer += dt;
+	if (levelTimer > 120.f)
+	{
+		state = LOSE;
+	}
 	Sensor::pointer()->Update(dt);
 	PlayerClass::pointer()->Update(dt, map);
 	cageTimer += dt;
@@ -199,87 +219,13 @@ void GameState::Update_Stuffs(double dt, Map* map)
 	{
 		if (Pokemon_On_Loose[0])
 		{
-			Radius = PokeballInfo::pointer()->getPokeballPos() - Enemy_Psychic::pointer()->GetPos();
-			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
-			if (range <= min_range)
-			{
-				if (catchrate < min_catchrate)
-				{
-					Pokemon_On_Loose[0] = false;
-					pokemonCount--;
-					if (pokemonCount <= 0 && state == FLOOR1)
-					{
-						state = FLOOR2;
-						GameReset();
-						for (int i = 0; i < 2; i++)
-						{
-							Pokemon_On_Loose[i] = false;
-						}
-						for (int i = 0; i < 2; i++)
-						{
-							pokemonCount++;
-							Pokemon_On_Loose[i] = true;
-						}
-					}
-					else if (pokemonCount <= 0 && state == FLOOR2)
-					{
-						state = FLOOR3;
-						GameReset();
-						for (int i = 0; i < 3; i++)
-						{
-							Pokemon_On_Loose[i] = false;
-						}
-						for (int i = 0; i < 3; i++)
-						{
-							pokemonCount++;
-							Pokemon_On_Loose[i] = true;
-						}
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-						GameReset();
-						for (int i = 0; i < 4; i++)
-						{
-							Pokemon_On_Loose[i] = false;
-						}
-						for (int i = 0; i < 4; i++)
-						{
-							pokemonCount++;
-							Pokemon_On_Loose[i] = true;
-						}
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-						GameReset();
-						for (int i = 0; i < 4; i++)
-						{
-							Pokemon_On_Loose[i] = false;
-						}
-						for (int i = 0; i < 4; i++)
-						{
-							pokemonCount++;
-							Pokemon_On_Loose[i] = true;
-						}
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
-						state = WIN;
-					}
-				}
-				PokeballInfo::pointer()->ClearBallStatus();
-			}
-		}
-		if (Pokemon_On_Loose[1])
-		{
 			Radius = PokeballInfo::pointer()->getPokeballPos() - Enemy_Ghost::pointer()->GetGhostPos();
 			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
 			if (range <= min_range)
 			{
 				if (catchrate < min_catchrate)
 				{
-					Pokemon_On_Loose[1] = false;
+					Pokemon_On_Loose[0] = false;
 					pokemonCount--;
 					Enemy_Ghost::pointer()->ClearGhost();
 					if (pokemonCount <= 0 && state == FLOOR1)
@@ -295,6 +241,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
@@ -309,6 +256,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR3)
 					{
@@ -323,6 +271,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR4)
 					{
@@ -337,6 +286,85 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR5)
+					{
+						state = WIN;
+					}
+				}
+				PokeballInfo::pointer()->ClearBallStatus();
+			}
+		}
+		if (Pokemon_On_Loose[1])
+		{
+			Radius = PokeballInfo::pointer()->getPokeballPos() - Enemy_Psychic::pointer()->GetPos();
+			range = (Radius.x*Radius.x) + (Radius.y*Radius.y);
+			if (range <= min_range)
+			{
+				if (catchrate < min_catchrate)
+				{
+					Pokemon_On_Loose[1] = false;
+					pokemonCount--;
+					if (pokemonCount <= 0 && state == FLOOR1)
+					{
+						state = FLOOR2;
+						GameReset();
+						for (int i = 0; i < 2; i++)
+						{
+							Pokemon_On_Loose[i] = false;
+						}
+						for (int i = 0; i < 2; i++)
+						{
+							pokemonCount++;
+							Pokemon_On_Loose[i] = true;
+						}
+						levelTimer = 0.0f;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR2)
+					{
+						state = FLOOR3;
+						GameReset();
+						for (int i = 0; i < 3; i++)
+						{
+							Pokemon_On_Loose[i] = false;
+						}
+						for (int i = 0; i < 3; i++)
+						{
+							pokemonCount++;
+							Pokemon_On_Loose[i] = true;
+						}
+						levelTimer = 0.0f;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR3)
+					{
+						state = FLOOR4;
+						GameReset();
+						for (int i = 0; i < 4; i++)
+						{
+							Pokemon_On_Loose[i] = false;
+						}
+						for (int i = 0; i < 4; i++)
+						{
+							pokemonCount++;
+							Pokemon_On_Loose[i] = true;
+						}
+						levelTimer = 0.0f;
+					}
+					else if (pokemonCount <= 0 && state == FLOOR4)
+					{
+						state = FLOOR5;
+						GameReset();
+						for (int i = 0; i < 4; i++)
+						{
+							Pokemon_On_Loose[i] = false;
+						}
+						for (int i = 0; i < 4; i++)
+						{
+							pokemonCount++;
+							Pokemon_On_Loose[i] = true;
+						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR5)
 					{
@@ -370,6 +398,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
@@ -384,6 +413,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR3)
 					{
@@ -398,6 +428,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR4)
 					{
@@ -412,6 +443,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR5)
 					{
@@ -444,6 +476,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR2)
 					{
@@ -458,6 +491,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR3)
 					{
@@ -472,6 +506,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR4)
 					{
@@ -486,6 +521,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 							pokemonCount++;
 							Pokemon_On_Loose[i] = true;
 						}
+						levelTimer = 0.0f;
 					}
 					else if (pokemonCount <= 0 && state == FLOOR5)
 					{
@@ -586,6 +622,7 @@ void GameState::GetState(double dt)
 			PlayerClass::pointer()->clearLights();
 			pokemonCount = 0;
 			state = START;
+			levelTimer = 0.0f;
 		}
 		break;
 	}
@@ -597,12 +634,47 @@ void GameState::GetState(double dt)
 			PlayerClass::pointer()->clearLights();
 			pokemonCount = 0;
 			state = START;
+			levelTimer = 0.0f;
+		}
+		if (LoseSoundBool)
+		{
+			SoundEngine::Use()->play2D(LoseSound, false);
+			LoseSoundBool = false;
+		}
+		break;
+	}
+	case JUMPSCARE_D:
+	{
+		scareTime += (dt);
+		if (scareTime > 5.f)
+		{
+			state = LOSE;
+		}
+		if (!LoseSoundBool)
+		{
+			SoundEngine::Use()->play2D(ScareSound, false);
+			LoseSoundBool = true;
+		}
+		break;
+	}
+	case JUMPSCARE_P:
+	{
+		scareTime += (dt);
+		if (scareTime >= 6)
+		{
+			state = LOSE;
+		}
+		if (!LoseSoundBool)
+		{
+			SoundEngine::Use()->play2D(ScareSound, false);
+			LoseSoundBool = true;
 		}
 		break;
 	}
 	break;
 	}
 }
+
 void GameState::Update(double dt)
 {
 	GetState(dt);
@@ -648,23 +720,37 @@ void GameState::RenderScreens()
 		Render_PI::pointer()->RenderMesh(losescreen, false);
 		Render_PI::pointer()->modelStack_Set(false);
 	}
+	if (state == JUMPSCARE_D)
+	{
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
+		Render_PI::pointer()->RenderMesh(D_Scare1, false);
+		Render_PI::pointer()->modelStack_Set(false);
+	}
+	if (state == JUMPSCARE_P)
+	{
+		Render_PI::pointer()->modelStack_Set(true);
+		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
+		Render_PI::pointer()->RenderMesh(P_Scare1, false);
+		Render_PI::pointer()->modelStack_Set(false);
+	}
 }
 
 void  GameState::RenderFloorData(Map* map)
 {
 	map->Render(PlayerClass::pointer()->getPlayerPosOffSet(), false);
-	if (state == FLOOR2 || state == FLOOR3 || state == FLOOR4 || state == FLOOR5)
+	if (state == FLOOR1 || state == FLOOR2 || state == FLOOR3 || state == FLOOR4 || state == FLOOR5)
 	{
 		if (Pokemon_On_Loose[0])
 		{
-			Enemy_Psychic::pointer()->RenderPsychic();
+			Enemy_Ghost::pointer()->RenderGhost();
 		}
 	}
-	if (state == FLOOR1 || state == FLOOR2 || state == FLOOR3 || state == FLOOR4 || state == FLOOR5)
+	if (state == FLOOR2 || state == FLOOR3 || state == FLOOR4 || state == FLOOR5)
 	{
 		if (Pokemon_On_Loose[1])
 		{
-			Enemy_Ghost::pointer()->RenderGhost();
+			Enemy_Psychic::pointer()->RenderPsychic();
 		}
 	}
 	if (state == FLOOR3 || state == FLOOR4 || state == FLOOR5)
@@ -714,8 +800,8 @@ void GameState::Render()
 {
 	RenderScreens();
 	RenderFloors();
-	//cout << cageTimer << endl;
 }
+
 void GameState::Exit()
 {
 	if (c_pointer != nullptr)
@@ -787,6 +873,24 @@ void GameState::Exit()
 			Floor5->Clear();
 			delete Floor5;
 			Floor5 = nullptr;
+		}
+		if (D_Scare1 != nullptr)
+		{
+			delete D_Scare1;
+			D_Scare1 = nullptr;
+		}
+		if (P_Scare1 != nullptr)
+		{
+			delete P_Scare1;
+			P_Scare1 = nullptr;
+		}
+		if (ScareSound != nullptr)
+		{
+			ScareSound = nullptr;
+		}
+		if (LoseSound != nullptr)
+		{
+			LoseSound = nullptr;
 		}
 		delete c_pointer;
 		c_pointer = nullptr;

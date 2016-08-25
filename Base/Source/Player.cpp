@@ -175,13 +175,11 @@ void PlayerClass::Update(double dt, Map* map)
 		if (LightPower > 0.f)
 		{
 			LightPower -= 0.2 * LightRange * dt;
-			LightPower -= 0.2* LightRange * dt;
 		}
 		else if (LightPower <= 0.f)
 		{
 			LightPower = 0.f;
-			LightRange = 1.f;
-			//LightRange = 0.f;
+			LightRange = 0.f;
 			LightOn = false;
 		}
 	}

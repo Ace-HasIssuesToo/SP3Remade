@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 25/8/2016 11:38:36 AM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -18,7 +19,18 @@
          Debug\Vector3.obj
          Common.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib
      1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" (Build target(s)).
+=======
+﻿生成启动时间为 25/8/2016 下午 12:41:56。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
+     1>Lib:
+         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
+>>>>>>> 04ce6401c3653071da4843e3e035359f594743f7
 
-Build succeeded.
+生成成功。
 
+<<<<<<< HEAD
 Time Elapsed 00:00:01.78
+=======
+已用时间 00:00:00.04
+>>>>>>> 04ce6401c3653071da4843e3e035359f594743f7
