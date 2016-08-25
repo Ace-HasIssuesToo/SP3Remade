@@ -1,3 +1,4 @@
+<<<<<<< 88135e8f8e45867ceb112d1ae527757690566dbc
 <<<<<<< HEAD
 ﻿Build started 24/8/2016 5:51:03 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
@@ -27,6 +28,34 @@
      1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(193): warning C4018: “<”: 有符号/无符号不匹配
      1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(196): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
 >>>>>>> d4bad9edc12688afdb87e5ee050fe283773b74c4
+=======
+﻿生成启动时间为 25/8/2016 上午 9:16:25。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
+         Player.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(43): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(44): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(114): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(115): warning C4244: “*=”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(122): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(136): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(140): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(144): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(148): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(154): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(160): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(168): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(252): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(270): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(283): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(289): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(295): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(301): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(421): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(421): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(410): warning C4715: “PlayerClass::getPlayerMesh2”: 不是所有的控件路径都返回值
+>>>>>>> Light Power Fixed
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
          Debug\Application.obj
@@ -56,8 +85,12 @@
 
 生成成功。
 
+<<<<<<< 88135e8f8e45867ceb112d1ae527757690566dbc
 <<<<<<< HEAD
 Time Elapsed 00:00:01.48
 =======
 已用时间 00:00:01.62
 >>>>>>> d4bad9edc12688afdb87e5ee050fe283773b74c4
+=======
+已用时间 00:00:02.55
+>>>>>>> Light Power Fixed

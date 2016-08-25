@@ -519,6 +519,7 @@ void GameState::Exit()
 		Enemy_Dark::pointer()->Exit();
 		Sensor::pointer()->Exit();
 		//ReadTxtFile::pointer()->Exit();
+		ReadTxtFile::pointer()->Exit();
 		if (text != nullptr)
 		{
 			delete text;
