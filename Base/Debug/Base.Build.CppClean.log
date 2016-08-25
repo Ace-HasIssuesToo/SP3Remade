@@ -1,4 +1,3 @@
-c:\users\user\documents\sp3remade\base\debug\vc120.pdb
 d:\nyp projects\sp3\edited pull\base\debug\vc120.pdb
 d:\nyp projects\sp3\edited pull\base\debug\vc120.idb
 d:\nyp projects\sp3\edited pull\base\debug\application.obj
@@ -8,22 +7,20 @@ d:\nyp projects\sp3\edited pull\base\debug\enemy_ghost.obj
 d:\nyp projects\sp3\edited pull\base\debug\enemy_poison.obj
 d:\nyp projects\sp3\edited pull\base\debug\enemy_psychic.obj
 d:\nyp projects\sp3\edited pull\base\debug\gamestate.obj
-d:\nyp projects\sp3\edited pull\base\debug\input_pi.obj
 d:\nyp projects\sp3\edited pull\base\debug\main_shaft.obj
 d:\nyp projects\sp3\edited pull\base\debug\map_pi.obj
+d:\nyp projects\sp3\edited pull\base\debug\player.obj
 d:\nyp projects\sp3\edited pull\base\debug\pokeinfo.obj
+d:\nyp projects\sp3\edited pull\base\debug\readtxtfile.obj
 d:\nyp projects\sp3\edited pull\base\debug\render_pi.obj
+d:\nyp projects\sp3\edited pull\base\debug\main.obj
+d:\nyp projects\sp3\edited pull\base\debug\input_pi.obj
 d:\nyp projects\sp3\edited pull\base\debug\sensor.obj
 d:\nyp projects\sp3\edited pull\base\debug\soundengine.obj
 d:\nyp projects\sp3\edited pull\base\debug\support_codes.obj
 d:\nyp projects\sp3\edited pull\base\debug\texture_pi.obj
 d:\nyp projects\sp3\edited pull\base\debug\ui_pi.obj
-d:\nyp projects\sp3\edited pull\base\debug\main.obj
 d:\nyp projects\sp3\edited pull\base\debug\additional_functions.obj
-d:\nyp projects\sp3\edited pull\base\debug\player.obj
-d:\nyp projects\sp3\edited pull\base\debug\readtxtfile.obj
-c:\users\user\documents\sp3remade\debug\base.exe
-c:\users\user\documents\sp3remade\debug\base.pdb
 d:\nyp projects\sp3\edited pull\debug\base.exe
 d:\nyp projects\sp3\edited pull\debug\base.pdb
 d:\nyp projects\sp3\edited pull\base\debug\base.tlog\cl.command.1.tlog

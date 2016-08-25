@@ -26,7 +26,7 @@ GameState::~GameState()
 void GameState::Init()
 {
 	GameInIt();
-	state = START;
+	state = INTRODUCTION;
 	LoseSoundBool = false;
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -566,8 +566,19 @@ void GameState::GetState(double dt)
 		ReadTxtFile::pointer()->TimerStart = true;
 		ReadTxtFile::pointer()->Update(dt);
 
-		if (Application::IsKeyPressed(VK_RETURN))
+		static bool skipScene, sceneSkipped = false;
+		if (!skipScene && Application::IsKeyPressed(VK_RETURN))
 		{
+			skipScene = true;
+			ReadTxtFile::pointer()->sequence = 6;
+			ReadTxtFile::pointer()->bgTimer = 15.f;
+		}
+		if (skipScene && !Application::IsKeyPressed(VK_RETURN))
+			sceneSkipped = true;
+
+		if (sceneSkipped && Application::IsKeyPressed(VK_RETURN))
+		{
+			skipScene = sceneSkipped = false;
 			state = FLOOR1;
 			for (int i = 0; i < 1; i++)
 			{
