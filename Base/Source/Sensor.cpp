@@ -64,6 +64,7 @@ void Sensor::Range_Cal(Vector3 Enemy_Pos)
 void Sensor::Update(double dt)
 {
 	Player_Pos = PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos();
+	Player_Pos =PlayerClass::pointer()->getPlayerPos();
 	Mesh_Update(Save, dt);
 	Mesh_Update(Danger, dt);
 	Mesh_Update(dead, dt);
@@ -78,6 +79,7 @@ void Sensor::Update(double dt)
 void Sensor::Render()
 {
 	int Min_Range = 1000;
+	int Min_Range = 50;
 	Vector3 Pos = Render_PI::Window_Scale();
 	Pos.y = 15;
 	Pos.x *= 0.9;
