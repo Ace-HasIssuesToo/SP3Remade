@@ -86,7 +86,7 @@ void ReadTxtFile::Update(double dt)
 	if (bgTimer > 15.f)
 		asylumON = false;
 
-	cout << bgTimer << endl;
+	//cout << bgTimer << endl;
 }
 
 void ReadTxtFile::ReadFromTextFile()
@@ -242,6 +242,7 @@ void ReadTxtFile::Exit()
 	}
 	if (asylum != nullptr)
 	{
+<<<<<<< HEAD
 		SpriteAnimation *sa2 = dynamic_cast<SpriteAnimation*>(asylum);
 		if (sa2)
 		{
@@ -254,6 +255,12 @@ void ReadTxtFile::Exit()
 			}
 			delete asylum;
 			asylum = nullptr;
+=======
+		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(asylum);
+		if (sa)
+		{
+			delete sa->m_anim;
+>>>>>>> 09d08b766a849cd7c0729f773ac35ca979ae95d3
 		}
 	}
 	if (c_ReadTxtFile != nullptr)
