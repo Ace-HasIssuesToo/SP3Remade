@@ -25,16 +25,13 @@ PlayerClass::PlayerClass()
 	, playerMeshLeft(nullptr)
 	, playerMeshForward(nullptr)
 	, playerMeshDownward(nullptr)
-<<<<<<< HEAD
 	, Battery(nullptr)
 	, Drink(nullptr)
 	, BatteryExists(false)
 	, DrinkExists(false)
 	, displayBattteryExists(false)
 	, displayDrinkExists(false)
-=======
 	, playerMeshIdle(nullptr)
->>>>>>> 2ec1af14c0b26a96e670a7b4c63238b0364565c7
 {
 }
 
@@ -99,15 +96,10 @@ void PlayerClass::Init()
 	}
 	Battery = MeshBuilder::GenerateQuad("battery", Color(0, 0, 0), 1.f);
 	Battery->textureArray[0] = LoadTGA("Data//Texture//battery.tga");
-
-<<<<<<< HEAD
 	Drink = MeshBuilder::GenerateQuad("energydrink", Color(0, 0, 0), 1.f);
 	Drink->textureArray[0] = LoadTGA("Data//Texture//energydrink.tga");
-=======
 	playerMeshIdle = MeshBuilder::GenerateQuad("playerMeshIdle", Color(0,0,0), 1.f);
 	playerMeshIdle->textureArray[0] = LoadTGA("Data//Texture//playerIdle.tga");
-
->>>>>>> 2ec1af14c0b26a96e670a7b4c63238b0364565c7
 }
 
 float PlayerClass::GetLightRange()
@@ -275,7 +267,6 @@ void PlayerClass::Update(double dt, Map* map)
 		GetDrink = true;
 		//DrinkExists = true;
 	}
-<<<<<<< HEAD
 	
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
@@ -308,13 +299,13 @@ void PlayerClass::Update(double dt, Map* map)
 			GetDrink = false;
 		}
 	}
-=======
+
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
 		GetBattery = true;
 	}
 
->>>>>>> 2ec1af14c0b26a96e670a7b4c63238b0364565c7
+
 	if (GetBattery == true)
 	{
 		batteryTimer += dt;
@@ -323,7 +314,7 @@ void PlayerClass::Update(double dt, Map* map)
 			GetBattery = false;
 		}
 	}
-<<<<<<< HEAD
+
 	/*if (DrinkExists == true)
 	{
 		displayDrinkExists += dt;
@@ -333,7 +324,6 @@ void PlayerClass::Update(double dt, Map* map)
 
 	}*/
 
-=======
 	if (GetDrink == true)
 	{
 		drinkTimer += dt;
@@ -358,7 +348,7 @@ void PlayerClass::Update(double dt, Map* map)
 		LightPower = 10.f;
 		GetBattery = false;
 	}
->>>>>>> 2ec1af14c0b26a96e670a7b4c63238b0364565c7
+
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
@@ -450,7 +440,7 @@ void PlayerClass::Exit()
 			delete playerMeshDownward;
 			playerMeshDownward = nullptr;
 		};
-<<<<<<< HEAD
+
 		if (Battery != nullptr)
 		{
 			delete Battery;
@@ -461,13 +451,13 @@ void PlayerClass::Exit()
 			delete Drink;
 			Drink = nullptr;
 		}
-=======
+
 		if (playerMeshIdle != nullptr)
 		{
 			delete playerMeshIdle;
 			playerMeshIdle = nullptr;
 		};
->>>>>>> 2ec1af14c0b26a96e670a7b4c63238b0364565c7
+
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
@@ -524,8 +514,6 @@ void PlayerClass::Renderplayer()
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
 	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
-
-<<<<<<< HEAD
 	
 		if (batteryTimer >0.f && batteryTimer < 3.f)
 		{
@@ -564,7 +552,7 @@ void PlayerClass::Renderplayer()
 			Render_PI::pointer()->modelStack_Set(false);
 			//cout << drinkTimer << endl;
 		}
-=======
+
 	if (batteryTimer > drinkTimer)
 	{
 		if (GetBattery == true && batteryTimer < 3.f)
@@ -583,5 +571,5 @@ void PlayerClass::Renderplayer()
 			//cout << drinkTimer << endl;
 		}
 	}
->>>>>>> 2ec1af14c0b26a96e670a7b4c63238b0364565c7
+
 }
