@@ -14,6 +14,7 @@ void Event::Init()
 	Effect_Time = 0;
 	RandMultiplier =100;
 	FlashDelay = 0;
+	LastTime = CurrentTime = 0;
 }
 
 void Event::Clear()
@@ -22,10 +23,12 @@ void Event::Clear()
 	Effect_Time = 0;
 	RandMultiplier = 100;
 	FlashDelay = 0;
+	LastTime = CurrentTime = 0;
 }
 
 void Event::Update(double dt, Map* map)
 {
+	CurrentTime += dt;
 	if (bool(current_Effect))
 	{
 		Effect_Time -= dt;
@@ -44,16 +47,22 @@ void Event::Update(double dt, Map* map)
 			current_Effect = No_Effect;
 		}
 	}
-	else
+	else if ((CurrentTime - LastTime) > 1.f)
 	{
+		LastTime = CurrentTime;
 		Black = true;
 		RandMultiplier = Math::Max(RandMultiplier, (int)All_Effect);
-		Effect_Time = rand() % RandMultiplier;
-		if (Effect_Time >= All_Effect)
+		int effect = rand() % RandMultiplier;
+		if (effect >= All_Effect)
 		{
 			Effect_Time = 0;
+			Black = false;
 		}
-		else if (current_Effect == Lightning)
+		else
+		{
+			current_Effect = Effects(effect);
+		}
+		if (current_Effect == Lightning)
 		{
 			Effect_Time = Math::RandFloatMinMax(0.3f, 0.5f);
 			FlashDelay = 0;
@@ -76,25 +85,7 @@ void Event::Update(double dt, Map* map)
 		}
 	}
 
-	if (!bool(current_Effect))
-	{
-		if (Application::IsKeyPressed('I'))
-		{
-			current_Effect = Lightning;
-			Effect_Time = Math::RandFloatMinMax(0.3f, 0.5f);
-			FlashDelay = 0;
-		}
-		else if (Application::IsKeyPressed('O'))
-		{
-			current_Effect = BlackOut;
-			Effect_Time = Math::RandFloatMinMax(2.f, 4.f);
-		}
-		else if (Application::IsKeyPressed('P'))
-		{
-			current_Effect = BlackOut;
-			Effect_Time = Math::RandFloatMinMax(2.f, 10.f);
-		}
-	}
+	
 }
 
 void Event::Render(Map* map, Vector3 pos)

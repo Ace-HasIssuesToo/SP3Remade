@@ -31,6 +31,7 @@ private:
 	int RandMultiplier;
 	bool Black;
 	float FlashDelay;
+	float LastTime, CurrentTime;
 };
 
 #endif

@@ -27,8 +27,13 @@ GameState::~GameState()
 void GameState::Init()
 {
 	GameInIt();
+<<<<<<< HEAD
+	state = INTRODUCTION;
+	LoseSoundBool = false;
+=======
 	state = START;
 	PlayTheme = LoseSoundBool = false;
+>>>>>>> fc405f820e446c5b3ec4d1d6d05ebaabf74623a4
 	Floor1 = new Map();
 	Floor2 = new Map();
 	Floor3 = new Map();
@@ -113,7 +118,6 @@ void GameState::GameReset()
 	cageTimer = 0;
 	levelTimer = 0;
 	isReleased = false;
-
 	PlayerClass::pointer()->clearPlayer();
 	Enemy_Ghost::pointer()->ClearGhost();
 	Enemy_Psychic::pointer()->clearPsychic();
@@ -122,7 +126,7 @@ void GameState::GameReset()
 	PokeballInfo::pointer()->ClearBallStatus();
 	ReadTxtFile::pointer()->clearIntro();
 	Event::pointer()->Clear();
-	Event::pointer()->Set_Multiplier(50);
+	Event::pointer()->Set_Multiplier(100);
 	if (state == FLOOR5)
 	{
 		Event::pointer()->Set_Multiplier(10);
@@ -596,6 +600,26 @@ void GameState::GetState(double dt)
 						 ReadTxtFile::pointer()->TimerStart = true;
 						 ReadTxtFile::pointer()->Update(dt);
 
+<<<<<<< HEAD
+		static bool skipScene, sceneSkipped = false;
+		if (!skipScene && Application::IsKeyPressed(VK_RETURN))
+		{
+			skipScene = true;
+			ReadTxtFile::pointer()->sequence = 6;
+			ReadTxtFile::pointer()->bgTimer = 15.f;
+		}
+		if (skipScene && !Application::IsKeyPressed(VK_RETURN))
+			sceneSkipped = true;
+
+		if (sceneSkipped && Application::IsKeyPressed(VK_RETURN))
+		{
+			skipScene = sceneSkipped = false;
+			state = FLOOR1;
+			for (int i = 0; i < 1; i++)
+			{
+				Pokemon_On_Loose[i] = false;
+			}
+=======
 						 if (Application::IsKeyPressed(VK_RETURN))
 						 {
 							 state = FLOOR1;
@@ -603,6 +627,7 @@ void GameState::GetState(double dt)
 							 {
 								 Pokemon_On_Loose[i] = false;
 							 }
+>>>>>>> fc405f820e446c5b3ec4d1d6d05ebaabf74623a4
 
 							 for (int i = 0; i < 1; i++)
 							 {
