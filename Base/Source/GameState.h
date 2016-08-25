@@ -61,6 +61,7 @@ private:
 	
 	int pokemonCount;
 	float cageTimer;
+	float levelTimer;
 	static GameState* c_pointer;
 	bool isReleased;
 	bool GetPokemonState();

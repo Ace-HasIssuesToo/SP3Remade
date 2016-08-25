@@ -78,7 +78,6 @@ void Sensor::Update(double dt)
 
 void Sensor::Render()
 {
-	int Min_Range = 1000;
 	int Min_Range = 50;
 	Vector3 Pos = Render_PI::Window_Scale();
 	Pos.y = 15;
