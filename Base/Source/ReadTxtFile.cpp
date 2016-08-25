@@ -5,10 +5,7 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-ReadTxtFile::ReadTxtFile() 
-	: fullIntro(0)
-	, introTimer(0), sequence(0),
-	TimerStart(false), timerTime(false), timerReset(false), intro_dialogue(nullptr)
+ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), TimerStart(false), intro_dialogue(nullptr)
 {
 
 }
@@ -23,9 +20,6 @@ void ReadTxtFile::clearIntro()
 	fullIntro = { 0 };
 	introTimer = 0;
 	TimerStart = false;
-	timerTime = false;
-	timerReset = false;
-	sequence = 0;
 }
 
 void ReadTxtFile::Init()
@@ -51,7 +45,7 @@ void ReadTxtFile::ReadFromTextFile()
 	string sentence;
 
 	inStory.open("Data//Text//story.txt");
-
+	
 	while (!inStory.eof())
 	{
 		getline(inStory, sentence);
@@ -92,53 +86,36 @@ vector<string> ReadTxtFile::lineSplit(string input)
 
 void ReadTxtFile::Render()
 {
+	// Every 5 secs, change to next line of array
 	vector<string> tempIntro;
 
-	// Re-loop timer back to 0 secs
-	if (sequence < fullIntro.size())
+	float tempTimer = 0.f;
+	//while (introTimer > 5.f)
+	//{
+	//	//Loop every 5 seconds
+
+
+	//	introTimer = tempTimer;
+	//}
+
+	cout << "False / True : " << TimerStart << endl;
+	cout << "introTimer : " << introTimer << endl;
+	cout << "tempTimer : " << tempTimer << endl;
+
+	for (int i = 0; i < fullIntro.size(); i++)
 	{
-		tempIntro = lineSplit(fullIntro.at(sequence));
-
-		// Re-loop timer back to 0 secs
-		if (introTimer > 5.f)
-		{
-			introTimer = 0.f;
-			timerTime = true;
-		}
-		// Go to next line
-		if (timerTime == true)
-		{
-			sequence++;
-			timerReset = true;
-		}
-		// Reset variables
-		if (timerReset == true)
-		{
-			timerReset = false;
-			timerTime = false;
-		}
-
-		for (int i = 0; i < tempIntro.size(); i++)
-		{
-			int Y = tempIntro.size() - i;
-			Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempIntro.at(i), Color(1, 1, 1), Vector3(1, 5 * Y, 1), Vector3(5, 5, 1));
-		}
+		tempIntro = lineSplit(fullIntro.at(i));
 	}
 
-	cout << sequence << endl;
-	//cout << timerTime << endl;
-
-	if (sequence == fullIntro.size())
+	for (int i = 0; i < tempIntro.size(); i++)
 	{
-		ostringstream ss;
-		ss.str("");
-		ss << "Press 'Enter'  to continue...";
-		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, ss.str(), Color(1, 1, 1), Vector3(1, 5, 1), Vector3(5, 5, 1));
+		int Y = tempIntro.size() - i;
+		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempIntro.at(i), Color(1, 1, 1), Vector3(1, 5*Y, 1), Vector3(5, 5, 1));
 	}
 }
 
 void ReadTxtFile::Exit()
-{
+{ 
 	if (intro_dialogue != nullptr)
 	{
 		delete intro_dialogue;

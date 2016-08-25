@@ -30,8 +30,6 @@ private:
 	vector<string> fullIntro;
 
 	float introTimer;
-	bool timerTime, timerReset;
-	int sequence;
 
 	Mesh* intro_dialogue;
 };
