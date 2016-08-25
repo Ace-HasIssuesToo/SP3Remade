@@ -38,6 +38,7 @@ public:
 	void RenderFloors();
 	void RenderScreens();
 	void RenderFloorData(Map* map);
+	void EndLevel();
 
 	void Init();
 	void Update(double dt);

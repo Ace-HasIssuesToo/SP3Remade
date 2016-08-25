@@ -1,58 +1,43 @@
-<<<<<<< HEAD
-﻿  Player.cpp
-=======
-<<<<<<< HEAD
-﻿Build started 25/8/2016 4:23:39 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp
-         GameState.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(196): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(203): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(659): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(673): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(698): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(705): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(716): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(723): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(730): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(737): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(744): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
-         D:\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\Debug" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glfw/lib-msvc100" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/glew/lib" /LIBPATH:"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\NYP Projects\SP3\Edited Pull\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
-=======
-<<<<<<< ed381094f4092d377e2cb02337f2583bec64dbb5
-<<<<<<< HEAD
 ﻿  UI_PI.cpp
-  GameState.cpp
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(200): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(208): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(653): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(667): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(692): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(699): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(710): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(717): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(724): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(731): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\gamestate.cpp(738): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-  Compiling...
+  Texture_PI.cpp
+  Support_Codes.cpp
+c:\users\user\documents\sp3remade\base\source\support_codes.cpp(1100): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\support_codes.cpp(1101): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+  SoundEngine.cpp
   Sensor.cpp
 c:\users\user\documents\sp3remade\base\source\sensor.cpp(61): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
 c:\users\user\documents\sp3remade\base\source\sensor.cpp(103): warning C4305: '*=' : truncation from 'double' to 'float'
+  Input_PI.cpp
+  main.cpp
+  Render_PI.cpp
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(38): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(40): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(42): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(44): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(46): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(48): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(50): warning C4305: '+=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(52): warning C4305: '-=' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\render_pi.cpp(165): warning C4305: 'argument' : truncation from 'double' to 'float'
   ReadTxtFile.cpp
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(58): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(79): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(144): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(152): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(160): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(170): warning C4018: '<' : signed/unsigned mismatch
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(193): warning C4018: '<' : signed/unsigned mismatch
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(196): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(60): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(81): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(148): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(156): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(164): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(172): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(182): warning C4018: '<' : signed/unsigned mismatch
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(205): warning C4018: '<' : signed/unsigned mismatch
+c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(208): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  PokeInfo.cpp
+c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(42): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(48): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(54): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(60): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(68): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(77): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(95): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
   Player.cpp
-c:\users\user\documents\sp3remade\base\source\player.cpp(49): warning C4305: 'argument' : truncation from 'double' to 'float'
->>>>>>> a93ddd2b6f80e23ec7f98e5e92c0f1aa5e4446ce
 c:\users\user\documents\sp3remade\base\source\player.cpp(50): warning C4305: 'argument' : truncation from 'double' to 'float'
 c:\users\user\documents\sp3remade\base\source\player.cpp(51): warning C4305: 'argument' : truncation from 'double' to 'float'
 c:\users\user\documents\sp3remade\base\source\player.cpp(131): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
@@ -75,106 +60,78 @@ c:\users\user\documents\sp3remade\base\source\player.cpp(354): warning C4244: '+
 c:\users\user\documents\sp3remade\base\source\player.cpp(360): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
 c:\users\user\documents\sp3remade\base\source\player.cpp(498): warning C4305: 'argument' : truncation from 'double' to 'float'
 c:\users\user\documents\sp3remade\base\source\player.cpp(498): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+  Map_PI.cpp
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(8): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(9): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(10): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(51): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(90): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(92): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(105): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(112): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(122): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(129): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(151): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(153): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(169): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(176): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(189): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\map_pi.cpp(196): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Main_Shaft.cpp
+  GameState.cpp
+c:\users\user\documents\sp3remade\base\source\event.h(14): warning C4800: 'Event::Effects' : forcing value to bool 'true' or 'false' (performance warning)
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(272): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(280): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(596): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(610): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(637): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(644): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(655): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(662): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(669): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(676): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(683): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Event.cpp
+c:\users\user\documents\sp3remade\base\source\event.h(14): warning C4800: 'Event::Effects' : forcing value to bool 'true' or 'false' (performance warning)
+c:\users\user\documents\sp3remade\base\source\event.cpp(31): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\event.cpp(32): warning C4800: 'Event::Effects' : forcing value to bool 'true' or 'false' (performance warning)
+c:\users\user\documents\sp3remade\base\source\event.cpp(34): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\event.cpp(42): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+  Enemy_Psychic.cpp
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(28): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(28): warning C4800: 'float' : forcing value to bool 'true' or 'false' (performance warning)
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(96): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(100): warning C4305: 'argument' : truncation from 'double' to 'float'
+c:\users\user\documents\sp3remade\base\source\enemy_psychic.cpp(139): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+  Enemy_Poison.cpp
+c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(63): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(107): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(112): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(167): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(176): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(185): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_poison.cpp(201): warning C4305: 'argument' : truncation from 'double' to 'float'
+  Enemy_Ghost.cpp
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(74): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(75): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(76): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(116): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(124): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemy_ghost.cpp(125): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+  EnemyDark.cpp
+c:\users\user\documents\sp3remade\base\source\enemydark.cpp(90): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemydark.cpp(94): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemydark.cpp(98): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemydark.cpp(102): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemydark.cpp(188): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\enemydark.cpp(193): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Camera_PI.cpp
+  Generating Code...
 c:\users\user\documents\sp3remade\base\source\player.cpp(486): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
+  Compiling...
+  Application.cpp
+  Additional_Functions.cpp
+  Generating Code...
 Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-﻿Build started 25/8/2016 2:26:57 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Base\Base.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/Common/Source" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glew/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glfw/include" /I"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Player.cpp
-         Player.cpp
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(44): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(45): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(121): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(122): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(129): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(143): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(147): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(151): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(155): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(162): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(168): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(173): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(181): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(182): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(232): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(272): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(290): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(303): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(309): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(315): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(321): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(449): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(449): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>d:\sp3 life problems\sp3makeitstop\make it stop\oh god why\base\source\player.cpp(437): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glfw/lib-msvc100" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/glew/lib" /LIBPATH:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\/IrrKlang/lib" Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
-=======
-﻿生成启动时间为 25/8/2016 下午 4:04:06。
-=======
-﻿生成启动时间为 25/8/2016 下午 4:26:51。
->>>>>>> Fixed Some Minor Bug?
-     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Sensor.cpp
-         Sensor.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\sensor.cpp(61): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\sensor.cpp(103): warning C4305: “*=”: 从“double”到“float”截断
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
->>>>>>> 3e3fad45ee6599bcfb28046f09a6fb1b9a5c679e
->>>>>>> fc405f820e446c5b3ec4d1d6d05ebaabf74623a4
-         Debug\Application.obj
-         Debug\Camera_PI.obj
-         Debug\EnemyDark.obj
-         Debug\Enemy_Ghost.obj
-         Debug\Enemy_Poison.obj
-         Debug\Enemy_Psychic.obj
-         Debug\Event.obj
-         Debug\GameState.obj
-         Debug\Main_Shaft.obj
-         Debug\Map_PI.obj
-         Debug\Player.obj
-         Debug\PokeInfo.obj
-         Debug\ReadTxtFile.obj
-         Debug\Render_PI.obj
-         Debug\main.obj
-         Debug\Input_PI.obj
-         Debug\Sensor.obj
-         Debug\SoundEngine.obj
-         Debug\Support_Codes.obj
-         Debug\Texture_PI.obj
-         Debug\UI_PI.obj
-     1>Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Base.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Base.exe
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Base\Base.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-<<<<<<< HEAD
-Time Elapsed 00:00:01.25
-=======
-Time Elapsed 00:00:01.23
-=======
-     1>Additional_Functions.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
-     1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-         Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作。
-
-生成成功。
-
-<<<<<<< ed381094f4092d377e2cb02337f2583bec64dbb5
-已用时间 00:00:02.31
->>>>>>> 3e3fad45ee6599bcfb28046f09a6fb1b9a5c679e
->>>>>>> 2ec1af14c0b26a96e670a7b4c63238b0364565c7
-=======
-已用时间 00:00:02.57
->>>>>>> Fixed Some Minor Bug?
->>>>>>> fc405f820e446c5b3ec4d1d6d05ebaabf74623a4
->>>>>>> a93ddd2b6f80e23ec7f98e5e92c0f1aa5e4446ce
