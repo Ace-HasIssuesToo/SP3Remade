@@ -10,7 +10,6 @@ Enemy_Dark::Enemy_Dark()
 	:movementSpeed(0)
 	, throwSpeed(0)
 	, EnemyDarkPos(0, 0, 0)
-	, EnemyDarkPosOffSet(0, 0, 0)
 	, darkBallPos(0, 0, 0)
 	, EnemyDarkShadow(0, 0, 0)
 	, enemyDarkMeshLeft(nullptr)
@@ -165,23 +164,29 @@ void Enemy_Dark::Update(double dt, Map* map)
 	}
 	else
 	{
-		Vector3 offset = (EnemyDarkPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize() * 50;
-		if (rand() % 2)
+		if (!GameState::pointer()->checkcaged())
 		{
-			offset.x *= -1;
+			Vector3 offset = (EnemyDarkPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos())).Normalize() * 50;
+			if (rand() % 2)
+			{
+				offset.x *= -1;
+			}
+			if (rand() % 3)
+			{
+				offset.y *= -1;
+			}
+			EnemyDarkPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
 		}
-		if (rand() % 3)
-		{
-			offset.y *= -1;
-		}
-		EnemyDarkPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
 	}
 
 	if ((distSq <= combinedRadSq) && (ballOnScreen == false))
 	{
-		ballOnScreen = true;
-		darkBallPos = EnemyDarkPos;
-		darkBallDirection = (Vector3((PlayerClass::pointer()->getPlayerPos() + PlayerClass::pointer()->getPlayerPosOffSet()) - darkBallPos).Normalize()) * throwSpeed;
+		if (!GameState::pointer()->checkcaged())
+		{
+			ballOnScreen = true;
+			darkBallPos = EnemyDarkPos;
+			darkBallDirection = (Vector3((PlayerClass::pointer()->getPlayerPos() + PlayerClass::pointer()->getPlayerPosOffSet()) - darkBallPos).Normalize()) * throwSpeed;
+		}
 	}
 	else if (ballOnScreen == true)
 	{

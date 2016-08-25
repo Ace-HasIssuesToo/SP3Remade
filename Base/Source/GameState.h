@@ -61,6 +61,7 @@ public:
 
 	ISoundSource* ScareSound;
 	ISoundSource* LoseSound;
+	bool PlayTheme;
 
 	Mesh* GetText();
 private:

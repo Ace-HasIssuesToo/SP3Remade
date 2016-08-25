@@ -18,3 +18,5 @@ Mist,Data//Texture//Mist.tga
 VendingMachine,Data//Texture//vendingmachine.tga
 Mist_Floor,Data//Texture//Mist_Floor.tga
 Mist_Wall,Data//Texture//Mist_Wall.tga
+Bright_Floor,Data//Texture//Bright_Floor.tga
+Bright_Wall,Data//Texture//Bright_Wall.tga
