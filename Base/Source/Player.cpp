@@ -89,6 +89,7 @@ void PlayerClass::Init()
 	}
 
 }
+
 float PlayerClass::GetLightRange()
 {
 	/*if (LightOn == true)
@@ -101,8 +102,10 @@ float PlayerClass::GetLightRange()
 	}*/
 	return LightRange;
 }
+
 void PlayerClass::Update(double dt, Map* map)
 {
+	
 	playerShadow = PlayerPos;
 	PlayerPos.z = 0;
 	Vector3 Movement = Vector3();
@@ -167,7 +170,10 @@ void PlayerClass::Update(double dt, Map* map)
 		LightRange = Math::Min(LightRange, 5.f);
 	}
 
+<<<<<<< HEAD
 	//cout << LightPower << " / " << LightRange << endl;
+=======
+>>>>>>> 494432d42c0cb8d8bc650a745e912f8e4089319b
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)

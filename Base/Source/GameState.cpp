@@ -738,8 +738,11 @@ void GameState::Render()
 	RenderScreens();
 	RenderFloors();
 	//cout << cageTimer << endl;
+<<<<<<< HEAD
 	//cout << pokemonCount << endl;
 	cout << levelTimer << endl;
+=======
+>>>>>>> 494432d42c0cb8d8bc650a745e912f8e4089319b
 }
 void GameState::Exit()
 {

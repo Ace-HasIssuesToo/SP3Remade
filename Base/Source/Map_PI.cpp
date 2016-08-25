@@ -3,6 +3,32 @@
 #include "Texture_PI.h"
 #include "Player.h"
 
+Vector3 Map::Map_Rand()
+{
+	int x = Math::RandIntMinMax(0, Limitation.x*10.f);
+	int y = Math::RandIntMinMax(0, Limitation.y*10.f);
+	Vector3 pos = Vector3(x, y, 0);
+	while (Get_Type(pos) != "Floor")
+	{
+		if (pos.x > 0)
+		{
+			pos.x--;
+		}
+		else
+		{
+			pos.x = Limitation.x;
+			if (pos.y > 0)
+			{
+				pos.y--;
+			}
+			else
+			{
+				pos.y = Limitation.y;
+			}
+		}
+	}
+	return pos;
+}
 
 bool Map::Init(std::string Filename)
 {
