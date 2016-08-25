@@ -23,7 +23,8 @@ public:
 		Left = 0,
 		Right,
 		Top, 
-		Down
+		Down,
+		Idle
 	};
 
 	void setPlayerMesh(PlayerClass::PlayerMeshes mesh);
@@ -50,6 +51,7 @@ private:
 
 	PlayerMeshes playerMesh;
 	Mesh* playerMeshLeft, *playerMeshRight, *playerMeshForward, *playerMeshDownward;
+	Mesh* playerMeshIdle;
 	float Stamina;
 	float LightPower;
 	float LightRange;

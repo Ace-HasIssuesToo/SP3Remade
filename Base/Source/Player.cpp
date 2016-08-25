@@ -25,6 +25,7 @@ PlayerClass::PlayerClass()
 	, playerMeshLeft(nullptr)
 	, playerMeshForward(nullptr)
 	, playerMeshDownward(nullptr)
+	, playerMeshIdle(nullptr)
 {
 }
 
@@ -87,6 +88,9 @@ void PlayerClass::Init()
 		saR->m_anim = new Animation();
 		saR->m_anim->Set(0, 3, 0, 1.f, true);
 	}
+
+	playerMeshIdle = MeshBuilder::GenerateQuad("playerMeshIdle", Color(0,0,0), 1.f);
+	playerMeshIdle->textureArray[0] = LoadTGA("Data//Texture//playerIdle.tga");
 
 }
 
@@ -170,10 +174,6 @@ void PlayerClass::Update(double dt, Map* map)
 		LightRange = Math::Min(LightRange, 5.f);
 	}
 
-<<<<<<< HEAD
-	//cout << LightPower << " / " << LightRange << endl;
-=======
->>>>>>> 494432d42c0cb8d8bc650a745e912f8e4089319b
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
@@ -229,6 +229,10 @@ void PlayerClass::Update(double dt, Map* map)
 
 	Movement = Enemy_Poison::pointer()->Poison(Movement);
 	Movement = Enemy_Ghost::pointer()->Freeze(Movement);
+	if (Movement == (0,0,0))
+	{
+		setPlayerMesh(Idle);
+	}
 	if (Movement.y > 0)
 	{
 		setPlayerMesh(Top);
@@ -245,6 +249,7 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		setPlayerMesh(Right);
 	}
+	
 	playerShadow += Movement;
 	Vector3 size = Vector3(5, 5, 1);
 	Vector3 DisplacedMovement = playerShadow + Functions::DisplaceWall(Movement, size);
@@ -381,6 +386,11 @@ void PlayerClass::Exit()
 			delete playerMeshDownward;
 			playerMeshDownward = nullptr;
 		};
+		if (playerMeshIdle != nullptr)
+		{
+			delete playerMeshIdle;
+			playerMeshIdle = nullptr;
+		};
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
@@ -420,6 +430,8 @@ Mesh* PlayerClass::getPlayerMesh2()
 		break;
 	case Down:
 		return playerMeshDownward;
+	case Idle:
+		return playerMeshIdle;
 		break;
 	}
 }
