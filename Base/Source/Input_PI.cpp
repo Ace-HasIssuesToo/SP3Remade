@@ -59,7 +59,6 @@ void Input_PI::Update(double dt)
 		IsBeingPressed[PokeThrowRight] = false;
 		HaveBeenPressed[PokeThrowRight] = true;
 	}
-	if (Application::IsKeyPressed(VK_RBUTTON))
 	if (Application::IsKeyPressed('F'))
 	{
 		IsBeingPressed[Light_Switch] = true;
