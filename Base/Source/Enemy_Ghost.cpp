@@ -26,9 +26,9 @@ Enemy_Ghost::~Enemy_Ghost()
 }
 void Enemy_Ghost::Init()
 {
-	ghostPos = (Render_PI::Window_Scale() * 0.8);
+	//ghostPos = (Render_PI::Window_Scale() * 0.8);
 	//ghostPos = (Render_PI::Window_Scale() * 0.25f) + Vector3(0, 320, 0);
-	//ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
+	ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
 	//ghostoffset = (Math::RandFloatMinMax(5.f, 10.f), 0, Math::RandFloatMinMax(5.f, 10.f));
 	ghostSprite = MeshBuilder::GenerateSpriteAnimation("gastly", 1, 8);
 	ghostSprite->textureArray[0] = LoadTGA("Data//Texture//gastly.tga");
@@ -43,8 +43,8 @@ void Enemy_Ghost::Init()
 void Enemy_Ghost::ClearGhost()
 {
 	ghostTimer = ghostStayTimer = 0.0f;
-	ghostPos = (Render_PI::Window_Scale() * 0.8);
-	//ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
+	//ghostPos = (Render_PI::Window_Scale() * 0.8);
+	ghostPos = (Render_PI::Window_Scale() * 2) + Vector3(-45, 185, 0);
 	ghostShadow = Vector3(0, 0, 0);
 	ghostoffset = Vector3(0, 0, 0);
 	dirX = (Math::RandFloatMinMax(-5.f, 5.f));
@@ -102,31 +102,34 @@ void Enemy_Ghost::Update(double dt, Map* map)
 	{
 		ghostPos = ghostShadow;
 	}
-	if (ghostTimer > 30.f)
+	if (!GameState::pointer()->checkcaged())
 	{
-		//teleport ghost to player position
-		if (ghostStayTimer == 0.0f)
+		if (ghostTimer > 30.f)
 		{
-			//teleport first time
-			ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
-			SoundEngine::Use()->play2D(haunt);
+			//teleport ghost to player position
+			if (ghostStayTimer == 0.0f)
+			{
+				//teleport first time
+				ghostPos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos());
+				SoundEngine::Use()->play2D(haunt);
+			}
+			ghostStayTimer += dt;
+			dirX = 0;
+			dirY = 0;
+			if (ghostStayTimer > 2.5f)
+			{
+				//ghost will move away again
+				dirX += Math::RandFloatMinMax(-5, 5);
+				dirY += Math::RandFloatMinMax(-5, 5);
+				ghostShadow.x += dirX * dt;
+				ghostShadow.y += dirY * dt;
+				ghostTimer = 0.0f;
+			}
 		}
-		ghostStayTimer += dt;
-		dirX = 0;
-		dirY = 0;
-		if (ghostStayTimer > 2.5f)
+		else if (ghostTimer < 30.f)
 		{
-			//ghost will move away again
-			dirX += Math::RandFloatMinMax(-5, 5);
-			dirY += Math::RandFloatMinMax(-5, 5);
-			ghostShadow.x += dirX * dt;
-			ghostShadow.y += dirY * dt;
-			ghostTimer = 0.0f;
+			ghostStayTimer = 0.0f;
 		}
-	}
-	else if (ghostTimer < 30.f)
-	{
-		ghostStayTimer = 0.0f;
 	}
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(ghostSprite);
 	if (sa)

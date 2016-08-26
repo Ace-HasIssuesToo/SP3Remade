@@ -15,6 +15,7 @@ public:
 	virtual void RenderEnemyDark();
 	virtual void RenderDarkball();
 	void Exit();
+	void Pos_Set(Vector3 Pos){ EnemyDarkPos = Pos; };
 
 	Vector3 getEnemyDarkPos();
 
@@ -50,7 +51,7 @@ private:
 	float distSq;
 	float combinedRadSq;
 
-	Vector3 EnemyDarkPos, EnemyDarkPosOffSet, EnemyDarkScale;
+	Vector3 EnemyDarkPos, EnemyDarkScale;
 	Vector3 EnemyDarkShadow;
 
 	EnemyDarkMeshes enemyDarkMesh;

@@ -87,6 +87,7 @@ void GameState::Init()
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
 	scareTime = 0;
 }
+
 void GameState::GameInIt()
 {
 	PlayerClass::pointer()->Init();
@@ -99,8 +100,13 @@ void GameState::GameInIt()
 	ReadTxtFile::pointer()->Init();
 	ReadTxtFile::pointer()->ReadFromTextFile();
 }
+
 void GameState::GameReset()
 {
+	cageTimer = 0;
+	levelTimer = 0;
+	isReleased = false;
+
 	PlayerClass::pointer()->clearPlayer();
 	Enemy_Ghost::pointer()->ClearGhost();
 	Enemy_Psychic::pointer()->clearPsychic();
@@ -109,14 +115,17 @@ void GameState::GameReset()
 	PokeballInfo::pointer()->ClearBallStatus();
 	ReadTxtFile::pointer()->clearIntro();
 }
+
 Mesh* GameState::GetText()
 {
 	return text;
 }
+
 void GameState::SetState(Game gamestate)
 {
 	state = gamestate;
 }
+
 void GameState::Update_Pokemon(double dt, Map* map)
 {
 	if (state == FLOOR1)
@@ -191,6 +200,7 @@ void GameState::Update_Pokemon(double dt, Map* map)
 		}
 	}
 }
+
 void GameState::Update_Stuffs(double dt, Map* map)
 {
 	levelTimer += dt;
@@ -201,13 +211,18 @@ void GameState::Update_Stuffs(double dt, Map* map)
 	Sensor::pointer()->Update(dt);
 	PlayerClass::pointer()->Update(dt, map);
 	cageTimer += dt;
-	//if (cageTimer > 30.f)
-	//{
-		//isReleased = true;
+	if (cageTimer > Math::RandFloatMinMax(10.f, 20.f) && !isReleased)
+	{
+		isReleased = true;
+		Enemy_Ghost::pointer()->Pos_Set(map->Map_Rand());
+		Enemy_Psychic::pointer()->Pos_Set(map->Map_Rand());
+		Enemy_Poison::pointer()->Pos_Set(map->Map_Rand());
+		Enemy_Dark::pointer()->Pos_Set(map->Map_Rand());
+		SoundEngine::Use()->play2D("Data//Sound//LosingSound.mp3", false);
+	}
 	
 	Update_Pokemon(dt, map);
 		
-	//}
 	PokeballInfo::pointer()->Update(dt, map);
 
 	Vector3 Radius = Vector3();
@@ -533,6 +548,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 		}
 	}
 }
+
 void GameState::GetState(double dt)
 {
 	switch (state)
@@ -679,6 +695,7 @@ void GameState::Update(double dt)
 {
 	GetState(dt);
 }
+
 void GameState::RenderScreens()
 {
 	if (state == START)
@@ -796,6 +813,7 @@ void GameState::RenderFloors()
 		RenderFloorData(Floor5);
 	}
 }
+
 void GameState::Render()
 {
 	RenderScreens();
