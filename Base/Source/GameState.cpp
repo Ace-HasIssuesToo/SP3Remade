@@ -15,8 +15,13 @@ GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
 , D_Scare1(nullptr), P_Scare1(nullptr)
+<<<<<<< HEAD
 , ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false), levelTimer(0)
 , PlayTheme(false)
+=======
+, ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
+, levelTimer(0), PlayTheme(false)
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 {
 
 }
@@ -27,6 +32,11 @@ GameState::~GameState()
 void GameState::Init()
 {
 	GameInIt();
+<<<<<<< HEAD
+=======
+	state = INTRODUCTION;
+	LoseSoundBool = false;
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 	state = START;
 	PlayTheme = LoseSoundBool = false;
 	Floor1 = new Map();
@@ -89,6 +99,13 @@ void GameState::Init()
 
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//InvoLaugh.mp3");
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
+=======
+>>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 	scareTime = 0;
 	levelTimer = 180.f;
 }
@@ -124,7 +141,7 @@ void GameState::GameReset()
 	Event::pointer()->Set_Multiplier(100);
 	if (state == FLOOR5)
 	{
-		Event::pointer()->Set_Multiplier(10);
+		Event::pointer()->Set_Multiplier(0);
 	}
 
 }
@@ -291,9 +308,9 @@ void GameState::Update_Stuffs(double dt, Map* map)
 
 	Vector3 Radius = Vector3();
 	double range = 0;
-	float min_range = 10;
+	float min_range = 20;
 	int catchrate = rand() % 101;
-	int min_catchrate = 40;
+	int min_catchrate = 10;
 	if (PokeballInfo::pointer()->getBallStatus())
 	{
 		if (Pokemon_On_Loose[0])
@@ -566,6 +583,7 @@ void GameState::GetState(double dt)
 		{
 			GameReset();
 			PlayerClass::pointer()->clearLights();
+			PlayerClass::pointer()->clearItems();
 			state = START;
 		}
 		break;
@@ -576,7 +594,7 @@ void GameState::GetState(double dt)
 		{
 			GameReset();
 			PlayerClass::pointer()->clearLights();
-			state = START;
+			PlayerClass::pointer()->clearItems();
 		}
 		if (LoseSoundBool)
 		{

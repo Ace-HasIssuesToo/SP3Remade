@@ -139,9 +139,6 @@ void Enemy_Poison::Update(double dt, Map* map)
 				Pos = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) + offset;
 			}
 		}
-	}
-	if (!GameState::pointer()->checkcaged())
-	{
 		if (CoolDown == 0)
 		{
 			Vector3 Range = (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()) - Pos;
