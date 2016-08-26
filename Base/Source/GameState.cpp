@@ -15,13 +15,8 @@ GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
 , D_Scare1(nullptr), P_Scare1(nullptr)
-<<<<<<< HEAD
 , ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
 , levelTimer(0), PlayTheme(false)
-=======
-, ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false), levelTimer(0)
-, PlayTheme(false)
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 {
 
 }
@@ -32,11 +27,8 @@ GameState::~GameState()
 void GameState::Init()
 {
 	GameInIt();
-<<<<<<< HEAD
-=======
 	state = INTRODUCTION;
 	LoseSoundBool = false;
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	state = START;
 	PlayTheme = LoseSoundBool = false;
 	Floor1 = new Map();
@@ -99,10 +91,7 @@ void GameState::Init()
 
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//InvoLaugh.mp3");
-<<<<<<< HEAD
-=======
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	scareTime = 0;
 	levelTimer = 180.f;
 }

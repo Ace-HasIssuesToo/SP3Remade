@@ -20,3 +20,5 @@ Mist_Floor,Data//Texture//Mist_Floor.tga
 Mist_Wall,Data//Texture//Mist_Wall.tga
 Bright_Floor,Data//Texture//Bright_Floor.tga
 Bright_Wall,Data//Texture//Bright_Wall.tga
+Stamina,Data//Texture//stamina.tga
+Battery,Data//Texture//batterybar.tga

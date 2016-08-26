@@ -271,11 +271,8 @@ void ReadTxtFile::Exit()
 	{
 		delete textbox;
 		textbox = nullptr;
-<<<<<<< HEAD
-=======
 		delete asylum;
 		asylum = nullptr;
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	}
 
 	if (c_ReadTxtFile != nullptr)
