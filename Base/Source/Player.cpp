@@ -6,6 +6,7 @@
 #include "Enemy_Ghost.h"
 #include "GameState.h"
 #include "Additional_Functions.h"
+#include "SoundEngine.h"
 
 PlayerClass* PlayerClass::m_pointer = new PlayerClass();
 
@@ -92,6 +93,8 @@ void PlayerClass::Init()
 	playerMeshIdle = MeshBuilder::GenerateQuad("playerMeshIdle", Color(0,0,0), 1.f);
 	playerMeshIdle->textureArray[0] = LoadTGA("Data//Texture//playerIdle.tga");
 
+	PickUp = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Retrieval.mp3");
+	Drink = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Estus.mp3");
 }
 
 float PlayerClass::GetLightRange()
@@ -284,10 +287,6 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		drinkTimer = 0.0f;
 		Stamina = 30.f;
-		/*if (Stamina >= 30.f)
-		{
-		Stamina = 30.f;
-		}*/
 	}
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseBattery])
 	{

@@ -15,12 +15,8 @@ GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
 , D_Scare1(nullptr), P_Scare1(nullptr)
-<<<<<<< HEAD
-, ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false), levelTimer(0)
-=======
 , ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
 , levelTimer(0), PlayTheme(false)
->>>>>>> 3e3fad45ee6599bcfb28046f09a6fb1b9a5c679e
 {
 
 }
@@ -89,12 +85,7 @@ void GameState::Init()
 	P_Scare1->textureArray[0] = LoadTGA("Data//Texture//PScare1.tga");
 
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
-<<<<<<< HEAD
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//InvoLaugh.mp3");
-=======
-	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
-	
->>>>>>> 3e3fad45ee6599bcfb28046f09a6fb1b9a5c679e
 	scareTime = 0;
 }
 
@@ -572,142 +563,143 @@ void GameState::GetState(double dt)
 	{
 	case START:
 	{
-				  if (Application::IsKeyPressed('S'))
-				  {
-					  state = INTRODUCTION;
-				  }
-				  else if (Application::IsKeyPressed('H'))
-				  {
-					  state = GUIDE;
-				  }
-				  else if (Application::IsKeyPressed('C'))
-				  {
-					  state = CREDIT;
-				  }
-				  break;
+		if (Application::IsKeyPressed('S'))
+		{
+		  state = INTRODUCTION;
+		}
+		else if (Application::IsKeyPressed('H'))
+		{
+		  state = GUIDE;
+		}
+		else if (Application::IsKeyPressed('C'))
+		{
+		  state = CREDIT;
+		}
+		break;
 	}
 	case GUIDE:
 	{
-				  if (Application::IsKeyPressed('B'))
-				  {
-					  state = START;
-				  }
-				  break;
+		if (Application::IsKeyPressed('B'))
+		{
+		  state = START;
+		}
+		break;
 	}
 	case INTRODUCTION:
 	{
-						 ReadTxtFile::pointer()->TimerStart = true;
-						 ReadTxtFile::pointer()->Update(dt);
+		ReadTxtFile::pointer()->TimerStart = true;
+		ReadTxtFile::pointer()->Update(dt);
 
-						 if (Application::IsKeyPressed(VK_RETURN))
-						 {
-							 state = FLOOR1;
-							 for (int i = 0; i < 1; i++)
-							 {
-								 Pokemon_On_Loose[i] = false;
-							 }
+		if (Application::IsKeyPressed(VK_RETURN))
+		{
+			 state = FLOOR1;
+			 for (int i = 0; i < 1; i++)
+			 {
+				 Pokemon_On_Loose[i] = false;
+			 }
 
-							 for (int i = 0; i < 1; i++)
-							 {
-								 pokemonCount++;
-								 Pokemon_On_Loose[i] = true;
-							 }
-						 }
+			 for (int i = 0; i < 1; i++)
+			 {
+				 pokemonCount++;
+				 Pokemon_On_Loose[i] = true;
+			 }
+		}
 	}
 	case CREDIT:
 	{
-				   if (Application::IsKeyPressed('B'))
-				   {
-					   state = START;
-				   }
+		 if (Application::IsKeyPressed('B'))
+		 {
+		   state = START;
+		 }
 				   break;
 	}
 	case FLOOR1:
 	{
-				   if (!PlayTheme)
-				   {
-					   SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
-					   PlayTheme = true;
-				   }
-				   Update_Stuffs(dt, Floor1);
-				   break;
+		if (!PlayTheme)
+		{
+		   SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
+		   PlayTheme = true;
+		}
+		Update_Stuffs(dt, Floor1);
+		break;
 	}
 	case FLOOR2:
 	{
-				   Update_Stuffs(dt, Floor2);
-				   break;
+		Update_Stuffs(dt, Floor2);
+		break;
 	}
 	case FLOOR3:
 	{
-				   Update_Stuffs(dt, Floor3);
-				   break;
+		Update_Stuffs(dt, Floor3);
+		break;
 	}
 	case FLOOR4:
 	{
-				   Update_Stuffs(dt, Floor4);
-				   break;
+		Update_Stuffs(dt, Floor4);
+		break;
 	}
 	case FLOOR5:
 	{
-				   Update_Stuffs(dt, Floor5);
-				   break;
+		Update_Stuffs(dt, Floor5);
+		break;
 	}
 	case WIN:
 	{
-				if (Application::IsKeyPressed(VK_SPACE))
-				{
-					GameReset();
-					PlayerClass::pointer()->clearLights();
-					pokemonCount = 0;
-					state = START;
-					levelTimer = 0.0f;
-				}
-				break;
+		if (Application::IsKeyPressed(VK_SPACE))
+		{
+			GameReset();
+			PlayerClass::pointer()->clearLights();
+			pokemonCount = 0;
+			state = START;
+			levelTimer = 0.0f;
+		}
+		break;
 	}
 	case LOSE:
 	{
-				 if (Application::IsKeyPressed('R'))
-				 {
-					 GameReset();
-					 PlayerClass::pointer()->clearLights();
-					 pokemonCount = 0;
-					 state = START;
-					 levelTimer = 0.0f;
-				 }
-				 if (LoseSoundBool)
-				 {
-					 SoundEngine::Use()->play2D(LoseSound, false);
-					 LoseSoundBool = false;
-				 }
-				 break;
+		if (Application::IsKeyPressed('R'))
+		{
+		 GameReset();
+		 PlayerClass::pointer()->clearLights();
+		 pokemonCount = 0;
+		 state = START;
+		 levelTimer = 0.0f;
+		}
+		if (LoseSoundBool)
+		{
+		 SoundEngine::Use()->play2D(LoseSound, false);
+		 LoseSoundBool = false;
+		 scareTime = 0;
+		}
+		break;
 	}
 	case JUMPSCARE_D:
 	{
-						scareTime += (dt);
-						if (scareTime > 5.f)
-						{
-							state = LOSE;
-						}
-						if (!LoseSoundBool)
-						{
-							SoundEngine::Use()->play2D(ScareSound, false);
-							LoseSoundBool = true;
-						}
-						break;
+		scareTime += (dt);
+		if (scareTime > 6)
+		{
+			state = LOSE;
+		}
+		if (!LoseSoundBool)
+		{
+			SoundEngine::Use()->play2D(ScareSound, false);
+			LoseSoundBool = true;
+		}
+		break;
 	}
 	case JUMPSCARE_P:
 	{
-						scareTime += (dt);
-						if (scareTime >= 6)
-						{
-							state = LOSE;
-						}
-						if (!LoseSoundBool)
-						{
-							SoundEngine::Use()->play2D(ScareSound, false);
-							LoseSoundBool = true;
-						}
-						break;
+		scareTime += (dt);
+		if (scareTime >= 6)
+		{
+			state = LOSE;
+		}
+		if (!LoseSoundBool)
+		{
+			SoundEngine::Use()->play2D(ScareSound, false);
+			LoseSoundBool = true;
+		}
+		break;
 	}
 		break;
 	}
@@ -850,10 +842,6 @@ void GameState::Render()
 {
 	RenderScreens();
 	RenderFloors();
-<<<<<<< HEAD
-	//cout << cageTimer << endl;
-=======
->>>>>>> 3e3fad45ee6599bcfb28046f09a6fb1b9a5c679e
 }
 
 void GameState::Exit()

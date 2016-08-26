@@ -4,6 +4,7 @@
 #include "Render_PI.h"
 #include "Map_PI.h"
 #include "PokeInfo.h"
+#include "irrKlang.h"
 
 class PlayerClass
 {
@@ -37,6 +38,8 @@ public:
 	}
 	float return_LightPower(){ return LightPower; };
 	float return_Runtime(){ return Stamina; };
+	ISoundSource* Drink;
+	ISoundSource* PickUp;
 private:
 	PlayerClass();
 	~PlayerClass();
