@@ -248,14 +248,10 @@ void ReadTxtFile::Exit()
 			delete sa2->m_anim;
 			sa2->m_anim = nullptr;
 		}
-<<<<<<< HEAD
 		delete asylum;
 		asylum = nullptr;
-=======
-			delete asylum;
-			asylum = nullptr;
->>>>>>> 04ce6401c3653071da4843e3e035359f594743f7
 	}
+
 	if (c_ReadTxtFile != nullptr)
 	{
 		delete c_ReadTxtFile;

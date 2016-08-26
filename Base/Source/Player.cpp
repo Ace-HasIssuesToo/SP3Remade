@@ -154,13 +154,13 @@ void PlayerClass::Update(double dt, Map* map)
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
 	{
 		LightOn = false;
-		LightRange -= dt*5;
+		LightRange -= dt*100;
 		LightRange = Math::Max(LightRange, 0.f);
 	}
 	else if (Input_PI::pointer()->IsBeingPressed[Input_PI::OnLight] == true)
 	{
 		LightOn = true;
-		LightRange += dt*5;
+		LightRange += dt * 100;
 		LightRange = Math::Min(LightRange, 5.f);
 	}
 
@@ -168,11 +168,11 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 		if (LightPower > 0.f)
 		{
-			LightPower -= 0.2 * LightRange * dt;
+			LightPower -= 0.01 * LightRange * dt;
 		}
 		else if (LightPower <= 0.f)
 		{
-			LightRange -= dt * 5;
+			LightRange -= dt * 100;
 			LightRange = Math::Max(LightRange, 0.f);
 		}
 	}
