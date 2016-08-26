@@ -38,8 +38,10 @@ public:
 	}
 	float return_LightPower(){ return LightPower; };
 	float return_Runtime(){ return Stamina; };
-	ISoundSource* Drink;
+	bool return_BatteryIcon(){ return GetBattery; };
+	bool return_DrinkIcon(){ return GetDrink; };
 	ISoundSource* PickUp;
+	string returnDeco(){return Deco_interacted;	};
 private:
 	PlayerClass();
 	~PlayerClass();
@@ -67,8 +69,7 @@ private:
 	bool BatteryExists;
 	Mesh* RunBar;
 	Mesh* LightBar;
-	Mesh* Battery;
-	Mesh* Drink;
+	string Deco_interacted;
 };
 
 const float Max_Speed = 6.f;

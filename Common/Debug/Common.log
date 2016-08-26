@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿  Vector3.cpp
   Vector2.cpp
   timer.cpp
@@ -7,39 +6,3 @@
   MathUtility.cpp
   Generating Code...
   Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
-=======
-<<<<<<< HEAD
-﻿Build started 25/8/2016 4:12:32 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Common.lib
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Common\Common.vcxproj" (Build target(s)).
-=======
-<<<<<<< HEAD
-﻿Build started 25/8/2016 5:36:55 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
-=======
-<<<<<<< HEAD
-﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
-=======
-﻿生成启动时间为 26/8/2016 上午 9:29:47。
-     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
-     1>Lib:
-         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
->>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
-
-Build succeeded.
-
-<<<<<<< HEAD
-Time Elapsed 00:00:00.03
-=======
-<<<<<<< HEAD
-Time Elapsed 00:00:00.04
-=======
-已用时间 00:00:00.90
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
->>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
->>>>>>> d95b00b47aa96f13513135d55ea7d5754178e0bd

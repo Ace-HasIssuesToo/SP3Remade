@@ -53,7 +53,10 @@ void ReadTxtFile::Init()
 	textbox = MeshBuilder::GenerateQuad("textbox", Color(0, 0, 0), 1.f);
 	textbox->textureArray[0] = LoadTGA("Data//Texture//textbox.tga");
 }
-
+Mesh* ReadTxtFile::GetText()
+{
+	return intro_dialogue;
+}
 void ReadTxtFile::Update(double dt)
 {
 	if (TimerStart)
@@ -271,19 +274,8 @@ void ReadTxtFile::Exit()
 	{
 		delete textbox;
 		textbox = nullptr;
-<<<<<<< HEAD
 		delete asylum;
 		asylum = nullptr;
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-		delete asylum;
-		asylum = nullptr;
-=======
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
->>>>>>> d95b00b47aa96f13513135d55ea7d5754178e0bd
 	}
 
 	if (c_ReadTxtFile != nullptr)

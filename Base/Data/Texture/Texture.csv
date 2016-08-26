@@ -29,3 +29,5 @@ BatteryThree,Data//Texture//battery35.tga
 BatteryTwo,Data//Texture//battery25.tga
 BatteryOne,Data//Texture//battery15.tga
 BatteryZero,Data//Texture//battery0.tga
+DrinkIcon,Data//Texture//energydrink.tga
+BatteryIcon,Data//Texture//battery.tga

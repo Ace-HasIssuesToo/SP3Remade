@@ -27,7 +27,7 @@ public:
 	void RenderAsylum();
 	void RenderText();
 	void RenderTextBox();
-
+	Mesh* GetText();
 	bool TimerStart;
 	int sequence;
 	float bgTimer;
