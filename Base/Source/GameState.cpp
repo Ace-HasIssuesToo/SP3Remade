@@ -15,8 +15,18 @@ GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
 , D_Scare1(nullptr), P_Scare1(nullptr)
+<<<<<<< HEAD
 , ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
 , levelTimer(0), PlayTheme(false)
+=======
+<<<<<<< HEAD
+, ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false), levelTimer(0)
+, PlayTheme(false)
+=======
+, ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
+, levelTimer(0), PlayTheme(false)
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 {
 
 }
@@ -27,8 +37,11 @@ GameState::~GameState()
 void GameState::Init()
 {
 	GameInIt();
+<<<<<<< HEAD
+=======
 	state = INTRODUCTION;
 	LoseSoundBool = false;
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 	state = START;
 	PlayTheme = LoseSoundBool = false;
 	Floor1 = new Map();
@@ -91,7 +104,20 @@ void GameState::Init()
 
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//InvoLaugh.mp3");
+<<<<<<< HEAD
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
+=======
+>>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
+>>>>>>> d95b00b47aa96f13513135d55ea7d5754178e0bd
 	scareTime = 0;
 	levelTimer = 180.f;
 }
@@ -480,6 +506,17 @@ void GameState::GetState(double dt)
 	{
 		if (Application::IsKeyPressed('S'))
 		{
+<<<<<<< HEAD
+		  state = INTRODUCTION;
+		}
+		else if (Application::IsKeyPressed('H'))
+		{
+		  state = GUIDE;
+		}
+		else if (Application::IsKeyPressed('C'))
+		{
+		  state = CREDIT;
+=======
 			state = INTRODUCTION;
 		}
 		else if (Application::IsKeyPressed('H'))
@@ -489,6 +526,7 @@ void GameState::GetState(double dt)
 		else if (Application::IsKeyPressed('C'))
 		{
 			state = CREDIT;
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		}
 		break;
 	}
@@ -496,7 +534,11 @@ void GameState::GetState(double dt)
 	{
 		if (Application::IsKeyPressed('B'))
 		{
+<<<<<<< HEAD
+		  state = START;
+=======
 			state = START;
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		}
 		break;
 	}
@@ -505,19 +547,31 @@ void GameState::GetState(double dt)
 		ReadTxtFile::pointer()->TimerStart = true;
 		ReadTxtFile::pointer()->Update(dt);
 
-		static bool skipScene, sceneSkipped = false;
-		if (!skipScene && Application::IsKeyPressed(VK_RETURN))
+<<<<<<< HEAD
+		if (Application::IsKeyPressed(VK_RETURN))
 		{
-			skipScene = true;
+			 state = FLOOR1;
+			 for (int i = 0; i < 1; i++)
+			 {
+				 Pokemon_On_Loose[i] = false;
+			 }
+
+			 for (int i = 0; i < 1; i++)
+			 {
+				 pokemonCount++;
+				 Pokemon_On_Loose[i] = true;
+			 }
+=======
+		static bool sceneSkipped = false;
+		if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip] && !sceneSkipped)
+		{
+			sceneSkipped = true;
 			ReadTxtFile::pointer()->sequence = 6;
 			ReadTxtFile::pointer()->bgTimer = 15.f;
 		}
-		if (skipScene && !Application::IsKeyPressed(VK_RETURN))
-			sceneSkipped = true;
 
-		if (sceneSkipped && Application::IsKeyPressed(VK_RETURN))
+		else if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip])
 		{
-			skipScene = sceneSkipped = false;
 			state = FLOOR1;
 			
 			if (Application::IsKeyPressed(VK_RETURN))
@@ -526,22 +580,36 @@ void GameState::GetState(double dt)
 				//EndLevel();
 			}
 			EndLevel();
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		}
 	}
 	case CREDIT:
 	{
+<<<<<<< HEAD
+		 if (Application::IsKeyPressed('B'))
+		 {
+		   state = START;
+		 }
+				   break;
+=======
 		if (Application::IsKeyPressed('B'))
 		{
 			state = START;
 		}
 		break;
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 	}
 	case FLOOR1:
 	{
 		if (!PlayTheme)
 		{
+<<<<<<< HEAD
+		   SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
+		   PlayTheme = true;
+=======
 			SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
 			PlayTheme = true;
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		}
 		Update_Stuffs(dt, Floor1);
 		break;
@@ -572,8 +640,14 @@ void GameState::GetState(double dt)
 		{
 			GameReset();
 			PlayerClass::pointer()->clearLights();
+<<<<<<< HEAD
+			pokemonCount = 0;
+			state = START;
+			levelTimer = 0.0f;
+=======
 			PlayerClass::pointer()->clearItems();
 			state = START;
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		}
 		break;
 	}
@@ -581,6 +655,19 @@ void GameState::GetState(double dt)
 	{
 		if (Application::IsKeyPressed('R'))
 		{
+<<<<<<< HEAD
+		 GameReset();
+		 PlayerClass::pointer()->clearLights();
+		 pokemonCount = 0;
+		 state = START;
+		 levelTimer = 0.0f;
+		}
+		if (LoseSoundBool)
+		{
+		 SoundEngine::Use()->play2D(LoseSound, false);
+		 LoseSoundBool = false;
+		 scareTime = 0;
+=======
 			GameReset();
 			PlayerClass::pointer()->clearLights();
 			PlayerClass::pointer()->clearItems();
@@ -589,13 +676,18 @@ void GameState::GetState(double dt)
 		{
 			SoundEngine::Use()->play2D(LoseSound, false);
 			LoseSoundBool = false;
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		}
 		break;
 	}
 	case JUMPSCARE_D:
 	{
 		scareTime += (dt);
+<<<<<<< HEAD
+		if (scareTime > 6)
+=======
 		if (scareTime > 5.f)
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		{
 			state = LOSE;
 		}
@@ -618,6 +710,11 @@ void GameState::GetState(double dt)
 			SoundEngine::Use()->play2D(ScareSound, false);
 			LoseSoundBool = true;
 		}
+<<<<<<< HEAD
+		break;
+	}
+=======
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 		break;
 	}
 	break;
@@ -762,8 +859,11 @@ void GameState::Render()
 {
 	RenderScreens();
 	RenderFloors();
+<<<<<<< HEAD
+=======
 	//cout << levelTimer << endl;
 	cout << pokemonCount << endl;
+>>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
 }
 
 void GameState::Exit()
