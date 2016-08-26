@@ -5,9 +5,9 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), sequence(0), bgTimer(0),
+ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), sequence(0), bgTimer(0), fullGameplay(0),
 TimerStart(false), timerTime(false), timerReset(false), flashON(false), asylumON(false),
-intro_dialogue(nullptr), city(nullptr), flash(nullptr), asylum(false)
+intro_dialogue(nullptr), city(nullptr), flash(nullptr), asylum(nullptr), textbox(nullptr)
 {
 
 }
@@ -22,7 +22,6 @@ void ReadTxtFile::clearIntro()
 	sequence = 0;
 	introTimer = bgTimer = 0;
 	timerTime = TimerStart = timerReset = flashON = asylumON = false;
-	//intro_dialogue = city = flash = asylum = nullptr;
 }
 
 void ReadTxtFile::Init()
@@ -50,6 +49,9 @@ void ReadTxtFile::Init()
 		sa2->m_anim = new Animation();
 		sa2->m_anim->Set(2, 3, 0, 2.f, true);
 	}
+
+	textbox = MeshBuilder::GenerateQuad("textbox", Color(0, 0, 0), 1.f);
+	textbox->textureArray[0] = LoadTGA("Data//Texture//textbox.tga");
 }
 
 void ReadTxtFile::Update(double dt)
@@ -86,32 +88,34 @@ void ReadTxtFile::Update(double dt)
 	if (bgTimer > 15.f)
 		asylumON = false;
 
-	//cout << bgTimer << endl;
+	//cout << sequence << endl;
 }
 
 void ReadTxtFile::ReadFromTextFile()
 {
-	//ofstream myfile;
-	//myfile.open("example.txt");
-	//myfile << "Writing this to a file.\n";
-	//myfile.close();
+	ifstream inIntro, inGameplay;
+	string lineIntro, lineGameplay;
 
-	ifstream inStory;
-	string sentence;
-
-	inStory.open("Data//Text//story.txt");
-
-	while (!inStory.eof())
+	inIntro.open("Data//Text//introduction.txt");
+	while (!inIntro.eof())
 	{
-		getline(inStory, sentence);
-		fullIntro.push_back(sentence);
+		getline(inIntro, lineIntro);
+		fullIntro.push_back(lineIntro);
 	}
-	inStory.close();
+	inIntro.close();
+
+	inGameplay.open("Data//Text//gameplay.txt");
+	while (!inGameplay.eof())
+	{
+		getline(inGameplay, lineGameplay);
+		fullGameplay.push_back(lineGameplay);
+	}
+	inGameplay.close();
 }
 
 vector<string> ReadTxtFile::lineSplit(string input)
 {
-	int maxCharac = 27;
+	int maxCharac = 35;
 	vector<string> output;
 	int division = 0;
 	bool check = true;
@@ -162,6 +166,14 @@ void ReadTxtFile::RenderAsylum()
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
+void ReadTxtFile::RenderTextBox()
+{
+	Render_PI::pointer()->modelStack_Set(true);
+	Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.1, 1), 0, 0, Vector3(130, 15, 1));
+	Render_PI::pointer()->RenderMesh(textbox, false);
+	Render_PI::pointer()->modelStack_Set(false);
+}
+
 void ReadTxtFile::RenderText()
 {
 	vector<string> tempIntro;
@@ -193,7 +205,7 @@ void ReadTxtFile::RenderText()
 		for (int i = 0; i < tempIntro.size(); i++)
 		{
 			int Y = tempIntro.size() - i;
-			Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempIntro.at(i), Color(1, 1, 1), Vector3(1, 5 * Y, 1), Vector3(5, 5, 1));
+			Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempIntro.at(i), Color(0, 0, 0), Vector3(10, 5 * Y + 2, 1), Vector3(5, 5, 1));
 		}
 	}
 
@@ -202,8 +214,10 @@ void ReadTxtFile::RenderText()
 		ostringstream ss;
 		ss.str("");
 		ss << "Press 'Enter'  to continue";
-		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, ss.str(), Color(1, 1, 1), Vector3(1, 5, 1), Vector3(5, 5, 1));
+		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, ss.str(), Color(1, 1, 1), Vector3(75, 4, 1), Vector3(5, 5, 1));
 	}
+
+
 }
 
 void ReadTxtFile::Render()
@@ -214,6 +228,8 @@ void ReadTxtFile::Render()
 		RenderFlash();
 	if (asylumON == true)
 		RenderAsylum();
+	if (sequence != fullIntro.size())
+		RenderTextBox();
 	RenderText();
 }
 
@@ -250,6 +266,19 @@ void ReadTxtFile::Exit()
 		}
 		delete asylum;
 		asylum = nullptr;
+	}
+	if (textbox != nullptr)
+	{
+		delete textbox;
+		textbox = nullptr;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		delete asylum;
+		asylum = nullptr;
+=======
+>>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 	}
 
 	if (c_ReadTxtFile != nullptr)

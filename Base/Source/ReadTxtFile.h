@@ -26,24 +26,26 @@ public:
 	void RenderFlash();
 	void RenderAsylum();
 	void RenderText();
+	void RenderTextBox();
 
 	bool TimerStart;
+	int sequence;
+	float bgTimer;
 
 private:
 	static ReadTxtFile* c_ReadTxtFile;
 
-	vector<string> fullIntro;
+	vector<string> fullIntro, fullGameplay;
 
 	float introTimer;
 	bool timerTime, timerReset;
-	int sequence;
-	float bgTimer;
 	bool flashON, asylumON;
 
 	Mesh* intro_dialogue;
 	Mesh* city;
 	Mesh* flash;
 	Mesh* asylum;
+	Mesh* textbox;
 };
 
 #endif

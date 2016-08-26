@@ -24,6 +24,7 @@ public:
 		LOSE,
 		WIN,
 		INTRODUCTION,
+		GAMEPLAY,
 		JUMPSCARE_D,
 		JUMPSCARE_P,
 		CREDIT,
@@ -37,6 +38,7 @@ public:
 	void RenderFloors();
 	void RenderScreens();
 	void RenderFloorData(Map* map);
+	void EndLevel();
 
 	void Init();
 	void Update(double dt);
@@ -54,6 +56,7 @@ public:
 	Mesh* losescreen;
 	Mesh* helpscreen;
 	Mesh* creditscreen;
+	//Mesh* timer;
 
 	Mesh* D_Scare1;
 	Mesh* P_Scare1;
