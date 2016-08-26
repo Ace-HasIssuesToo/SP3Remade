@@ -12,7 +12,7 @@ void Event::Init()
 {
 	current_Effect = No_Effect;
 	Effect_Time = 0;
-	RandMultiplier =100;
+	RandMultiplier = 100;
 	FlashDelay = 0;
 	LastTime = CurrentTime = 0;
 }
@@ -21,7 +21,7 @@ void Event::Clear()
 {
 	current_Effect = No_Effect;
 	Effect_Time = 0;
-	RandMultiplier = 100;
+	RandMultiplier = 0;
 	FlashDelay = 0;
 	LastTime = CurrentTime = 0;
 }
@@ -55,7 +55,7 @@ void Event::Update(double dt, Map* map)
 		int effect = rand() % RandMultiplier;
 		if (effect >= All_Effect)
 		{
-			Effect_Time = 0;
+			current_Effect = No_Effect;
 			Black = false;
 		}
 		else
@@ -71,9 +71,11 @@ void Event::Update(double dt, Map* map)
 		else if (current_Effect == BlackOut)
 		{
 			Effect_Time = Math::RandFloatMinMax(2.f, 10.f);
+			SoundEngine::Use()->play2D("Data//Sound//LightBulbCrashing.mp3", false);
 		}
 		else if (current_Effect == Stun)
 		{
+			SoundEngine::Use()->play2D("Data//Sound//RunningPokemon.mp3", false);
 			Effect_Time = Math::RandFloatMinMax(2.f, 4.f);
 			if (!GameState::pointer()->checkcaged())
 			{

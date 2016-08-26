@@ -1,21 +1,13 @@
-<<<<<<< bd972c5c346726012c65fe05f97f3c91fc1e48e3
-<<<<<<< f08fd16c97853f99d55c30cd222df495a481a909
-<<<<<<< HEAD
-﻿  Player.cpp
-=======
-<<<<<<< HEAD
-﻿Build started 25/8/2016 4:39:36 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
-=======
-﻿生成启动时间为 25/8/2016 下午 5:48:28。
-=======
-﻿生成启动时间为 25/8/2016 下午 6:00:48。
->>>>>>> bugs somewhere in light
+﻿生成启动时间为 26/8/2016 上午 9:54:24。
      1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
->>>>>>> Fixed Minor Bug..
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Input_PI.cpp
-         Input_PI.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Event.cpp
+         Event.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\event.h(14): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(31): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(32): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(34): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(42): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
          Debug\Application.obj
@@ -46,81 +38,4 @@
 
 生成成功。
 
-<<<<<<< bd972c5c346726012c65fe05f97f3c91fc1e48e3
-<<<<<<< f08fd16c97853f99d55c30cd222df495a481a909
-Time Elapsed 00:00:00.89
-=======
-﻿  UI_PI.cpp
-  Texture_PI.cpp
-  Support_Codes.cpp
-c:\users\user\documents\sp3remade\base\source\support_codes.cpp(1100): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\support_codes.cpp(1101): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-  SoundEngine.cpp
-  Sensor.cpp
-c:\users\user\documents\sp3remade\base\source\sensor.cpp(61): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-c:\users\user\documents\sp3remade\base\source\sensor.cpp(103): warning C4305: '*=' : truncation from 'double' to 'float'
-  Input_PI.cpp
-  main.cpp
-  Render_PI.cpp
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(38): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(40): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(42): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(44): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(46): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(48): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(50): warning C4305: '+=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(52): warning C4305: '-=' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\render_pi.cpp(165): warning C4305: 'argument' : truncation from 'double' to 'float'
-  ReadTxtFile.cpp
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(60): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(81): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(148): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(156): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(164): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(172): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(182): warning C4018: '<' : signed/unsigned mismatch
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(205): warning C4018: '<' : signed/unsigned mismatch
-c:\users\user\documents\sp3remade\base\source\readtxtfile.cpp(208): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-  PokeInfo.cpp
-c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(42): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(48): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(54): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(60): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(68): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(77): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\pokeinfo.cpp(95): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-  Player.cpp
->>>>>>> aa634c353ff9bdbb14a1b6d040c8c0a24a5e980a
-c:\users\user\documents\sp3remade\base\source\player.cpp(50): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\player.cpp(51): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\player.cpp(135): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(136): warning C4244: '*=' : conversion from 'float' to 'int', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(143): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(157): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(161): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(165): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(169): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(175): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(181): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(189): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(193): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(237): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(296): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(310): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(346): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(352): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(358): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(364): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(502): warning C4305: 'argument' : truncation from 'double' to 'float'
-c:\users\user\documents\sp3remade\base\source\player.cpp(502): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-c:\users\user\documents\sp3remade\base\source\player.cpp(490): warning C4715: 'PlayerClass::getPlayerMesh2' : not all control paths return a value
-Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
-=======
-已用时间 00:00:16.38
->>>>>>> Fixed Minor Bug..
-=======
-已用时间 00:00:01.83
->>>>>>> bugs somewhere in light
+已用时间 00:00:01.55

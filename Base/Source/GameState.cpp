@@ -126,7 +126,7 @@ void GameState::GameReset()
 	Event::pointer()->Set_Multiplier(100);
 	if (state == FLOOR5)
 	{
-		Event::pointer()->Set_Multiplier(10);
+		Event::pointer()->Set_Multiplier(0);
 	}
 
 }
@@ -293,9 +293,9 @@ void GameState::Update_Stuffs(double dt, Map* map)
 
 	Vector3 Radius = Vector3();
 	double range = 0;
-	float min_range = 10;
+	float min_range = 20;
 	int catchrate = rand() % 101;
-	int min_catchrate = 40;
+	int min_catchrate = 10;
 	if (PokeballInfo::pointer()->getBallStatus())
 	{
 		if (Pokemon_On_Loose[0])
