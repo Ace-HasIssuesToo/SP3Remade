@@ -24,9 +24,8 @@ public:
 		Right,
 		Top, 
 		Down,
-		Idle
+		Idle,
 	};
-
 	void setPlayerMesh(PlayerClass::PlayerMeshes mesh);
 	Mesh* getPlayerMesh2();
 	void clearPlayer();
@@ -63,8 +62,6 @@ private:
 	bool GetDrink;
 	bool DrinkExists;
 	bool BatteryExists;
-	bool displayBattteryExists;
-	bool displayDrinkExists;
 	Mesh* RunBar;
 	Mesh* LightBar;
 	Mesh* Battery;

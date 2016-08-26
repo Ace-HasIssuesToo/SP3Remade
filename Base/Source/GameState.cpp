@@ -91,10 +91,7 @@ void GameState::Init()
 
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//InvoLaugh.mp3");
-<<<<<<< HEAD
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
-=======
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
 	scareTime = 0;
 	levelTimer = 180.f;
 }
