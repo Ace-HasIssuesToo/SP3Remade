@@ -75,11 +75,12 @@ void PokeballInfo::Update(double dt, Map* map)
 			ballDirection *= -1;
 		}
 		ballDirection *= 0.989;
-		if (ballDirection.x > -1 && ballDirection.x < 1)
+		float Min_vel = 3.f;
+		if (ballDirection.x > -Min_vel && ballDirection.x < Min_vel)
 		{
 			ballDirection.x = 0;
 		}
-		if (ballDirection.y > -1 && ballDirection.y < 1)
+		if (ballDirection.y > -Min_vel && ballDirection.y < Min_vel)
 		{
 			ballDirection.y = 0;
 		}
