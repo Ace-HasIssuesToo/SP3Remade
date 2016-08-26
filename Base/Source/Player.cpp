@@ -96,15 +96,10 @@ void PlayerClass::Init()
 	}
 	Battery = MeshBuilder::GenerateQuad("battery", Color(0, 0, 0), 1.f);
 	Battery->textureArray[0] = LoadTGA("Data//Texture//battery.tga");
-<<<<<<< HEAD
-	Drink = MeshBuilder::GenerateQuad("energydrink", Color(0, 0, 0), 1.f);
-	Drink->textureArray[0] = LoadTGA("Data//Texture//energydrink.tga");
-=======
 
 	Drink = MeshBuilder::GenerateQuad("energydrink", Color(0, 0, 0), 1.f);
 	Drink->textureArray[0] = LoadTGA("Data//Texture//energydrink.tga");
 
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	playerMeshIdle = MeshBuilder::GenerateQuad("playerMeshIdle", Color(0,0,0), 1.f);
 	playerMeshIdle->textureArray[0] = LoadTGA("Data//Texture//playerIdle.tga");
 }
@@ -274,11 +269,6 @@ void PlayerClass::Update(double dt, Map* map)
 		GetDrink = true;
 		//DrinkExists = true;
 	}
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
 		GetBattery = true;
@@ -310,16 +300,12 @@ void PlayerClass::Update(double dt, Map* map)
 			GetDrink = false;
 		}
 	}
-<<<<<<< HEAD
 
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
 		GetBattery = true;
 	}
 
-
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	if (GetBattery == true)
 	{
 		batteryTimer += dt;
@@ -330,10 +316,7 @@ void PlayerClass::Update(double dt, Map* map)
 			GetBattery = false;
 		}
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	/*if (DrinkExists == true)
 	{
 	displayDrinkExists += dt;
@@ -342,7 +325,6 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 	}*/
 
-<<<<<<< HEAD
 	if (GetDrink == true)
 	{
 		drinkTimer += dt;
@@ -352,8 +334,6 @@ void PlayerClass::Update(double dt, Map* map)
 		}
 	}
 
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink])
 	{
 		drinkTimer = 0.0f;
@@ -369,10 +349,7 @@ void PlayerClass::Update(double dt, Map* map)
 		LightPower = 10.f;
 		GetBattery = false;
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
@@ -464,10 +441,7 @@ void PlayerClass::Exit()
 			delete playerMeshDownward;
 			playerMeshDownward = nullptr;
 		};
-<<<<<<< HEAD
 
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 		if (Battery != nullptr)
 		{
 			delete Battery;
@@ -478,19 +452,13 @@ void PlayerClass::Exit()
 			delete Drink;
 			Drink = nullptr;
 		}
-<<<<<<< HEAD
 
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 		if (playerMeshIdle != nullptr)
 		{
 			delete playerMeshIdle;
 			playerMeshIdle = nullptr;
 		};
-<<<<<<< HEAD
 
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
@@ -547,7 +515,6 @@ void PlayerClass::Renderplayer()
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
 	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
-<<<<<<< HEAD
 	
 		if (batteryTimer >0.f && batteryTimer < 3.f)
 		{
@@ -586,13 +553,8 @@ void PlayerClass::Renderplayer()
 			Render_PI::pointer()->modelStack_Set(false);
 			//cout << drinkTimer << endl;
 		}
-
-	if (batteryTimer > drinkTimer)
-=======
-
 	
 	if (batteryTimer >0.f && batteryTimer < 3.f)
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 	{
 		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
 		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
@@ -629,8 +591,4 @@ void PlayerClass::Renderplayer()
 		Render_PI::pointer()->modelStack_Set(false);
 		//cout << drinkTimer << endl;
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
 }

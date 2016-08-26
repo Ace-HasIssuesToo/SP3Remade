@@ -22,6 +22,7 @@ public:
 		PokeThrowLeft,
 		PokeThrowRight,
 		Interact,
+		IntroSkip,
 		Run,
 		OnLight,
 		OffLight,

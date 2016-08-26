@@ -101,6 +101,15 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[Forward] = false;
 	}
+	if (Application::IsKeyPressed(VK_RETURN))
+	{
+		IsBeingPressed[IntroSkip] = true;
+	}
+	else if (IsBeingPressed[IntroSkip] == true)
+	{
+		IsBeingPressed[IntroSkip] = false;
+		HaveBeenPressed[IntroSkip] = true;
+	}
 	if (Application::IsKeyPressed('S'))
 	{
 		IsBeingPressed[Backward] = true;
