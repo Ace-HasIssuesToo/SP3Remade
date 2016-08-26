@@ -4,6 +4,7 @@
 #include "Enemy_Psychic.h"
 #include "Enemy_Ghost.h"
 #include "EnemyDark.h"
+#include "GameState.h"
 
 
 Sensor* Sensor::m_pointer = new Sensor();
@@ -63,17 +64,35 @@ void Sensor::Range_Cal(Vector3 Enemy_Pos)
 
 void Sensor::Update(double dt)
 {
-	Player_Pos = PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos();
-	Player_Pos =PlayerClass::pointer()->getPlayerPos();
+	Player_Pos = PlayerClass::pointer()->getPlayerPos();
 	Mesh_Update(Save, dt);
 	Mesh_Update(Danger, dt);
 	Mesh_Update(dead, dt);
 
 	Range = INT_MAX;
-	Range_Cal(Enemy_Poison::pointer()->GetPos());
-	Range_Cal(Enemy_Psychic::pointer()->GetPos());
-	Range_Cal(Enemy_Ghost::pointer()->GetGhostPos());
-	Range_Cal(Enemy_Dark::pointer()->getEnemyDarkPos());
+	int state = GameState::pointer()->current_State();
+	if (state == GameState::FLOOR1)
+	{
+		Range_Cal(Enemy_Ghost::pointer()->GetGhostPos());
+	}
+	else if (state == GameState::FLOOR2)
+	{
+		Range_Cal(Enemy_Psychic::pointer()->GetPos());
+		Range_Cal(Enemy_Ghost::pointer()->GetGhostPos());
+	}
+	else if (state == GameState::FLOOR3)
+	{
+			Range_Cal(Enemy_Poison::pointer()->GetPos());
+		Range_Cal(Enemy_Psychic::pointer()->GetPos());
+		Range_Cal(Enemy_Ghost::pointer()->GetGhostPos());
+	}
+	else
+	{
+		Range_Cal(Enemy_Poison::pointer()->GetPos());
+		Range_Cal(Enemy_Psychic::pointer()->GetPos());
+		Range_Cal(Enemy_Ghost::pointer()->GetGhostPos());
+		Range_Cal(Enemy_Dark::pointer()->getEnemyDarkPos());
+	}
 }
 
 void Sensor::Render()
@@ -87,7 +106,7 @@ void Sensor::Render()
 	{
 		Render_PI::pointer()->RenderMeshIn2D(Save, false, Pos, Vector3(20, 20, 1));
 	}
-	else if (Range > Min_Range*25)
+	else if (Range > Min_Range*5)
 	{
 		Render_PI::pointer()->RenderMeshIn2D(Danger, false, Pos, Vector3(20, 20, 1));
 	}

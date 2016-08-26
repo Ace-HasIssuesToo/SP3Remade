@@ -247,28 +247,9 @@ void ReadTxtFile::Exit()
 		{
 			delete sa2->m_anim;
 			sa2->m_anim = nullptr;
-			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(asylum);
-			if (sa)
-			{
-				delete sa->m_anim;
-			}
+		}
 			delete asylum;
 			asylum = nullptr;
-<<<<<<< HEAD
-		}
-		if (c_ReadTxtFile != nullptr)
-		{
-			delete c_ReadTxtFile;
-			c_ReadTxtFile = nullptr;
-=======
-=======
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(asylum);
-		if (sa)
-		{
-			delete sa->m_anim;
->>>>>>> 09d08b766a849cd7c0729f773ac35ca979ae95d3
->>>>>>> 494432d42c0cb8d8bc650a745e912f8e4089319b
-		}
 	}
 	if (c_ReadTxtFile != nullptr)
 	{

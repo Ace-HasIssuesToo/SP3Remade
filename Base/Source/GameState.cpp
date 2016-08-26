@@ -12,13 +12,10 @@ GameState* GameState::c_pointer = new GameState();
 GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , losescreen(nullptr), helpscreen(nullptr), creditscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
-<<<<<<< HEAD
 , pokemonCount(0), cageTimer(0), isReleased(false)
 , D_Scare1(nullptr), P_Scare1(nullptr)
 , ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
-=======
-, pokemonCount(0), cageTimer(0), isReleased(false), levelTimer(0)
->>>>>>> a29abb07151d03d9f9a28f7bd65111ff3e4a3f14
+,levelTimer(0)
 {
 
 }
@@ -803,16 +800,8 @@ void GameState::Render()
 {
 	RenderScreens();
 	RenderFloors();
-	//cout << cageTimer << endl;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	//cout << pokemonCount << endl;
-	cout << levelTimer << endl;
-=======
->>>>>>> 494432d42c0cb8d8bc650a745e912f8e4089319b
->>>>>>> a29abb07151d03d9f9a28f7bd65111ff3e4a3f14
 }
+
 void GameState::Exit()
 {
 	if (c_pointer != nullptr)
