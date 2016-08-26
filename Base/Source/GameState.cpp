@@ -125,7 +125,6 @@ void GameState::GameReset()
 	cageTimer = 0;
 	levelTimer = 0;
 	isReleased = false;
-
 	PlayerClass::pointer()->clearPlayer();
 	Enemy_Ghost::pointer()->ClearGhost();
 	Enemy_Psychic::pointer()->clearPsychic();
@@ -134,7 +133,7 @@ void GameState::GameReset()
 	PokeballInfo::pointer()->ClearBallStatus();
 	ReadTxtFile::pointer()->clearIntro();
 	Event::pointer()->Clear();
-	Event::pointer()->Set_Multiplier(50);
+	Event::pointer()->Set_Multiplier(100);
 	if (state == FLOOR5)
 	{
 		Event::pointer()->Set_Multiplier(10);
