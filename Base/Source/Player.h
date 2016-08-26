@@ -38,8 +38,11 @@ public:
 	}
 	float return_LightPower(){ return LightPower; };
 	float return_Runtime(){ return Stamina; };
+<<<<<<< HEAD
 	bool return_BatteryIcon(){ return GetBattery; };
 	bool return_DrinkIcon(){ return GetDrink; };
+=======
+>>>>>>> 064852617059d73312bd6ff3648fefc7376cf973
 	ISoundSource* PickUp;
 	string returnDeco(){return Deco_interacted;	};
 private:

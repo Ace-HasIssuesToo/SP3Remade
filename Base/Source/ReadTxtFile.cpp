@@ -274,8 +274,27 @@ void ReadTxtFile::Exit()
 	{
 		delete textbox;
 		textbox = nullptr;
+<<<<<<< HEAD
 		delete asylum;
 		asylum = nullptr;
+=======
+<<<<<<< 680590776936ab288f01ffbf183b4ace13c2aa59
+<<<<<<< HEAD
+		delete asylum;
+		asylum = nullptr;
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+		delete asylum;
+		asylum = nullptr;
+=======
+>>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
+>>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
+>>>>>>> d95b00b47aa96f13513135d55ea7d5754178e0bd
+=======
+>>>>>>> 10 MB reached!
+>>>>>>> 064852617059d73312bd6ff3648fefc7376cf973
 	}
 
 	if (c_ReadTxtFile != nullptr)
