@@ -175,6 +175,7 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::OffLight] == true)
+	if (Input_PI::pointer()->HaveBeenPressed[Input_PI::Light_Switch] == true)
 	{
 		LightOn = false;
 		LightRange -= dt*100;
@@ -190,15 +191,22 @@ void PlayerClass::Update(double dt, Map* map)
 	if (LightOn == true)
 	{
 		if (LightPower > 0.f)
+		if (LightOn)
 		{
 			LightPower -= 0.01 * LightRange * dt;
+			LightOn = false;
+			LightRange = 0;
 		}
 		else if (LightPower <= 0.f)
+		else
 		{
 			LightRange -= dt * 100;
 			LightRange = Math::Max(LightRange, 0.f);
+			LightOn = true;
+			LightRange = 10;
 		}
 	}
+
 
 	if (getPlayerMesh2() == playerMeshForward)
 	{
@@ -351,6 +359,7 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 	}*/
 
+<<<<<<< aa634c353ff9bdbb14a1b6d040c8c0a24a5e980a
 <<<<<<< HEAD
 	if (GetDrink == true)
 	{
@@ -382,7 +391,12 @@ void PlayerClass::Update(double dt, Map* map)
 
 =======
 >>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
+<<<<<<< f08fd16c97853f99d55c30cd222df495a481a909
 >>>>>>> aa634c353ff9bdbb14a1b6d040c8c0a24a5e980a
+=======
+=======
+>>>>>>> Fixed More Bug???!!!
+>>>>>>> Fixed Minor Bug..
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))

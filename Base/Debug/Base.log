@@ -1,52 +1,183 @@
+<<<<<<< f08fd16c97853f99d55c30cd222df495a481a909
 <<<<<<< HEAD
 ﻿  Player.cpp
 =======
 <<<<<<< HEAD
 ﻿Build started 25/8/2016 4:39:36 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
+=======
+﻿生成启动时间为 25/8/2016 下午 5:48:28。
+     1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
+>>>>>>> Fixed Minor Bug..
      1>ClCompile:
-         D:\Visual Studio 2013\VC\bin\CL.exe /c /I"D:\NYP Projects\SP3\Edited Pull\/Common/Source" /I"D:\NYP Projects\SP3\Edited Pull\/glew/include" /I"D:\NYP Projects\SP3\Edited Pull\/glfw/include" /I"D:\NYP Projects\SP3\Edited Pull\/IrrKlang/include" /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Additional_Functions.cpp Source\Application.cpp Source\Camera_PI.cpp Source\EnemyDark.cpp Source\Enemy_Ghost.cpp Source\Enemy_Poison.cpp Source\Enemy_Psychic.cpp Source\Event.cpp Source\GameState.cpp Source\Main_Shaft.cpp Source\Map_PI.cpp Source\Player.cpp Source\PokeInfo.cpp Source\ReadTxtFile.cpp Source\Render_PI.cpp Source\main.cpp Source\Input_PI.cpp Source\Sensor.cpp Source\SoundEngine.cpp Source\Support_Codes.cpp Source\Texture_PI.cpp Source\UI_PI.cpp
+         UI_PI.cpp
+         Texture_PI.cpp
+         Support_Codes.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\support_codes.cpp(1100): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\support_codes.cpp(1101): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+         SoundEngine.cpp
+         Sensor.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\sensor.cpp(61): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\sensor.cpp(103): warning C4305: “*=”: 从“double”到“float”截断
+         Input_PI.cpp
+         main.cpp
+         Render_PI.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(38): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(40): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(42): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(44): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(46): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(48): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(50): warning C4305: “+=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(52): warning C4305: “-=”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\render_pi.cpp(165): warning C4305: “参数”: 从“double”到“float”截断
+         ReadTxtFile.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(60): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(81): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(148): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(156): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(164): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(172): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(182): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(205): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(208): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(274): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\readtxtfile.cpp(278): error C2143: 语法错误 : 缺少“;”(在“>>”的前面)
+         PokeInfo.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(42): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(48): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(54): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(60): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(68): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(77): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\pokeinfo.cpp(95): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+         Player.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(50): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(51): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(99): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(102): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(107): error C2143: 语法错误 : 缺少“;”(在“>>”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(136): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(137): warning C4244: “*=”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(144): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(158): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(162): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(166): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(170): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(227): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(266): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(272): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(290): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(302): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(305): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(310): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(313): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(314): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(322): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(337): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(338): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(345): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(348): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(362): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(370): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(372): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(373): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(374): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(376): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(378): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(379): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(380): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(382): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(384): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(385): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(386): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(388): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(390): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(391): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(392): error C2065: “Limitation_size”: 未声明的标识符
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(459): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(464): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(473): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(478): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(482): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(541): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(541): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(542): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(545): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(549): error C2181: 没有匹配 if 的非法 else
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(583): error C2143: 语法错误 : 缺少“;”(在“==”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(583): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(588): error C2143: 语法错误 : 缺少“;”(在“{”的前面)
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(592): error C2181: 没有匹配 if 的非法 else
+     1>c:\users\sword_000\desktop\sp3\base\source\player.cpp(624): error C2143: 语法错误 : 缺少“;”(在“<<”的前面)
+         Map_PI.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(8): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(9): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(10): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(51): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(90): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(92): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(105): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(112): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(122): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(129): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(151): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(153): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(169): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(176): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(189): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\map_pi.cpp(196): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+         Main_Shaft.cpp
          GameState.cpp
-     1>d:\nyp projects\sp3\edited pull\base\source\event.h(14): warning C4800: 'Event::Effects' : forcing value to bool 'true' or 'false' (performance warning)
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(217): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(225): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(597): error C2143: syntax error : missing ';' before '<<'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(599): error C2065: 'skipScene' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(601): error C2065: 'skipScene' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(605): error C2065: 'skipScene' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(606): error C2065: 'sceneSkipped' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(608): error C2065: 'sceneSkipped' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(610): error C2065: 'skipScene' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(610): error C2065: 'sceneSkipped' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(616): error C2143: syntax error : missing ';' before '=='
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(618): error C2143: syntax error : missing ';' before '{'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(624): error C2143: syntax error : missing ';' before '>>'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(626): error C2065: 'i' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(626): error C2143: syntax error : missing ';' before ')'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(627): error C2143: syntax error : missing ';' before '{'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(629): error C2065: 'i' : undeclared identifier
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(702): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(716): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(733): error C2601: 'GameState::Update' : local function definitions are illegal
-                 d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(565): this line contains a '{' which has not yet been matched
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(738): error C2601: 'GameState::RenderScreens' : local function definitions are illegal
-                 d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(565): this line contains a '{' which has not yet been matched
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(795): error C2601: 'GameState::RenderFloorData' : local function definitions are illegal
-                 d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(565): this line contains a '{' which has not yet been matched
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(841): error C2601: 'GameState::RenderFloors' : local function definitions are illegal
-                 d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(565): this line contains a '{' which has not yet been matched
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(866): error C2601: 'GameState::Render' : local function definitions are illegal
-                 d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(565): this line contains a '{' which has not yet been matched
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(877): error C2059: syntax error : 'bad suffix on number'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(878): error C2021: expected exponent value, not 'c'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(878): error C2059: syntax error : 'bad suffix on number'
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(882): error C2601: 'GameState::Exit' : local function definitions are illegal
-                 d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(565): this line contains a '{' which has not yet been matched
-     1>d:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(969): fatal error C1075: end of file found before the left brace '{' at 'd:\nyp projects\sp3\edited pull\base\source\gamestate.cpp(565)' was matched
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\sword_000\desktop\sp3\base\source\event.h(14): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(18): error C2612: 基/成员初始值设定项列表中的非法后缀“<<”
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(867): fatal error C1004: 发现意外的文件尾
+         Event.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\event.h(14): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(31): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(32): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(34): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(42): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+         Enemy_Psychic.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(28): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(28): warning C4800: “float”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(96): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(100): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_psychic.cpp(139): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+         Enemy_Poison.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(63): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(107): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(112): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(167): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(176): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(185): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_poison.cpp(201): warning C4305: “参数”: 从“double”到“float”截断
+         Enemy_Ghost.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(74): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(75): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(76): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(116): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(124): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemy_ghost.cpp(125): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+         EnemyDark.cpp
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(90): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(94): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(98): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(102): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(188): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\enemydark.cpp(193): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+         Camera_PI.cpp
+         正在生成代码...
+         正在编译...
+         Application.cpp
+         Additional_Functions.cpp
+         正在生成代码...
+     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”(Build 个目标)的操作 - 失败。
 
-Build FAILED.
+生成失败。
 
+<<<<<<< f08fd16c97853f99d55c30cd222df495a481a909
 Time Elapsed 00:00:00.89
 =======
 ﻿  UI_PI.cpp
@@ -117,3 +248,6 @@ Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
 >>>>>>> dce268fa39bf8225ebae7ac7fb5c192c7ccbc4ce
+=======
+已用时间 00:00:16.38
+>>>>>>> Fixed Minor Bug..
