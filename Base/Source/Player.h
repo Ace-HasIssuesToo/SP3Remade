@@ -38,7 +38,6 @@ public:
 	}
 	float return_LightPower(){ return LightPower; };
 	float return_Runtime(){ return Stamina; };
-	ISoundSource* Drink;
 	ISoundSource* PickUp;
 private:
 	PlayerClass();

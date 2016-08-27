@@ -1,3 +1,4 @@
+<<<<<<< 680590776936ab288f01ffbf183b4ace13c2aa59
 <<<<<<< HEAD
 =======
 <<<<<<< 64eb896c773fc80356a2e785c10c1ccde8a99f5d
@@ -267,33 +268,27 @@ LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; us
 =======
 ﻿生成启动时间为 26/8/2016 上午 11:18:31。
 >>>>>>> Balanced Some GamePlay
+=======
+﻿生成启动时间为 26/8/2016 下午 3:18:25。
+>>>>>>> 10 MB reached!
      1>项目“C:\Users\sword_000\Desktop\SP3\Base\Base.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Event.cpp Source\GameState.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\sword_000\Desktop\SP3\/Common/Source /IC:\Users\sword_000\Desktop\SP3\/glew/include /IC:\Users\sword_000\Desktop\SP3\/glfw/include /IC:\Users\sword_000\Desktop\SP3\/IrrKlang/include /ZI /nologo /W3 /WX- /Od /Oy- /D _VARIADIC_MAX=10 /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\GameState.cpp
          GameState.cpp
      1>c:\users\sword_000\desktop\sp3\base\source\event.h(14): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(271): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(279): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(596): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(610): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(637): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(644): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(655): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(662): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(277): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(285): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(625): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(640): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(669): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
      1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(676): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(683): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-         Event.cpp
-     1>c:\users\sword_000\desktop\sp3\base\source\event.h(14): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(31): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(32): warning C4800: “Event::Effects”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(34): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-     1>c:\users\sword_000\desktop\sp3\base\source\event.cpp(42): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-         正在生成代码...
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(687): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(694): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(701): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(708): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+     1>c:\users\sword_000\desktop\sp3\base\source\gamestate.cpp(715): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sword_000\Desktop\SP3\Debug\Base.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\sword_000\Desktop\SP3\Debug /LIBPATH:"C:\Users\sword_000\Desktop\SP3\/glfw/lib-msvc100" /LIBPATH:C:\Users\sword_000\Desktop\SP3\/glew/lib /LIBPATH:C:\Users\sword_000\Desktop\SP3\/IrrKlang/lib Common.lib winmm.lib opengl32.lib glu32.lib glew32.lib glfw3.lib irrKlang.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sword_000\Desktop\SP3\Debug\Base.lib" /MACHINE:X86 Debug\Additional_Functions.obj
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
->>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
          Debug\Application.obj
          Debug\Camera_PI.obj
          Debug\EnemyDark.obj
@@ -315,18 +310,6 @@ LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; us
          Debug\Support_Codes.obj
          Debug\Texture_PI.obj
          Debug\UI_PI.obj
-     1>Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Base.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Base.exe
-     1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-<<<<<<< HEAD
-Time Elapsed 00:00:10.58
-=======
-Time Elapsed 00:00:01.25
-=======
      1>Additional_Functions.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
      1>LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
          Base.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Base.exe
@@ -334,6 +317,7 @@ Time Elapsed 00:00:01.25
 
 生成成功。
 
+<<<<<<< 680590776936ab288f01ffbf183b4ace13c2aa59
 <<<<<<< 64eb896c773fc80356a2e785c10c1ccde8a99f5d
 已用时间 00:00:01.55
 >>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
@@ -343,3 +327,6 @@ Time Elapsed 00:00:01.25
 已用时间 00:00:03.41
 >>>>>>> Balanced Some GamePlay
 >>>>>>> d95b00b47aa96f13513135d55ea7d5754178e0bd
+=======
+已用时间 00:00:01.59
+>>>>>>> 10 MB reached!
