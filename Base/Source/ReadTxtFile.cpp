@@ -400,12 +400,15 @@ void ReadTxtFile::Exit()
 	{
 		delete textbox;
 		textbox = nullptr;
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 <<<<<<< HEAD
 
 =======
 		delete asylum;
 		asylum = nullptr;
 >>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
+=======
+>>>>>>> Clock Done!
 	}
 
 	if (c_ReadTxtFile != nullptr)

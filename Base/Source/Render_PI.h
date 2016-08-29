@@ -19,7 +19,7 @@ public:
 	bool Ortho_Get(){ return Ortho; };
 	void RenderText(Mesh* mesh, std::string text, Color color);
 	void RenderTextOnScreen(Mesh* mesh, std::string text, Color color, Vector3 Translate, Vector3 Scale);
-	void RenderMeshIn2D(Mesh *mesh, bool enableLight, Vector3 Translate, Vector3 Scale);
+	void RenderMeshIn2D(Mesh *mesh, bool enableLight, Vector3 Translate, Vector3 Scale, float Angle = 0.f, Vector3 Rotate = Vector3());
 	void RenderMesh(Mesh *mesh, bool enableLight);
 	enum DataType
 	{

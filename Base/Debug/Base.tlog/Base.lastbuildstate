@@ -1,6 +1,10 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 <<<<<<< HEAD
 Debug|Win32|D:\NYP Projects\SP3\Edited Pull\|
 =======
 Debug|Win32|C:\Users\user\Documents\SP3Remade\|
 >>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
+=======
+Debug|Win32|C:\Users\sword_000\Desktop\SP3\|
+>>>>>>> Clock Done!

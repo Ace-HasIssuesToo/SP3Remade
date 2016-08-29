@@ -384,7 +384,7 @@ void Render_PI::RenderTextOnScreen(Mesh* mesh, std::string text, Color color, Ve
 	}
 }
 
-void Render_PI::RenderMeshIn2D(Mesh *mesh, bool enableLight, Vector3 Translate, Vector3 Scale)
+void Render_PI::RenderMeshIn2D(Mesh *mesh, bool enableLight, Vector3 Translate, Vector3 Scale, float Angle, Vector3 Rotate)
 {
 	if (this->Ortho == false)
 	{
@@ -403,6 +403,10 @@ void Render_PI::RenderMeshIn2D(Mesh *mesh, bool enableLight, Vector3 Translate, 
 
 	modelStack.PushMatrix();
 	modelStack.Translate(Translate.x, Translate.y, Translate.z);
+	if (Rotate != Vector3() && Angle != 0)
+	{
+		modelStack.Rotate(Angle, Rotate.x, Rotate.y, Rotate.z);
+	}
 	modelStack.Scale(Scale.x, Scale.y, Scale.z);
 	Mtx44 MVP, modelView, modelView_inverse_transpose;
 
