@@ -298,14 +298,29 @@ void PlayerClass::Update(double dt, Map* map)
 			GetDrink = false;
 		}
 	}
+<<<<<<< HEAD
+=======
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
+<<<<<<< HEAD
+>>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
 
 
+=======
+>>>>>>> Clock Done!
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
 		GetBattery = true;
 	}
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
+=======
+>>>>>>> Clock Done!
+>>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
 	if (GetBattery == true)
 	{
 		batteryTimer += dt;
@@ -316,7 +331,14 @@ void PlayerClass::Update(double dt, Map* map)
 			GetBattery = false;
 		}
 	}
+<<<<<<< HEAD
+=======
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
+<<<<<<< HEAD
+>>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
 
+=======
+>>>>>>> Clock Done!
 	/*if (DrinkExists == true)
 	{
 	displayDrinkExists += dt;
@@ -352,7 +374,15 @@ void PlayerClass::Update(double dt, Map* map)
 		GetBattery = false;
 	}
 
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
+=======
+>>>>>>> Clock Done!
+>>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
@@ -518,6 +548,18 @@ void PlayerClass::Renderplayer()
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
 	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
+<<<<<<< HEAD
+=======
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
+<<<<<<< HEAD
+=======
+	if (batteryTimer > 0.f && batteryTimer < 3.f)
+	{
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
+	}
+>>>>>>> Clock Done!
+>>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
 
 
 	if (batteryTimer > 0.f && batteryTimer < 3.f)
@@ -599,8 +641,42 @@ void PlayerClass::Renderplayer()
 			Render_PI::pointer()->modelStack_Set(false);
 			//cout << drinkTimer << endl;
 		}
+<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 
 
+=======
+	
+	if (batteryTimer >0.f && batteryTimer < 3.f)
+	{
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
+	}
+	else if (LightPower > 6.f && LightPower <= 8.f)
+	{
+		Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BatteryFour"), false, Vector3(107, 31, 0), Vector3(4, 4, 1));
+	}
+	else if (LightPower > 4.f && LightPower <= 6.f)
+	{
+		Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BatteryThree"), false, Vector3(107, 31, 0), Vector3(4, 4, 1));
+	}
+	else if (LightPower > 2.f && LightPower <= 4.f)
+	{
+		Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BatteryTwo"), false, Vector3(107, 31, 0), Vector3(4, 4, 1));
+	}
+	else if (LightPower > 0.f && LightPower <= 2.f)
+	{
+		Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BatteryOne"), false, Vector3(107, 31, 0), Vector3(4, 4, 1));
+	}
+	else
+	{
+		Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BatteryZero"), false, Vector3(107, 31, 0), Vector3(4, 4, 1));
+	}
+	Render_PI::pointer()->modelStack_Set(false);
+
+	Render_PI::pointer()->modelStack_Set(true);
+	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("StaminaIcon"), false, Vector3(107, 26, 0), Vector3(4, 5, 1));
+	Render_PI::pointer()->modelStack_Set(false);
+>>>>>>> Clock Done!
 		if (batteryTimer > 0.f && batteryTimer < 3.f)
 		{
 			Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));

@@ -67,6 +67,7 @@ public:
 	bool PlayTheme;
 
 	Mesh* GetText();
+	float Get_Timer(){ return levelTimer; };
 private:
 	bool LoseSoundBool;
 	GameState();
