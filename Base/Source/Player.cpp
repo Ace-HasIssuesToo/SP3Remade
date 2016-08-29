@@ -174,12 +174,12 @@ void PlayerClass::Update(double dt, Map* map)
 
 		if (LightOn)
 		{
-<<<<<<< HEAD
+
 			LightPower -= 0.1 * LightRange * dt;
-=======
+
 		LightOn = false;
 		LightRange = 0;
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
+
 		}
 		else
 		{
@@ -298,22 +298,14 @@ void PlayerClass::Update(double dt, Map* map)
 			GetDrink = false;
 		}
 	}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
+
 
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
 		GetBattery = true;
 	}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 	if (GetBattery == true)
 	{
 		batteryTimer += dt;
@@ -324,12 +316,7 @@ void PlayerClass::Update(double dt, Map* map)
 			GetBattery = false;
 		}
 	}
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 	/*if (DrinkExists == true)
 	{
 	displayDrinkExists += dt;
@@ -348,7 +335,7 @@ void PlayerClass::Update(double dt, Map* map)
 		}
 	}
 
-<<<<<<< HEAD
+
 	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink])
 	{
 		drinkTimer = 0.0f;
@@ -365,9 +352,7 @@ void PlayerClass::Update(double dt, Map* map)
 		GetBattery = false;
 	}
 
-=======
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
+
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
@@ -459,10 +444,7 @@ void PlayerClass::Exit()
 			delete playerMeshDownward;
 			playerMeshDownward = nullptr;
 		};
-<<<<<<< HEAD
 
-=======
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 		if (Battery != nullptr)
 		{
 			delete Battery;
@@ -473,19 +455,13 @@ void PlayerClass::Exit()
 			delete Drink;
 			Drink = nullptr;
 		}
-<<<<<<< HEAD
 
-=======
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 		if (playerMeshIdle != nullptr)
 		{
 			delete playerMeshIdle;
 			playerMeshIdle = nullptr;
 		};
-<<<<<<< HEAD
 
-=======
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
@@ -542,9 +518,7 @@ void PlayerClass::Renderplayer()
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
 	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
-	
-		if (batteryTimer >0.f && batteryTimer < 3.f)
-=======
+
 
 	if (batteryTimer > 0.f && batteryTimer < 3.f)
 	{
@@ -587,7 +561,7 @@ void PlayerClass::Renderplayer()
 	if (batteryTimer > drinkTimer)
 	{
 		if (batteryTimer > 0.f && batteryTimer < 3.f)
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
+
 		{
 			Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
 			Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
@@ -597,7 +571,7 @@ void PlayerClass::Renderplayer()
 			Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Got drink", Color(1, 1, 0), Vector3(38, 51, 0), Vector3(5, 5, 1));
 			Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 2 to restore stamina", Color(1, 1, 0), Vector3(5, 45, 0), Vector3(5, 5, 1));
 		}
-<<<<<<< HEAD
+
 		//if (displayBattteryExists == true)
 		//{
 		//	//Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
@@ -616,7 +590,7 @@ void PlayerClass::Renderplayer()
 			Render_PI::pointer()->modelStack_Set(false);
 			//cout << batteryTimer << endl;
 		}
-		
+
 		if (GetDrink == true)
 		{
 			Render_PI::pointer()->modelStack_Set(true);
@@ -625,35 +599,31 @@ void PlayerClass::Renderplayer()
 			Render_PI::pointer()->modelStack_Set(false);
 			//cout << drinkTimer << endl;
 		}
-<<<<<<< HEAD
-	
-	if (batteryTimer >0.f && batteryTimer < 3.f)
-	{
-		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
-		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
-=======
-=======
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
-	}
-	if (GetBattery == true)
-	{
-		Render_PI::pointer()->modelStack_Set(true);
-		Render_PI::pointer()->modelStack_Define(Vector3(5, 15, 0), 0, 0, Vector3(5, 10, 1));
-		Render_PI::pointer()->RenderMesh(Battery, false);
-		Render_PI::pointer()->modelStack_Set(false);
-		//cout << batteryTimer << endl;
-	}
 
-	if (GetDrink == true)
-	{
-		Render_PI::pointer()->modelStack_Set(true);
-		Render_PI::pointer()->modelStack_Define(Vector3(15, 15, 0), 0, 0, Vector3(5, 10, 1));
-		Render_PI::pointer()->RenderMesh(Drink, false);
-		Render_PI::pointer()->modelStack_Set(false);
-		//cout << drinkTimer << endl;
+
+		if (batteryTimer > 0.f && batteryTimer < 3.f)
+		{
+			Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
+			Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
+
+		}
+		if (GetBattery == true)
+		{
+			Render_PI::pointer()->modelStack_Set(true);
+			Render_PI::pointer()->modelStack_Define(Vector3(5, 15, 0), 0, 0, Vector3(5, 10, 1));
+			Render_PI::pointer()->RenderMesh(Battery, false);
+			Render_PI::pointer()->modelStack_Set(false);
+			//cout << batteryTimer << endl;
+		}
+
+		if (GetDrink == true)
+		{
+			Render_PI::pointer()->modelStack_Set(true);
+			Render_PI::pointer()->modelStack_Define(Vector3(15, 15, 0), 0, 0, Vector3(5, 10, 1));
+			Render_PI::pointer()->RenderMesh(Drink, false);
+			Render_PI::pointer()->modelStack_Set(false);
+			//cout << drinkTimer << endl;
+		}
+
 	}
-<<<<<<< HEAD
-=======
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 }

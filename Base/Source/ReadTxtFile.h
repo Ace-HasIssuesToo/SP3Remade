@@ -15,31 +15,42 @@ public:
 
 	void Init();
 	void ReadFromTextFile();
-	vector<string> lineSplit(string input);
 	void Update(double dt);
-	void Render();
+	void FloorUpdate(double dt);
+	void RenderForIntro();
+	void RenderForGameplay();
 	void Exit();
+
+	void SetStorage(int storage);
+	int GetStorage();
 
 	void clearIntro();
 
 	void RenderCity();
 	void RenderFlash();
 	void RenderAsylum();
-	void RenderText();
+	void RenderTextForIntro();
+	void RenderTextForGameplay();
 	void RenderTextBox();
+	void RenderForAfter();
+	void RenderTextForAfter();
+
+	void EnterLoop();
 
 	bool TimerStart;
-	int sequence;
+	int sequence, order, next;
 	float bgTimer;
+	void tempGameplayFunction();
 
 private:
 	static ReadTxtFile* c_ReadTxtFile;
 
-	vector<string> fullIntro, fullGameplay;
+	vector<string> lineSplit(string input);
+	vector<string> fullIntro, fullGameplay, fullAfter, tempGameplay;
 
+	int storage, gpPointer, gpgpPointer, duringPointer;
 	float introTimer;
-	bool timerTime, timerReset;
-	bool flashON, asylumON;
+	bool timerTime, timerReset, flashON, asylumON, release, duringPress;
 
 	Mesh* intro_dialogue;
 	Mesh* city;

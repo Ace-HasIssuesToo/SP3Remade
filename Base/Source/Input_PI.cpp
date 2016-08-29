@@ -110,6 +110,24 @@ void Input_PI::Update(double dt)
 		IsBeingPressed[IntroSkip] = false;
 		HaveBeenPressed[IntroSkip] = true;
 	}
+	if (Application::IsKeyPressed(VK_RETURN))
+	{
+		IsBeingPressed[GameplayNext] = true;
+	}
+	else if (IsBeingPressed[GameplayNext] == true)
+	{
+		IsBeingPressed[GameplayNext] = false;
+		HaveBeenPressed[GameplayNext] = true;
+	}
+	if (Application::IsKeyPressed(VK_RETURN))
+	{
+		IsBeingPressed[DuringGP] = true;
+	}
+	else if (IsBeingPressed[DuringGP] == true)
+	{
+		IsBeingPressed[DuringGP] = false;
+		HaveBeenPressed[DuringGP] = true;
+	}
 	if (Application::IsKeyPressed('S'))
 	{
 		IsBeingPressed[Backward] = true;

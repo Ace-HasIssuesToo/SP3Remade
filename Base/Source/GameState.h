@@ -24,7 +24,7 @@ public:
 		LOSE,
 		WIN,
 		INTRODUCTION,
-		GAMEPLAY,
+		GAMEPLAY_BEFORE,
 		JUMPSCARE_D,
 		JUMPSCARE_P,
 		CREDIT,
@@ -46,6 +46,7 @@ public:
 	void Update_Pokemon(double dt, Map* map);
 	void Render();
 	void Exit();
+	void LevelCheck(int i);
 	bool checkcaged(){ return !isReleased; };
 	Game current_State(){ return state; };
 	static GameState* pointer(){ return c_pointer; };
@@ -83,4 +84,6 @@ private:
 	static GameState* c_pointer;
 	bool isReleased;
 	float scareTime;
+
+	int beforePointer;
 };

@@ -15,13 +15,8 @@ GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
 , Floor1(nullptr), Floor2(nullptr), Floor3(nullptr), Floor4(nullptr), Floor5(nullptr)
 , pokemonCount(0), cageTimer(0), isReleased(false)
 , D_Scare1(nullptr), P_Scare1(nullptr)
-<<<<<<< HEAD
-, ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false), levelTimer(0)
-, PlayTheme(false)
-=======
 , ScareSound(nullptr), LoseSound(nullptr), scareTime(0), LoseSoundBool(false)
-, levelTimer(0), PlayTheme(false)
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
+, levelTimer(0), PlayTheme(false), beforePointer(0)
 {
 
 }
@@ -32,12 +27,7 @@ GameState::~GameState()
 void GameState::Init()
 {
 	GameInIt();
-<<<<<<< HEAD
-=======
-	state = INTRODUCTION;
-	LoseSoundBool = false;
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
-	state = START;
+	state = WIN;
 	PlayTheme = LoseSoundBool = false;
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -99,13 +89,6 @@ void GameState::Init()
 
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//InvoLaugh.mp3");
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
-=======
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
 	scareTime = 0;
 	levelTimer = 180.f;
 }
@@ -136,14 +119,13 @@ void GameState::GameReset()
 	Enemy_Poison::pointer()->ClearPoison();
 	Enemy_Dark::pointer()->clearEnemyDark();
 	PokeballInfo::pointer()->ClearBallStatus();
-	ReadTxtFile::pointer()->clearIntro();
 	Event::pointer()->Clear();
 	Event::pointer()->Set_Multiplier(100);
 	if (state == FLOOR5)
 	{
 		Event::pointer()->Set_Multiplier(0);
 	}
-
+	EndLevel();
 }
 
 Mesh* GameState::GetText()
@@ -281,10 +263,11 @@ void GameState::EndLevel()
 		}
 	}
 }
+
 void GameState::Update_Stuffs(double dt, Map* map)
 {
 	levelTimer -= dt;
-	
+
 	if (levelTimer <= 0.f)
 	{
 		state = LOSE;
@@ -310,7 +293,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 	double range = 0;
 	float min_range = 20;
 	int catchrate = rand() % 101;
-	int min_catchrate = 10;
+	int min_catchrate = 100;
 	if (PokeballInfo::pointer()->getBallStatus())
 	{
 		if (Pokemon_On_Loose[0])
@@ -321,37 +304,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			{
 				if (catchrate < min_catchrate)
 				{
-					Pokemon_On_Loose[0] = false;
-					pokemonCount--;
-					Enemy_Ghost::pointer()->ClearGhost();
-					if (pokemonCount <= 0 && state == FLOOR1)
-					{
-						state = FLOOR2;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR2)
-					{
-						state = FLOOR3;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
-						state = WIN;
-					}
+					LevelCheck(0);
 				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
@@ -364,36 +317,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			{
 				if (catchrate < min_catchrate)
 				{
-					Pokemon_On_Loose[1] = false;
-					pokemonCount--;
-					if (pokemonCount <= 0 && state == FLOOR1)
-					{
-						state = FLOOR2;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR2)
-					{
-						state = FLOOR3;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
-						state = WIN;
-					}
+					LevelCheck(1);
 				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
@@ -406,37 +330,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			{
 				if (catchrate < min_catchrate)
 				{
-					Pokemon_On_Loose[2] = false;
-					Enemy_Poison::pointer()->ClearPoison();
-					pokemonCount--;
-					if (pokemonCount <= 0 && state == FLOOR1)
-					{
-						state = FLOOR2;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR2)
-					{
-						state = FLOOR3;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
-						state = WIN;
-					}
+					LevelCheck(2);
 				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
@@ -449,40 +343,45 @@ void GameState::Update_Stuffs(double dt, Map* map)
 			{
 				if (catchrate < min_catchrate)
 				{
-					Pokemon_On_Loose[3] = false;
-					pokemonCount--;
-					if (pokemonCount <= 0 && state == FLOOR1)
-					{
-						state = FLOOR2;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR2)
-					{
-						state = FLOOR3;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR3)
-					{
-						state = FLOOR4;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR4)
-					{
-						state = FLOOR5;
-						GameReset();
-						EndLevel();
-					}
-					else if (pokemonCount <= 0 && state == FLOOR5)
-					{
-						state = WIN;
-					}
+					LevelCheck(3);
 				}
 				PokeballInfo::pointer()->ClearBallStatus();
 			}
 		}
+	}
+}
+
+void GameState::LevelCheck(int i)
+{
+	Pokemon_On_Loose[i] = false;
+	pokemonCount--;
+	if (pokemonCount <= 0 && state == FLOOR1)
+	{
+		state = GAMEPLAY_BEFORE;
+		ReadTxtFile::pointer()->SetStorage(FLOOR2);
+		ReadTxtFile::pointer()->tempGameplayFunction();
+	}
+	else if (pokemonCount <= 0 && state == FLOOR2)
+	{
+		state = GAMEPLAY_BEFORE;
+		ReadTxtFile::pointer()->SetStorage(FLOOR3);
+		ReadTxtFile::pointer()->tempGameplayFunction();
+	}
+	else if (pokemonCount <= 0 && state == FLOOR3)
+	{
+		state = GAMEPLAY_BEFORE;
+		ReadTxtFile::pointer()->SetStorage(FLOOR4);
+		ReadTxtFile::pointer()->tempGameplayFunction();
+	}
+	else if (pokemonCount <= 0 && state == FLOOR4)
+	{
+		state = GAMEPLAY_BEFORE;
+		ReadTxtFile::pointer()->SetStorage(FLOOR5);
+		ReadTxtFile::pointer()->tempGameplayFunction();
+	}
+	else if (pokemonCount <= 0 && state == FLOOR5)
+	{
+		state = WIN;
 	}
 }
 
@@ -517,7 +416,6 @@ void GameState::GetState(double dt)
 	case INTRODUCTION:
 	{
 		ReadTxtFile::pointer()->TimerStart = true;
-		ReadTxtFile::pointer()->Update(dt);
 
 		static bool sceneSkipped = false;
 		if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip] && !sceneSkipped)
@@ -530,6 +428,8 @@ void GameState::GetState(double dt)
 		else if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip])
 		{
 			state = FLOOR1;
+			ReadTxtFile::pointer()->clearIntro();
+			ReadTxtFile::pointer()->TimerStart = false;
 			
 			if (Application::IsKeyPressed(VK_RETURN))
 			{
@@ -537,6 +437,16 @@ void GameState::GetState(double dt)
 				//EndLevel();
 			}
 			EndLevel();
+		}
+	}
+	case GAMEPLAY_BEFORE:
+	{
+		ReadTxtFile::pointer()->EnterLoop();
+		int temp = ReadTxtFile::pointer()->GetStorage();
+		if (bool(temp) == true)
+		{
+			state = (Game)temp;
+			GameReset();
 		}
 	}
 	case CREDIT:
@@ -579,11 +489,13 @@ void GameState::GetState(double dt)
 	}
 	case WIN:
 	{
-		if (Application::IsKeyPressed(VK_SPACE))
+		ReadTxtFile::pointer()->TimerStart = true;
+		if (Application::IsKeyPressed(VK_RETURN))
 		{
 			GameReset();
 			PlayerClass::pointer()->clearLights();
 			PlayerClass::pointer()->clearItems();
+			ReadTxtFile::pointer()->TimerStart = false;
 			state = START;
 		}
 		break;
@@ -639,6 +551,8 @@ void GameState::GetState(double dt)
 void GameState::Update(double dt)
 {
 	GetState(dt);
+	ReadTxtFile::pointer()->Update(dt);
+	//cout <<  << endl;
 }
 
 void GameState::RenderScreens()
@@ -659,7 +573,11 @@ void GameState::RenderScreens()
 	}
 	if (state == INTRODUCTION)
 	{
-		ReadTxtFile::pointer()->Render();
+		ReadTxtFile::pointer()->RenderForIntro();
+	}
+	if (state == GAMEPLAY_BEFORE)
+	{
+		ReadTxtFile::pointer()->RenderForGameplay();
 	}
 	if (state == CREDIT)
 	{
@@ -670,10 +588,7 @@ void GameState::RenderScreens()
 	}
 	if (state == WIN)
 	{
-		Render_PI::pointer()->modelStack_Set(true);
-		Render_PI::pointer()->modelStack_Define(Vector3(Render_PI::Window_Scale().x * 0.5, Render_PI::Window_Scale().y * 0.5, 1), 0, 0, Vector3(150, 100, 1));
-		Render_PI::pointer()->RenderMesh(winscreen, false);
-		Render_PI::pointer()->modelStack_Set(false);
+		ReadTxtFile::pointer()->RenderForAfter();
 	}
 	if (state == LOSE)
 	{
@@ -774,7 +689,7 @@ void GameState::Render()
 	RenderScreens();
 	RenderFloors();
 	//cout << levelTimer << endl;
-	cout << pokemonCount << endl;
+	//cout << pokemonCount << endl;
 }
 
 void GameState::Exit()

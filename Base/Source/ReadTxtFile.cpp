@@ -5,9 +5,10 @@
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
-ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), sequence(0), bgTimer(0), fullGameplay(0),
+ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), sequence(0), bgTimer(0), fullGameplay(0), order(0), next(0),
 TimerStart(false), timerTime(false), timerReset(false), flashON(false), asylumON(false),
-intro_dialogue(nullptr), city(nullptr), flash(nullptr), asylum(nullptr), textbox(nullptr)
+intro_dialogue(nullptr), city(nullptr), flash(nullptr), asylum(nullptr), textbox(nullptr), storage(0), release(false),
+tempGameplay(0), gpPointer(0), gpgpPointer(0), duringPointer(0), duringPress(false)
 {
 
 }
@@ -17,9 +18,22 @@ ReadTxtFile::~ReadTxtFile()
 
 }
 
+void ReadTxtFile::SetStorage(int storage)
+{
+	this->storage = storage;
+}
+
+int ReadTxtFile::GetStorage()
+{
+	if (release)
+		return storage;
+	else
+		return 0;
+}
+
 void ReadTxtFile::clearIntro()
 {
-	sequence = 0;
+	sequence = order = 0;
 	introTimer = bgTimer = 0;
 	timerTime = TimerStart = timerReset = flashON = asylumON = false;
 }
@@ -59,6 +73,9 @@ void ReadTxtFile::Update(double dt)
 	if (TimerStart)
 		introTimer += dt;
 
+	if (!TimerStart)
+		introTimer = 0.f;
+
 	//Update asylum sprite
 	SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(flash);
 	if (sa)
@@ -74,7 +91,7 @@ void ReadTxtFile::Update(double dt)
 		sa2->m_anim->animActive = true;
 	}
 
-	//Update background order
+	//Update background sequence
 	if (sequence >= 3)
 	{
 		flashON = true;
@@ -88,13 +105,21 @@ void ReadTxtFile::Update(double dt)
 	if (bgTimer > 15.f)
 		asylumON = false;
 
-	//cout << sequence << endl;
+	cout << introTimer << endl;
+}
+
+void ReadTxtFile::FloorUpdate(double dt)
+{
+	if (Input_PI::pointer()->HaveBeenPressed[Input_PI::DuringGP])
+	{
+		duringPointer++;
+	}
 }
 
 void ReadTxtFile::ReadFromTextFile()
 {
-	ifstream inIntro, inGameplay;
-	string lineIntro, lineGameplay;
+	ifstream inIntro, inGameplay, inAfter;
+	string lineIntro, lineGameplay, lineAfter;
 
 	inIntro.open("Data//Text//introduction.txt");
 	while (!inIntro.eof())
@@ -111,6 +136,19 @@ void ReadTxtFile::ReadFromTextFile()
 		fullGameplay.push_back(lineGameplay);
 	}
 	inGameplay.close();
+
+	inAfter.open("Data//Text//after.txt");
+	while (!inAfter.eof())
+	{
+		getline(inAfter, lineAfter);
+		fullAfter.push_back(lineAfter);
+	}
+	inAfter.close();
+
+	//for (auto it = begin(fullGameplay); it != fullGameplay.end(); ++it)
+	//{
+	//	cout << *(it) << endl;
+	//}
 }
 
 vector<string> ReadTxtFile::lineSplit(string input)
@@ -140,6 +178,24 @@ vector<string> ReadTxtFile::lineSplit(string input)
 	}
 
 	return output;
+}
+
+void ReadTxtFile::tempGameplayFunction()
+{
+	while (tempGameplay.size() != 0)
+	{
+		tempGameplay.pop_back();
+	}
+	gpgpPointer = 0;
+	gpPointer++;
+	release = false;
+	for (; gpPointer < fullGameplay.size(); gpPointer++)
+	{
+		if (fullGameplay.at(gpPointer).at(0) != '(')
+			tempGameplay.push_back(fullGameplay.at(gpPointer));
+		else
+			break;
+	}
 }
 
 void ReadTxtFile::RenderCity()
@@ -174,11 +230,10 @@ void ReadTxtFile::RenderTextBox()
 	Render_PI::pointer()->modelStack_Set(false);
 }
 
-void ReadTxtFile::RenderText()
+void ReadTxtFile::RenderTextForIntro()
 {
 	vector<string> tempIntro;
 
-	// Re-loop timer back to 0 secs
 	if (sequence < fullIntro.size())
 	{
 		tempIntro = lineSplit(fullIntro.at(sequence));
@@ -216,11 +271,58 @@ void ReadTxtFile::RenderText()
 		ss << "Press 'Enter'  to continue";
 		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, ss.str(), Color(1, 1, 1), Vector3(75, 4, 1), Vector3(5, 5, 1));
 	}
-
-
 }
 
-void ReadTxtFile::Render()
+void ReadTxtFile::RenderTextForGameplay()
+{
+	RenderTextBox();
+	Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempGameplay.at(gpgpPointer), Color(0, 0, 0), Vector3(10, 5 + 2, 1), Vector3(5, 5, 1));
+}
+
+void ReadTxtFile::RenderTextForAfter()
+{
+	vector<string> tempAfter;
+
+	if (next < fullAfter.size())
+	{
+		tempAfter = lineSplit(fullAfter.at(next));
+
+		// Re-loop timer back to 0 secs
+		if (introTimer > 3.f)
+		{
+			introTimer = 0.f;
+			timerTime = true;
+		}
+		// Go to next line
+		if (timerTime == true)
+		{
+			next++;
+			timerReset = true;
+		}
+		// Reset variables
+		if (timerReset == true)
+		{
+			timerReset = false;
+			timerTime = false;
+		}
+
+		for (int i = 0; i < tempAfter.size(); i++)
+		{
+			int Y = tempAfter.size() - i;
+			Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, tempAfter.at(i), Color(0, 0, 0), Vector3(10, 5 * Y + 2, 1), Vector3(5, 5, 1));
+		}
+	}
+
+	if (next == fullAfter.size())
+	{
+		ostringstream ss;
+		ss.str("");
+		ss << "End.";
+		Render_PI::pointer()->RenderTextOnScreen(intro_dialogue, ss.str(), Color(1, 1, 1), Vector3(65, 4, 1), Vector3(5, 5, 1));
+	}
+}
+
+void ReadTxtFile::RenderForIntro()
 {
 	if (sequence < 3)
 		RenderCity();
@@ -230,7 +332,31 @@ void ReadTxtFile::Render()
 		RenderAsylum();
 	if (sequence != fullIntro.size())
 		RenderTextBox();
-	RenderText();
+	RenderTextForIntro();
+}
+
+void ReadTxtFile::RenderForGameplay()
+{
+	RenderTextForGameplay();
+}
+
+void ReadTxtFile::RenderForAfter()
+{
+	if (next != fullAfter.size())
+		RenderTextBox();
+	RenderTextForAfter();
+}
+
+void ReadTxtFile::EnterLoop()
+{
+	if (Input_PI::pointer()->HaveBeenPressed[Input_PI::GameplayNext])
+	{
+		gpgpPointer++;
+		if (gpgpPointer >= tempGameplay.size())
+		{
+			release = true;
+		}
+	}
 }
 
 void ReadTxtFile::Exit()
@@ -271,14 +397,7 @@ void ReadTxtFile::Exit()
 	{
 		delete textbox;
 		textbox = nullptr;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-		delete asylum;
-		asylum = nullptr;
-=======
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
+
 	}
 
 	if (c_ReadTxtFile != nullptr)
