@@ -22,8 +22,6 @@ Bright_Floor,Data//Texture//Bright_Floor.tga
 Bright_Wall,Data//Texture//Bright_Wall.tga
 Stamina,Data//Texture//stamina.tga
 Battery,Data//Texture//batterybar.tga
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-=======
 StaminaIcon,Data//Texture//staminaicon.tga
 BatteryFull,Data//Texture//batteryfull.tga
 BatteryFour,Data//Texture//battery45.tga
@@ -34,4 +32,3 @@ BatteryZero,Data//Texture//battery0.tga
 DrinkIcon,Data//Texture//energydrink.tga
 BatteryIcon,Data//Texture//battery.tga
 Running_Man,Data//Texture//Running_Man.tga
->>>>>>> fixed Some Text problem!

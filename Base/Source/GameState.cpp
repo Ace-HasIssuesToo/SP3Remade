@@ -8,6 +8,8 @@
 #include "UI_PI.h"
 #include "SoundEngine.h"
 #include "Event.h"
+#include "DecoText.h"
+#include "Vector3.h"
 
 GameState* GameState::c_pointer = new GameState();
 GameState::GameState() : text(nullptr), startscreen(nullptr), winscreen(nullptr)
@@ -27,15 +29,11 @@ GameState::~GameState()
 void GameState::Init()
 {
 	GameInIt();
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 	state = START;
-=======
-	state = INTRODUCTION;
 	if (state == FLOOR5)
 	{
 		Event::pointer()->Set_Multiplier(0);
 	}
->>>>>>> fixed Some Text problem!
 	PlayTheme = LoseSoundBool = false;
 	Floor1 = new Map();
 	Floor2 = new Map();
@@ -97,20 +95,7 @@ void GameState::Init()
 
 	ScareSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Jumpscare.mp3");
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//InvoLaugh.mp3");
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-<<<<<<< HEAD
-=======
-<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
-<<<<<<< HEAD
-=======
 	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
->>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
-=======
-	LoseSound = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//LosingSound.mp3");
->>>>>>> Clock Done!
->>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
-=======
->>>>>>> fixed Some Text problem!
 	scareTime = 0;
 	levelTimer = 180.f;
 }
@@ -316,11 +301,7 @@ void GameState::Update_Stuffs(double dt, Map* map)
 	double range = 0;
 	float min_range = 20;
 	int catchrate = rand() % 101;
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 	int min_catchrate = 100;
-=======
-	int min_catchrate = 20;
->>>>>>> fixed Some Text problem!
 	if (PokeballInfo::pointer()->getBallStatus())
 	{
 		if (Pokemon_On_Loose[0])
@@ -452,51 +433,43 @@ void GameState::GetState(double dt)
 	}
 	case INTRODUCTION:
 	{
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 		ReadTxtFile::pointer()->TimerStart = true;
-
-=======
 		ReadTxtFile::pointer()->Update(dt);
 		if (Application::IsKeyPressed(VK_RETURN))
 		{
-			 state = FLOOR1;
-			 for (int i = 0; i < 1; i++)
-			 {
-				 Pokemon_On_Loose[i] = false;
-			 }
-
-			 for (int i = 0; i < 1; i++)
-			 {
-				 pokemonCount++;
-				 Pokemon_On_Loose[i] = true;
-			 }
->>>>>>> fixed Some Text problem!
-		static bool sceneSkipped = false;
-		if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip] && !sceneSkipped)
-		{
-			sceneSkipped = true;
-			ReadTxtFile::pointer()->sequence = 6;
-			ReadTxtFile::pointer()->bgTimer = 15.f;
-			SoundEngine::Use()->stopAllSounds();
-		}
-
-		else if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip])
-		{
 			state = FLOOR1;
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-			ReadTxtFile::pointer()->clearIntro();
-			ReadTxtFile::pointer()->TimerStart = false;
-			
-=======
->>>>>>> fixed Some Text problem!
-			if (Application::IsKeyPressed(VK_RETURN))
+			for (int i = 0; i < 1; i++)
+			{
+				Pokemon_On_Loose[i] = false;
+			}
+
+			for (int i = 0; i < 1; i++)
+			{
+				pokemonCount++;
+				Pokemon_On_Loose[i] = true;
+			}
+			static bool sceneSkipped = false;
+			if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip] && !sceneSkipped)
+			{
+				sceneSkipped = true;
+				ReadTxtFile::pointer()->sequence = 6;
+				ReadTxtFile::pointer()->bgTimer = 15.f;
+				SoundEngine::Use()->stopAllSounds();
+			}
+
+			else if (Input_PI::pointer()->HaveBeenPressed[Input_PI::IntroSkip])
 			{
 				state = FLOOR1;
-				//EndLevel();
+				ReadTxtFile::pointer()->clearIntro();
+				ReadTxtFile::pointer()->TimerStart = false;
+				if (Application::IsKeyPressed(VK_RETURN))
+				{
+					state = FLOOR1;
+					//EndLevel();
+				}
+				EndLevel();
 			}
-			EndLevel();
 		}
-	}
 	case GAMEPLAY_BEFORE:
 	{
 		ReadTxtFile::pointer()->EnterLoop();
@@ -527,41 +500,41 @@ void GameState::GetState(double dt)
 	}
 	case FLOOR2:
 	{
-				   if (!PlayTheme)
-				   {
-					   SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
-					   PlayTheme = true;
-				   }
+		if (!PlayTheme)
+		{
+			SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
+			PlayTheme = true;
+		}
 		Update_Stuffs(dt, Floor2);
 		break;
 	}
 	case FLOOR3:
 	{
-				   if (!PlayTheme)
-				   {
-					   SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
-					   PlayTheme = true;
-				   }
+		if (!PlayTheme)
+		{
+			SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
+			PlayTheme = true;
+		}
 		Update_Stuffs(dt, Floor3);
 		break;
 	}
 	case FLOOR4:
 	{
-				   if (!PlayTheme)
-				   {
-					   SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
-					   PlayTheme = true;
-				   }
+		if (!PlayTheme)
+		{
+			SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
+			PlayTheme = true;
+		}
 		Update_Stuffs(dt, Floor4);
 		break;
 	}
 	case FLOOR5:
 	{
-				   if (!PlayTheme)
-				   {
-					   SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
-					   PlayTheme = true;
-				   }
+		if (!PlayTheme)
+		{
+			SoundEngine::Use()->play2D("Data//Sound//Theme.mp3", true);
+			PlayTheme = true;
+		}
 		Update_Stuffs(dt, Floor5);
 		break;
 	}
@@ -620,7 +593,8 @@ void GameState::GetState(double dt)
 		break;
 	}
 	break;
-	
+
+	}
 	}
 }
 
@@ -772,11 +746,8 @@ void GameState::Exit()
 {
 	if (c_pointer != nullptr)
 	{
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-=======
 		UI::Exit();
 		DecoText::pointer()->Exit();
->>>>>>> fixed Some Text problem!
 		PlayerClass::pointer()->Exit();
 		PokeballInfo::pointer()->Exit();
 		Enemy_Psychic::pointer()->Exit();

@@ -7,6 +7,7 @@ void DecoText::Init()
 	m_pointer->Deco_Data.insert(std::pair<std::string, std::string>("Default", "1010111010101110101010"));
 	if (Set("Data\\Texture\\DecoText.csv") == false)
 	{
+		cout << "Error" << endl;
 	}
 }
 
@@ -62,19 +63,17 @@ bool DecoText::Set(std::string FileName)
 				}
 				else
 				{
-					cout << Deco_Name << " texture array have error" << endl;
 					return false;
 				}
 			}
 			if (Deco_interact.size() == 0)
 			{
-				cout << Deco_Name << " texture array have error" << endl;
 				return false;
+				cout << Deco_Name << " texture array have error" << endl;
 			}
 			else if (Deco_Name.size() == 0)
 			{
 				cout << Deco_Name << " have error" << endl;
-				return false;
 			}
 			else
 			{

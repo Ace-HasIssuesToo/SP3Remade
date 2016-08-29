@@ -14,6 +14,7 @@
     <ClCompile Include="Source\Additional_Functions.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Camera_PI.cpp" />
+    <ClCompile Include="Source\DecoText.cpp" />
     <ClCompile Include="Source\EnemyDark.cpp" />
     <ClCompile Include="Source\Enemy_Ghost.cpp" />
     <ClCompile Include="Source\Enemy_Poison.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="Source\Additional_Functions.h" />
     <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Camera_PI.h" />
+    <ClInclude Include="Source\DecoText.h" />
     <ClInclude Include="Source\EnemyDark.h" />
     <ClInclude Include="Source\Enemy_Ghost.h" />
     <ClInclude Include="Source\Enemy_Poison.h" />

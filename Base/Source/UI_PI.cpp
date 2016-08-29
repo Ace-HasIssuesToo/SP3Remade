@@ -4,9 +4,8 @@
 #include "Texture_PI.h"
 #include "Enemy_Poison.h"
 #include "Sensor.h"
-<<<<<<< HEAD
-=======
 #include "GameState.h"
+#include "DecoText.h"
 
 
 Mesh* UI::clock = nullptr;
@@ -38,51 +37,14 @@ void UI::Init()
 	hour_hand = MeshBuilder::GenerateOBJ("clock", "Data\\UI\\hour_hand.obj");
 	hour_hand->textureArray[0] = LoadTGA("Data\\UI\\hand.tga");
 }
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
->>>>>>> Clock Done!
->>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
-=======
->>>>>>> fixed Some Text problem!
-
 void UI::Render()
 {
 	Enemy_Poison::pointer()->render_Poison();
 	Sensor::pointer()->Render();
 	float Runtime = PlayerClass::pointer()->return_Runtime();
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-	Render_PI::pointer()->modelStack_Set(true);
-	//Vector3 Pos = (Vector3(184, 5, 0) + Vector3(Runtime * 10, 48, 0))*0.5f;
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Stamina"), false, Vector3(110, 27, 0) + Vector3(Runtime * 1.75, 0, 0), Vector3(Runtime * 3.5, 5, 5));
-	Render_PI::pointer()->modelStack_Set(false);
-
-	float LightPower = PlayerClass::pointer()->return_LightPower();
-	Render_PI::pointer()->modelStack_Set(true);
-	Vector3 Pos2 = (Vector3(10, 5, 0) + Vector3(LightPower * 11, 55, 0))*0.5f;
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Battery"), false, Vector3(110, 31, 0) + Vector3(LightPower * 1.0, 0, 0), Vector3(LightPower * 2, 3, 5));
-	Render_PI::pointer()->modelStack_Set(false);
-
-<<<<<<< HEAD
-	/*if (state == FLOOR1 || state == FLOOR2 || state == FLOOR3 || state == FLOOR4 || state == FLOOR5)
-=======
-<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
-=======
 	float LightPower = PlayerClass::pointer()->return_LightPower();
 
-	//Render_PI::pointer()->modelStack_Set(true);
-	////Vector3 Pos = (Vector3(184, 5, 0) + Vector3(Runtime * 10, 48, 0))*0.5f;
-	//Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Stamina"), false, Vector3(110, 27, 0) + Vector3(Runtime * 1.75, 0, 0), Vector3(Runtime * 3.5, 5, 1));
-	//Render_PI::pointer()->modelStack_Set(false);
 
-	//Render_PI::pointer()->modelStack_Set(true);/*
-	//Vector3 Pos2 = (Vector3(10, 5, 0) + Vector3(LightPower * 11, 55, 0))*0.5f;*/
-	//Render_PI::pointer()->RenderMeshIn2D(Texture::Get("Battery"), false, Vector3(110, 31, 0) + Vector3(LightPower * 1.0, 0, 0), Vector3(LightPower * 2, 3, 1));
-	//Render_PI::pointer()->modelStack_Set(false);
-
-	//Render_PI::pointer()->modelStack_Set(true);
-	//Render_PI::pointer()->RenderMeshIn2D(Texture::Get("StaminaIcon"), false, Vector3(107, 26, 0), Vector3(4, 5, 1));
-	//Render_PI::pointer()->modelStack_Set(false);
-
->>>>>>> fixed Some Text problem!
 	bool GetBattery = PlayerClass::pointer()->return_BatteryIcon();
 	if (GetBattery == true)
 	{
@@ -107,22 +69,7 @@ void UI::Render()
 		Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BatteryFull"), false, PosBattery, SizeBattery);
 	}
 	else if (LightPower > 6.f && LightPower <= 8.f)
->>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
 	{
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-		Render_PI::pointer()->modelStack_Set(true);
-		Vector3 Pos = Vector3(levelTimer* 0.05, 40, 0)*0.5f;
-		Render_PI::pointer()->RenderMeshIn2D(timer, false, Pos, Vector3(levelTimer * 0.7, 5, 5));
-		Render_PI::pointer()->modelStack_Set(false);
-
-<<<<<<< HEAD
-	}*/
-=======
-	Render_PI::pointer()->modelStack_Set(true);
-	Render_PI::pointer()->RenderMeshIn2D(Texture::Get("StaminaIcon"), false, Vector3(107, 26, 0), Vector3(4, 5, 1));
-	Render_PI::pointer()->modelStack_Set(false);
-=======
-=======
 		Render_PI::pointer()->RenderMeshIn2D(Texture::Get("BatteryFour"), false, PosBattery, SizeBattery);
 	}
 	else if (LightPower > 4.f && LightPower <= 6.f)
@@ -151,7 +98,6 @@ void UI::Render()
 		Render_PI::pointer()->modelStack_Set(false);
 	}
 
->>>>>>> fixed Some Text problem!
 
 	Vector3 Pos = Render_PI::Window_Scale();
 	Pos.y -= 15;
@@ -170,11 +116,9 @@ void UI::Render()
 	Render_PI::pointer()->RenderMeshIn2D(hour_hand, false, Pos, Vector3(20, 20, 1),hour_Angle, Vector3(0, 0, 1));
 	Render_PI::pointer()->modelStack_Set(false);
 
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-	
->>>>>>> Clock Done!
-	
->>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
-=======
->>>>>>> fixed Some Text problem!
+
+	Render_PI::pointer()->modelStack_Set(true);
+	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), DecoText::Get(PlayerClass::pointer()->returnDeco()), Color(0.5, 0.9, 0.1), Vector3(25, 50, 0), Vector3(5, 5, 1));
+	Render_PI::pointer()->modelStack_Set(false);
+
 }

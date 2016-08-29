@@ -118,10 +118,6 @@ void ReadTxtFile::Update(double dt)
 	if (bgTimer > 15.f)
 		asylumON = false;
 
-<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
-	//cout << introTimer << endl;
-=======
->>>>>>> fixed Some Text problem!
 }
 
 void ReadTxtFile::FloorUpdate(double dt)
@@ -417,19 +413,12 @@ void ReadTxtFile::Exit()
 			textbox = nullptr;
 
 		}
-<<<<<<< HEAD
-=======
-		delete asylum;
-		asylum = nullptr;
 	}
 	if (textbox != nullptr)
 	{
 		delete textbox;
 		textbox = nullptr;
 	}
->>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
-
 		delete c_ReadTxtFile;
 		c_ReadTxtFile = nullptr;
-	}
 }
