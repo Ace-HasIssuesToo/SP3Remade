@@ -32,11 +32,15 @@ public:
 	void RenderTextForIntro();
 	void RenderTextForGameplay();
 	void RenderTextBox();
+<<<<<<< HEAD
 	void RenderForAfter();
 	void RenderTextForAfter();
 
 	void EnterLoop();
 
+=======
+	Mesh* GetText();
+>>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
 	bool TimerStart;
 	int sequence, order, next;
 	float bgTimer;

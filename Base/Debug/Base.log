@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 29/8/2016 9:21:13 AM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Base\Base.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -48,3 +49,21 @@
 Build succeeded.
 
 Time Elapsed 00:00:02.67
+=======
+﻿  GameState.cpp
+c:\users\user\documents\sp3remade\base\source\event.h(14): warning C4800: 'Event::Effects' : forcing value to bool 'true' or 'false' (performance warning)
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(277): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(285): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(641): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(655): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(684): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(691): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(702): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(709): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(716): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(723): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+c:\users\user\documents\sp3remade\base\source\gamestate.cpp(730): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+Additional_Functions.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Base.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Base.exe
+>>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
