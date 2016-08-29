@@ -1,3 +1,4 @@
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 <<<<<<< HEAD
 =======
 <<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
@@ -67,14 +68,17 @@ Time Elapsed 00:00:01.88
 =======
 ﻿生成启动时间为 29/8/2016 上午 8:40:58。
 >>>>>>> Clock Done!
+=======
+﻿生成启动时间为 29/8/2016 上午 10:46:57。
+>>>>>>> fixed Some Text problem!
      1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
      1>Lib:
          Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
      1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
->>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
 
-Build succeeded.
+生成成功。
 
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 <<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 <<<<<<< HEAD
 Time Elapsed 00:00:01.88
@@ -100,3 +104,6 @@ Time Elapsed 00:00:00.04
 已用时间 00:00:00.06
 >>>>>>> Clock Done!
 >>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
+=======
+已用时间 00:00:00.04
+>>>>>>> fixed Some Text problem!

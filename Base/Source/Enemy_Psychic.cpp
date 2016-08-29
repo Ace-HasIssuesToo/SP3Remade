@@ -76,7 +76,6 @@ void Enemy_Psychic::Update(double dt, Map* map)
 	{
 		Vector3 radiusRange;
 		radiusRange = (psychicPos - (PlayerClass::pointer()->getPlayerPosOffSet() + PlayerClass::pointer()->getPlayerPos()));
-		cout << radiusRange << endl;
 		float radRange = radiusRange.x * radiusRange.x + radiusRange.y * radiusRange.y;
 
 		if (radRange < 200.f)

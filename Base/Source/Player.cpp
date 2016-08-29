@@ -138,14 +138,14 @@ void PlayerClass::Update(double dt, Map* map)
 	}
 	else
 	{
-		if (Stamina <= Max_Speed)
+		if (Stamina <= 10.f)
 		{
 			Stamina += 0.5 * dt;
 		}
 	}
-	if (Stamina > Max_Speed)
+	if (Stamina > 10.f)
 	{
-		Stamina = Max_Speed;
+		Stamina = 10.f;
 	}
 	else if (Stamina < 0.f)
 	{
@@ -174,12 +174,17 @@ void PlayerClass::Update(double dt, Map* map)
 
 		if (LightOn)
 		{
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 
 			LightPower -= 0.1 * LightRange * dt;
 
 		LightOn = false;
 		LightRange = 0;
 
+=======
+		LightOn = false;
+		LightRange = 0;
+>>>>>>> fixed Some Text problem!
 		}
 		else
 		{
@@ -256,7 +261,7 @@ void PlayerClass::Update(double dt, Map* map)
 	//Kind of Collision
 	if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Wall")
 	{
-
+		Deco_interacted = "Wall";
 	}
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Floor")
 	{
@@ -265,11 +270,16 @@ void PlayerClass::Update(double dt, Map* map)
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "VendingMachine")
 	{
 		GetDrink = true;
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 		//DrinkExists = true;
+=======
+		Deco_interacted = "VendingMachine";
+>>>>>>> fixed Some Text problem!
 	}
 	else if (map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
 	{
 		GetBattery = true;
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 		//BatteryExists = true;
 	}
 	//else if (BatteryExists == true && map->Get_Type(DisplacedMovement + PlayerPosOffSet) == "Treasure")
@@ -284,20 +294,22 @@ void PlayerClass::Update(double dt, Map* map)
 	//		displayDrinkExists = true;
 	//	}
 	////}
+=======
+		Deco_interacted = "Treasure";
+	}
+	else
+	{
+		Deco_interacted = map->Get_Type(DisplacedMovement + PlayerPosOffSet);
+	}
+>>>>>>> fixed Some Text problem!
 	if (GetDrink == true)
 	{
-		drinkTimer += dt;
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink])
+		if (drinkTimer < 10.f)
 		{
-			drinkTimer = 0.0f;
-			Stamina = 10.f;
-			if (Stamina > 10.f)
-			{
-			Stamina = 10.f;
-			}
-			GetDrink = false;
+			drinkTimer += dt;
 		}
 	}
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 <<<<<<< HEAD
 =======
 <<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
@@ -321,24 +333,36 @@ void PlayerClass::Update(double dt, Map* map)
 =======
 >>>>>>> Clock Done!
 >>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
+=======
+>>>>>>> fixed Some Text problem!
 	if (GetBattery == true)
 	{
-		batteryTimer += dt;
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseBattery])
+		if (batteryTimer < 10.f)
 		{
-			batteryTimer = 0.0f;
-			LightPower = 10.f;
-			GetBattery = false;
+			batteryTimer += dt;
 		}
 	}
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 <<<<<<< HEAD
 =======
 <<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 <<<<<<< HEAD
 >>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
-
 =======
->>>>>>> Clock Done!
+>>>>>>> fixed Some Text problem!
+
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink] && GetDrink)
+	{
+		Stamina = 10.f;
+		GetDrink = false;
+		drinkTimer = 0.f;
+	}
+	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseBattery] && GetBattery)
+	{
+		LightPower = 10.f;
+		GetBattery = false;
+		batteryTimer = 0.f;
+	}
 	/*if (DrinkExists == true)
 	{
 	displayDrinkExists += dt;
@@ -347,35 +371,7 @@ void PlayerClass::Update(double dt, Map* map)
 	{
 	}*/
 
-	if (GetDrink == true)
-	{
-		drinkTimer += dt;
-		if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink])
-		{
-			drinkTimer = 0.0f;
-			Stamina = 30.f;
-		}
-	}
-
-
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseDrink])
-	{
-		drinkTimer = 0.0f;
-		Stamina = 30.f;
-		/*if (Stamina >= 30.f)
-		{
-		Stamina = 30.f;
-		}*/
-	}
-	if (Input_PI::pointer()->IsBeingPressed[Input_PI::UseBattery])
-	{
-		batteryTimer = 0.0f;
-		LightPower = 10.f;
-		GetBattery = false;
-	}
-
-<<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
-
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 <<<<<<< HEAD
 =======
 =======
@@ -383,6 +379,8 @@ void PlayerClass::Update(double dt, Map* map)
 =======
 >>>>>>> Clock Done!
 >>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
+=======
+>>>>>>> fixed Some Text problem!
 	//Keep Player in window
 	float Limitation_size = 30;
 	if (PlayerPos.x > (Render_PI::Window_Scale().x - Limitation_size))
@@ -475,6 +473,7 @@ void PlayerClass::Exit()
 			playerMeshDownward = nullptr;
 		};
 
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 		if (Battery != nullptr)
 		{
 			delete Battery;
@@ -486,12 +485,17 @@ void PlayerClass::Exit()
 			Drink = nullptr;
 		}
 
+=======
+>>>>>>> fixed Some Text problem!
 		if (playerMeshIdle != nullptr)
 		{
 			delete playerMeshIdle;
 			playerMeshIdle = nullptr;
 		};
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 
+=======
+>>>>>>> fixed Some Text problem!
 		delete m_pointer;
 		m_pointer = nullptr;
 	};
@@ -548,19 +552,32 @@ void PlayerClass::Renderplayer()
 	ss.precision(5);
 	ss << "Balls Left: " << PokeballInfo::pointer()->getNumOfBalls();
 	Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), ss.str(), Color(1, 0.25f, 0), (Render_PI::Window_Scale() * 0.3, 10, 1), Vector3(5, 5, 1));
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 <<<<<<< HEAD
 =======
 <<<<<<< dda089ad6b72dd5b6f8e8d0ad7abb116fc753095
 <<<<<<< HEAD
 =======
 	if (batteryTimer > 0.f && batteryTimer < 3.f)
+=======
+
+	/*if (batteryTimer > 0.f && batteryTimer < 3.f && (drinkTimer > 0.f && batteryTimer<drinkTimer))
+>>>>>>> fixed Some Text problem!
 	{
 		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Found battery", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
 		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 1 to use battery", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
 	}
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 >>>>>>> Clock Done!
 >>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
 
+=======
+	else if (drinkTimer > 0.f && drinkTimer < 3.f )
+	{
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Got drink", Color(1, 1, 0), Vector3(35, 51, 0), Vector3(5, 5, 1));
+		Render_PI::pointer()->RenderTextOnScreen(GameState::pointer()->GetText(), "Press 2 to drink Drink", Color(1, 1, 0), Vector3(15, 45, 0), Vector3(5, 5, 1));
+	}*/
+>>>>>>> fixed Some Text problem!
 
 	if (batteryTimer > 0.f && batteryTimer < 3.f)
 	{
@@ -590,6 +607,7 @@ void PlayerClass::Renderplayer()
 		Render_PI::pointer()->modelStack_Set(false);
 		//cout << batteryTimer << endl;
 	}
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 
 	if (GetDrink == true)
 	{
@@ -702,4 +720,7 @@ void PlayerClass::Renderplayer()
 		}
 
 	}
+=======
+
+>>>>>>> fixed Some Text problem!
 }

@@ -11,6 +11,7 @@ private:
 public:
 	static void Init();
 	static void Render();
+	static void Exit();
 };
 static const int min_per_hour = int(180.f / 6.f);
 #endif

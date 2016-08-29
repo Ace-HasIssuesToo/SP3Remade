@@ -37,10 +37,15 @@ public:
 	void RenderTextBox();
 	void RenderForAfter();
 	void RenderTextForAfter();
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 	void MusicInit();
 
 	void EnterLoop();
 
+=======
+	void EnterLoop();
+	Mesh* GetText();
+>>>>>>> fixed Some Text problem!
 	bool TimerStart;
 	int sequence, order, next;
 	float bgTimer;

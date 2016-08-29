@@ -1,4 +1,5 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< 95f352927d21644605e9f46273789b3cf40c46c8
 <<<<<<< HEAD
 Debug|Win32|D:\NYP Projects\SP3\Edited Pull\|
 =======
@@ -36,3 +37,6 @@ Debug|Win32|C:\Users\sword_000\Desktop\SP3\|
 Debug|Win32|C:\Users\sword_000\Desktop\SP3\|
 >>>>>>> Clock Done!
 >>>>>>> 44426e81d4351c103c7110d8e3b8bd85597ddb6f
+=======
+Debug|Win32|C:\Users\sword_000\Desktop\SP3\|
+>>>>>>> fixed Some Text problem!
