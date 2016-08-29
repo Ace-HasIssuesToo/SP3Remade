@@ -1,5 +1,4 @@
 #include "PokeInfo.h"
-#include "SoundEngine.h"
 
 PokeballInfo* PokeballInfo::m_pointer = new PokeballInfo();
 
@@ -12,7 +11,6 @@ PokeballInfo::PokeballInfo()
 	, throwSpeed(0)
 	, numOfBalls(0)
 	, pokeballmesh(nullptr)
-	, ShotOn(nullptr)
 {
 
 }
@@ -33,7 +31,6 @@ void PokeballInfo::Init()
 	numOfBalls = 100;
 	pokeballmesh = MeshBuilder::GenerateQuad("Pokeball", Color(0, 0, 0), 1.f);
 	pokeballmesh->textureArray[0] = LoadTGA("Data//Texture//PokeBall.tga");
-	ShotOn = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//Shot.wav");
 }
 void PokeballInfo::Update(double dt, Map* map)
 {
@@ -41,28 +38,24 @@ void PokeballInfo::Update(double dt, Map* map)
 	{
 		if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowFront] == true && numOfBalls >= 1)
 		{
-			SoundEngine::Use()->play2D(ShotOn);
 			ballOnScreen = true;
 			ballDirection.y = throwSpeed;
 			numOfBalls--;
 		}
 		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowBack] == true && numOfBalls >= 1)
 		{
-			SoundEngine::Use()->play2D(ShotOn);
 			ballOnScreen = true;
 			ballDirection.y = -throwSpeed;
 			numOfBalls--;
 		}
 		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowLeft] == true && numOfBalls >= 1)
 		{
-			SoundEngine::Use()->play2D(ShotOn);
 			ballOnScreen = true;
 			ballDirection.x = -throwSpeed;
 			numOfBalls--;
 		}
 		else if (Input_PI::pointer()->IsBeingPressed[Input_PI::PokeThrowRight] == true && numOfBalls >= 1)
 		{
-			SoundEngine::Use()->play2D(ShotOn);
 			ballOnScreen = true;
 			ballDirection.x = throwSpeed;
 			numOfBalls--;
@@ -148,11 +141,11 @@ void PokeballInfo::Exit()
 {
 	if (m_pointer != nullptr)
 	{
-		if (pokeballmesh != nullptr)
-		{
-			delete pokeballmesh;
-			pokeballmesh = nullptr;
-		}
+	if (pokeballmesh != nullptr)
+	{
+		delete pokeballmesh;
+		pokeballmesh = nullptr;
+	}
 		delete m_pointer;
 		m_pointer = nullptr;
 	};

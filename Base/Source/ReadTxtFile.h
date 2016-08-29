@@ -4,6 +4,9 @@
 #include "Support_Codes.h"
 #include "Render_PI.h"
 #include "Map_PI.h"
+#include "irrKlang.h"
+
+using namespace irrklang;
 
 class ReadTxtFile
 {
@@ -32,19 +35,19 @@ public:
 	void RenderTextForIntro();
 	void RenderTextForGameplay();
 	void RenderTextBox();
-<<<<<<< HEAD
 	void RenderForAfter();
 	void RenderTextForAfter();
+	void MusicInit();
 
 	void EnterLoop();
 
-=======
-	Mesh* GetText();
->>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
 	bool TimerStart;
 	int sequence, order, next;
 	float bgTimer;
 	void tempGameplayFunction();
+
+	// Sound Engine
+	ISoundSource* introMusic;
 
 private:
 	static ReadTxtFile* c_ReadTxtFile;
@@ -54,7 +57,7 @@ private:
 
 	int storage, gpPointer, gpgpPointer, duringPointer;
 	float introTimer;
-	bool timerTime, timerReset, flashON, asylumON, release, duringPress;
+	bool timerTime, timerReset, flashON, asylumON, release, duringPress, introSound;
 
 	Mesh* intro_dialogue;
 	Mesh* city;

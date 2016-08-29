@@ -5,7 +5,6 @@
 #include "Map_PI.h"
 #include "Player.h"
 #include "Input_PI.h"
-#include "irrKlang.h"
 
 class PokeballInfo
 {
@@ -24,7 +23,6 @@ public:
 	{
 		return m_pointer;
 	}
-	ISoundSource* ShotOn;
 private:
 	PokeballInfo();
 	~PokeballInfo();

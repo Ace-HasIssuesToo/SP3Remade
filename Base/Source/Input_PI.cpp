@@ -136,6 +136,15 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[Backward] = false;
 	}
+	if (Application::IsKeyPressed(VK_SHIFT))
+	{
+		IsBeingPressed[Run] = true;
+	}
+	else if (IsBeingPressed[Run] == true)
+	{
+		IsBeingPressed[Run] = false;
+		HaveBeenPressed[Run] = true;
+	}
 	if (Application::IsKeyPressed(VK_RETURN))
 	{
 		IsBeingPressed[NextStatement] = true;
@@ -180,15 +189,6 @@ void Input_PI::Update(double dt)
 	{
 		IsBeingPressed[UseDrink] = false;
 		HaveBeenPressed[UseDrink] = true;
-	}
-	if (Application::IsKeyPressed('N'))
-	{
-		IsBeingPressed[NextLevel] = true;
-	}
-	else if (IsBeingPressed[NextLevel] == true)
-	{
-		IsBeingPressed[NextLevel] = false;
-		HaveBeenPressed[NextLevel] = true;
 	}
 }
 

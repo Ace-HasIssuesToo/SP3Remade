@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿Build started 26/8/2016 2:36:20 PM.
      1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -19,66 +18,7 @@
          Debug\Vector3.obj
          Common.vcxproj -> D:\NYP Projects\SP3\Edited Pull\Debug\Common.lib
      1>Done Building Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" (Build target(s)).
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< 680590776936ab288f01ffbf183b4ace13c2aa59
-<<<<<<< HEAD
->>>>>>> 064852617059d73312bd6ff3648fefc7376cf973
-﻿  Vector3.cpp
-  Vector2.cpp
-  timer.cpp
-  Mtx44.cpp
-  MatrixStack.cpp
-  MathUtility.cpp
-  Generating Code...
-  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-﻿Build started 25/8/2016 4:12:32 PM.
-     1>Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Common\Common.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
-         Common.vcxproj -> D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Debug\Common.lib
-     1>Done Building Project "D:\SP3 Life Problems\SP3MAKEITSTOP\MAKE IT STOP\OH GOD WHY\Common\Common.vcxproj" (Build target(s)).
-=======
-<<<<<<< HEAD
-﻿Build started 25/8/2016 5:36:55 PM.
-     1>Project "D:\NYP Projects\SP3\Edited Pull\Common\Common.vcxproj" on node 2 (Build target(s)).
-=======
-<<<<<<< HEAD
-﻿  Common.vcxproj -> C:\Users\user\Documents\SP3Remade\Debug\Common.lib
-=======
-﻿生成启动时间为 26/8/2016 上午 9:29:47。
-=======
-﻿生成启动时间为 26/8/2016 下午 2:40:07。
->>>>>>> 10 MB reached!
-     1>项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”在节点 2 上(Build 个目标)。
-     1>Lib:
-         Common.vcxproj -> C:\Users\sword_000\Desktop\SP3\Debug\Common.lib
-     1>已完成生成项目“C:\Users\sword_000\Desktop\SP3\Common\Common.vcxproj”(Build 个目标)的操作。
->>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
 
 Build succeeded.
 
-<<<<<<< HEAD
 Time Elapsed 00:00:01.88
-=======
-<<<<<<< 680590776936ab288f01ffbf183b4ace13c2aa59
-<<<<<<< HEAD
-Time Elapsed 00:00:00.03
-=======
-<<<<<<< HEAD
-Time Elapsed 00:00:00.04
-=======
-已用时间 00:00:00.90
->>>>>>> c480e6e9fc89873b4663ee066b9e6b32d93fa01f
->>>>>>> de08da505f2883da8197e7af6153638f6ac16f4e
->>>>>>> 6e5dbc1ea98272b3d564529c3f5ea36b798380c6
->>>>>>> d95b00b47aa96f13513135d55ea7d5754178e0bd
-=======
-已用时间 00:00:00.05
->>>>>>> 10 MB reached!
->>>>>>> 064852617059d73312bd6ff3648fefc7376cf973
->>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd

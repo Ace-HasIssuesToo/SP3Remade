@@ -32,7 +32,6 @@ public:
 		UseDrink,
 		Phone_Switch,
 		NextStatement,
-		NextLevel,
 		All_Control,
 	};
 	bool IsBeingPressed[All_Control];

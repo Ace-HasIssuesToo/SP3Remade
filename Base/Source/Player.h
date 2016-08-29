@@ -4,7 +4,6 @@
 #include "Render_PI.h"
 #include "Map_PI.h"
 #include "PokeInfo.h"
-#include "irrKlang.h"
 
 class PlayerClass
 {
@@ -25,8 +24,9 @@ public:
 		Right,
 		Top, 
 		Down,
-		Idle,
+		Idle
 	};
+
 	void setPlayerMesh(PlayerClass::PlayerMeshes mesh);
 	Mesh* getPlayerMesh2();
 	void clearPlayer();
@@ -38,10 +38,6 @@ public:
 	}
 	float return_LightPower(){ return LightPower; };
 	float return_Runtime(){ return Stamina; };
-	bool return_BatteryIcon(){ return GetBattery; };
-	bool return_DrinkIcon(){ return GetDrink; };
-	ISoundSource* PickUp;
-	string returnDeco(){return Deco_interacted;	};
 private:
 	PlayerClass();
 	~PlayerClass();
@@ -67,7 +63,12 @@ private:
 	bool GetDrink;
 	bool DrinkExists;
 	bool BatteryExists;
-	string Deco_interacted;
+	bool displayBattteryExists;
+	bool displayDrinkExists;
+	Mesh* RunBar;
+	Mesh* LightBar;
+	Mesh* Battery;
+	Mesh* Drink;
 };
 
 const float Max_Speed = 6.f;

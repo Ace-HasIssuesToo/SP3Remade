@@ -2,12 +2,13 @@
 #include "Texture_PI.h"
 #include "Player.h"
 #include "GameState.h"
+#include "SoundEngine.h"
 
 ReadTxtFile* ReadTxtFile::c_ReadTxtFile = new ReadTxtFile();
 
 ReadTxtFile::ReadTxtFile() : fullIntro(0), introTimer(0), sequence(0), bgTimer(0), fullGameplay(0), order(0), next(0),
-TimerStart(false), timerTime(false), timerReset(false), flashON(false), asylumON(false),
-intro_dialogue(nullptr), city(nullptr), flash(nullptr), asylum(nullptr), textbox(nullptr), storage(0), release(false),
+TimerStart(false), timerTime(false), timerReset(false), flashON(false), asylumON(false), introSound(true),
+intro_dialogue(nullptr), city(nullptr), flash(nullptr), asylum(nullptr), textbox(nullptr), storage(0), release(false), introMusic(nullptr),
 tempGameplay(0), gpPointer(0), gpgpPointer(0), duringPointer(0), duringPress(false)
 {
 
@@ -66,11 +67,20 @@ void ReadTxtFile::Init()
 
 	textbox = MeshBuilder::GenerateQuad("textbox", Color(0, 0, 0), 1.f);
 	textbox->textureArray[0] = LoadTGA("Data//Texture//textbox.tga");
+
+	// Sound Engine
+	introMusic = SoundEngine::Use()->addSoundSourceFromFile("Data//Sound//intro_music.mp3");
 }
-Mesh* ReadTxtFile::GetText()
+
+void ReadTxtFile::MusicInit()
 {
-	return intro_dialogue;
+	if (introSound)
+	{
+		SoundEngine::Use()->play2D(introMusic);
+		introSound = false;
+	}
 }
+
 void ReadTxtFile::Update(double dt)
 {
 	if (TimerStart)
@@ -108,7 +118,7 @@ void ReadTxtFile::Update(double dt)
 	if (bgTimer > 15.f)
 		asylumON = false;
 
-	cout << introTimer << endl;
+	//cout << introTimer << endl;
 }
 
 void ReadTxtFile::FloorUpdate(double dt)
@@ -364,52 +374,47 @@ void ReadTxtFile::EnterLoop()
 
 void ReadTxtFile::Exit()
 {
-	if (intro_dialogue != nullptr)
-	{
-		delete intro_dialogue;
-		intro_dialogue = nullptr;
-	}
-	if (city != nullptr)
-	{
-		delete city;
-		city = nullptr;
-	}
-	if (flash != nullptr)
-	{
-		SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(flash);
-		if (sa)
-		{
-			delete sa->m_anim;
-			sa->m_anim = nullptr;
-		}
-		delete flash;
-		flash = nullptr;
-	}
-	if (asylum != nullptr)
-	{
-		SpriteAnimation *sa2 = dynamic_cast<SpriteAnimation*>(asylum);
-		if (sa2)
-		{
-			delete sa2->m_anim;
-			sa2->m_anim = nullptr;
-		}
-		delete asylum;
-		asylum = nullptr;
-	}
-	if (textbox != nullptr)
-	{
-		delete textbox;
-		textbox = nullptr;
-<<<<<<< HEAD
-
-=======
-		delete asylum;
-		asylum = nullptr;
->>>>>>> 99c5520e85fffbac70454a40e72ac1e955dcd0dd
-	}
-
 	if (c_ReadTxtFile != nullptr)
 	{
+		if (intro_dialogue != nullptr)
+		{
+			delete intro_dialogue;
+			intro_dialogue = nullptr;
+		}
+		if (city != nullptr)
+		{
+			delete city;
+			city = nullptr;
+		}
+		if (flash != nullptr)
+		{
+			SpriteAnimation *sa = dynamic_cast<SpriteAnimation*>(flash);
+			if (sa)
+			{
+				delete sa->m_anim;
+				sa->m_anim = nullptr;
+			}
+			delete flash;
+			flash = nullptr;
+		}
+		if (asylum != nullptr)
+		{
+			SpriteAnimation *sa2 = dynamic_cast<SpriteAnimation*>(asylum);
+			if (sa2)
+			{
+				delete sa2->m_anim;
+				sa2->m_anim = nullptr;
+			}
+			delete asylum;
+			asylum = nullptr;
+		}
+		if (textbox != nullptr)
+		{
+			delete textbox;
+			textbox = nullptr;
+
+		}
+
 		delete c_ReadTxtFile;
 		c_ReadTxtFile = nullptr;
 	}

@@ -13,7 +13,6 @@ void Event::Init()
 	current_Effect = No_Effect;
 	Effect_Time = 0;
 	RandMultiplier = 100;
-	RandMultiplier = 50;
 	FlashDelay = 0;
 	LastTime = CurrentTime = 0;
 }
@@ -84,16 +83,6 @@ void Event::Update(double dt, Map* map)
 				Enemy_Psychic::pointer()->Pos_Set(map->Map_Rand());
 				Enemy_Poison::pointer()->Pos_Set(map->Map_Rand());
 				Enemy_Dark::pointer()->Pos_Set(map->Map_Rand());
-
-				SoundEngine::Use()->play2D("Data//Sound//RunningPokemon.mp3", false);
-				Effect_Time = Math::RandFloatMinMax(2.f, 4.f);
-				if (!GameState::pointer()->checkcaged())
-				{
-					Enemy_Ghost::pointer()->Pos_Set(map->Map_Rand());
-					Enemy_Psychic::pointer()->Pos_Set(map->Map_Rand());
-					Enemy_Poison::pointer()->Pos_Set(map->Map_Rand());
-					Enemy_Dark::pointer()->Pos_Set(map->Map_Rand());
-				}
 			}
 		}
 	}
